@@ -1,0 +1,16 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defer": false,
+        "designer|userClassName": "js",
+        "url": "resources\\js\\odataProxy.js",
+        "x-compile": true
+    },
+    "name": "js",
+    "designerId": "a74bc0eb-3a67-42c6-912b-cdfa844cd934"
+}

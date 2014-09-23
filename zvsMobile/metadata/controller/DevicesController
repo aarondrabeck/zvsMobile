@@ -1,0 +1,281 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DevicesController"
+    },
+    "name": "MyController",
+    "designerId": "6ce882fa-eb1d-4863-9c06-c76d93e27216",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#deviceDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewItemTap",
+                "implHandler": [
+                    "var mainView = this.getMainView();",
+                    "var valuesStore = Ext.getStore('DeviceValuesStore');",
+                    "valuesStore.filter('DeviceId', record.data.Id);",
+                    "",
+                    "valuesStore.load();",
+                    "",
+                    "mainView.push({",
+                    "    xtype: 'devicedetailstabpanel',",
+                    "    title: record.data.Name,",
+                    "    data: record.data",
+                    "});",
+                    "",
+                    "var sw = this.getSwitchControlPanel();",
+                    "sw.setRecord(record.data);"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onDataviewItemTap",
+            "designerId": "d0522694-13c8-42c5-9e78-da8fb488bf72"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "#mainView"
+            },
+            "name": "mainView",
+            "designerId": "47c4e436-8611-4bff-97fd-b57fdd686044"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#devicesReloadBtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "onReloadTap",
+                "implHandler": [
+                    "var deviceStore = Ext.getStore('DeviceStore');",
+                    "deviceStore.load();"
+                ],
+                "name": "tap"
+            },
+            "name": "onReloadTap",
+            "designerId": "eb3098de-7923-45d3-9165-8485b976891d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#deviceDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewRefresh",
+                "implHandler": [
+                    "",
+                    "var locationNames = [];",
+                    "var items = [{text: 'All', locationFilter: 'all',pressed:true}];",
+                    "var deviceStore = Ext.getStore('DeviceStore');",
+                    "var toolbar = Ext.getCmp('deviceToolbar');",
+                    "if(deviceStore.getFilters().length === 0)",
+                    "{",
+                    "    deviceStore.each(function(element) {",
+                    "",
+                    "",
+                    "        var item =  {",
+                    "                    text: element.data.Location,",
+                    "                    locationFilter:element.data.Location",
+                    "                };",
+                    "",
+                    "",
+                    "        if(locationNames.indexOf(element.data.Location) === -1)",
+                    "            items.push(item);",
+                    "",
+                    "        locationNames.push(element.data.Location);",
+                    "    });",
+                    "    var segButton  =Ext.getCmp('filterSegmentedButton');",
+                    "    segButton.removeAll();",
+                    " segButton.add(items);",
+                    "",
+                    "}"
+                ],
+                "name": "refresh"
+            },
+            "name": "onDataviewRefresh",
+            "designerId": "62fd5231-f582-429a-96d3-afa1576d8abf"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "segmentedbutton#filterSegmentedButton",
+                "designer|targetType": "Ext.SegmentedButton",
+                "fn": "onSegmentedbuttonToggle",
+                "implHandler": [
+                    "",
+                    "var deviceStore = Ext.getStore('DeviceStore');",
+                    "var filter = button.locationFilter;",
+                    "if(filter)",
+                    "            {",
+                    "                if(filter == 'all')",
+                    "                    deviceStore.clearFilter();",
+                    "                else",
+                    "                    deviceStore.filter('Location', filter);",
+                    "            }"
+                ],
+                "name": "toggle"
+            },
+            "name": "onSegmentedbuttonToggle",
+            "designerId": "cef6ff2e-9edb-4f2b-8b33-c218cdf788e1"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "switchControlPanel",
+                "selector": "panel#switchControlPanel",
+                "xtype": "switchcontrolpanel"
+            },
+            "name": "switchControlPanel",
+            "designerId": "cddd6671-e4d1-4dd1-a966-be30f891975f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "togglefield#switchToggle",
+                "designer|targetType": "Ext.field.Toggle",
+                "fn": "onSwitchTogglefieldChange",
+                "implHandler": [
+                    "var panel = this.getSwitchControlPanel();",
+                    "var device = panel.getData();",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: 'http://10.1.0.54:50232/DeviceCommands/?$filter=CustomData1 eq \\'Basic\\' and DeviceId eq '+ device.Id + '&$select=Id',",
+                    "    method: 'GET',",
+                    "    headers: {",
+                    "        'Content-Type': 'application/json',",
+                    "        'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
+                    "    },",
+                    "    success: function (response, opts) {",
+                    "        var result = JSON.parse(response.responseText);",
+                    "        if (result.value.length == 1) {",
+                    "            var commandId = result.value[0].Id;",
+                    "            Ext.Ajax.request({",
+                    "                url: 'http://10.1.0.54:50232/DeviceCommands('+commandId+')/Actions.Execute',",
+                    "                method: 'POST',",
+                    "                headers: {",
+                    "                    'Content-Type': 'application/json',",
+                    "                    'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
+                    "                },",
+                    "                params: {",
+                    "                    value: 1",
+                    "                },",
+                    "                success: function (response, opts) {",
+                    "                    var result = JSON.parse(response.responseText);",
+                    "                    if (result.value.length == 1) {",
+                    "                        success(result.value[0].Id);",
+                    "                    }",
+                    "                    else {",
+                    "                        panel.setError('Device command not found.');",
+                    "                    }",
+                    "                },",
+                    "                failure: function (response, opts) {",
+                    "                    var result = JSON.parse(response.responseText);",
+                    "                    panel.setError(result.error.message);",
+                    "                }",
+                    "            });",
+                    "",
+                    "        }",
+                    "        else {",
+                    "            panel.setError('Device command not found.');",
+                    "        }",
+                    "    },",
+                    "    failure: function (response, opts) {",
+                    "        var result = JSON.parse(response.responseText);",
+                    "        panel.setError(result.error.message);",
+                    "    }",
+                    "});",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "name": "change"
+            },
+            "name": "onSwitchTogglefieldChange",
+            "designerId": "822fe9f0-eb6b-4c9d-b9ff-5e63689ee13c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "deviceId",
+                    "panel",
+                    "success"
+                ],
+                "fn": "getBasicDeviceCommand",
+                "implHandler": [
+                    "Ext.Ajax.request({",
+                    "            url: 'http://10.1.0.54:50232/DeviceCommands/?$filter=CustomData1 eqa \\'Basic\\' and DeviceId eq '+ deviceId + '&$select=Id',",
+                    "            method: 'GET',",
+                    "            headers: {",
+                    "                'Content-Type': 'application/json',",
+                    "                'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
+                    "            },",
+                    "            success: function (response, opts) {",
+                    "                var result = JSON.parse(response.responseText);",
+                    "                if (result.value.length == 1) {",
+                    "                    success(result.value[0].Id);",
+                    "                }",
+                    "                else {",
+                    "                    panel.setError('Device command not found.');",
+                    "                }",
+                    "            },",
+                    "            failure: function (response, opts) {",
+                    "                var result = JSON.parse(response.responseText);",
+                    "                panel.setError(result.error.message);",
+                    "            }",
+                    "        });"
+                ]
+            },
+            "name": "getBasicDeviceCommand",
+            "designerId": "63576e96-2ddd-4655-b089-206627ba1a19"
+        }
+    ]
+}

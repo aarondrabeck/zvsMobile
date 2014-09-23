@@ -1,0 +1,65 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "devicedetailstabpanel",
+        "designer|userClassName": "DeviceDetailsTabPanel",
+        "id": "deviceDetailsTabPanel",
+        "itemId": null
+    },
+    "name": "MyTabPanel",
+    "designerId": "5ef75ce5-018b-4de5-9eaa-97cf5b8dda42",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null,
+                "iconCls": "action",
+                "title": "Control"
+            },
+            "name": "switchcontrolpanel",
+            "designerId": "9abb4469-c285-4b30-a388-513099c3621c",
+            "masterInstanceId": "0c783cbd-5169-4e88-95ec-762d60755feb"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "more",
+                "title": "Values"
+            },
+            "name": "devicevaluespanel",
+            "designerId": "f72355f3-68d8-4a1a-a85f-97889e7dbbc5",
+            "masterInstanceId": "6192869c-ad6e-4f4c-a2ae-d6058a34b218"
+        },
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "center",
+                "designer|uiInterfaceName": "neutral",
+                "docked": "bottom",
+                "ui": "neutral"
+            },
+            "name": "MyTabBar",
+            "designerId": "fd4f5f72-2470-4840-9356-e5ae79cf484b"
+        }
+    ]
+}

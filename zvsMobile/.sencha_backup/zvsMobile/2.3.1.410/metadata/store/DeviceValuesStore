@@ -1,0 +1,79 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userClassName": "DeviceValuesStore",
+        "groupDir": "DESC",
+        "groupField": "Genre",
+        "model": "DeviceValue",
+        "remoteFilter": true,
+        "storeId": "DeviceValuesStore"
+    },
+    "name": "DeviceStore1",
+    "designerId": "4abf8518-888e-4e8f-b6d9-12161b5a1c1b",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|createAlias": "odata",
+                "enablePagingParams": false,
+                "filterParam": "$filter",
+                "headers": [
+                    "",
+                    "{",
+                    "'Content-Type': 'application/json',",
+                    "'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
+                    "}"
+                ],
+                "limitParam": "$top",
+                "noCache": false,
+                "sortParam": "$orderby",
+                "startParam": "$skip",
+                "url": "http://10.1.0.54:50232/DeviceValues/",
+                "useDefaultXhrHeader": false
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "346ae503-998f-47e8-bd51-14ad55bbab12",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "Id",
+                        "rootProperty": "value"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "02f7dd4b-855c-4b1a-ab19-734b168d5367"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": null,
+                "property": "Name"
+            },
+            "name": "MySorter1",
+            "designerId": "fcd27c76-42cc-40b1-b43f-a2dac2ee7e50"
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+﻿{
+    "devices": [
+        {
+            "id": "1",
+            "name": "Kitchen Light",
+            "level": 23,
+            "state": "DIM",
+            "type": "DIMMER"
+        },
+        {
+            "id": "2",
+            "name": "Bathroom Light",
+            "level": 0,
+            "state": "OFF",
+            "type": "DIMMER"
+        },
+        {
+            "id": "3",
+            "name": "Other Light",
+            "level": 0,
+            "state": "OFF",
+            "type": "SWITCH"
+        },
+        {
+            "id": "4",
+            "name": "Outside Light",
+            "level": 99,
+            "state": "ON",
+            "type": "DIMMER"
+        },
+        {
+            "id": "5",
+            "name": "Inside Light",
+            "level": 99,
+            "state": "ON",
+            "type": "DIMMER"
+        },
+        {
+            "id": "6",
+            "name": "Really really long name that should be truncated Light",
+            "level": 99,
+            "state": "ON",
+            "type": "DIMMER"
+        },
+        {
+            "id": "7",
+            "name": "Den Light",
+            "level": 99,
+            "state": "ON",
+            "type": "DIMMER"
+        },
+        {
+            "id": "8",
+            "name": "Main",
+            "level": 72,
+            "state": "RUNNING",
+            "type": "THERMOSTAT"
+        }
+    ]
+
+}

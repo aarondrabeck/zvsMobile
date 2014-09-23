@@ -1,0 +1,100 @@
+.dataview-horizontal .x-dataview-item, .dataview-inline .x-dataview-item {
+    -webkit-box-shadow: 0 5px 10px -6px black;
+    -moz-box-shadow: 0 5px 10px -6px black;
+    box-shadow: 0 5px 10px -6px black;
+    padding: 5px;
+    margin: 5px;
+    width: 170px;
+    height: 140px;
+    background-color: white;
+}
+
+.THERMOSTAT-RUNNING, .THERMOSTAT-OFF, .THERMOSTAT {
+    background-image: url('/resources/images/thermostat.png');
+}
+
+.CONTROLLER, .CONTROLLER-ON, .CONTROLLER-OFF {
+    background-image: url('/resources/images/controller.png');
+}
+
+.DIMMER, .DIMMER-ON {
+    background-image: url('/resources/images/lb_on.png');
+}
+
+.DIMMER-DIM {
+    background-image: url('/resources/images/lb_dim.png');
+}
+
+.DIMMER-OFF {
+    background-image: url('/resources/images/lb_off.png');
+}
+
+.SWITCH, .SWITCH-ON {
+    background-image: url('/resources/images/switch_on.png');
+}
+
+.SWITCH-OFF {
+    background-image: url('/resources/images/switch_off.png');
+}
+
+.device-name-truncate {
+    width: 162px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:.9em
+}
+
+.location-name-truncate {
+    width: 162px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:.7em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.device-level {
+    text-align: center;
+    margin-top: 30px;
+    font-size:.7em
+}
+
+.device-item {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 20px 20px;
+    width: 162px;
+    height: 130px;
+}
+
+.device-item-level {
+   
+    width: 100px;
+    margin: 0 auto;
+}
+
+.device-item-level .meter {
+    margin: .2em 0;
+    width: 100%;
+    height: 5px;
+    background-color: #EEE;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(2%, #ffffff), color-stop(100%, #dcdcdc));
+    background-image: linear-gradient(#ffffff,#ffffff 2%,#dcdcdc);
+    border: 1px solid #EEE;
+    -webkit-border-radius: 0.3em;
+    border-radius: 0.3em;
+}
+
+.device-item-level .meter .progress {
+    background-color: #00d228;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cdffcd), color-stop(2%, #00d228), color-stop(100%, #05d62a));
+    background-image: linear-gradient(#cdffcd,#00d228 2%,#05d62a);
+    border: 1px solid #1ce133;
+    -webkit-border-radius: 0.3em;
+    border-radius: 0.3em;
+    height: 100%;
+}

@@ -1,0 +1,226 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DeviceValue",
+        "idProperty": "Id"
+    },
+    "name": "MyModel",
+    "designerId": "7933a4e0-7699-49f0-8f08-b6137f4bca1b",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "DeviceId",
+                "type": "int"
+            },
+            "name": "field21",
+            "designerId": "c274df84-4975-4147-b33a-f4b78f2a4480"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Name",
+                "type": "string"
+            },
+            "name": "field11",
+            "designerId": "debeab43-c368-4161-9bf9-f375ba0d217d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "UniqueIdentifier",
+                "type": "string"
+            },
+            "name": "field12",
+            "designerId": "2f11d058-08a2-4d7f-b796-66699fe652fb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Value",
+                "type": "string"
+            },
+            "name": "field13",
+            "designerId": "4cd283c8-f801-4755-b214-12a25da11e5b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Description",
+                "type": "string"
+            },
+            "name": "field14",
+            "designerId": "408c222c-f4da-4eba-9cd0-5fc616bec54d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Genre",
+                "type": "string"
+            },
+            "name": "field15",
+            "designerId": "ce630a1e-69d0-4987-97a4-36134136c191"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Index",
+                "type": "string"
+            },
+            "name": "field16",
+            "designerId": "3075e907-d53b-402a-989f-5433996c2a2a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "CommandClass",
+                "type": "string"
+            },
+            "name": "field17",
+            "designerId": "fd1da0d3-eb76-4906-839d-c738e5e473c4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "CustomData1",
+                "type": "string"
+            },
+            "name": "field18",
+            "designerId": "eae0d418-bf36-4fc5-a290-a2ce3066a180"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "CustomData2",
+                "type": "string"
+            },
+            "name": "field19",
+            "designerId": "16c5e2be-9975-4236-83c0-0907a5ee6d15"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Id",
+                "type": "int"
+            },
+            "name": "field20",
+            "designerId": "c470a09c-2aa6-473f-b069-9ac4ed18aa7d"
+        },
+        {
+            "type": "Ext.data.association.BelongsTo",
+            "reference": {
+                "name": "belongsTo",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "belongsToDevice",
+                "foreignKey": "DeviceId",
+                "model": "Device"
+            },
+            "name": "MyBelongsToAssociation",
+            "designerId": "94cfc372-f6b6-435d-838c-494c5d0faac8"
+        },
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    "{ read: 'http://localhost:50232/DeviceValues/' }"
+                ],
+                "designer|createAlias": "odata",
+                "filterParam": "$filter",
+                "headers": [
+                    "{",
+                    "'Content-Type': 'application/json',",
+                    "'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
+                    "}"
+                ],
+                "url": "http://localhost:50232/DeviceValues",
+                "useDefaultXhrHeader": false
+            },
+            "name": "MyAjaxProxy1",
+            "designerId": "fe104d79-76ae-4ab9-95cb-71b40205de5a",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "Id",
+                        "rootProperty": "value"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "ed419940-08ea-4747-b755-79d3db821cde"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userAlias": "devicevaluespanel",
+        "designer|userClassName": "DeviceValuesPanel",
+        "fullscreen": true,
+        "layout": "fit"
+    },
+    "name": "MyPanel",
+    "designerId": "6192869c-ad6e-4f4c-a2ae-d6058a34b218",
+    "cn": [
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "grouped": true,
+                "store": "DeviceValuesStore"
+            },
+            "name": "MyList",
+            "designerId": "f54a8f8d-bd10-4bd6-96e1-ea5aa652a846",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>{Name} - {Value}</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "513d428c-35ea-4b45-8c6e-864f9482c3a9"
+                },
+                {
+                    "type": "Ext.plugin.PullRefresh",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyPullRefreshPlugin",
+                    "designerId": "cec1e3a6-955f-4faf-a593-603ffb9ecb63"
+                }
+            ]
+        }
+    ]
+}

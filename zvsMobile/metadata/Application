@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "Navigation",
+            "DevicesController"
+        ],
+        "models": [
+            "Device",
+            "DeviceValue"
+        ],
+        "name": "zvsMobile",
+        "stores": [
+            "DeviceStore",
+            "DeviceValuesStore"
+        ],
+        "views": [
+            "MainView",
+            "DevicesPanel",
+            "AboutPanel",
+            "ContactPanel",
+            "NavMenu",
+            "DeviceValuesPanel",
+            "DeviceDetailsTabPanel",
+            "SwitchControlPanel"
+        ]
+    },
+    "name": "Application",
+    "designerId": "application"
+}

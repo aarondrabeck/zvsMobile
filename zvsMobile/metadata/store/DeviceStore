@@ -1,0 +1,112 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": null,
+        "designer|userClassName": "DeviceStore",
+        "groupDir": "DESC",
+        "groupField": null,
+        "model": "Device",
+        "storeId": "DeviceStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "d19a7c47-5d37-416c-8220-e97fd3d14506",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|createAlias": "odata",
+                "enablePagingParams": false,
+                "filterParam": "$filter",
+                "headers": [
+                    "",
+                    "{",
+                    "'Content-Type': 'application/json',",
+                    "'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
+                    "}"
+                ],
+                "limitParam": "$top",
+                "noCache": false,
+                "sortParam": "$orderby",
+                "startParam": "$skip",
+                "url": "http://10.1.0.54:50232/Devices/?$expand=Type&$filter=Type/UniqueIdentifier ne 'CONTROLLER'",
+                "useDefaultXhrHeader": false
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "fb1cb667-39f4-4a29-9bfc-2480cc75a2ce",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "Id",
+                        "rootProperty": "value"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "36adcc65-d658-4675-a13d-00eb977d29aa"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "Location"
+            },
+            "name": "MySorter",
+            "designerId": "df216fee-7115-416a-b26f-ee782e99c344"
+        },
+        {
+            "type": "Ext.util.Grouper",
+            "reference": {
+                "name": "grouper",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": null
+            },
+            "name": "MyGrouper",
+            "designerId": "efa249fa-d347-4486-acb1-6a2bafd4adbe",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item"
+                        ],
+                        "fn": "groupFn",
+                        "implHandler": [
+                            "return item.get('Type');"
+                        ]
+                    },
+                    "name": "groupFn",
+                    "designerId": "a08e1462-87e2-44d6-9053-b3fc684d236d"
+                }
+            ]
+        }
+    ]
+}

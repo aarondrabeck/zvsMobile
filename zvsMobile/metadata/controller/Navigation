@@ -1,0 +1,122 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Navigation"
+    },
+    "designerId": "b65f72c1-bee5-4e5a-9fed-ce939650a75c",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "mainview #menuButton",
+                "designer|params": [
+                    "target"
+                ],
+                "fn": "showMenu",
+                "implHandler": [
+                    "",
+                    "// Get or create navigation menu",
+                    "var menu = this.getNavMenu();",
+                    "if (!menu) {",
+                    "    menu = Ext.create('widget.navmenu');",
+                    "}",
+                    "",
+                    "var menuItems = menu.getItems().items,\t\t\t\t// Menu buttons",
+                    "\tcurrentView = this.currentView || \"devicespanel\";\t// Current view alias, default to home",
+                    "",
+                    "// Disable active view's button",
+                    "menuItems.forEach(function(button) {",
+                    "",
+                    "    // Get custom navView attribute",
+                    "    var navView = button.config.navView;",
+                    "",
+                    "    // Active button, disable",
+                    "    if (currentView == navView) {",
+                    "        button.disable();",
+                    "    }",
+                    "",
+                    "    // Enable all others",
+                    "    else {",
+                    "        button.enable();",
+                    "    }",
+                    "",
+                    "});",
+                    "",
+                    "// Show menu by menu button",
+                    "menu.showBy(target);",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "showMenu",
+            "designerId": "beb8e73c-976d-4842-a233-effc11685cea"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navmenu button",
+                "designer|targetType": "Ext.Button",
+                "fn": "navigate",
+                "implHandler": [
+                    "",
+                    "/**",
+                    "*\tThe following code enables navigation",
+                    "*\tby checking the custom attribute 'navView',",
+                    "*\twhich is the alias of the view to show",
+                    "*/",
+                    "",
+                    "var text = button.getText(),\t\t\t\t\t\t// Button text",
+                    "\tnavView = button.getInitialConfig().navView,\t// Get custom attribute 'navView'",
+                    "\tmainView = this.getMainView(),\t\t\t\t\t// Main navigation view",
+                    "\tnavMenu = this.getNavMenu();\t\t\t\t\t// Navigation menu",
+                    "",
+                    "// Add view to main view",
+                    "mainView.push({",
+                    "    xtype: navView,",
+                    "    title: text",
+                    "});",
+                    "",
+                    "// Remember current view alias",
+                    "this.currentView = navView;",
+                    "",
+                    "// Hide menu",
+                    "navMenu.hide();",
+                    "//Ext.select('.x-button-back').hide();"
+                ],
+                "name": "tap"
+            },
+            "name": "navigate",
+            "designerId": "7d2ec394-96f9-46bd-afc0-b4bea517cc08"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "navMenu",
+                "selector": "#navMenu",
+                "xtype": "navmenu"
+            },
+            "name": "navMenu",
+            "designerId": "ee9ba556-0a0b-41bb-981d-cd5cda8538c8"
+        }
+    ]
+}
