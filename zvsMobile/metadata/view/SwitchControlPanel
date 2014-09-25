@@ -55,11 +55,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "switchToggle",
-                "label": "Control"
+                "itemId": "toggleSetBtn",
+                "label": "Set",
+                "name": "toggleSet"
             },
             "name": "MyToggleField",
-            "designerId": "b99e2d7f-b19f-43ff-a063-f19847fb826e"
+            "designerId": "afbed703-25c1-4fa4-809d-84cd0707fc86"
         },
         {
             "type": "Ext.Label",
@@ -69,6 +70,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "centered": false,
                 "html": null,
                 "id": "feedbackLabel",
                 "margin": 10,
@@ -98,8 +100,9 @@
                     "    this.down('#locationTextField').setValue(record.Location);",
                     "    this.setData(record);",
                     "",
-                    "    var toggle = this.down('#switchToggle');",
-                    "   toggle.suspendEvents();",
+                    "    var toggle = this.down('#toggleSetBtn');",
+                    "",
+                    "    toggle.suspendEvents();",
                     "    if(record.CurrentLevelInt > 0)",
                     "        toggle.setValue(1);",
                     "    else",

@@ -41,11 +41,13 @@ Ext.define('zvsMobile.view.SwitchControlPanel', {
             },
             {
                 xtype: 'togglefield',
-                id: 'switchToggle',
-                label: 'Control'
+                itemId: 'toggleSetBtn',
+                label: 'Set',
+                name: 'toggleSet'
             },
             {
                 xtype: 'label',
+                centered: false,
                 id: 'feedbackLabel',
                 margin: 10
             }
@@ -60,8 +62,9 @@ Ext.define('zvsMobile.view.SwitchControlPanel', {
             this.down('#locationTextField').setValue(record.Location);
             this.setData(record);
 
-            var toggle = this.down('#switchToggle');
-           toggle.suspendEvents();
+            var toggle = this.down('#toggleSetBtn');
+
+            toggle.suspendEvents();
             if(record.CurrentLevelInt > 0)
                 toggle.setValue(1);
             else

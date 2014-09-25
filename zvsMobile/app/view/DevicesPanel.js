@@ -23,8 +23,7 @@ Ext.define('zvsMobile.view.DevicesPanel', {
         'Ext.Toolbar',
         'Ext.Button',
         'Ext.Spacer',
-        'Ext.SegmentedButton',
-        'zvsMobile.view.DeviceControlPanel'
+        'Ext.SegmentedButton'
     ],
 
     config: {

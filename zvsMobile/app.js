@@ -31,12 +31,12 @@ Ext.application({
     views: [
         'MainView',
         'DevicesPanel',
-        'AboutPanel',
-        'ContactPanel',
         'NavMenu',
         'DeviceValuesPanel',
         'DeviceDetailsTabPanel',
-        'SwitchControlPanel'
+        'SwitchControlPanel',
+        'DimmerControlPanel',
+        'ThermoControlPanel'
     ],
     controllers: [
         'Navigation',

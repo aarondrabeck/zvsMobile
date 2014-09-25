@@ -39,7 +39,7 @@
                 "noCache": false,
                 "sortParam": "$orderby",
                 "startParam": "$skip",
-                "url": "http://10.1.0.54:50232/Devices/?$expand=Type&$filter=Type/UniqueIdentifier ne 'CONTROLLER'",
+                "url": "http://10.1.0.54:50232/odata4/Devices/?$expand=Type&$filter=Type/UniqueIdentifier ne 'CONTROLLER'",
                 "useDefaultXhrHeader": false
             },
             "name": "MyAjaxProxy",

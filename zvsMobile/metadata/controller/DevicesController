@@ -29,14 +29,46 @@
                     "",
                     "valuesStore.load();",
                     "",
+                    "var device = record.data;",
+                    "",
                     "mainView.push({",
                     "    xtype: 'devicedetailstabpanel',",
-                    "    title: record.data.Name,",
-                    "    data: record.data",
+                    "    title: device.Name,",
+                    "    data: device",
                     "});",
                     "",
-                    "var sw = this.getSwitchControlPanel();",
-                    "sw.setRecord(record.data);"
+                    "var deviceDetailsTabPanel = this.getDeviceDetailsTabPanel();",
+                    "",
+                    "var switchControlPanel = this.getSwitchControlPanel();",
+                    "var dimmerControlPanel = this.getDimmerControlPanel();",
+                    "var thermoControlPanel = this.getThermoControlPanel();",
+                    "deviceDetailsTabPanel.getTabBar().getComponent(0).hide();",
+                    "deviceDetailsTabPanel.getTabBar().getComponent(1).hide();",
+                    "deviceDetailsTabPanel.getTabBar().getComponent(2).hide();",
+                    "",
+                    "if(device.type.UniqueIdentifier == 'SWITCH')",
+                    "{   ",
+                    "    switchControlPanel.setRecord(device);",
+                    "    deviceDetailsTabPanel.setActiveItem(0);",
+                    "    deviceDetailsTabPanel.getTabBar().getComponent(0).show();",
+                    "}",
+                    "else if(device.type.UniqueIdentifier == 'DIMMER')",
+                    "{    ",
+                    "    dimmerControlPanel.setRecord(device);",
+                    "    deviceDetailsTabPanel.setActiveItem(1);",
+                    "    deviceDetailsTabPanel.getTabBar().getComponent(1).show();",
+                    "}",
+                    "else if(device.type.UniqueIdentifier == 'THERMOSTAT')",
+                    "{      ",
+                    "    thermoControlPanel.setRecord(device);",
+                    "    deviceDetailsTabPanel.setActiveItem(2);",
+                    "    deviceDetailsTabPanel.getTabBar().getComponent(2).show();",
+                    "}",
+                    "",
+                    "",
+                    "",
+                    "var panel = this.getDimmerControlPanel();",
+                    "panel.setRecord(record.data);"
                 ],
                 "name": "itemtap"
             },
@@ -150,20 +182,23 @@
             "designerId": "cef6ff2e-9edb-4f2b-8b33-c218cdf788e1"
         },
         {
-            "type": "controllerref",
+            "type": "controlleraction",
             "reference": {
-                "name": "items",
+                "name": "listeners",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "autoCreate": true,
-                "ref": "switchControlPanel",
-                "selector": "panel#switchControlPanel",
-                "xtype": "switchcontrolpanel"
+                "designer|controlQuery": "tabpanel#deviceDetailsTabPanel",
+                "designer|targetType": "Ext.tab.Panel",
+                "fn": "onTabpanelUpdatedata",
+                "implHandler": [
+                    ""
+                ],
+                "name": "updatedata"
             },
-            "name": "switchControlPanel",
-            "designerId": "cddd6671-e4d1-4dd1-a966-be30f891975f"
+            "name": "onTabpanelUpdatedata",
+            "designerId": "4a3fdede-d0d4-4abf-a84e-453b69584d0a"
         },
         {
             "type": "controlleraction",
@@ -173,86 +208,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "togglefield#switchToggle",
-                "designer|targetType": "Ext.field.Toggle",
-                "fn": "onSwitchTogglefieldChange",
+                "designer|controlQuery": "sliderfield#dimmerSlider",
+                "designer|targetType": "Ext.field.Slider",
+                "fn": "onSliderfieldChange",
                 "implHandler": [
-                    "var panel = this.getSwitchControlPanel();",
-                    "var device = panel.getData();",
+                    "//dimmerSlider",
+                    "  var panel = this.getDimmerControlPanel();",
+                    "        var device = panel.getData();",
                     "",
-                    "Ext.Ajax.request({",
-                    "    url: 'http://10.1.0.54:50232/DeviceCommands/?$filter=CustomData1 eq \\'Basic\\' and DeviceId eq '+ device.Id + '&$select=Id',",
-                    "    method: 'GET',",
-                    "    headers: {",
-                    "        'Content-Type': 'application/json',",
-                    "        'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
-                    "    },",
-                    "    success: function (response, opts) {",
-                    "        var result = JSON.parse(response.responseText);",
-                    "        if (result.value.length == 1) {",
-                    "            var commandId = result.value[0].Id;",
-                    "            Ext.Ajax.request({",
-                    "                url: 'http://10.1.0.54:50232/DeviceCommands('+commandId+')/Actions.Execute',",
-                    "                method: 'POST',",
-                    "                headers: {",
-                    "                    'Content-Type': 'application/json',",
-                    "                    'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
-                    "                },",
-                    "                params: {",
-                    "                    value: 1",
-                    "                },",
-                    "                success: function (response, opts) {",
-                    "                    var result = JSON.parse(response.responseText);",
-                    "                    if (result.value.length == 1) {",
-                    "                        success(result.value[0].Id);",
-                    "                    }",
-                    "                    else {",
-                    "                        panel.setError('Device command not found.');",
-                    "                    }",
-                    "                },",
-                    "                failure: function (response, opts) {",
-                    "                    var result = JSON.parse(response.responseText);",
-                    "                    panel.setError(result.error.message);",
-                    "                }",
-                    "            });",
-                    "",
-                    "        }",
-                    "        else {",
-                    "            panel.setError('Device command not found.');",
-                    "        }",
-                    "    },",
-                    "    failure: function (response, opts) {",
-                    "        var result = JSON.parse(response.responseText);",
-                    "        panel.setError(result.error.message);",
-                    "    }",
-                    "});",
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "name": "change"
-            },
-            "name": "onSwitchTogglefieldChange",
-            "designerId": "822fe9f0-eb6b-4c9d-b9ff-5e63689ee13c"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "deviceId",
-                    "panel",
-                    "success"
-                ],
-                "fn": "getBasicDeviceCommand",
-                "implHandler": [
-                    "Ext.Ajax.request({",
-                    "            url: 'http://10.1.0.54:50232/DeviceCommands/?$filter=CustomData1 eqa \\'Basic\\' and DeviceId eq '+ deviceId + '&$select=Id',",
+                    "        Ext.Ajax.request({",
+                    "            url: 'http://10.1.0.54:50232/odata4/DeviceCommands/?$filter=contains(UniqueIdentifier, \\'DYNAMIC_CMD_BASIC\\') and DeviceId eq '+ device.Id,",
                     "            method: 'GET',",
                     "            headers: {",
                     "                'Content-Type': 'application/json',",
@@ -261,7 +226,33 @@
                     "            success: function (response, opts) {",
                     "                var result = JSON.parse(response.responseText);",
                     "                if (result.value.length == 1) {",
-                    "                    success(result.value[0].Id);",
+                    "                    var commandId = result.value[0].Id;",
+                    "                    Ext.Ajax.request({",
+                    "                        url: 'http://10.1.0.54:50232/odata4/DeviceCommands('+commandId+')/Actions.Execute',",
+                    "                        method: 'POST',",
+                    "                        headers: {",
+                    "                            'Content-Type': 'application/json',",
+                    "                            'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
+                    "                        },",
+                    "                        jsonData: {",
+                    "                            Argument: newValue.toString(),",
+                    "                            Argument2: null",
+                    "                        },",
+                    "                        success: function (response, opts) {",
+                    "                            var result = JSON.parse(response.responseText);",
+                    "                            if (result.value) {",
+                    "                                panel.setSuccess(result.value);",
+                    "                            }",
+                    "                            else {",
+                    "                                panel.setError('Error setting command.');",
+                    "                            }",
+                    "                        },",
+                    "                        failure: function (response, opts) {",
+                    "                            var result = JSON.parse(response.responseText);",
+                    "                            panel.setError(result.error.message);",
+                    "                        }",
+                    "                    });",
+                    "",
                     "                }",
                     "                else {",
                     "                    panel.setError('Device command not found.');",
@@ -272,10 +263,139 @@
                     "                panel.setError(result.error.message);",
                     "            }",
                     "        });"
-                ]
+                ],
+                "name": "change"
             },
-            "name": "getBasicDeviceCommand",
-            "designerId": "63576e96-2ddd-4655-b089-206627ba1a19"
+            "name": "onSliderfieldChange",
+            "designerId": "26292a4c-102b-415f-8b16-81cc1d5d9d9c"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "deviceDetailsTabPanel",
+                "selector": "tabpanel#deviceDetailsTabPanel"
+            },
+            "name": "deviceDetailsTabPanel",
+            "designerId": "680f921f-1379-447c-9eb4-b7d2e1e782c0"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "switchControlPanel",
+                "selector": "panel#switchControlPanel"
+            },
+            "name": "switchControlPanel",
+            "designerId": "3102b243-a125-42e9-b79e-c7b35309db36"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "thermoControlPanel",
+                "selector": "panel#thermoControlPanel"
+            },
+            "name": "thermoControlPanel",
+            "designerId": "e93eb43d-5e2f-4fde-9336-c4f7ee06b90b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "dimmerControlPanel",
+                "selector": "panel#dimmerControlPanel"
+            },
+            "name": "dimmerControlPanel",
+            "designerId": "47caf0cf-1ca5-4a40-b07c-ba7d65d22ff0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "togglefield",
+                "designer|targetType": "Ext.field.Toggle",
+                "fn": "onOffSwitchTogglefieldChange",
+                "implHandler": [
+                    "        var panel = this.getSwitchControlPanel();",
+                    "        var device = panel.getData();",
+                    "        var uId = newValue === 0 ? 'TURNOFF' : 'TURNON';",
+                    "",
+                    "",
+                    "        Ext.Ajax.request({",
+                    "            url: 'http://10.1.0.54:50232/odata4/DeviceTypeCommands/?$filter=UniqueIdentifier eq \\''+uId+'\\' and DeviceTypeId eq '+ device.DeviceTypeId + '&$select=Id',",
+                    "",
+                    "            //odata4/DeviceCommands/?$filter=CustomData1 eq \\'Basic\\' and DeviceId eq '+ device.Id + '&$select=Id',",
+                    "            method: 'GET',",
+                    "            headers: {",
+                    "                'Content-Type': 'application/json',",
+                    "                'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
+                    "            },",
+                    "            success: function (response, opts) {",
+                    "                var result = JSON.parse(response.responseText);",
+                    "                if (result.value.length == 1) {",
+                    "                    var commandId = result.value[0].Id;",
+                    "                    Ext.Ajax.request({",
+                    "                        url: 'http://10.1.0.54:50232/odata4/DeviceTypeCommands('+commandId+')/Actions.Execute',",
+                    "                        method: 'POST',",
+                    "                        headers: {",
+                    "                            'Content-Type': 'application/json',",
+                    "                            'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
+                    "                        },",
+                    "                        jsonData: {",
+                    "                            Argument: null,",
+                    "                            Argument2: device.Id.toString()",
+                    "                        },",
+                    "                        success: function (response, opts) {",
+                    "                            var result = JSON.parse(response.responseText);",
+                    "                            if (result.value) {",
+                    "                                panel.setSuccess(result.value);",
+                    "                            }",
+                    "                            else {",
+                    "                                panel.setError('Error setting command.');",
+                    "                            }",
+                    "                        },",
+                    "                        failure: function (response, opts) {",
+                    "                            var result = JSON.parse(response.responseText);",
+                    "                            panel.setError(result.error.message);",
+                    "                        }",
+                    "                    });",
+                    "",
+                    "                }",
+                    "                else {",
+                    "                    panel.setError('Device command not found.');",
+                    "                }",
+                    "            },",
+                    "            failure: function (response, opts) {",
+                    "                var result = JSON.parse(response.responseText);",
+                    "                panel.setError(result.error.message);",
+                    "            }",
+                    "        });"
+                ],
+                "name": "change"
+            },
+            "name": "onOffSwitchTogglefieldChange",
+            "designerId": "374559fa-c860-4962-aab7-aae8f6fe9778"
         }
     ]
 }

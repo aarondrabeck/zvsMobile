@@ -39,7 +39,7 @@
                 "noCache": false,
                 "sortParam": "$orderby",
                 "startParam": "$skip",
-                "url": "http://10.1.0.54:50232/DeviceValues/",
+                "url": "http://10.1.0.54:50232/odata4/DeviceValues/",
                 "useDefaultXhrHeader": false
             },
             "name": "MyAjaxProxy",

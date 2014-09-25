@@ -19,16 +19,29 @@ Ext.define('zvsMobile.view.DeviceDetailsTabPanel', {
 
     requires: [
         'zvsMobile.view.SwitchControlPanel',
+        'zvsMobile.view.DimmerControlPanel',
+        'zvsMobile.view.ThermoControlPanel',
         'zvsMobile.view.DeviceValuesPanel',
         'Ext.Panel',
         'Ext.tab.Bar'
     ],
 
     config: {
+        activeItem: 3,
         id: 'deviceDetailsTabPanel',
         items: [
             {
                 xtype: 'switchcontrolpanel',
+                title: 'Control',
+                iconCls: 'action'
+            },
+            {
+                xtype: 'dimmercontrolpanel',
+                title: 'Control',
+                iconCls: 'action'
+            },
+            {
+                xtype: 'thermocontrolpanel',
                 title: 'Control',
                 iconCls: 'action'
             },

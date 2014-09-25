@@ -26,6 +26,10 @@ Ext.define('zvsMobile.view.MainView', {
 
     config: {
         itemId: 'mainView',
+        layout: {
+            type: 'card',
+            animation: 'slide'
+        },
         items: [
             {
                 xtype: 'devicespanel',

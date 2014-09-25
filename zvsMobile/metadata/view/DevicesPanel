@@ -12,7 +12,6 @@
         "itemId": "devicesPanel",
         "layout": "fit",
         "requires": [
-            "zvsMobile.view.DeviceControlPanel",
             "Ext.SegmentedButton"
         ]
     },

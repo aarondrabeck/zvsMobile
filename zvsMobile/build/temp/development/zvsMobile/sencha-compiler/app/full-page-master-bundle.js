@@ -1,2 +1,2 @@
 // @tag full-page
-// @require M:\sencha\zvsmobile2\zvsMobile\app.js
+// @require M:\zvsmobile2\zvsMobile\app.js

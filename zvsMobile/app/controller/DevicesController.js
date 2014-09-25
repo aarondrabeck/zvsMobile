@@ -19,11 +19,10 @@ Ext.define('zvsMobile.controller.DevicesController', {
     config: {
         refs: {
             mainView: '#mainView',
-            switchControlPanel: {
-                autoCreate: true,
-                selector: 'panel#switchControlPanel',
-                xtype: 'switchcontrolpanel'
-            }
+            deviceDetailsTabPanel: 'tabpanel#deviceDetailsTabPanel',
+            switchControlPanel: 'panel#switchControlPanel',
+            thermoControlPanel: 'panel#thermoControlPanel',
+            dimmerControlPanel: 'panel#dimmerControlPanel'
         },
 
         control: {
@@ -37,8 +36,14 @@ Ext.define('zvsMobile.controller.DevicesController', {
             "segmentedbutton#filterSegmentedButton": {
                 toggle: 'onSegmentedbuttonToggle'
             },
-            "togglefield#switchToggle": {
-                change: 'onSwitchTogglefieldChange'
+            "tabpanel#deviceDetailsTabPanel": {
+                updatedata: 'onTabpanelUpdatedata'
+            },
+            "sliderfield#dimmerSlider": {
+                change: 'onSliderfieldChange'
+            },
+            "togglefield": {
+                change: 'onOffSwitchTogglefieldChange'
             }
         }
     },
@@ -50,14 +55,46 @@ Ext.define('zvsMobile.controller.DevicesController', {
 
         valuesStore.load();
 
+        var device = record.data;
+
         mainView.push({
             xtype: 'devicedetailstabpanel',
-            title: record.data.Name,
-            data: record.data
+            title: device.Name,
+            data: device
         });
 
-        var sw = this.getSwitchControlPanel();
-        sw.setRecord(record.data);
+        var deviceDetailsTabPanel = this.getDeviceDetailsTabPanel();
+
+        var switchControlPanel = this.getSwitchControlPanel();
+        var dimmerControlPanel = this.getDimmerControlPanel();
+        var thermoControlPanel = this.getThermoControlPanel();
+        deviceDetailsTabPanel.getTabBar().getComponent(0).hide();
+        deviceDetailsTabPanel.getTabBar().getComponent(1).hide();
+        deviceDetailsTabPanel.getTabBar().getComponent(2).hide();
+
+        if(device.type.UniqueIdentifier == 'SWITCH')
+        {
+            switchControlPanel.setRecord(device);
+            deviceDetailsTabPanel.setActiveItem(0);
+            deviceDetailsTabPanel.getTabBar().getComponent(0).show();
+        }
+        else if(device.type.UniqueIdentifier == 'DIMMER')
+        {
+            dimmerControlPanel.setRecord(device);
+            deviceDetailsTabPanel.setActiveItem(1);
+            deviceDetailsTabPanel.getTabBar().getComponent(1).show();
+        }
+        else if(device.type.UniqueIdentifier == 'THERMOSTAT')
+        {
+            thermoControlPanel.setRecord(device);
+            deviceDetailsTabPanel.setActiveItem(2);
+            deviceDetailsTabPanel.getTabBar().getComponent(2).show();
+        }
+
+
+
+        var panel = this.getDimmerControlPanel();
+        panel.setRecord(record.data);
     },
 
     onReloadTap: function(button, e, eOpts) {
@@ -107,65 +144,17 @@ Ext.define('zvsMobile.controller.DevicesController', {
                     }
     },
 
-    onSwitchTogglefieldChange: function(togglefield, newValue, oldValue, eOpts) {
-        var panel = this.getSwitchControlPanel();
-        var device = panel.getData();
-
-        Ext.Ajax.request({
-            url: 'http://10.1.0.54:50232/DeviceCommands/?$filter=CustomData1 eq \'Basic\' and DeviceId eq '+ device.Id + '&$select=Id',
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'
-            },
-            success: function (response, opts) {
-                var result = JSON.parse(response.responseText);
-                if (result.value.length == 1) {
-                    var commandId = result.value[0].Id;
-                    Ext.Ajax.request({
-                        url: 'http://10.1.0.54:50232/DeviceCommands('+commandId+')/Actions.Execute',
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'
-                        },
-                        params: {
-                            value: 1
-                        },
-                        success: function (response, opts) {
-                            var result = JSON.parse(response.responseText);
-                            if (result.value.length == 1) {
-                                success(result.value[0].Id);
-                            }
-                            else {
-                                panel.setError('Device command not found.');
-                            }
-                        },
-                        failure: function (response, opts) {
-                            var result = JSON.parse(response.responseText);
-                            panel.setError(result.error.message);
-                        }
-                    });
-
-                }
-                else {
-                    panel.setError('Device command not found.');
-                }
-            },
-            failure: function (response, opts) {
-                var result = JSON.parse(response.responseText);
-                panel.setError(result.error.message);
-            }
-        });
-
-
-
+    onTabpanelUpdatedata: function(component, newData, eOpts) {
 
     },
 
-    getBasicDeviceCommand: function(deviceId, panel, success) {
-        Ext.Ajax.request({
-                    url: 'http://10.1.0.54:50232/DeviceCommands/?$filter=CustomData1 eqa \'Basic\' and DeviceId eq '+ deviceId + '&$select=Id',
+    onSliderfieldChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
+        //dimmerSlider
+          var panel = this.getDimmerControlPanel();
+                var device = panel.getData();
+
+                Ext.Ajax.request({
+                    url: 'http://10.1.0.54:50232/odata4/DeviceCommands/?$filter=contains(UniqueIdentifier, \'DYNAMIC_CMD_BASIC\') and DeviceId eq '+ device.Id,
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -174,7 +163,90 @@ Ext.define('zvsMobile.controller.DevicesController', {
                     success: function (response, opts) {
                         var result = JSON.parse(response.responseText);
                         if (result.value.length == 1) {
-                            success(result.value[0].Id);
+                            var commandId = result.value[0].Id;
+                            Ext.Ajax.request({
+                                url: 'http://10.1.0.54:50232/odata4/DeviceCommands('+commandId+')/Actions.Execute',
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'
+                                },
+                                jsonData: {
+                                    Argument: newValue.toString(),
+                                    Argument2: null
+                                },
+                                success: function (response, opts) {
+                                    var result = JSON.parse(response.responseText);
+                                    if (result.value) {
+                                        panel.setSuccess(result.value);
+                                    }
+                                    else {
+                                        panel.setError('Error setting command.');
+                                    }
+                                },
+                                failure: function (response, opts) {
+                                    var result = JSON.parse(response.responseText);
+                                    panel.setError(result.error.message);
+                                }
+                            });
+
+                        }
+                        else {
+                            panel.setError('Device command not found.');
+                        }
+                    },
+                    failure: function (response, opts) {
+                        var result = JSON.parse(response.responseText);
+                        panel.setError(result.error.message);
+                    }
+                });
+    },
+
+    onOffSwitchTogglefieldChange: function(togglefield, newValue, oldValue, eOpts) {
+                var panel = this.getSwitchControlPanel();
+                var device = panel.getData();
+                var uId = newValue === 0 ? 'TURNOFF' : 'TURNON';
+
+
+                Ext.Ajax.request({
+                    url: 'http://10.1.0.54:50232/odata4/DeviceTypeCommands/?$filter=UniqueIdentifier eq \''+uId+'\' and DeviceTypeId eq '+ device.DeviceTypeId + '&$select=Id',
+
+                    //odata4/DeviceCommands/?$filter=CustomData1 eq \'Basic\' and DeviceId eq '+ device.Id + '&$select=Id',
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'
+                    },
+                    success: function (response, opts) {
+                        var result = JSON.parse(response.responseText);
+                        if (result.value.length == 1) {
+                            var commandId = result.value[0].Id;
+                            Ext.Ajax.request({
+                                url: 'http://10.1.0.54:50232/odata4/DeviceTypeCommands('+commandId+')/Actions.Execute',
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'
+                                },
+                                jsonData: {
+                                    Argument: null,
+                                    Argument2: device.Id.toString()
+                                },
+                                success: function (response, opts) {
+                                    var result = JSON.parse(response.responseText);
+                                    if (result.value) {
+                                        panel.setSuccess(result.value);
+                                    }
+                                    else {
+                                        panel.setError('Error setting command.');
+                                    }
+                                },
+                                failure: function (response, opts) {
+                                    var result = JSON.parse(response.responseText);
+                                    panel.setError(result.error.message);
+                                }
+                            });
+
                         }
                         else {
                             panel.setError('Device command not found.');

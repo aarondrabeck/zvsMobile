@@ -1,0 +1,202 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "dimmercontrolpanel",
+        "designer|userClassName": "DimmerControlPanel",
+        "id": null,
+        "itemId": "dimmerControlPanel",
+        "requires": [
+            "Ext.chart.series.sprite.PieSlice"
+        ],
+        "scrollable": "vertical"
+    },
+    "name": "SwitchControlPanel1",
+    "designerId": "a595e2ff-acfc-49df-b5e4-971a07ac40bf",
+    "cn": [
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "id": null,
+                "itemId": "locationTextField",
+                "label": "Room",
+                "value": null
+            },
+            "name": "MyTextField",
+            "designerId": "b320c314-35f6-455d-a394-8aea9efbdb10"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "id": null,
+                "itemId": "typeTextField",
+                "label": "Type",
+                "value": null
+            },
+            "name": "MyTextField1",
+            "designerId": "b665df2c-1651-444f-a69b-67e5c9c4d097"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "id": null,
+                "itemId": "levelTextField",
+                "label": "Level",
+                "value": null
+            },
+            "name": "MyTextField2",
+            "designerId": "e40fe718-9577-49f1-9d03-d1b9f0f0117b"
+        },
+        {
+            "type": "Ext.field.Slider",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "dimmerSlider",
+                "itemId": "mysliderfield",
+                "label": "Set"
+            },
+            "name": "MySliderField",
+            "designerId": "341d68dc-4181-48f0-9009-07a0ef99187e",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onDimmerSliderChange",
+                        "implHandler": [
+                            "this.down('#levelTextField').setValue(newValue + '%');"
+                        ],
+                        "name": "change"
+                    },
+                    "name": "onDimmerSliderChange",
+                    "designerId": "e3a52bc5-84c5-4a97-a266-fd9842693271"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": null,
+                "id": null,
+                "itemId": "feedbackLabel",
+                "margin": 10,
+                "style": null,
+                "top": null
+            },
+            "name": "MyLabel",
+            "designerId": "072db04c-c7dc-4563-bdc2-592a97c5c188"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "setRecord",
+                "implHandler": [
+                    "this.callParent(arguments);",
+                    "if (record) {",
+                    "",
+                    "    this.down('#typeTextField').setValue(record.type.Name);",
+                    "    this.down('#locationTextField').setValue(record.Location);",
+                    "    this.down('#levelTextField').setValue(record.CurrentLevelText);",
+                    "    this.setData(record);",
+                    "",
+                    "",
+                    "    var slider = this.down('#dimmerSlider');",
+                    "    slider.suspendEvents();",
+                    "    slider.setValue(record.CurrentLevelInt);",
+                    "",
+                    "    slider.resumeEvents(true);",
+                    "",
+                    "}",
+                    ""
+                ]
+            },
+            "name": "setRecord",
+            "designerId": "db696037-07b0-4b1a-bfee-277ecd772806"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "message"
+                ],
+                "fn": "setError",
+                "implHandler": [
+                    "       var feedbackLabel= this.down('#feedbackLabel');",
+                    "        feedbackLabel.setHtml(message);",
+                    "       feedbackLabel.setStyle('color:red');"
+                ]
+            },
+            "name": "setError",
+            "designerId": "bd41d6e7-4323-4c42-91c2-3aa0324a2058"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "message"
+                ],
+                "fn": "setSuccess",
+                "implHandler": [
+                    " var feedbackLabel= this.down('#feedbackLabel');",
+                    "        feedbackLabel.setHtml(message);",
+                    "       feedbackLabel.setStyle('color:green');"
+                ]
+            },
+            "name": "setSuccess",
+            "designerId": "494deb4d-63f3-4b33-9c62-0681061ead31"
+        }
+    ]
+}
