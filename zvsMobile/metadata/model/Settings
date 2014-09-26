@@ -1,0 +1,127 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "settings",
+        "designer|userClassName": "Settings",
+        "idProperty": "Id"
+    },
+    "name": "MyModel",
+    "designerId": "96d4f04c-76da-4ec9-a0fa-f37a2028b2a5",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Id",
+                "type": "int"
+            },
+            "name": "field22",
+            "designerId": "178dcced-c491-4489-9a4b-71902865fd87"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Url",
+                "type": "string"
+            },
+            "name": "field23",
+            "designerId": "625040be-ce41-42ae-a485-0ec5f787f1df"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Port",
+                "type": "int"
+            },
+            "name": "field24",
+            "designerId": "11228b59-2716-40a9-88bf-ab467db92d6a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Token",
+                "type": "string"
+            },
+            "name": "field25",
+            "designerId": "9865c42f-65b0-4055-8dad-5318ab7271e2"
+        },
+        {
+            "type": "formatvalidation",
+            "reference": {
+                "name": "validations",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "field": "Port",
+                "matcher": "/^0*(?:6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[1-9][0-9]{1,3}|[0-9])$/",
+                "message": "Invalid"
+            },
+            "name": "MyFormatValidation",
+            "designerId": "62359338-af60-4aff-ab32-74055b3b38af"
+        },
+        {
+            "type": "presencevalidation",
+            "reference": {
+                "name": "validations",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "field": "Token"
+            },
+            "name": "MyPresenceValidation",
+            "designerId": "76588c5a-dc5e-4527-bc2b-ce94be44930a"
+        },
+        {
+            "type": "presencevalidation",
+            "reference": {
+                "name": "validations",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "field": "Port"
+            },
+            "name": "MyPresenceValidation1",
+            "designerId": "3b083a59-8b94-4dcd-abbf-0b6668a07cd0"
+        },
+        {
+            "type": "presencevalidation",
+            "reference": {
+                "name": "validations",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "field": "Url"
+            },
+            "name": "MyPresenceValidation2",
+            "designerId": "2461a22c-2608-4d74-964d-db7e62cbe342"
+        }
+    ]
+}

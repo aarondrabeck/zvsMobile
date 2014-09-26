@@ -6,7 +6,8 @@
     margin: 5px;
     width: 170px;
     height: 140px;
-    background-color: white;
+    background-color:#2CAFE7
+
 }
 
 .THERMOSTAT-RUNNING, .THERMOSTAT-OFF, .THERMOSTAT {
@@ -18,7 +19,7 @@
 }
 
 .DIMMER, .DIMMER-ON {
-    background-image: url('/resources/images/lb_on.png');
+    background-image: url('/resources/images/lightbulb.png');
 }
 
 .DIMMER-DIM {
@@ -30,7 +31,7 @@
 }
 
 .SWITCH, .SWITCH-ON {
-    background-image: url('/resources/images/switch_on.png');
+    background-image: url('/resources/images/switch.png');
 }
 
 .SWITCH-OFF {
@@ -42,7 +43,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size:.9em
+    font-size:.9em;
+    color: white;
 }
 
 .location-name-truncate {
@@ -54,25 +56,27 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    color: white;
 }
 
 .device-level {
     text-align: center;
-    margin-top: 30px;
-    font-size:.7em
+    margin-top: 79px;
+    font-size:.7em;
+    color: white;
 }
 
 .device-item {
     position: relative;
     background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 20px 20px;
+    background-position: center center;
+    background-size: 91px 91px;
     width: 162px;
     height: 130px;
 }
 
 .device-item-level {
-   
+
     width: 100px;
     margin: 0 auto;
 }
@@ -90,10 +94,10 @@
 }
 
 .device-item-level .meter .progress {
-    background-color: #00d228;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cdffcd), color-stop(2%, #00d228), color-stop(100%, #05d62a));
-    background-image: linear-gradient(#cdffcd,#00d228 2%,#05d62a);
-    border: 1px solid #1ce133;
+    background-color: #E3E3E3;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #E3E3E3), color-stop(2%, #00d228), color-stop(100%, #05d62a));
+    background-image: linear-gradient(#E3E3E3,#E3E3E3 2%,#E3E3E3);
+    border: 1px solid gray;
     -webkit-border-radius: 0.3em;
     border-radius: 0.3em;
     height: 100%;

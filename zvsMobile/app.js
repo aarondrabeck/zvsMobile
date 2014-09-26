@@ -22,11 +22,13 @@ Ext.Loader.setConfig({
 Ext.application({
     models: [
         'Device',
-        'DeviceValue'
+        'DeviceValue',
+        'Settings'
     ],
     stores: [
         'DeviceStore',
-        'DeviceValuesStore'
+        'DeviceValuesStore',
+        'Settings'
     ],
     views: [
         'MainView',
@@ -36,13 +38,36 @@ Ext.application({
         'DeviceDetailsTabPanel',
         'SwitchControlPanel',
         'DimmerControlPanel',
-        'ThermoControlPanel'
+        'ThermoControlPanel',
+        'SettingsForm'
     ],
     controllers: [
         'Navigation',
-        'DevicesController'
+        'Devices',
+        'Settings'
     ],
     name: 'zvsMobile',
+
+    getToken: function() {
+        var store = Ext.getStore('Settings');
+        var setting = store.getById(1);
+        if(setting && setting.data && setting.data.Token)
+        return setting.data.Token;
+
+        return 'defaultToken';
+
+
+    },
+
+    getBaseUrl: function() {
+        var settingsStore = Ext.getStore('Settings');
+        var record = settingsStore.getById(1);
+
+        if(record && record.data && record.data.Url&& record.data.Port)
+            return record.data.Url + ':'+ record.data.Port +'/' ;
+
+            return 'http://localhost:8080/';
+    },
 
     launch: function() {
 

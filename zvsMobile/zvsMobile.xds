@@ -26,7 +26,11 @@
         "generateArchitectVersion": true,
         "projectHasEnabledWebServer": true,
         "lockUrlPrefix": true,
-        "installStatus": "Not Installed"
+        "installStatus": "Not Installed",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
+        }
     },
     "xdsVersion": "3.1.0",
     "xdsBuild": 1903,
@@ -42,27 +46,33 @@
             "6192869c-ad6e-4f4c-a2ae-d6058a34b218",
             "0d545aa1-c01d-4d51-aaf6-3da9ac173463",
             "0599d6d3-6430-4abc-acd2-a6797bbd23d2",
-            "a595e2ff-acfc-49df-b5e4-971a07ac40bf"
+            "a595e2ff-acfc-49df-b5e4-971a07ac40bf",
+            "8b7af629-5bf5-47f6-8efa-05c8c0809369"
         ],
         "store": [
             "d19a7c47-5d37-416c-8220-e97fd3d14506",
-            "4abf8518-888e-4e8f-b6d9-12161b5a1c1b"
+            "4abf8518-888e-4e8f-b6d9-12161b5a1c1b",
+            "e2982ca9-ae6f-491a-8fe1-c3930e1e1a84"
         ],
         "controller": [
             "b65f72c1-bee5-4e5a-9fed-ce939650a75c",
-            "6ce882fa-eb1d-4863-9c06-c76d93e27216"
+            "6ce882fa-eb1d-4863-9c06-c76d93e27216",
+            "caee1779-2d65-469d-ba31-9a79bf95275c"
         ],
         "model": [
             "c0d35e80-94cf-4ea9-b237-bd6232a3e8bf",
             "8045e9de-2651-4822-9a59-823840290e31",
-            "7933a4e0-7699-49f0-8f08-b6137f4bca1b"
+            "7933a4e0-7699-49f0-8f08-b6137f4bca1b",
+            "96d4f04c-76da-4ec9-a0fa-f37a2028b2a5",
+            "532efd48-5e22-49c8-8c51-907cc6be62c0"
         ],
         "resource": [
             "01dfa91f-d7fa-4c86-8272-a99995dea3d2",
             "e81cb86d-bfa2-4156-85bd-7960788c5c75",
             "a4765e2b-8072-425c-ad47-b5e44774c8b3",
             "35026270-325c-458b-8940-4dd04d366703",
-            "a74bc0eb-3a67-42c6-912b-cdfa844cd934"
+            "a74bc0eb-3a67-42c6-912b-cdfa844cd934",
+            "3b10905e-e12b-4042-a02c-eadff8942fdf"
         ],
         "app": [
             "application"

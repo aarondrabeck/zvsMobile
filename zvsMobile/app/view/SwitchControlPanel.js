@@ -31,17 +31,20 @@ Ext.define('zvsMobile.view.SwitchControlPanel', {
                 xtype: 'textfield',
                 disabled: true,
                 id: 'locationTextField',
+                margin: '10 5 0 5 ',
                 label: 'Room'
             },
             {
                 xtype: 'textfield',
                 disabled: true,
                 id: 'typeTextField',
+                margin: '10 5 0 5 ',
                 label: 'Type'
             },
             {
                 xtype: 'togglefield',
                 itemId: 'toggleSetBtn',
+                margin: '10 5 0 5 ',
                 label: 'Set',
                 name: 'toggleSet'
             },

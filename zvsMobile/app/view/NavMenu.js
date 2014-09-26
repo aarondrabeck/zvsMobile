@@ -32,23 +32,33 @@ Ext.define('zvsMobile.view.NavMenu', {
             {
                 xtype: 'button',
                 navView: 'devicespanel',
-                margin: 15,
+                itemId: 'mybutton1',
+                margin: 3,
                 iconCls: 'home',
                 text: 'Devices'
             },
             {
                 xtype: 'button',
                 navView: 'aboutpanel',
-                margin: 15,
+                margin: 3,
                 iconCls: 'info',
                 text: 'Scenes'
             },
             {
                 xtype: 'button',
                 navView: 'contactpanel',
-                margin: 15,
+                margin: 3,
                 iconCls: 'compose',
                 text: 'Groups'
+            },
+            {
+                xtype: 'button',
+                navView: 'settingsform',
+                itemId: 'mybutton6',
+                margin: '20 3 3 3',
+                width: 150,
+                iconCls: 'settings',
+                text: 'Settings'
             }
         ]
     }

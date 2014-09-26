@@ -21,15 +21,12 @@ Ext.define('zvsMobile.view.MainView', {
         'zvsMobile.view.DevicesPanel',
         'Ext.Panel',
         'Ext.navigation.Bar',
-        'Ext.Button'
+        'Ext.Button',
+        'Ext.Menu'
     ],
 
     config: {
         itemId: 'mainView',
-        layout: {
-            type: 'card',
-            animation: 'slide'
-        },
         items: [
             {
                 xtype: 'devicespanel',
@@ -40,7 +37,7 @@ Ext.define('zvsMobile.view.MainView', {
             centered: false,
             docked: 'top',
             itemId: 'navBar',
-            ui: 'nuetral',
+            ui: 'neutral',
             layout: {
                 type: 'hbox',
                 align: 'center'
@@ -50,13 +47,6 @@ Ext.define('zvsMobile.view.MainView', {
                     xtype: 'button',
                     itemId: 'menuButton',
                     iconCls: 'more',
-                    text: ''
-                },
-                {
-                    xtype: 'button',
-                    align: 'right',
-                    itemId: 'settingsButton',
-                    iconCls: 'settings',
                     text: ''
                 }
             ]

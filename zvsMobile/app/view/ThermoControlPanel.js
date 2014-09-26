@@ -30,12 +30,14 @@ Ext.define('zvsMobile.view.ThermoControlPanel', {
                 xtype: 'textfield',
                 disabled: true,
                 id: 'locationTextField2',
+                margin: '10 5 0 5 ',
                 label: 'Room'
             },
             {
                 xtype: 'textfield',
                 disabled: true,
                 id: 'typeTextField2',
+                margin: '10 5 0 5 ',
                 label: 'Type'
             },
             {

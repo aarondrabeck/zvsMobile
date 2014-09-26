@@ -30,6 +30,7 @@
                 "id": null,
                 "itemId": "locationTextField",
                 "label": "Room",
+                "margin": "10 5 0 5 ",
                 "value": null
             },
             "name": "MyTextField",
@@ -47,6 +48,7 @@
                 "id": null,
                 "itemId": "typeTextField",
                 "label": "Type",
+                "margin": "10 5 0 5 ",
                 "value": null
             },
             "name": "MyTextField1",
@@ -64,6 +66,7 @@
                 "id": null,
                 "itemId": "levelTextField",
                 "label": "Level",
+                "margin": "10 5 0 5 ",
                 "value": null
             },
             "name": "MyTextField2",
@@ -79,7 +82,8 @@
             "userConfig": {
                 "id": "dimmerSlider",
                 "itemId": "mysliderfield",
-                "label": "Set"
+                "label": "Set",
+                "margin": "10 5 0 5 "
             },
             "name": "MySliderField",
             "designerId": "341d68dc-4181-48f0-9009-07a0ef99187e",

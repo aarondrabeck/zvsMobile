@@ -1,0 +1,145 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Settings"
+    },
+    "name": "MyController",
+    "designerId": "caee1779-2d65-469d-ba31-9a79bf95275c",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#saveButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "OnSaveBtnTap",
+                "implHandler": [
+                    "//Save Emp",
+                    "var settingForm = this.getSettingsForm();",
+                    "",
+                    "var settingsStore = Ext.getStore('Settings');",
+                    "var record = settingsStore.getById(1);",
+                    "// get model instance \"bound\" to form",
+                    "var rec = settingForm.getRecord();",
+                    "",
+                    "var settingsStore = Ext.getStore('Settings');",
+                    "record.set(settingForm.getValues());",
+                    "",
+                    "var errs = rec.validate();",
+                    "var msg = '';",
+                    "",
+                    "if (!errs.isValid()) {",
+                    "    errs.each(function (err) {",
+                    "        msg += err.getField() + ' ' + err.getMessage() + '.  ';",
+                    "    });",
+                    "    Ext.Msg.alert('Error', msg);",
+                    "    return;",
+                    "}",
+                    "",
+                    "settingsStore.sync();",
+                    "Ext.Msg.alert('Done',  'Settings saved');"
+                ],
+                "name": "tap"
+            },
+            "name": "OnSaveBtnTap",
+            "designerId": "ed34b076-203b-41ac-bbfc-671fb6285501"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "myurlfield",
+                "selector": "urlfield#myurlfield"
+            },
+            "name": "myurlfield",
+            "designerId": "64de18f1-3ead-4498-ab13-a3d9629e4708"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mynumberfield",
+                "selector": "numberfield#mynumberfield"
+            },
+            "name": "mynumberfield",
+            "designerId": "bb3ebbc6-d634-4f73-be65-9c70d48a3815"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "tokenTextField",
+                "selector": "textfield#tokenTextField"
+            },
+            "name": "tokenTextField",
+            "designerId": "16561585-8447-428c-bab0-91e531fac9aa"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "settingsForm",
+                "selector": "formpanel#settingsForm"
+            },
+            "name": "settingsForm",
+            "designerId": "4de97438-c012-4194-b508-f6878747ba00"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "formpanel#settingsForm",
+                "designer|targetType": "Ext.form.Panel",
+                "fn": "onFormpanelInitialize",
+                "implHandler": [
+                    "var settingsStore = Ext.getStore('Settings');",
+                    "var record = settingsStore.getById(1);",
+                    "",
+                    "if(!record) {",
+                    "    record = Ext.create('zvsMobile.model.Settings', {",
+                    "        Id: 1,",
+                    "        Url: 'localhost',",
+                    "        Port: 5332",
+                    "    });",
+                    "    settingsStore.add(record);",
+                    "}",
+                    "",
+                    "var settingForm = this.getSettingsForm();",
+                    "settingForm.setRecord(record);"
+                ],
+                "name": "initialize"
+            },
+            "name": "onFormpanelInitialize",
+            "designerId": "f8dfafe8-0a13-48b8-bcb1-e61db8c35ce1"
+        }
+    ]
+}

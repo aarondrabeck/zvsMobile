@@ -26,8 +26,8 @@
             "codeClass": null,
             "userConfig": {
                 "iconCls": "home",
-                "itemId": null,
-                "margin": 15,
+                "itemId": "mybutton1",
+                "margin": 3,
                 "navId": null,
                 "navView": "devicespanel",
                 "text": "Devices"
@@ -58,7 +58,7 @@
                 "config": null,
                 "iconCls": "info",
                 "itemId": null,
-                "margin": 15,
+                "margin": 3,
                 "navId": null,
                 "navView": "aboutpanel",
                 "text": "Scenes"
@@ -93,13 +93,44 @@
             "userConfig": {
                 "iconCls": "compose",
                 "itemId": null,
-                "margin": 15,
+                "margin": 3,
                 "navId": null,
                 "navView": "contactpanel",
                 "text": "Groups"
             },
             "name": "MyButton3",
             "designerId": "2f7996be-3019-4db7-88bf-0d5eabbb3536",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navId",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navView",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "settings",
+                "itemId": "mybutton6",
+                "margin": "20 3 3 3",
+                "navId": null,
+                "navView": "settingsform",
+                "text": "Settings",
+                "width": 150
+            },
+            "name": "MyButton6",
+            "designerId": "2f3627df-38a5-4f2f-89d1-9c56b2d38690",
             "customConfigs": [
                 {
                     "group": "(Custom Properties)",

@@ -21,78 +21,81 @@ Ext.define('zvsMobile.controller.Navigation', {
             navMenu: {
                 selector: '#navMenu',
                 xtype: 'navmenu'
-            }
+            },
+            mainView: 'navigationview#mainView',
+            settingsForm: {
+                autoCreate: true,
+                selector: 'formpanel#form',
+                xtype: 'settingsform'
+            },
+            devicesPanel: 'panel#devicesPanel'
         },
 
         control: {
             "mainview #menuButton": {
                 tap: 'showMenu'
             },
-            "navmenu button": {
-                tap: 'navigate'
+            "button#mybutton1": {
+                tap: 'onNavDeviceBtnTap'
+            },
+            "button#mybutton6": {
+                tap: 'onSettingsButtonTap'
             }
         }
     },
 
     showMenu: function(target) {
-
         // Get or create navigation menu
         var menu = this.getNavMenu();
         if (!menu) {
             menu = Ext.create('widget.navmenu');
         }
 
-        var menuItems = menu.getItems().items,				// Menu buttons
-        	currentView = this.currentView || "devicespanel";	// Current view alias, default to home
-
-        // Disable active view's button
-        menuItems.forEach(function(button) {
-
-            // Get custom navView attribute
-            var navView = button.config.navView;
-
-            // Active button, disable
-            if (currentView == navView) {
-                button.disable();
-            }
-
-            // Enable all others
-            else {
-                button.enable();
-            }
-
+        Ext.Viewport.setMenu(menu, {
+            side:'left',
+            cover:true
         });
+        Ext.Viewport.toggleMenu('left');
 
-        // Show menu by menu button
-        menu.showBy(target);
+        // var menuItems = menu.getItems().items,				// Menu buttons
+        // 	currentView = this.currentView || "devicespanel";	// Current view alias, default to home
+
+        // // Disable active view's button
+        // menuItems.forEach(function(button) {
+
+        //     // Get custom navView attribute
+        //     var navView = button.config.navView;
+
+        //     // Active button, disable
+        //     if (currentView == navView) {
+        //         button.disable();
+        //     }
+
+        //     // Enable all others
+        //     else {
+        //         button.enable();
+        //     }
+
+        //});
+
 
     },
 
-    navigate: function(button, e, eOpts) {
+    onNavDeviceBtnTap: function(button, e, eOpts) {
+        var mainView = this.getMainView();
+        var devicesPanel = this.getDevicesPanel();
+        mainView.setActiveItem(devicesPanel);
+        Ext.Viewport.removeMenu('left');
+        this.currentView = devicesPanel;
+    },
 
-        /**
-        *	The following code enables navigation
-        *	by checking the custom attribute 'navView',
-        *	which is the alias of the view to show
-        */
-
-        var text = button.getText(),						// Button text
-        	navView = button.getInitialConfig().navView,	// Get custom attribute 'navView'
-        	mainView = this.getMainView(),					// Main navigation view
-        	navMenu = this.getNavMenu();					// Navigation menu
-
-        // Add view to main view
-        mainView.push({
-            xtype: navView,
-            title: text
-        });
-
-        // Remember current view alias
-        this.currentView = navView;
-
-        // Hide menu
-        navMenu.hide();
-        //Ext.select('.x-button-back').hide();
+    onSettingsButtonTap: function(button, e, eOpts) {
+        var mainView = this.getMainView();
+        var settingsForm = this.getSettingsForm();
+        settingsForm.title = 'Settings';
+        mainView.setActiveItem(settingsForm);
+        Ext.Viewport.removeMenu('left');
+        this.currentView = settingsForm;
     }
 
 });

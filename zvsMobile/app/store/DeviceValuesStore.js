@@ -37,10 +37,9 @@ Ext.define('zvsMobile.store.DeviceValuesStore', {
             noCache: false,
             sortParam: '$orderby',
             startParam: '$skip',
-            url: 'http://10.1.0.54:50232/odata4/DeviceValues/',
+            url: '/odata4/DeviceValues/',
             headers: {
-                'Content-Type': 'application/json',
-                'X-zvsToken': 'CC2D226814CBC713134BD9D09B892F10A9'
+                'Content-Type': 'application/json'
             },
             useDefaultXhrHeader: false,
             reader: {

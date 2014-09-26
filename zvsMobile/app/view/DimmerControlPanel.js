@@ -32,24 +32,28 @@ Ext.define('zvsMobile.view.DimmerControlPanel', {
                 xtype: 'textfield',
                 disabled: true,
                 itemId: 'locationTextField',
+                margin: '10 5 0 5 ',
                 label: 'Room'
             },
             {
                 xtype: 'textfield',
                 disabled: true,
                 itemId: 'typeTextField',
+                margin: '10 5 0 5 ',
                 label: 'Type'
             },
             {
                 xtype: 'textfield',
                 disabled: true,
                 itemId: 'levelTextField',
+                margin: '10 5 0 5 ',
                 label: 'Level'
             },
             {
                 xtype: 'sliderfield',
                 id: 'dimmerSlider',
                 itemId: 'mysliderfield',
+                margin: '10 5 0 5 ',
                 label: 'Set'
             },
             {

@@ -28,7 +28,7 @@ Ext.define('zvsMobile.view.DeviceDetailsTabPanel', {
 
     config: {
         activeItem: 3,
-        id: 'deviceDetailsTabPanel',
+        itemId: 'deviceDetailsTabPanel',
         items: [
             {
                 xtype: 'switchcontrolpanel',

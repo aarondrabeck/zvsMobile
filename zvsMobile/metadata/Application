@@ -8,16 +8,19 @@
     "userConfig": {
         "controllers": [
             "Navigation",
-            "DevicesController"
+            "Devices",
+            "Settings"
         ],
         "models": [
             "Device",
-            "DeviceValue"
+            "DeviceValue",
+            "Settings"
         ],
         "name": "zvsMobile",
         "stores": [
             "DeviceStore",
-            "DeviceValuesStore"
+            "DeviceValuesStore",
+            "Settings"
         ],
         "views": [
             "MainView",
@@ -27,9 +30,57 @@
             "DeviceDetailsTabPanel",
             "SwitchControlPanel",
             "DimmerControlPanel",
-            "ThermoControlPanel"
+            "ThermoControlPanel",
+            "SettingsForm"
         ]
     },
     "name": "Application",
-    "designerId": "application"
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getToken",
+                "implHandler": [
+                    "var store = Ext.getStore('Settings');",
+                    "var setting = store.getById(1);",
+                    "if(setting && setting.data && setting.data.Token)",
+                    "return setting.data.Token;",
+                    "",
+                    "return 'defaultToken';",
+                    "",
+                    ""
+                ]
+            },
+            "name": "getToken",
+            "designerId": "4093e6ce-5b72-4c01-99f4-5674723fe94c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getBaseUrl",
+                "implHandler": [
+                    "var settingsStore = Ext.getStore('Settings');",
+                    "var record = settingsStore.getById(1);",
+                    "",
+                    "if(record && record.data && record.data.Url&& record.data.Port)",
+                    "    return record.data.Url + ':'+ record.data.Port +'/' ;",
+                    "",
+                    "    return 'http://localhost:8080/';"
+                ]
+            },
+            "name": "getBaseUrl",
+            "designerId": "ed16112c-be2e-45ca-ba9f-520949527d91"
+        }
+    ]
 }

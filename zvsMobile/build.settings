@@ -1,0 +1,6 @@
+{
+    "webBuild": {
+        "environment": "production",
+        "publishPath": "C:/Users/aaron-drabeck/Desktop/touchtest"
+    }
+}

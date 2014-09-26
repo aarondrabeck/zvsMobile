@@ -21,9 +21,9 @@ Ext.define('zvsMobile.view.DevicesPanel', {
         'Ext.dataview.DataView',
         'Ext.XTemplate',
         'Ext.Toolbar',
+        'Ext.SegmentedButton',
         'Ext.Button',
-        'Ext.Spacer',
-        'Ext.SegmentedButton'
+        'Ext.Spacer'
     ],
 
     config: {
@@ -34,6 +34,7 @@ Ext.define('zvsMobile.view.DevicesPanel', {
                 xtype: 'dataview',
                 cls: 'dataview-inline',
                 itemId: 'deviceDataview',
+                style: '',
                 inline: true,
                 itemCls: 'dataview-inline',
                 itemTpl: [
@@ -44,37 +45,48 @@ Ext.define('zvsMobile.view.DevicesPanel', {
                     '    <div class="device-level">',
                     '			{CurrentLevelText}',
                     '		</div>',
-                    '	<div class="device-item-level">',
-                    '		<div class="meter">',
-                    '			<div class="progress" style="width:{CurrentLevelInt}%">',
-                    '			</div>',
-                    '		</div>',
-                    '		',
-                    '	</div>',
+                    '	',
                     '     <h5 class="location-name-truncate">{Location}</h5>',
                     '</div>'
                 ],
-                store: 'DeviceStore'
-            },
-            {
-                xtype: 'toolbar',
-                docked: 'bottom',
-                id: 'deviceToolbar',
-                ui: 'neutral',
-                scrollable: 'horizontal',
+                store: 'DeviceStore',
                 items: [
                     {
-                        xtype: 'button',
-                        id: 'devicesReloadBtn',
-                        text: 'Reload'
-                    },
-                    {
-                        xtype: 'spacer'
-                    },
-                    {
-                        xtype: 'segmentedbutton',
-                        id: 'filterSegmentedButton',
-                        allowDepress: true
+                        xtype: 'toolbar',
+                        docked: 'bottom',
+                        height: 50,
+                        itemId: 'deviceToolbar',
+                        padding: 5,
+                        ui: 'neutral',
+                        scrollable: 'horizontal',
+                        layout: {
+                            type: 'hbox',
+                            align: 'center'
+                        },
+                        items: [
+                            {
+                                xtype: 'segmentedbutton',
+                                itemId: 'filterSegmentedButton',
+                                items: [
+                                    {
+                                        xtype: 'button',
+                                        pressed: true,
+                                        locationFilter: 'all',
+                                        text: 'All'
+                                    }
+                                ]
+                            },
+                            {
+                                xtype: 'spacer'
+                            },
+                            {
+                                xtype: 'button',
+                                centered: false,
+                                itemId: 'devicesReloadBtn',
+                                icon: 'true',
+                                iconCls: 'refresh'
+                            }
+                        ]
                     }
                 ]
             }

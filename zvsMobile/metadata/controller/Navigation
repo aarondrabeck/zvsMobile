@@ -24,84 +24,45 @@
                 ],
                 "fn": "showMenu",
                 "implHandler": [
-                    "",
                     "// Get or create navigation menu",
                     "var menu = this.getNavMenu();",
                     "if (!menu) {",
                     "    menu = Ext.create('widget.navmenu');",
                     "}",
                     "",
-                    "var menuItems = menu.getItems().items,\t\t\t\t// Menu buttons",
-                    "\tcurrentView = this.currentView || \"devicespanel\";\t// Current view alias, default to home",
-                    "",
-                    "// Disable active view's button",
-                    "menuItems.forEach(function(button) {",
-                    "",
-                    "    // Get custom navView attribute",
-                    "    var navView = button.config.navView;",
-                    "",
-                    "    // Active button, disable",
-                    "    if (currentView == navView) {",
-                    "        button.disable();",
-                    "    }",
-                    "",
-                    "    // Enable all others",
-                    "    else {",
-                    "        button.enable();",
-                    "    }",
-                    "",
+                    "Ext.Viewport.setMenu(menu, {",
+                    "    side:'left',",
+                    "    cover:true",
                     "});",
+                    "Ext.Viewport.toggleMenu('left');",
                     "",
-                    "// Show menu by menu button",
-                    "menu.showBy(target);",
+                    "// var menuItems = menu.getItems().items,\t\t\t\t// Menu buttons",
+                    "// \tcurrentView = this.currentView || \"devicespanel\";\t// Current view alias, default to home",
+                    "",
+                    "// // Disable active view's button",
+                    "// menuItems.forEach(function(button) {",
+                    "",
+                    "//     // Get custom navView attribute",
+                    "//     var navView = button.config.navView;",
+                    "",
+                    "//     // Active button, disable",
+                    "//     if (currentView == navView) {",
+                    "//         button.disable();",
+                    "//     }",
+                    "",
+                    "//     // Enable all others",
+                    "//     else {",
+                    "//         button.enable();",
+                    "//     }",
+                    "",
+                    "//});",
+                    "",
                     ""
                 ],
                 "name": "tap"
             },
             "name": "showMenu",
             "designerId": "beb8e73c-976d-4842-a233-effc11685cea"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "navmenu button",
-                "designer|targetType": "Ext.Button",
-                "fn": "navigate",
-                "implHandler": [
-                    "",
-                    "/**",
-                    "*\tThe following code enables navigation",
-                    "*\tby checking the custom attribute 'navView',",
-                    "*\twhich is the alias of the view to show",
-                    "*/",
-                    "",
-                    "var text = button.getText(),\t\t\t\t\t\t// Button text",
-                    "\tnavView = button.getInitialConfig().navView,\t// Get custom attribute 'navView'",
-                    "\tmainView = this.getMainView(),\t\t\t\t\t// Main navigation view",
-                    "\tnavMenu = this.getNavMenu();\t\t\t\t\t// Navigation menu",
-                    "",
-                    "// Add view to main view",
-                    "mainView.push({",
-                    "    xtype: navView,",
-                    "    title: text",
-                    "});",
-                    "",
-                    "// Remember current view alias",
-                    "this.currentView = navView;",
-                    "",
-                    "// Hide menu",
-                    "navMenu.hide();",
-                    "//Ext.select('.x-button-back').hide();"
-                ],
-                "name": "tap"
-            },
-            "name": "navigate",
-            "designerId": "7d2ec394-96f9-46bd-afc0-b4bea517cc08"
         },
         {
             "type": "controllerref",
@@ -117,6 +78,97 @@
             },
             "name": "navMenu",
             "designerId": "ee9ba556-0a0b-41bb-981d-cd5cda8538c8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "f7c17090-e222-461c-8889-730a24cbf86e"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "settingsForm",
+                "selector": "formpanel#form",
+                "xtype": "settingsform"
+            },
+            "name": "settingsForm",
+            "designerId": "91a4d99f-87bc-4e4c-b400-1765fb7e3f00"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "devicesPanel",
+                "selector": "panel#devicesPanel"
+            },
+            "name": "devicesPanel",
+            "designerId": "40e7a626-f458-42a4-afbd-c9bb3fb3f676"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#mybutton1",
+                "designer|targetType": "Ext.Button",
+                "fn": "onNavDeviceBtnTap",
+                "implHandler": [
+                    "var mainView = this.getMainView();",
+                    "var devicesPanel = this.getDevicesPanel();",
+                    "mainView.setActiveItem(devicesPanel);",
+                    "Ext.Viewport.removeMenu('left');",
+                    "this.currentView = devicesPanel;"
+                ],
+                "name": "tap"
+            },
+            "name": "onNavDeviceBtnTap",
+            "designerId": "3f64a808-6821-4fa6-8776-eae27ebb8c90"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#mybutton6",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSettingsButtonTap",
+                "implHandler": [
+                    "var mainView = this.getMainView();",
+                    "var settingsForm = this.getSettingsForm();",
+                    "settingsForm.title = 'Settings';",
+                    "mainView.setActiveItem(settingsForm);",
+                    "Ext.Viewport.removeMenu('left');",
+                    "this.currentView = settingsForm;"
+                ],
+                "name": "tap"
+            },
+            "name": "onSettingsButtonTap",
+            "designerId": "09e6c9fc-2790-4def-96d2-abbe6ed4ebe3"
         }
     ]
 }

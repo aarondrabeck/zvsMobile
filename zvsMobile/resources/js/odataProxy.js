@@ -21,7 +21,7 @@ Ext.define('zvsMobile.ODataProxy', {
         Prefer:'return-content'
     },
     constructor:function(cfg) {
-        
+
         return this.callParent(arguments);
     },
     buildUrl:function(request) {
@@ -30,20 +30,28 @@ Ext.define('zvsMobile.ODataProxy', {
             records   = request.getOperation().getRecords() || [],
             record    = records[0],
             params     = request.getParams() || {},
-            url       = me.url,
-            idProperty = me.getModel().getIdProperty(),
+            url     = me.callParent(arguments);
+        idProperty = me.getModel().getIdProperty(),
             id        = (record && !record.phantom) ? record.getId() : params[idProperty];
 
+        url = zvsMobile.app.getBaseUrl() + url;
         if (id) {
             url = url.replace(/\/?$/,'(' + id + ')');
         }
         if (request.url) {
             url += request.url;
         }
-        request.url = url;
-        return me.callParent(arguments);
+        //request._url = url;        
+
+        var defaultHeaders = Ext.Ajax.getDefaultHeaders() || {};
+        var headers = me.getHeaders() || {};
+        headers["X-zvsToken"] = zvsMobile.app.getToken();
+        me.setHeaders(headers);
+
+
+        return url;
     },
-   
+
     encodeFilters:function(filters) {
         var sch,
             filterChecks = [],
@@ -53,19 +61,19 @@ Ext.define('zvsMobile.ODataProxy', {
         for (sch = 0; filter = filters[sch]; sch++) {
             exact = filter.config.exactMatch;
             filterBuf = [];
-       //     if (exact) {
-                filterBuf.push('(');
-                filterBuf.push(filter.config.value);
-                filterBuf.push(' eq ');
-         //   } else {
-           //     filterBuf.push('substringof(\'');
-             //   filterBuf.push(filter.config.value);
-          //      filterBuf.push('\',');
-           // }
-            
+            //     if (exact) {
+            filterBuf.push('(');
+            filterBuf.push(filter.config.value);
+            filterBuf.push(' eq ');
+            //   } else {
+            //     filterBuf.push('substringof(\'');
+            //   filterBuf.push(filter.config.value);
+            //      filterBuf.push('\',');
+            // }
+
             filterBuf.push(filter.config.property);
-           //// if (!filter.caseSensitive && !exact) {
-                //filterBuf.push(')');
+            //// if (!filter.caseSensitive && !exact) {
+            //filterBuf.push(')');
             //}
             filterBuf.push(')');
             filterChecks.push(filterBuf.join(''));

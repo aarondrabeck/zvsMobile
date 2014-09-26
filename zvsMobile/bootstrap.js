@@ -637,17 +637,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
-  "Ext.log.Base": [],
-  "Ext.log.Logger": [],
-  "Ext.log.filter.Filter": [],
-  "Ext.log.filter.Priority": [],
-  "Ext.log.formatter.Default": [],
-  "Ext.log.formatter.Formatter": [],
-  "Ext.log.formatter.Identity": [],
-  "Ext.log.writer.Console": [],
-  "Ext.log.writer.DocumentTitle": [],
-  "Ext.log.writer.Remote": [],
-  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
@@ -773,19 +762,24 @@ Ext.ClassManager.addNameAlternateMappings({
     "Ext.viewport.WP"
   ],
   "zvsMobile.ODataProxy": [],
-  "zvsMobile.controller.DevicesController": [],
+  "zvsMobile.controller.Devices": [],
   "zvsMobile.controller.Navigation": [],
+  "zvsMobile.controller.Settings": [],
   "zvsMobile.model.Device": [],
   "zvsMobile.model.DeviceType": [],
   "zvsMobile.model.DeviceValue": [],
+  "zvsMobile.model.MyClass": [],
+  "zvsMobile.model.Settings": [],
   "zvsMobile.store.DeviceStore": [],
   "zvsMobile.store.DeviceValuesStore": [],
+  "zvsMobile.store.Settings": [],
   "zvsMobile.view.DeviceDetailsTabPanel": [],
   "zvsMobile.view.DeviceValuesPanel": [],
   "zvsMobile.view.DevicesPanel": [],
   "zvsMobile.view.DimmerControlPanel": [],
   "zvsMobile.view.MainView": [],
   "zvsMobile.view.NavMenu": [],
+  "zvsMobile.view.SettingsForm": [],
   "zvsMobile.view.SwitchControlPanel": [],
   "zvsMobile.view.ThermoControlPanel": []
 });
@@ -1592,17 +1586,6 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
-  "Ext.log.Base": [],
-  "Ext.log.Logger": [],
-  "Ext.log.filter.Filter": [],
-  "Ext.log.filter.Priority": [],
-  "Ext.log.formatter.Default": [],
-  "Ext.log.formatter.Formatter": [],
-  "Ext.log.formatter.Identity": [],
-  "Ext.log.writer.Console": [],
-  "Ext.log.writer.DocumentTitle": [],
-  "Ext.log.writer.Remote": [],
-  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
@@ -1746,13 +1729,21 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.ODataProxy": [
     "proxy.odata"
   ],
-  "zvsMobile.controller.DevicesController": [],
+  "zvsMobile.controller.Devices": [],
   "zvsMobile.controller.Navigation": [],
+  "zvsMobile.controller.Settings": [],
   "zvsMobile.model.Device": [],
   "zvsMobile.model.DeviceType": [],
   "zvsMobile.model.DeviceValue": [],
+  "zvsMobile.model.MyClass": [],
+  "zvsMobile.model.Settings": [
+    "model.settings"
+  ],
   "zvsMobile.store.DeviceStore": [],
   "zvsMobile.store.DeviceValuesStore": [],
+  "zvsMobile.store.Settings": [
+    "store.settings"
+  ],
   "zvsMobile.view.DeviceDetailsTabPanel": [
     "widget.devicedetailstabpanel"
   ],
@@ -1770,6 +1761,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.view.NavMenu": [
     "widget.navmenu"
+  ],
+  "zvsMobile.view.SettingsForm": [
+    "widget.settingsform"
   ],
   "zvsMobile.view.SwitchControlPanel": [
     "widget.switchcontrolpanel"

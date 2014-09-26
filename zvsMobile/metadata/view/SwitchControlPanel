@@ -26,6 +26,7 @@
                 "disabled": true,
                 "id": "locationTextField",
                 "label": "Room",
+                "margin": "10 5 0 5 ",
                 "value": null
             },
             "name": "MyTextField",
@@ -42,6 +43,7 @@
                 "disabled": true,
                 "id": "typeTextField",
                 "label": "Type",
+                "margin": "10 5 0 5 ",
                 "value": null
             },
             "name": "MyTextField1",
@@ -57,6 +59,7 @@
             "userConfig": {
                 "itemId": "toggleSetBtn",
                 "label": "Set",
+                "margin": "10 5 0 5 ",
                 "name": "toggleSet"
             },
             "name": "MyToggleField",
