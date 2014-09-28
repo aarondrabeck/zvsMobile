@@ -37,7 +37,7 @@
                 ],
                 "docked": null,
                 "inline": true,
-                "itemCls": "dataview-inline",
+                "itemCls": "deviceItem",
                 "itemId": "deviceDataview",
                 "store": "DeviceStore",
                 "style": ""
@@ -58,14 +58,12 @@
                     "userConfig": {
                         "designer|displayName": "itemTpl",
                         "implHandler": [
-                            "<div class=\"device-item {type.UniqueIdentifier}\">",
-                            "\t",
-                            "\t<h4 class=\"device-name-truncate\">{Name}</h4>",
-                            "   ",
+                            "<div class=\"device-item\">",
+                            "\t<h4 class=\"device-name-truncate\">{Name}</h4>  ",
+                            "    <i class=\"{type.UniqueIdentifier}\"></i> ",
                             "    <div class=\"device-level\">",
                             "\t\t\t{CurrentLevelText}",
-                            "\t\t</div>",
-                            "\t",
+                            "\t\t</div>\t",
                             "     <h5 class=\"location-name-truncate\">{Location}</h5>",
                             "</div>"
                         ]
@@ -154,7 +152,7 @@
                                 "baseCls": null,
                                 "border": null,
                                 "centered": false,
-                                "icon": "true",
+                                "icon": null,
                                 "iconAlign": null,
                                 "iconCls": "refresh",
                                 "id": null,

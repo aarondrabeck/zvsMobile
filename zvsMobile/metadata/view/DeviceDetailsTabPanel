@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "activeItem": 3,
         "designer|userAlias": "devicedetailstabpanel",
         "designer|userClassName": "DeviceDetailsTabPanel",
         "id": null,
@@ -23,55 +22,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "iconCls": "action",
-                "title": "Control"
-            },
-            "name": "switchcontrolpanel1",
-            "designerId": "ea08535d-3e9d-4f90-9818-1bb12de6fe08",
-            "masterInstanceId": "0d545aa1-c01d-4d51-aaf6-3da9ac173463"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "iconCls": "action",
-                "title": "Control"
-            },
-            "name": "dimmercontrolpanel2",
-            "designerId": "8d6f56bb-5f06-4ff0-be27-28b5b8a1ac20",
-            "masterInstanceId": "a595e2ff-acfc-49df-b5e4-971a07ac40bf"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "iconCls": "action",
-                "title": "Control"
-            },
-            "name": "thermocontrolpanel1",
-            "designerId": "86078610-be11-42b6-a875-38520fd2f826",
-            "masterInstanceId": "0599d6d3-6430-4abc-acd2-a6797bbd23d2"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "iconCls": "more",
                 "title": "Values"
             },
-            "name": "devicevaluespanel2",
+            "name": "devicevaluespanel",
             "designerId": "f72355f3-68d8-4a1a-a85f-97889e7dbbc5",
             "masterInstanceId": "6192869c-ad6e-4f4c-a2ae-d6058a34b218"
         },
@@ -86,6 +40,7 @@
                 "container|pack": "center",
                 "designer|uiInterfaceName": "neutral",
                 "docked": "bottom",
+                "itemId": "actionTabBar",
                 "ui": "neutral"
             },
             "name": "MyTabBar",

@@ -1,0 +1,36 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scenespanel",
+        "designer|userClassName": "Scenes"
+    },
+    "name": "MyController",
+    "designerId": "0f69bfbb-812c-4fb8-b595-7d12d66b698e",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel#scenesPanel",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onPanelInitialize",
+                "implHandler": [
+                    "var sceneStore = Ext.getStore('SceneStore');",
+                    "sceneStore.load();"
+                ],
+                "name": "initialize"
+            },
+            "name": "onPanelInitialize",
+            "designerId": "b7606757-fd6d-4039-9876-e0614632aeb8"
+        }
+    ]
+}

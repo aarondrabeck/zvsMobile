@@ -30,14 +30,14 @@ Ext.define('zvsMobile.view.SwitchControlPanel', {
             {
                 xtype: 'textfield',
                 disabled: true,
-                id: 'locationTextField',
+                itemId: 'locationTextField',
                 margin: '10 5 0 5 ',
                 label: 'Room'
             },
             {
                 xtype: 'textfield',
                 disabled: true,
-                id: 'typeTextField',
+                itemId: 'typeTextField',
                 margin: '10 5 0 5 ',
                 label: 'Type'
             },
@@ -50,8 +50,7 @@ Ext.define('zvsMobile.view.SwitchControlPanel', {
             },
             {
                 xtype: 'label',
-                centered: false,
-                id: 'feedbackLabel',
+                itemId: 'feedbackLabel',
                 margin: 10
             }
         ]

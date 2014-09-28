@@ -74,8 +74,8 @@ Ext.define('zvsMobile.controller.Settings', {
             settingsStore.add(record);
         }
 
-        var settingForm = this.getSettingsForm();
-        settingForm.setRecord(record);
+        //var settingForm = this.getSettingsForm();
+        component.setRecord(record);
     }
 
 });

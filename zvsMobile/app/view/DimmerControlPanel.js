@@ -51,8 +51,7 @@ Ext.define('zvsMobile.view.DimmerControlPanel', {
             },
             {
                 xtype: 'sliderfield',
-                id: 'dimmerSlider',
-                itemId: 'mysliderfield',
+                itemId: 'dimmerSlider',
                 margin: '10 5 0 5 ',
                 label: 'Set'
             },

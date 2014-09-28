@@ -1,0 +1,74 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "config": null,
+        "designer|userAlias": "groupspanel",
+        "designer|userClassName": "GroupsPanel",
+        "itemId": "groupsPanel",
+        "layout": "fit"
+    },
+    "name": "ScenesPanel1",
+    "designerId": "d0b86522-f0cd-4bad-bb68-c78c3efb016c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "config",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "dataview-inline"
+                ],
+                "docked": null,
+                "inline": true,
+                "itemCls": "groupItem",
+                "itemId": "groupsDataview",
+                "store": "GroupStore",
+                "style": ""
+            },
+            "name": "MyDataView",
+            "configAlternates": {
+                "inline": "boolean"
+            },
+            "designerId": "0febb941-2c53-4cc9-9cd3-d2a5d6ffc1e9",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"group-item\">",
+                            "\t<h4 class=\"group-name-truncate\">{Name}</h4>  ",
+                            "    <i class=\"GROUP\"></i> ",
+                            "    <div class=\"group-level\">",
+                            "\t\t\tRunning",
+                            "\t\t</div>\t    ",
+                            "</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "dffa14ab-19b0-4eab-8db9-0ff7209ff43d"
+                }
+            ]
+        }
+    ]
+}

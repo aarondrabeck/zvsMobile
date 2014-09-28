@@ -80,8 +80,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "id": "dimmerSlider",
-                "itemId": "mysliderfield",
+                "id": null,
+                "itemId": "dimmerSlider",
                 "label": "Set",
                 "margin": "10 5 0 5 "
             },

@@ -9,18 +9,24 @@
         "controllers": [
             "Navigation",
             "Devices",
-            "Settings"
+            "Settings",
+            "Scenes",
+            "Group"
         ],
         "models": [
             "Device",
             "DeviceValue",
-            "Settings"
+            "Settings",
+            "Scene",
+            "Group"
         ],
         "name": "zvsMobile",
         "stores": [
             "DeviceStore",
             "DeviceValuesStore",
-            "Settings"
+            "Settings",
+            "SceneStore",
+            "GroupStore"
         ],
         "views": [
             "MainView",
@@ -31,7 +37,9 @@
             "SwitchControlPanel",
             "DimmerControlPanel",
             "ThermoControlPanel",
-            "SettingsForm"
+            "SettingsForm",
+            "ScenesPanel",
+            "GroupsPanel"
         ]
     },
     "name": "Application",

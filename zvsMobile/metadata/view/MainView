@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoDestroy": false,
         "container|animation": null,
         "designer|initialView": true,
         "designer|userAlias": "mainview",
@@ -27,7 +28,7 @@
             "userConfig": {
                 "title": "Devices"
             },
-            "name": "devicespanel2",
+            "name": "devicespanel1",
             "designerId": "498cac42-a8ff-45b0-8824-6cd6462aa473",
             "masterInstanceId": "12fcc33d-36a7-475b-8792-6b6c96745316"
         },
@@ -58,7 +59,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "iconCls": "more",
+                        "iconCls": "list",
                         "itemId": "menuButton",
                         "text": ""
                     },

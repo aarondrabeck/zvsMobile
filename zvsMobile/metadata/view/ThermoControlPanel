@@ -24,7 +24,8 @@
             "codeClass": null,
             "userConfig": {
                 "disabled": true,
-                "id": "locationTextField2",
+                "id": null,
+                "itemId": "locationTextField",
                 "label": "Room",
                 "margin": "10 5 0 5 ",
                 "value": null
@@ -41,7 +42,8 @@
             "codeClass": null,
             "userConfig": {
                 "disabled": true,
-                "id": "typeTextField2",
+                "id": null,
+                "itemId": "typeTextField",
                 "label": "Type",
                 "margin": "10 5 0 5 ",
                 "value": null
@@ -58,7 +60,8 @@
             "codeClass": null,
             "userConfig": {
                 "html": null,
-                "id": "feedbackLabel2",
+                "id": null,
+                "itemId": "feedbackLabel",
                 "margin": 10,
                 "style": null,
                 "top": null

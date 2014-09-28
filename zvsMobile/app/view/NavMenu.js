@@ -18,6 +18,9 @@ Ext.define('zvsMobile.view.NavMenu', {
     alias: 'widget.navmenu',
 
     requires: [
+        'Ext.Panel',
+        'Ext.Img',
+        'Ext.Label',
         'Ext.Button'
     ],
 
@@ -30,33 +33,55 @@ Ext.define('zvsMobile.view.NavMenu', {
         modal: true,
         items: [
             {
+                xtype: 'panel',
+                items: [
+                    {
+                        xtype: 'image',
+                        docked: 'left',
+                        height: 50,
+                        width: 50,
+                        src: 'resources/images/256zvsIcon.png'
+                    },
+                    {
+                        xtype: 'label',
+                        centered: false,
+                        height: 50,
+                        html: 'zVirtualScenes</br>Mobile',
+                        padding: 5,
+                        style: 'font-family:Lato;color:#157EFB'
+                    }
+                ]
+            },
+            {
                 xtype: 'button',
                 navView: 'devicespanel',
-                itemId: 'mybutton1',
-                margin: 3,
-                iconCls: 'home',
+                itemId: 'DevicesBtn',
+                margin: '20 3 3 3',
+                iconCls: 'light',
                 text: 'Devices'
             },
             {
                 xtype: 'button',
-                navView: 'aboutpanel',
+                navView: 'scenespanel',
+                itemId: 'ScenesBtn',
                 margin: 3,
-                iconCls: 'info',
+                style: 'color:#9EC974',
+                iconCls: 'scene',
                 text: 'Scenes'
             },
             {
                 xtype: 'button',
-                navView: 'contactpanel',
+                navView: 'groupspanel',
+                itemId: 'GroupsBtn',
                 margin: 3,
-                iconCls: 'compose',
+                iconCls: 'group',
                 text: 'Groups'
             },
             {
                 xtype: 'button',
                 navView: 'settingsform',
-                itemId: 'mybutton6',
+                itemId: 'SettingsBtn',
                 margin: '20 3 3 3',
-                width: 150,
                 iconCls: 'settings',
                 text: 'Settings'
             }

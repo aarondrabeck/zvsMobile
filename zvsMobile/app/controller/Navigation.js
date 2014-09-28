@@ -23,11 +23,6 @@ Ext.define('zvsMobile.controller.Navigation', {
                 xtype: 'navmenu'
             },
             mainView: 'navigationview#mainView',
-            settingsForm: {
-                autoCreate: true,
-                selector: 'formpanel#form',
-                xtype: 'settingsform'
-            },
             devicesPanel: 'panel#devicesPanel'
         },
 
@@ -35,11 +30,8 @@ Ext.define('zvsMobile.controller.Navigation', {
             "mainview #menuButton": {
                 tap: 'showMenu'
             },
-            "button#mybutton1": {
-                tap: 'onNavDeviceBtnTap'
-            },
-            "button#mybutton6": {
-                tap: 'onSettingsButtonTap'
+            "navmenu button": {
+                tap: 'navigate'
             }
         }
     },
@@ -57,45 +49,48 @@ Ext.define('zvsMobile.controller.Navigation', {
         });
         Ext.Viewport.toggleMenu('left');
 
-        // var menuItems = menu.getItems().items,				// Menu buttons
-        // 	currentView = this.currentView || "devicespanel";	// Current view alias, default to home
+        var menuItems = menu.getItems().items,				// Menu buttons
+        	currentView = this.currentView || "devicespanel";	// Current view alias, default to home
 
-        // // Disable active view's button
-        // menuItems.forEach(function(button) {
+        // Disable active view's button
+        menuItems.forEach(function(button) {
 
-        //     // Get custom navView attribute
-        //     var navView = button.config.navView;
+            // Get custom navView attribute
+            var navView = button.config.navView;
 
-        //     // Active button, disable
-        //     if (currentView == navView) {
-        //         button.disable();
-        //     }
+            // Active button, disable
+            if (currentView == navView) {
+                button.disable();
+                button.setStyle('background-color:#f7f7f7');
+            }
 
-        //     // Enable all others
-        //     else {
-        //         button.enable();
-        //     }
+            // Enable all others
+            else {
+                button.enable();
+                 button.setStyle('background-color:white');
+            }
 
-        //});
+        });
 
 
     },
 
-    onNavDeviceBtnTap: function(button, e, eOpts) {
-        var mainView = this.getMainView();
-        var devicesPanel = this.getDevicesPanel();
-        mainView.setActiveItem(devicesPanel);
-        Ext.Viewport.removeMenu('left');
-        this.currentView = devicesPanel;
-    },
+    navigate: function(button, e, eOpts) {
+        var text = button.getText(),						// Button text
+        	navView = button.getInitialConfig().navView,	// Get custom attribute 'navView'
+        	mainView = this.getMainView(),					// Main navigation view
+        	navMenu = this.getNavMenu();					// Navigation menu
 
-    onSettingsButtonTap: function(button, e, eOpts) {
-        var mainView = this.getMainView();
-        var settingsForm = this.getSettingsForm();
-        settingsForm.title = 'Settings';
-        mainView.setActiveItem(settingsForm);
+        // Add view to main view
+        mainView.push({
+            xtype: navView,
+            title: text
+        });
+
+        // Remember current view alias
+        this.currentView = navView;
+
         Ext.Viewport.removeMenu('left');
-        this.currentView = settingsForm;
     }
 
 });

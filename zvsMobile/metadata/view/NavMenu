@@ -18,6 +18,52 @@
     "designerId": "6b1d9070-b093-4ef5-9404-8efed4679c79",
     "cn": [
         {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyPanel",
+            "designerId": "eef82a48-125a-4c64-b928-1b9598ac2b97",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "left",
+                        "height": 50,
+                        "src": "resources/images/256zvsIcon.png",
+                        "width": 50
+                    },
+                    "name": "MyImg",
+                    "designerId": "81c6d641-61a1-43fa-a661-7343a830dd91"
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": false,
+                        "docked": null,
+                        "height": 50,
+                        "html": "zVirtualScenes</br>Mobile",
+                        "padding": 5,
+                        "style": "font-family:Lato;color:#157EFB"
+                    },
+                    "name": "MyLabel1",
+                    "designerId": "e88663a9-24c4-43b1-b2e5-47b692056bf4"
+                }
+            ]
+        },
+        {
             "type": "Ext.Button",
             "reference": {
                 "name": "items",
@@ -25,11 +71,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "iconCls": "home",
-                "itemId": "mybutton1",
-                "margin": 3,
+                "iconCls": "light",
+                "itemId": "DevicesBtn",
+                "margin": "20 3 3 3",
                 "navId": null,
                 "navView": "devicespanel",
+                "style": null,
                 "text": "Devices"
             },
             "name": "MyButton1",
@@ -56,11 +103,12 @@
             "codeClass": null,
             "userConfig": {
                 "config": null,
-                "iconCls": "info",
-                "itemId": null,
+                "iconCls": "scene",
+                "itemId": "ScenesBtn",
                 "margin": 3,
                 "navId": null,
-                "navView": "aboutpanel",
+                "navView": "scenespanel",
+                "style": "color:#9EC974",
                 "text": "Scenes"
             },
             "name": "MyButton2",
@@ -91,11 +139,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "iconCls": "compose",
-                "itemId": null,
+                "iconCls": "group",
+                "itemId": "GroupsBtn",
                 "margin": 3,
                 "navId": null,
-                "navView": "contactpanel",
+                "navView": "groupspanel",
                 "text": "Groups"
             },
             "name": "MyButton3",
@@ -122,12 +170,12 @@
             "codeClass": null,
             "userConfig": {
                 "iconCls": "settings",
-                "itemId": "mybutton6",
+                "itemId": "SettingsBtn",
                 "margin": "20 3 3 3",
                 "navId": null,
                 "navView": "settingsform",
                 "text": "Settings",
-                "width": 150
+                "width": null
             },
             "name": "MyButton6",
             "designerId": "2f3627df-38a5-4f2f-89d1-9c56b2d38690",

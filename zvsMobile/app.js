@@ -23,12 +23,16 @@ Ext.application({
     models: [
         'Device',
         'DeviceValue',
-        'Settings'
+        'Settings',
+        'Scene',
+        'Group'
     ],
     stores: [
         'DeviceStore',
         'DeviceValuesStore',
-        'Settings'
+        'Settings',
+        'SceneStore',
+        'GroupStore'
     ],
     views: [
         'MainView',
@@ -39,12 +43,16 @@ Ext.application({
         'SwitchControlPanel',
         'DimmerControlPanel',
         'ThermoControlPanel',
-        'SettingsForm'
+        'SettingsForm',
+        'ScenesPanel',
+        'GroupsPanel'
     ],
     controllers: [
         'Navigation',
         'Devices',
-        'Settings'
+        'Settings',
+        'Scenes',
+        'Group'
     ],
     name: 'zvsMobile',
 

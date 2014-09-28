@@ -42,6 +42,8 @@
             "faa0b672-f068-471f-a6d3-46b660667fb3",
             "6b1d9070-b093-4ef5-9404-8efed4679c79",
             "12fcc33d-36a7-475b-8792-6b6c96745316",
+            "4b6e07d4-fd06-4c0e-ab4a-3c6dc373e44d",
+            "d0b86522-f0cd-4bad-bb68-c78c3efb016c",
             "5ef75ce5-018b-4de5-9eaa-97cf5b8dda42",
             "6192869c-ad6e-4f4c-a2ae-d6058a34b218",
             "0d545aa1-c01d-4d51-aaf6-3da9ac173463",
@@ -51,20 +53,25 @@
         ],
         "store": [
             "d19a7c47-5d37-416c-8220-e97fd3d14506",
+            "f6322341-b060-4399-a1ec-2c2d6ec2cd6a",
+            "50d45753-ccb0-4980-bcaa-e31f558b2a38",
             "4abf8518-888e-4e8f-b6d9-12161b5a1c1b",
             "e2982ca9-ae6f-491a-8fe1-c3930e1e1a84"
         ],
         "controller": [
             "b65f72c1-bee5-4e5a-9fed-ce939650a75c",
             "6ce882fa-eb1d-4863-9c06-c76d93e27216",
-            "caee1779-2d65-469d-ba31-9a79bf95275c"
+            "caee1779-2d65-469d-ba31-9a79bf95275c",
+            "0f69bfbb-812c-4fb8-b595-7d12d66b698e",
+            "c6990502-853e-4d93-b472-8289f0f01fc3"
         ],
         "model": [
             "c0d35e80-94cf-4ea9-b237-bd6232a3e8bf",
             "8045e9de-2651-4822-9a59-823840290e31",
             "7933a4e0-7699-49f0-8f08-b6137f4bca1b",
             "96d4f04c-76da-4ec9-a0fa-f37a2028b2a5",
-            "532efd48-5e22-49c8-8c51-907cc6be62c0"
+            "24a1fc61-1181-4675-8a21-8e3754ef1ad5",
+            "ebd722d2-4190-44a4-8432-e9b4992ba8ef"
         ],
         "resource": [
             "01dfa91f-d7fa-4c86-8272-a99995dea3d2",

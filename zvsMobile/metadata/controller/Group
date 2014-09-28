@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Group"
+    },
+    "name": "MyController",
+    "designerId": "c6990502-853e-4d93-b472-8289f0f01fc3",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#groupsDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewInitialize",
+                "implHandler": [
+                    "var sceneStore = Ext.getStore('GroupStore');",
+                    "sceneStore.load();"
+                ],
+                "name": "initialize"
+            },
+            "name": "onDataviewInitialize",
+            "designerId": "01c308d6-820a-4c22-b162-30726751e742"
+        }
+    ]
+}

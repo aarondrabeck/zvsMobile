@@ -36,16 +36,14 @@ Ext.define('zvsMobile.view.DevicesPanel', {
                 itemId: 'deviceDataview',
                 style: '',
                 inline: true,
-                itemCls: 'dataview-inline',
+                itemCls: 'deviceItem',
                 itemTpl: [
-                    '<div class="device-item {type.UniqueIdentifier}">',
-                    '	',
-                    '	<h4 class="device-name-truncate">{Name}</h4>',
-                    '   ',
+                    '<div class="device-item">',
+                    '	<h4 class="device-name-truncate">{Name}</h4>  ',
+                    '    <i class="{type.UniqueIdentifier}"></i> ',
                     '    <div class="device-level">',
                     '			{CurrentLevelText}',
-                    '		</div>',
-                    '	',
+                    '		</div>	',
                     '     <h5 class="location-name-truncate">{Location}</h5>',
                     '</div>'
                 ],
@@ -70,8 +68,8 @@ Ext.define('zvsMobile.view.DevicesPanel', {
                                 items: [
                                     {
                                         xtype: 'button',
-                                        pressed: true,
                                         locationFilter: 'all',
+                                        pressed: true,
                                         text: 'All'
                                     }
                                 ]
@@ -83,7 +81,6 @@ Ext.define('zvsMobile.view.DevicesPanel', {
                                 xtype: 'button',
                                 centered: false,
                                 itemId: 'devicesReloadBtn',
-                                icon: 'true',
                                 iconCls: 'refresh'
                             }
                         ]

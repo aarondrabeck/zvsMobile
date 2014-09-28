@@ -39,7 +39,8 @@ Ext.define('zvsMobile.controller.Devices', {
                 toggle: 'onSegmentedbuttonToggle'
             },
             "tabpanel#deviceDetailsTabPanel": {
-                updatedata: 'onTabpanelUpdatedata'
+                updatedata: 'onTabpanelUpdatedata',
+                initialize: 'onTabpanelInitialize'
             },
             "sliderfield#dimmerSlider": {
                 change: 'onSliderfieldChange'
@@ -67,39 +68,6 @@ Ext.define('zvsMobile.controller.Devices', {
             title: device.Name,
             data: device
         });
-
-        var deviceDetailsTabPanel = this.getDeviceDetailsTabPanel();
-
-        var switchControlPanel = this.getSwitchControlPanel();
-        var dimmerControlPanel = this.getDimmerControlPanel();
-        var thermoControlPanel = this.getThermoControlPanel();
-        deviceDetailsTabPanel.getTabBar().getComponent(0).hide();
-        deviceDetailsTabPanel.getTabBar().getComponent(1).hide();
-        deviceDetailsTabPanel.getTabBar().getComponent(2).hide();
-
-        if(device.type.UniqueIdentifier == 'SWITCH')
-        {
-            switchControlPanel.setRecord(device);
-            deviceDetailsTabPanel.setActiveItem(0);
-            deviceDetailsTabPanel.getTabBar().getComponent(0).show();
-        }
-        else if(device.type.UniqueIdentifier == 'DIMMER')
-        {
-            dimmerControlPanel.setRecord(device);
-            deviceDetailsTabPanel.setActiveItem(1);
-            deviceDetailsTabPanel.getTabBar().getComponent(1).show();
-        }
-        else if(device.type.UniqueIdentifier == 'THERMOSTAT')
-        {
-            thermoControlPanel.setRecord(device);
-            deviceDetailsTabPanel.setActiveItem(2);
-            deviceDetailsTabPanel.getTabBar().getComponent(2).show();
-        }
-
-
-
-        var panel = this.getDimmerControlPanel();
-        panel.setRecord(record.data);
     },
 
     onReloadTap: function(button, e, eOpts) {
@@ -154,7 +122,7 @@ Ext.define('zvsMobile.controller.Devices', {
 
     onSliderfieldChange: function(me, sl, thumb, newValue, oldValue, eOpts) {
         //dimmerSlider
-        var panel = this.getDimmerControlPanel();
+        var panel = me.up('#dimmerControlPanel');
         var device = panel.getData();
 
         Ext.Ajax.request({
@@ -209,7 +177,7 @@ Ext.define('zvsMobile.controller.Devices', {
     },
 
     onOffSwitchTogglefieldChange: function(togglefield, newValue, oldValue, eOpts) {
-                var panel = this.getSwitchControlPanel();
+        var panel = togglefield.up('#switchControlPanel');
                 var device = panel.getData();
                 var uId = newValue === 0 ? 'TURNOFF' : 'TURNON';
 
@@ -268,6 +236,33 @@ Ext.define('zvsMobile.controller.Devices', {
     onPanelInitialize: function(component, eOpts) {
          var deviceStore = Ext.getStore('DeviceStore');
                 deviceStore.load();
+    },
+
+    onTabpanelInitialize: function(component, eOpts) {
+        var device = component.getData();
+
+        var xtype;
+        if(device.type.UniqueIdentifier == 'SWITCH')
+        {
+            xtype = 'switchcontrolpanel';
+        }
+        else if(device.type.UniqueIdentifier == 'DIMMER')
+        {
+            xtype = 'dimmercontrolpanel';
+        }
+        else if(device.type.UniqueIdentifier == 'THERMOSTAT')
+        {
+            xtype = 'thermocontrolpanel';
+        }
+
+        var item =
+            {xtype: xtype,
+                          title: 'Action',
+                          iconCls: 'action'
+                         };
+
+        component.setActiveItem(item);
+        component.getActiveItem().setRecord(device);
     }
 
 });

@@ -1,3 +1,35 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("/resources/fonts/zvs/flaticon.eot");
+	src: url("/resources/fonts/zvs/flaticon.eot#iefix") format("embedded-opentype"),
+	url("/resources/fonts/zvs/flaticon.woff") format("woff"),
+	url("/resources/fonts/zvs/flaticon.ttf") format("truetype"),
+	url("/resources/fonts/zvs/flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+    font-size: 20px;
+    font-style: normal;
+    margin-left: 20px;
+}.flaticon-light71:before {
+	content: "\e000";
+}
+.flaticon-movie16:before {
+	content: "\e001";
+}
+.flaticon-switch1:before {
+	content: "\e002";
+}
+.flaticon-thermometer14:before {
+	content: "\e003";
+}
+.flaticon-wedding4:before {
+	content: "\e004";
+}
+
 .dataview-horizontal .x-dataview-item, .dataview-inline .x-dataview-item {
     -webkit-box-shadow: 0 5px 10px -6px black;
     -moz-box-shadow: 0 5px 10px -6px black;
@@ -5,37 +37,121 @@
     padding: 5px;
     margin: 5px;
     width: 170px;
-    height: 140px;
+    height: 140px;  
+}
+
+.deviceItem
+{
     background-color:#2CAFE7
-
 }
 
-.THERMOSTAT-RUNNING, .THERMOSTAT-OFF, .THERMOSTAT {
-    background-image: url('/resources/images/thermostat.png');
+.sceneItem
+{
+    background-color:#9EC974
 }
 
-.CONTROLLER, .CONTROLLER-ON, .CONTROLLER-OFF {
-    background-image: url('/resources/images/controller.png');
+.groupItem
+{
+    background-color:#F5A70E
 }
 
-.DIMMER, .DIMMER-ON {
-    background-image: url('/resources/images/lightbulb.png');
+
+.DIMMER:before {
+    content: "\e000";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+    margin-left: 60px;
 }
 
-.DIMMER-DIM {
-    background-image: url('/resources/images/lb_dim.png');
+
+.SWITCH:before {
+    content: "\e002";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+    margin-left: 52px;
 }
 
-.DIMMER-OFF {
-    background-image: url('/resources/images/lb_off.png');
+.THERMOSTAT:before {
+    content: "\e003";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+    margin-left: 50px;
 }
 
-.SWITCH, .SWITCH-ON {
-    background-image: url('/resources/images/switch.png');
+.scene-item {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 91px 91px;
+    width: 162px;
+    height: 130px;
 }
 
-.SWITCH-OFF {
-    background-image: url('/resources/images/switch_off.png');
+.SCENE:before {
+    content: "\e001";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+    margin-left: 50px;
+}
+
+.scene-name-truncate {
+    width: 162px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:.9em;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.scene-level {
+    text-align: center;
+    font-size:.75em;
+    color: white;
+    margin-top: 5px;
+}
+
+.group-item {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 91px 91px;
+    width: 162px;
+    height: 130px;
+}
+
+.GROUP:before {
+    content: "\e004";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+    margin-left: 50px;
+}
+
+.group-name-truncate {
+    width: 162px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:.9em;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.group-level {
+    text-align: center;
+    font-size:.75em;
+    color: white;
+    margin-top: 5px;
 }
 
 .device-name-truncate {
@@ -45,9 +161,11 @@
     text-overflow: ellipsis;
     font-size:.9em;
     color: white;
+    margin-bottom: 10px;
 }
 
 .location-name-truncate {
+    
     width: 162px;
     white-space: nowrap;
     overflow: hidden;
@@ -61,8 +179,7 @@
 
 .device-level {
     text-align: center;
-    margin-top: 79px;
-    font-size:.7em;
+    font-size:.75em;
     color: white;
 }
 
@@ -102,3 +219,21 @@
     border-radius: 0.3em;
     height: 100%;
 }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(/resources/fonts/lato.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'), url(/resources/fonts/lat.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+

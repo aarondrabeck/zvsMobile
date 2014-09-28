@@ -36,26 +36,28 @@
                     "});",
                     "Ext.Viewport.toggleMenu('left');",
                     "",
-                    "// var menuItems = menu.getItems().items,\t\t\t\t// Menu buttons",
-                    "// \tcurrentView = this.currentView || \"devicespanel\";\t// Current view alias, default to home",
+                    "var menuItems = menu.getItems().items,\t\t\t\t// Menu buttons",
+                    "\tcurrentView = this.currentView || \"devicespanel\";\t// Current view alias, default to home",
                     "",
-                    "// // Disable active view's button",
-                    "// menuItems.forEach(function(button) {",
+                    "// Disable active view's button",
+                    "menuItems.forEach(function(button) {",
                     "",
-                    "//     // Get custom navView attribute",
-                    "//     var navView = button.config.navView;",
+                    "    // Get custom navView attribute",
+                    "    var navView = button.config.navView;",
                     "",
-                    "//     // Active button, disable",
-                    "//     if (currentView == navView) {",
-                    "//         button.disable();",
-                    "//     }",
+                    "    // Active button, disable",
+                    "    if (currentView == navView) {",
+                    "        button.disable();",
+                    "        button.setStyle('background-color:#f7f7f7');",
+                    "    }",
                     "",
-                    "//     // Enable all others",
-                    "//     else {",
-                    "//         button.enable();",
-                    "//     }",
+                    "    // Enable all others",
+                    "    else {",
+                    "        button.enable();",
+                    "         button.setStyle('background-color:white');",
+                    "    }",
                     "",
-                    "//});",
+                    "});",
                     "",
                     ""
                 ],
@@ -101,22 +103,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "autoCreate": true,
-                "ref": "settingsForm",
-                "selector": "formpanel#form",
-                "xtype": "settingsform"
-            },
-            "name": "settingsForm",
-            "designerId": "91a4d99f-87bc-4e4c-b400-1765fb7e3f00"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "ref": "devicesPanel",
                 "selector": "panel#devicesPanel"
             },
@@ -131,44 +117,30 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "button#mybutton1",
+                "designer|controlQuery": "navmenu button",
                 "designer|targetType": "Ext.Button",
-                "fn": "onNavDeviceBtnTap",
+                "fn": "navigate",
                 "implHandler": [
-                    "var mainView = this.getMainView();",
-                    "var devicesPanel = this.getDevicesPanel();",
-                    "mainView.setActiveItem(devicesPanel);",
-                    "Ext.Viewport.removeMenu('left');",
-                    "this.currentView = devicesPanel;"
+                    "var text = button.getText(),\t\t\t\t\t\t// Button text",
+                    "\tnavView = button.getInitialConfig().navView,\t// Get custom attribute 'navView'",
+                    "\tmainView = this.getMainView(),\t\t\t\t\t// Main navigation view",
+                    "\tnavMenu = this.getNavMenu();\t\t\t\t\t// Navigation menu",
+                    "",
+                    "// Add view to main view",
+                    "mainView.push({",
+                    "    xtype: navView,",
+                    "    title: text",
+                    "});",
+                    "",
+                    "// Remember current view alias",
+                    "this.currentView = navView;",
+                    "",
+                    "Ext.Viewport.removeMenu('left');"
                 ],
                 "name": "tap"
             },
-            "name": "onNavDeviceBtnTap",
-            "designerId": "3f64a808-6821-4fa6-8776-eae27ebb8c90"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "button#mybutton6",
-                "designer|targetType": "Ext.Button",
-                "fn": "onSettingsButtonTap",
-                "implHandler": [
-                    "var mainView = this.getMainView();",
-                    "var settingsForm = this.getSettingsForm();",
-                    "settingsForm.title = 'Settings';",
-                    "mainView.setActiveItem(settingsForm);",
-                    "Ext.Viewport.removeMenu('left');",
-                    "this.currentView = settingsForm;"
-                ],
-                "name": "tap"
-            },
-            "name": "onSettingsButtonTap",
-            "designerId": "09e6c9fc-2790-4def-96d2-abbe6ed4ebe3"
+            "name": "navigate",
+            "designerId": "6386a869-da81-4839-88b2-8a8d852b82c0"
         }
     ]
 }

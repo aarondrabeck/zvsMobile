@@ -27,6 +27,7 @@ Ext.define('zvsMobile.view.MainView', {
 
     config: {
         itemId: 'mainView',
+        autoDestroy: false,
         items: [
             {
                 xtype: 'devicespanel',
@@ -46,7 +47,7 @@ Ext.define('zvsMobile.view.MainView', {
                 {
                     xtype: 'button',
                     itemId: 'menuButton',
-                    iconCls: 'more',
+                    iconCls: 'list',
                     text: ''
                 }
             ]
