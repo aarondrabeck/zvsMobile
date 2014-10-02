@@ -1,0 +1,273 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoDestroy": false,
+        "baseCls": "x-panel tileParent",
+        "designer|userAlias": "homepanel",
+        "designer|userClassName": "HomePanel",
+        "itemId": "homePanel",
+        "scrollable": "vertical"
+    },
+    "name": "MyPanel1",
+    "designerId": "4845c96b-bcf7-4419-b852-0471958945f9",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": null,
+                "cls": [
+                    "tile"
+                ],
+                "height": null
+            },
+            "name": "MyContainer",
+            "designerId": "e6f5a10f-aec5-4c55-b5d6-a8a5a948393b",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "tileInner"
+                    },
+                    "name": "MyContainer5",
+                    "designerId": "b5bdf454-5fe6-4a34-8db9-d6b19715d51d",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "x-button mainButtonCls",
+                                "centered": false,
+                                "height": null,
+                                "iconAlign": "top",
+                                "iconCls": "mainIconCls light",
+                                "labelCls": "mainLabelCls",
+                                "margin": null,
+                                "navView": "devicespanel",
+                                "style": "background-color:#2CAFE7",
+                                "text": "Devices",
+                                "width": null
+                            },
+                            "name": "MyButton",
+                            "designerId": "37597c2a-7169-4cf6-b12e-75b96dc4aec0",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "navView",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "tile"
+                ],
+                "height": null
+            },
+            "name": "MyContainer1",
+            "designerId": "31685c67-fc77-4909-8591-ee0a863d23f5",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "tileInner"
+                    },
+                    "name": "MyContainer6",
+                    "designerId": "20092f60-d05c-4238-ba78-373cd14a05ad",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "x-button mainButtonCls",
+                                "centered": false,
+                                "height": "100%",
+                                "iconAlign": "top",
+                                "iconCls": "scene mainIconCls",
+                                "labelCls": "mainLabelCls",
+                                "margin": null,
+                                "navView": "scenespanel",
+                                "style": "background-color:#9EC974",
+                                "text": "Scenes",
+                                "width": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "8d28ea74-df47-4df6-a137-eda1e8f5eb73",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "navView",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "tile"
+                ],
+                "height": null
+            },
+            "name": "MyContainer2",
+            "designerId": "b6cbba31-339f-4d2b-901f-de102adad765",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "tileInner"
+                    },
+                    "name": "MyContainer7",
+                    "designerId": "0d79e632-c2ae-4f71-b2d0-461383fa7c07",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "x-button mainButtonCls",
+                                "centered": false,
+                                "height": "100%",
+                                "iconAlign": "top",
+                                "iconCls": "group mainIconCls",
+                                "labelCls": "mainLabelCls",
+                                "margin": null,
+                                "navView": "groupspanel",
+                                "style": "background-color:#F5A70E",
+                                "text": "Group",
+                                "width": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "937e4118-d826-49e2-919b-fe23c8c27428",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "navView",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "tile"
+                ],
+                "height": null
+            },
+            "name": "MyContainer3",
+            "designerId": "adf09397-0335-481f-a21a-1965c67ecacf",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "baseCls": "tileInner"
+                    },
+                    "name": "MyContainer8",
+                    "designerId": "cf4d29b2-d06d-4595-a59d-3677e416f538",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "x-button mainButtonCls",
+                                "centered": false,
+                                "height": "100%",
+                                "iconAlign": "top",
+                                "iconCls": "settings mainIconCls",
+                                "labelCls": "mainLabelCls",
+                                "margin": null,
+                                "navView": "settingsform",
+                                "style": "background-color:#EE5445",
+                                "text": "Settings",
+                                "width": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "7ceb4666-1b3e-4e24-9d7e-55cdb5429923",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "navView",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

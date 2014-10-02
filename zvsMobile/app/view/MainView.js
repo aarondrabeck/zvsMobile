@@ -18,7 +18,7 @@ Ext.define('zvsMobile.view.MainView', {
     alias: 'widget.mainview',
 
     requires: [
-        'zvsMobile.view.DevicesPanel',
+        'zvsMobile.view.HomePanel',
         'Ext.Panel',
         'Ext.navigation.Bar',
         'Ext.Button',
@@ -30,8 +30,8 @@ Ext.define('zvsMobile.view.MainView', {
         autoDestroy: false,
         items: [
             {
-                xtype: 'devicespanel',
-                title: 'Devices'
+                xtype: 'homepanel',
+                title: 'zVirtualScenes Mobile'
             }
         ],
         navigationBar: {
@@ -39,6 +39,7 @@ Ext.define('zvsMobile.view.MainView', {
             docked: 'top',
             itemId: 'navBar',
             ui: 'neutral',
+            autoDestroy: false,
             layout: {
                 type: 'hbox',
                 align: 'center'

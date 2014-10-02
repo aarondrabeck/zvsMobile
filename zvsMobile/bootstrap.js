@@ -779,27 +779,29 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.controller.Scenes": [],
   "zvsMobile.controller.Settings": [],
   "zvsMobile.model.Device": [],
+  "zvsMobile.model.DeviceCommand": [],
+  "zvsMobile.model.DeviceCommandOption": [],
   "zvsMobile.model.DeviceType": [],
   "zvsMobile.model.DeviceValue": [],
   "zvsMobile.model.Group": [],
   "zvsMobile.model.Scene": [],
   "zvsMobile.model.Settings": [],
+  "zvsMobile.store.DeviceCommandStore": [],
   "zvsMobile.store.DeviceStore": [],
   "zvsMobile.store.DeviceValuesStore": [],
   "zvsMobile.store.GroupStore": [],
   "zvsMobile.store.SceneStore": [],
   "zvsMobile.store.Settings": [],
+  "zvsMobile.view.DeviceControlPanel": [],
   "zvsMobile.view.DeviceDetailsTabPanel": [],
   "zvsMobile.view.DeviceValuesPanel": [],
   "zvsMobile.view.DevicesPanel": [],
-  "zvsMobile.view.DimmerControlPanel": [],
   "zvsMobile.view.GroupsPanel": [],
+  "zvsMobile.view.HomePanel": [],
   "zvsMobile.view.MainView": [],
   "zvsMobile.view.NavMenu": [],
   "zvsMobile.view.ScenesPanel": [],
-  "zvsMobile.view.SettingsForm": [],
-  "zvsMobile.view.SwitchControlPanel": [],
-  "zvsMobile.view.ThermoControlPanel": []
+  "zvsMobile.view.SettingsForm": []
 });
 
 Ext.ClassManager.addNameAliasMappings({
@@ -1766,6 +1768,8 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.controller.Settings": [],
   "zvsMobile.model.Device": [],
+  "zvsMobile.model.DeviceCommand": [],
+  "zvsMobile.model.DeviceCommandOption": [],
   "zvsMobile.model.DeviceType": [],
   "zvsMobile.model.DeviceValue": [],
   "zvsMobile.model.Group": [],
@@ -1773,12 +1777,16 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.model.Settings": [
     "model.settings"
   ],
+  "zvsMobile.store.DeviceCommandStore": [],
   "zvsMobile.store.DeviceStore": [],
   "zvsMobile.store.DeviceValuesStore": [],
   "zvsMobile.store.GroupStore": [],
   "zvsMobile.store.SceneStore": [],
   "zvsMobile.store.Settings": [
     "store.settings"
+  ],
+  "zvsMobile.view.DeviceControlPanel": [
+    "widget.devicecontrolpanel"
   ],
   "zvsMobile.view.DeviceDetailsTabPanel": [
     "widget.devicedetailstabpanel"
@@ -1789,11 +1797,11 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.view.DevicesPanel": [
     "widget.devicespanel"
   ],
-  "zvsMobile.view.DimmerControlPanel": [
-    "widget.dimmercontrolpanel"
-  ],
   "zvsMobile.view.GroupsPanel": [
     "widget.groupspanel"
+  ],
+  "zvsMobile.view.HomePanel": [
+    "widget.homepanel"
   ],
   "zvsMobile.view.MainView": [
     "widget.mainview"
@@ -1806,12 +1814,6 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.view.SettingsForm": [
     "widget.settingsform"
-  ],
-  "zvsMobile.view.SwitchControlPanel": [
-    "widget.switchcontrolpanel"
-  ],
-  "zvsMobile.view.ThermoControlPanel": [
-    "widget.thermocontrolpanel"
   ]
 });
 

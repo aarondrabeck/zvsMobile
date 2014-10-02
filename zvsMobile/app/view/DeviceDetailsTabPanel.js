@@ -18,6 +18,7 @@ Ext.define('zvsMobile.view.DeviceDetailsTabPanel', {
     alias: 'widget.devicedetailstabpanel',
 
     requires: [
+        'zvsMobile.view.DeviceControlPanel',
         'zvsMobile.view.DeviceValuesPanel',
         'Ext.Panel',
         'Ext.tab.Bar'
@@ -26,6 +27,11 @@ Ext.define('zvsMobile.view.DeviceDetailsTabPanel', {
     config: {
         itemId: 'deviceDetailsTabPanel',
         items: [
+            {
+                xtype: 'devicecontrolpanel',
+                title: 'Control',
+                iconCls: 'action'
+            },
             {
                 xtype: 'devicevaluespanel',
                 title: 'Values',

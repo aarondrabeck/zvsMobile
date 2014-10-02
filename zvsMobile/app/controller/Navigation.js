@@ -32,6 +32,9 @@ Ext.define('zvsMobile.controller.Navigation', {
             },
             "navmenu button": {
                 tap: 'navigate'
+            },
+            "homepanel button": {
+                tap: 'homeNavigate'
             }
         }
     },
@@ -50,7 +53,7 @@ Ext.define('zvsMobile.controller.Navigation', {
         Ext.Viewport.toggleMenu('left');
 
         var menuItems = menu.getItems().items,				// Menu buttons
-        	currentView = this.currentView || "devicespanel";	// Current view alias, default to home
+        	currentView = this.currentView || "homepanel";	// Current view alias, default to home
 
         // Disable active view's button
         menuItems.forEach(function(button) {
@@ -91,6 +94,22 @@ Ext.define('zvsMobile.controller.Navigation', {
         this.currentView = navView;
 
         Ext.Viewport.removeMenu('left');
+    },
+
+    homeNavigate: function(button, e, eOpts) {
+        var text = button.getText(),						// Button text
+        	navView = button.getInitialConfig().navView,	// Get custom attribute 'navView'
+        	mainView = this.getMainView();					// Main navigation view
+
+        // Add view to main view
+        mainView.push({
+            xtype: navView,
+            title: text
+        });
+
+        // Remember current view alias
+        this.currentView = navView;
+
     }
 
 });

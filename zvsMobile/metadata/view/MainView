@@ -26,11 +26,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "Devices"
+                "title": "zVirtualScenes Mobile"
             },
-            "name": "devicespanel1",
-            "designerId": "498cac42-a8ff-45b0-8824-6cd6462aa473",
-            "masterInstanceId": "12fcc33d-36a7-475b-8792-6b6c96745316"
+            "name": "homepanel3",
+            "designerId": "611df710-4d88-48e6-b652-5631659fb354",
+            "masterInstanceId": "4845c96b-bcf7-4419-b852-0471958945f9"
         },
         {
             "type": "Ext.navigation.Bar",
@@ -40,6 +40,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "autoDestroy": false,
                 "centered": false,
                 "container|align": "center",
                 "designer|displayName": null,

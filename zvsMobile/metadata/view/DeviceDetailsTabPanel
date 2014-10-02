@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "activeItem": null,
         "designer|userAlias": "devicedetailstabpanel",
         "designer|userClassName": "DeviceDetailsTabPanel",
         "id": null,
@@ -14,6 +15,21 @@
     "name": "MyTabPanel",
     "designerId": "5ef75ce5-018b-4de5-9eaa-97cf5b8dda42",
     "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "action",
+                "title": "Control"
+            },
+            "name": "devicecontrolpanel",
+            "designerId": "6c3a462e-5338-4957-9666-ad668323a13c",
+            "masterInstanceId": "0599d6d3-6430-4abc-acd2-a6797bbd23d2"
+        },
         {
             "type": "linkedinstance",
             "reference": {

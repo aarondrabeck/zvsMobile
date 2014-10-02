@@ -18,7 +18,9 @@
             "DeviceValue",
             "Settings",
             "Scene",
-            "Group"
+            "Group",
+            "DeviceCommandOption",
+            "DeviceCommand"
         ],
         "name": "zvsMobile",
         "stores": [
@@ -26,7 +28,8 @@
             "DeviceValuesStore",
             "Settings",
             "SceneStore",
-            "GroupStore"
+            "GroupStore",
+            "DeviceCommandStore"
         ],
         "views": [
             "MainView",
@@ -39,7 +42,8 @@
             "ThermoControlPanel",
             "SettingsForm",
             "ScenesPanel",
-            "GroupsPanel"
+            "GroupsPanel",
+            "HomePanel"
         ]
     },
     "name": "Application",

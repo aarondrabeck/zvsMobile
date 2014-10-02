@@ -37,7 +37,7 @@
                     "Ext.Viewport.toggleMenu('left');",
                     "",
                     "var menuItems = menu.getItems().items,\t\t\t\t// Menu buttons",
-                    "\tcurrentView = this.currentView || \"devicespanel\";\t// Current view alias, default to home",
+                    "\tcurrentView = this.currentView || \"homepanel\";\t// Current view alias, default to home",
                     "",
                     "// Disable active view's button",
                     "menuItems.forEach(function(button) {",
@@ -141,6 +141,51 @@
             },
             "name": "navigate",
             "designerId": "6386a869-da81-4839-88b2-8a8d852b82c0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "homepanel button",
+                "designer|targetType": "Ext.Button",
+                "fn": "homeNavigate",
+                "implHandler": [
+                    "var text = button.getText(),\t\t\t\t\t\t// Button text",
+                    "\tnavView = button.getInitialConfig().navView,\t// Get custom attribute 'navView'",
+                    "\tmainView = this.getMainView();\t\t\t\t\t// Main navigation view",
+                    "",
+                    "// Add view to main view",
+                    "mainView.push({",
+                    "    xtype: navView,",
+                    "    title: text",
+                    "});",
+                    "",
+                    "// Remember current view alias",
+                    "this.currentView = navView;",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "homeNavigate",
+            "designerId": "0e41667b-e1df-4e3a-9398-3b26ccbbc243"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navigationview#mainView",
+                "designer|targetType": "Ext.navigation.View"
+            },
+            "name": "ControllerAction",
+            "designerId": "10750062-518e-474e-8814-c2b7136bc04c"
         }
     ]
 }

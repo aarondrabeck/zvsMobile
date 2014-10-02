@@ -1,0 +1,121 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "devicecontrolpanel",
+        "designer|userClassName": "DeviceControlPanel",
+        "id": null,
+        "itemId": "deviceControlPanel",
+        "requires": [
+            "Ext.field.Toggle",
+            "Ext.field.Select"
+        ],
+        "scrollable": "vertical"
+    },
+    "name": "SwitchControlPanel2",
+    "designerId": "0599d6d3-6430-4abc-acd2-a6797bbd23d2",
+    "cn": [
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "id": null,
+                "itemId": "locationTextField",
+                "label": "Room",
+                "margin": "10 5 0 5 ",
+                "value": null
+            },
+            "name": "MyTextField",
+            "designerId": "b642fe63-2f69-4ccf-bd23-f0facf416543"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disabled": true,
+                "id": null,
+                "itemId": "typeTextField",
+                "label": "Type",
+                "margin": "10 5 0 5 ",
+                "value": null
+            },
+            "name": "MyTextField1",
+            "designerId": "5dc98ba8-992d-4c88-a4e7-fa8574bddd1f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "message"
+                ],
+                "fn": "setError",
+                "implHandler": [
+                    "var feedbackLabel= this.down('#feedbackLabel');",
+                    "feedbackLabel.setHtml(message);",
+                    "feedbackLabel.setStyle('color:red');",
+                    "setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);"
+                ]
+            },
+            "name": "setError",
+            "designerId": "2d196b5f-2956-441b-9228-11e3dd823cbf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "message"
+                ],
+                "fn": "setSuccess",
+                "implHandler": [
+                    "var feedbackLabel= this.down('#feedbackLabel');",
+                    "feedbackLabel.setHtml(message);",
+                    "feedbackLabel.setStyle('color:green');",
+                    "setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);"
+                ]
+            },
+            "name": "setSuccess",
+            "designerId": "8f407fa2-14ee-44f0-918a-900ac5124008"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom",
+                "height": null,
+                "html": null,
+                "itemId": "feedbackLabel",
+                "padding": "10px",
+                "scrollable": "vertical"
+            },
+            "name": "MyToolbar",
+            "designerId": "e7cd7a8d-966b-48e9-89b9-134af24724fd"
+        }
+    ]
+}

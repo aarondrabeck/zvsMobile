@@ -25,14 +25,17 @@ Ext.application({
         'DeviceValue',
         'Settings',
         'Scene',
-        'Group'
+        'Group',
+        'DeviceCommandOption',
+        'DeviceCommand'
     ],
     stores: [
         'DeviceStore',
         'DeviceValuesStore',
         'Settings',
         'SceneStore',
-        'GroupStore'
+        'GroupStore',
+        'DeviceCommandStore'
     ],
     views: [
         'MainView',
@@ -40,12 +43,13 @@ Ext.application({
         'NavMenu',
         'DeviceValuesPanel',
         'DeviceDetailsTabPanel',
-        'SwitchControlPanel',
-        'DimmerControlPanel',
-        'ThermoControlPanel',
+        null,
+        null,
+        'DeviceControlPanel',
         'SettingsForm',
         'ScenesPanel',
-        'GroupsPanel'
+        'GroupsPanel',
+        'HomePanel'
     ],
     controllers: [
         'Navigation',

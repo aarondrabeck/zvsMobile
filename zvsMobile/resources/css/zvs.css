@@ -30,6 +30,26 @@
 	content: "\e004";
 }
 
+.mainIconCls {
+    font-size: 25vw !important;
+    color: white !important;
+}
+
+.mainLabelCls {
+    font-size: 4vw !important;
+    color: white !important;
+    
+}
+
+
+
+.mainButtonCls {
+
+    -webkit-border-radius: 0px !important;
+    border-radius: 0px  !important;
+    height: 100% !important;
+}
+
 .dataview-horizontal .x-dataview-item, .dataview-inline .x-dataview-item {
     -webkit-box-shadow: 0 5px 10px -6px black;
     -moz-box-shadow: 0 5px 10px -6px black;
@@ -40,11 +60,60 @@
     height: 140px;  
 }
 
-.deviceItem
-{
-    background-color:#2CAFE7
+ .tileParent{
+    position:relative;
+    
 }
 
+.tileInner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding:10px;
+}
+
+.tile {
+    display: block;
+    float: left;
+    width: 50%;
+    min-height: 100px;
+    margin-bottom: 1px;
+    padding: 10px;
+    color: white;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 0;
+    padding-bottom: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;   
+    
+} 
+
+
+
+@media (max-width: 100px) {
+    .tile {
+        width: 50%
+    }
+}
+
+@media (max-width: 300px) {
+    .tile {
+        width: 50%
+    }
+}
+
+
+.deviceItem
+{
+    background-color:#2CAFE7;
+    position: relative;  
+
+}
 .sceneItem
 {
     background-color:#9EC974
