@@ -19,7 +19,10 @@ Ext.define('zvsMobile.view.GroupsPanel', {
 
     requires: [
         'Ext.dataview.DataView',
-        'Ext.XTemplate'
+        'Ext.XTemplate',
+        'Ext.Toolbar',
+        'Ext.Spacer',
+        'Ext.Button'
     ],
 
     config: {
@@ -36,13 +39,24 @@ Ext.define('zvsMobile.view.GroupsPanel', {
                 itemTpl: [
                     '<div class="group-item">',
                     '	<h4 class="group-name-truncate">{Name}</h4>  ',
-                    '    <i class="GROUP"></i> ',
-                    '    <div class="group-level">',
-                    '			Running',
-                    '		</div>	    ',
+                    '    <i class="GROUP"></i>   	    ',
                     '</div>'
                 ],
                 store: 'GroupStore'
+            },
+            {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                items: [
+                    {
+                        xtype: 'spacer'
+                    },
+                    {
+                        xtype: 'button',
+                        itemId: 'refreshGroupsBtn',
+                        iconCls: 'refresh'
+                    }
+                ]
             }
         ]
     }

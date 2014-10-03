@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "DeviceCommandOption",
+        "designer|userClassName": "CommandOption",
         "idProperty": "Id"
     },
     "name": "MyModel",
@@ -63,12 +63,30 @@
             "codeClass": null,
             "userConfig": {
                 "designer|displayName": "belongsToDeviceCommand",
-                "foreignKey": "CommandId",
+                "foreignKey": null,
                 "model": "DeviceCommand",
                 "primaryKey": "Id"
             },
             "name": "MyBelongsToAssociation1",
             "designerId": "8c372c6a-84a2-4019-852e-dde28ddbe850"
+        },
+        {
+            "type": "Ext.data.association.BelongsTo",
+            "reference": {
+                "name": "belongsTo",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "associationKey": "Options",
+                "designer|displayName": "belongsToDeviceTypeCommand",
+                "foreignKey": null,
+                "getterName": null,
+                "model": "DeviceTypeCommand",
+                "primaryKey": "Id"
+            },
+            "name": "MyBelongsToAssociation2",
+            "designerId": "2bc99bb1-b31f-4a3f-86b3-b215a6534469"
         }
     ]
 }

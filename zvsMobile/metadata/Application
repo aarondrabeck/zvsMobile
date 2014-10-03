@@ -19,8 +19,9 @@
             "Settings",
             "Scene",
             "Group",
-            "DeviceCommandOption",
-            "DeviceCommand"
+            "DeviceCommand",
+            "DeviceTypeCommand",
+            "BuiltinCommand"
         ],
         "name": "zvsMobile",
         "stores": [
@@ -29,7 +30,9 @@
             "Settings",
             "SceneStore",
             "GroupStore",
-            "DeviceCommandStore"
+            "DeviceCommandStore",
+            "DeviceTypeCommandStore",
+            "BuiltinCommandStore"
         ],
         "views": [
             "MainView",
@@ -37,13 +40,13 @@
             "NavMenu",
             "DeviceValuesPanel",
             "DeviceDetailsTabPanel",
-            "SwitchControlPanel",
-            "DimmerControlPanel",
-            "ThermoControlPanel",
             "SettingsForm",
             "ScenesPanel",
             "GroupsPanel",
-            "HomePanel"
+            "HomePanel",
+            "DeviceControlPanel",
+            "SceneControlPanel",
+            "GroupControlPanel"
         ]
     },
     "name": "Application",
@@ -93,6 +96,74 @@
             },
             "name": "getBaseUrl",
             "designerId": "ed16112c-be2e-45ca-ba9f-520949527d91"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "commandId, arg1, arg2, calllback"
+                ],
+                "fn": "executeCommand",
+                "implHandler": [
+                    "var uri = zvsMobile.app.getBaseUrl() + 'odata4/Commands(' + commandId + ')/Actions.Execute';",
+                    "var callback2 = calllback;",
+                    "Ext.Ajax.request({",
+                    "    scope:  this,",
+                    "    url: uri,",
+                    "    method: 'POST',",
+                    "    headers: {",
+                    "        'Content-Type': 'application/json',",
+                    "        'X-zvsToken':zvsMobile.app.getToken()",
+                    "    },",
+                    "    jsonData: {",
+                    "        Argument: arg1.toString(),",
+                    "        Argument2: arg2.toString()",
+                    "    },",
+                    "    success: function (response, opts) {",
+                    "",
+                    "        var result = JSON.parse(response.responseText);",
+                    "        if (result.value) {",
+                    "            callback2(result.value, null);",
+                    "        }",
+                    "        else {",
+                    "            callback2(null, 'Error executing command');",
+                    "        }",
+                    "    },",
+                    "    failure: function (response, opts) {",
+                    "",
+                    "        if(response.status > 399)",
+                    "        {",
+                    "            if(response.status == 400 && response.responseText !== '') ",
+                    "            {",
+                    "",
+                    "                var result = JSON.parse(response.responseText);",
+                    "",
+                    "                if(result.error)",
+                    "                {",
+                    "                    callback2(null, result.error.message);",
+                    "                    return;",
+                    "                }",
+                    "            }",
+                    "",
+                    "            callback2(null, response.statusText);",
+                    "",
+                    "          ",
+                    "        }",
+                    "        else",
+                    "        {",
+                    "            callback2(null, 'Connection error');",
+                    "        }",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "executeCommand",
+            "designerId": "c71acd36-ee96-4da6-ac47-0e7a79bf911e"
         }
     ]
 }

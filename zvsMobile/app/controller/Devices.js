@@ -17,38 +17,109 @@ Ext.define('zvsMobile.controller.Devices', {
     extend: 'Ext.app.Controller',
 
     statics: {
-        setCommand: function(commandId, arg1, arg2, panel) {
-            var uri = zvsMobile.app.getBaseUrl() + 'odata4/DeviceCommands(' + commandId + ')/Actions.Execute';
-            var panel1 = panel;
-            Ext.Ajax.request({
-                scope:  this,
-                url: uri,
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-zvsToken':zvsMobile.app.getToken()
-                },
-                jsonData: {
-                    Argument: arg1.toString(),
-                    Argument2: arg2
-                },
-                success: function (response, opts) {
+        createControl: function(command, defaultValue, commandType, device, component) {
+            if(command.ArgumentType == 'LIST')
+            {
+                var options = [];
+                command.Options.forEach(function(option){
+                    options.push({text: option.Name,  value: option.Name});
+                });
 
-                    var result = JSON.parse(response.responseText);
-                    if (result.value) {
-                        panel1.setSuccess(result.value);
-
-                    }
-                    else {
-                        panel1.setError('Error setting command.');
-                    }
-                },
-                failure: function (response, opts) {
-                    var result = JSON.parse(response.responseText);
-
-                    panel1.setError(result.error.message);
+                if(defaultValue === null)
+                {
+                    defaultValue = '- select -';
+                    options.unshift( {text: '- select -',  value: '- select -'});
                 }
-            });
+
+                var input = component.add({
+                    xtype: 'selectfield',
+                    label: command.Name,
+                    value:defaultValue,
+                    margin: '10 5 0 5 ',
+                    command: command,
+                    commandType: commandType,
+                    device: device,
+                    options: options
+                });
+
+                input.suspendEvents();
+                input.setValue(defaultValue);
+                input.resumeEvents(true);
+
+            }
+            else if(command.ArgumentType == 'NONE')
+            {
+                var input = component.add({
+                    xtype: 'checkboxfield',
+                    label: command.Name,
+
+                    margin: '10 5 0 5 ',
+                    command: command,
+                    commandType: commandType,
+                    device: device
+                });
+            }
+            else if(command.ArgumentType == 'STRING')
+            {
+
+                var input = component.add({
+                    xtype: 'textfield',
+                    label: command.Name,
+                    clearIcon:false,
+                    margin: '10 5 0 5 ',
+                    command: command,
+                    commandType: commandType,
+                    device: device
+                });
+                if(defaultValue !== null)
+                {
+                    input.suspendEvents();
+                    input.setValue(defaultValue);
+                    input.resumeEvents(true);
+                }
+
+            }
+            else if(command.ArgumentType == 'BOOL')
+            {
+
+                var input = component.add({
+                    xtype: 'togglefield',
+                    label: command.Name,
+                    margin: '10 5 0 5 ',
+                    command: command,
+                    commandType: commandType,
+                    device: device
+                });
+                if(defaultValue !== null)
+                {
+                    input.suspendEvents();
+                    input.setValue(defaultValue);
+                    input.resumeEvents(true);
+                }
+
+            }
+            else if(command.ArgumentType == 'BYTE' || command.ArgumentType == 'INTEGER' || command.ArgumentType == 'DECIMAL' || command.ArgumentType == 'SHORT')
+            {
+
+                var input = component.add({
+                    xtype: 'numberfield',
+                    label: command.Name,
+
+                    clearIcon:false,
+                    margin: '10 5 0 5 ',
+                    command: command,
+                    commandType: commandType,
+                    device: device
+                });
+                if(defaultValue !== null)
+                {
+                    input.suspendEvents();
+                    input.setValue(defaultValue);
+                    input.resumeEvents(true);
+                }
+
+            }
+
         }
     },
 
@@ -72,10 +143,23 @@ Ext.define('zvsMobile.controller.Devices', {
                 toggle: 'onSegmentedbuttonToggle'
             },
             "panel#devicesPanel": {
-                initialize: 'onPanelInitialize'
+                initialize: 'onPanelInitialize',
+                show: 'onDevicePanelShow'
             },
             "panel#deviceControlPanel": {
                 show: 'onControlPanelShow'
+            },
+            "devicecontrolpanel selectfield": {
+                change: 'onSelectfieldChange'
+            },
+            "devicecontrolpanel textfield": {
+                change: 'onTextfieldChange'
+            },
+            "devicecontrolpanel togglefield": {
+                change: 'onToggleFieldChange'
+            },
+            "devicecontrolpanel checkboxfield": {
+                change: 'checkboxfieldChange'
             }
         }
     },
@@ -91,7 +175,7 @@ Ext.define('zvsMobile.controller.Devices', {
 
         mainView.push({
             xtype: 'devicedetailstabpanel',
-            title: device.Name,
+            title: device.Name + ' - ' + device.Location,
             data: device
         });
 
@@ -110,30 +194,28 @@ Ext.define('zvsMobile.controller.Devices', {
         var existingFilters = [];
         var segButton = dataview.down('#filterSegmentedButton');
         segButton.getItems().each(function(item)
-                                                                {
-                                                                    existingFilters.push(item.locationFilter);
+                                  {
+                                      existingFilters.push(item.locationFilter);
+                                  });
 
 
-                                                                });
-
-
-            //Create list without duplicates
+        //Create list without duplicates
 
         var allRecords = deviceStore.queryBy(function(){return true;});
-            allRecords.each(function(element) {
-                if(locationNames.indexOf(element.data.Location) === -1)
-                    locationNames.push(element.data.Location);
-            });
+        allRecords.each(function(element) {
+            if(locationNames.indexOf(element.data.Location) === -1)
+                locationNames.push(element.data.Location);
+        });
 
-            locationNames.sort();
+        locationNames.sort();
 
-            var buttons = [];
-            locationNames.forEach(function(value, index, array) {
+        var buttons = [];
+        locationNames.forEach(function(value, index, array) {
 
-                if(existingFilters.indexOf(value) === -1)
-                    buttons.push({ text: value, locationFilter:value });
-            });
-            segButton.add(buttons);
+            if(existingFilters.indexOf(value) === -1)
+                buttons.push({ text: value, locationFilter:value });
+        });
+        segButton.add(buttons);
 
     },
 
@@ -144,12 +226,12 @@ Ext.define('zvsMobile.controller.Devices', {
         var deviceStore = Ext.getStore('DeviceStore');
         var filter = button.locationFilter;
         if(filter)
-                    {
-                        if(filter == 'all')
-                            deviceStore.clearFilter();
-                        else
-                            deviceStore.filter('Location', filter);
-                    }
+        {
+            if(filter == 'all')
+                deviceStore.clearFilter();
+            else
+                deviceStore.filter('Location', filter);
+        }
     },
 
     onPanelInitialize: function(component, eOpts) {
@@ -158,11 +240,28 @@ Ext.define('zvsMobile.controller.Devices', {
     },
 
     onControlPanelShow: function(component, eOpts) {
+        if(component.IsLoaded)
+            return;
+
+        component.IsLoaded = true;
+
         var device = component.getParent().getData();
 
-        component.down('#typeTextField').setValue(device.type.Name);
-        component.down('#locationTextField').setValue(device.Location);
+        //Create Device Type Commands
+        var typeStore = Ext.getStore('DeviceTypeCommandStore');
+        typeStore.filter('DeviceTypeId', device.DeviceTypeId);
+        typeStore.load({
+            callback: function(records, operation, success) {
+                // the operation object contains all of the details of the load operation
 
+                typeStore.getData().each(function(item){
+                    var command = item.raw;
+                    zvsMobile.controller.Devices.createControl(command, null, 'DeviceTypeCommand', device, component);
+                });
+            }
+        });
+
+        //Create Device Commands
         Ext.Ajax.request({
             url: zvsMobile.app.getBaseUrl() + 'odata4/DeviceValues/?$filter=DeviceId eq '+device.Id+' and Genre eq \'User\'&$select=UniqueIdentifier, Value',
             method: 'GET',
@@ -199,150 +298,19 @@ Ext.define('zvsMobile.controller.Devices', {
 
                             store.getData().each(function(item){
 
-                                var defaultValue= '';
+                                var defaultValue= null;
                                 for(i=0; i<values.length; i++) {
                                     if(values[i].UniqueIdentifier == item.data.CustomData2)
                                         defaultValue =values[i].Value;
                                 }
 
-                                if(item.data.ArgumentType == 'LIST')
-                                {
-                                    var options = [];
-                                    item.raw.Options.forEach(function(option){
-                                        options.push({text: option.Name,  value: option.Name});
-                                    });
-
-                                    var input = component.add({
-                                        xtype: 'selectfield',
-                                        label: item.data.Name,
-                                        value:defaultValue,
-                                        margin: '10 5 0 5 ',
-                                        commandId: item.data.Id,
-                                        options: options,
-                                        listeners: {
-                                            change: function(inpt, newValue, oldValue, eOpts ) {
-                                                zvsMobile.controller.Devices.setCommand(inpt.commandId, newValue.toString(), null, component);
-                                            }
-                                        }
-                                    });
-                                    input.suspendEvents();
-                                    input.setValue(defaultValue);
-                                    input.resumeEvents(true);
-
-
-                                }
-                                else if(item.data.ArgumentType == 'NONE')
-                                {
-
-                                    var input = component.add({
-                                        xtype: 'checkboxfield',
-                                        label: item.data.Name,
-
-                                        margin: '10 5 0 5 ',
-                                        commandId: item.data.Id,
-                                        listeners: {
-                                            change: function(inpt,newValue, oldValue, eOpts ) {
-
-                                                zvsMobile.controller.Devices.setCommand(inpt.commandId, '', '', component);
-
-                                                inpt.suspendEvents();
-                                                setTimeout(function(){inpt.uncheck();
-                                                inpt.resumeEvents(true);}, 900);
-
-                                            }
-                                        }
-                                    });
-
-
-
-                                }
-                                else if(item.data.ArgumentType == 'STRING')
-                                {
-
-                                    var input = component.add({
-                                        xtype: 'textfield',
-                                        label: item.data.Name,
-
-                                        clearIcon:false,
-                                        margin: '10 5 0 5 ',
-                                        commandId: item.data.Id,
-                                        listeners: {
-                                            change: function(inpt,newValue, oldValue, eOpts ) {
-                                                zvsMobile.controller.Devices.setCommand(inpt.commandId, newValue.toString(), null, component);
-                                            }
-                                        }
-                                    });
-                                    input.suspendEvents();
-                                    input.setValue(defaultValue);
-                                    input.resumeEvents(true);
-
-                                }
-                                else if(item.data.ArgumentType == 'BOOL')
-                                {
-
-                                    var input = component.add({
-                                        xtype: 'togglefield',
-                                        label: item.data.Name,
-                                        margin: '10 5 0 5 ',
-                                        commandId: item.data.Id,
-                                        listeners: {
-                                            change: function(inpt,newValue, oldValue, eOpts ) {
-                                                zvsMobile.controller.Devices.setCommand(inpt.commandId, newValue> 0 ? 'true':'false', null, component);
-                                            }
-                                        }
-                                    });
-                                    input.suspendEvents();
-                                    input.setValue(defaultValue);
-                                    input.resumeEvents(true);
-
-                                }
-                                else if(item.data.ArgumentType == 'BYTE' || item.data.ArgumentType == 'INTEGER' || item.data.ArgumentType == 'DECIMAL' || item.data.ArgumentType == 'SHORT')
-                                {
-
-                                    var input = component.add({
-                                        xtype: 'numberfield',
-                                        label: item.data.Name,
-
-                                        clearIcon:false,
-                                        margin: '10 5 0 5 ',
-                                        commandId: item.data.Id,
-                                        listeners: {
-                                            change: function(inpt,newValue, oldValue, eOpts ) {
-
-
-                                                var intRegex = /^\d+$/;
-                                                if(newValue === '' ||
-                                                  ((newValue < 0 || newValue >255) && item.data.ArgumentType == 'BYTE')
-                                                   //|| (item.data.ArgumentType == 'INTEGER' && intRegex.test(someNumber))
-                                                  )
-                                                    {
-                                                        Ext.Msg.alert('Aw, Snap!', 'Input not valid.');
-                                                        inpt.suspendEvents();
-                                                            inpt.setValue(oldValue);
-                                                            inpt.resumeEvents(true);
-                                                        return;
-                                                    }
-
-
-
-                                                zvsMobile.controller.Devices.setCommand(inpt.commandId, newValue.toString(), null, component);
-                                            }
-                                        }
-                                    });
-                                    input.suspendEvents();
-                                    input.setValue(defaultValue);
-                                    input.resumeEvents(true);
-
-                                }
-
+                                var command = item.raw;
+                                zvsMobile.controller.Devices.createControl(command, defaultValue, 'DeviceCommand', device, component);
 
                             });
                         },
                         scope: this
                     });
-
-
-
                 }
                 else {
                     component.setError('Unabled to load device commands.');
@@ -354,6 +322,156 @@ Ext.define('zvsMobile.controller.Devices', {
             }
         });
 
+    },
+
+    onSelectfieldChange: function(selectfield, newValue, oldValue, eOpts) {
+        if(newValue === '- select -')
+            return;
+
+        var type = selectfield.commandType;
+        var id = selectfield.command.Id;
+        var device = selectfield.device;
+
+        if(type === 'DeviceCommand' || type === 'DeviceTypeCommand')
+        {
+            selectfield.disable();
+            zvsMobile.app.executeCommand(id, newValue.toString(), device.Id.toString(), function(success, error){
+                selectfield.enable();
+                if(success)
+                {
+                    selectfield.getParent().setSuccess(success);
+
+                    var deviceStore = Ext.getStore('DeviceStore');
+                    deviceStore.needsRefresh = true;
+                }
+                else
+                    selectfield.getParent().setError(error);
+            });
+        }
+
+
+    },
+
+    onTextfieldChange: function(textfield, newValue, oldValue, eOpts) {
+        if(textfield.command)
+        {
+
+            var type = textfield.commandType;
+            var command = textfield.command;
+            var id = textfield.command.Id;
+            var device = textfield.device;
+
+            if(type === 'DeviceCommand' || type === 'DeviceTypeCommand')
+            {
+                if(command.ArgumentType == 'STRING')
+                {
+                    textfield.disable();
+                    zvsMobile.app.executeCommand(id, newValue.toString(), device.Id.toString(), function(success, error){
+                        textfield.enable();
+                        if(success)
+                            {
+                            textfield.getParent().setSuccess(success);
+
+                                var deviceStore = Ext.getStore('DeviceStore');
+                    deviceStore.needsRefresh = true;
+                            }
+                        else
+                            textfield.getParent().setError(error);
+                    });
+                }
+                else if(command.ArgumentType == 'BYTE' || command.ArgumentType == 'INTEGER' || command.ArgumentType == 'DECIMAL' || command.ArgumentType == 'SHORT')
+                {
+                    var intRegex = /^\d+$/;
+                    if(newValue === '' ||
+                       ((newValue < 0 || newValue >255) && command.ArgumentType == 'BYTE')
+                       //|| (item.data.ArgumentType == 'INTEGER' && intRegex.test(someNumber))
+                      )
+                    {
+                        Ext.Msg.alert('Aw, Snap!', 'Input not valid.');
+                        textfield.suspendEvents();
+                        textfield.setValue(oldValue);
+                        textfield.resumeEvents(true);
+                        return;
+                    }
+
+
+                    textfield.disable();
+                    zvsMobile.app.executeCommand(id, newValue.toString(), device.Id.toString(), function(success, error){
+                        textfield.enable();
+                        if(success)
+                            {
+                            textfield.getParent().setSuccess(success);
+
+                                var deviceStore = Ext.getStore('DeviceStore');
+                    deviceStore.needsRefresh = true;
+                            }
+                        else
+                            textfield.getParent().setError(error);
+                    });
+
+                }
+            }
+        }
+    },
+
+    onToggleFieldChange: function(togglefield, newValue, oldValue, eOpts) {
+        var type = togglefield.commandType;
+        var id = togglefield.command.Id;
+        var device = togglefield.device;
+
+        if(type === 'DeviceCommand' || type === 'DeviceTypeCommand')
+        {
+            togglefield.disable();
+            zvsMobile.app.executeCommand(id, newValue> 0 ? 'true':'false', device.Id.toString(), function(success, error){
+                togglefield.enable();
+                if(success){
+                    togglefield.getParent().setSuccess(success);
+                    var deviceStore = Ext.getStore('DeviceStore');
+                    deviceStore.needsRefresh = true;
+                }
+                else
+                    togglefield.getParent().setError(error);
+            });
+        }
+
+
+    },
+
+    checkboxfieldChange: function(checkboxfield, newValue, oldValue, eOpts) {
+        var type = checkboxfield.commandType;
+        var id = checkboxfield.command.Id;
+        var device = checkboxfield.device;
+
+        if(type === 'DeviceCommand' || type === 'DeviceTypeCommand')
+        {
+            //checkboxfield.disable();
+            zvsMobile.app.executeCommand(id, newValue.toString(), device.Id.toString(), function(success, error){
+                //checkboxfield.enable();
+                if(success)
+                {
+                    checkboxfield.getParent().setSuccess(success);
+                    var deviceStore = Ext.getStore('DeviceStore');
+                    deviceStore.needsRefresh = true;
+                }
+                else
+                    checkboxfield.getParent().setError(error);
+            });
+
+
+            checkboxfield.suspendEvents();
+            setTimeout(function(){checkboxfield.uncheck();
+                                  checkboxfield.resumeEvents(true);}, 900);
+
+        }
+    },
+
+    onDevicePanelShow: function(component, eOpts) {
+        var deviceStore = Ext.getStore('DeviceStore');
+        if(deviceStore.needsRefresh)
+        {
+            deviceStore.load();
+            deviceStore.needsRefresh = false;
+        }
     }
 
 });

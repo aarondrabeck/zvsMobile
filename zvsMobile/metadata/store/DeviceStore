@@ -14,7 +14,17 @@
         "storeId": "DeviceStore"
     },
     "name": "MyJsonStore",
+    "configAlternates": {
+        "needsRefresh": "boolean"
+    },
     "designerId": "d19a7c47-5d37-416c-8220-e97fd3d14506",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "needsRefresh",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.data.proxy.Ajax",

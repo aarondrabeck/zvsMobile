@@ -20,42 +20,6 @@
     "designerId": "0599d6d3-6430-4abc-acd2-a6797bbd23d2",
     "cn": [
         {
-            "type": "Ext.field.Text",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "disabled": true,
-                "id": null,
-                "itemId": "locationTextField",
-                "label": "Room",
-                "margin": "10 5 0 5 ",
-                "value": null
-            },
-            "name": "MyTextField",
-            "designerId": "b642fe63-2f69-4ccf-bd23-f0facf416543"
-        },
-        {
-            "type": "Ext.field.Text",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "disabled": true,
-                "id": null,
-                "itemId": "typeTextField",
-                "label": "Type",
-                "margin": "10 5 0 5 ",
-                "value": null
-            },
-            "name": "MyTextField1",
-            "designerId": "5dc98ba8-992d-4c88-a4e7-fa8574bddd1f"
-        },
-        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",

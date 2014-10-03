@@ -58,15 +58,52 @@
                         "implHandler": [
                             "<div class=\"group-item\">",
                             "\t<h4 class=\"group-name-truncate\">{Name}</h4>  ",
-                            "    <i class=\"GROUP\"></i> ",
-                            "    <div class=\"group-level\">",
-                            "\t\t\tRunning",
-                            "\t\t</div>\t    ",
+                            "    <i class=\"GROUP\"></i>   \t    ",
                             "</div>"
                         ]
                     },
                     "name": "itemTpl",
                     "designerId": "dffa14ab-19b0-4eab-8db9-0ff7209ff43d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "name": "MyToolbar2",
+            "designerId": "c008ac84-885c-48e7-a600-390e8a5a53d5",
+            "cn": [
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MySpacer2",
+                    "designerId": "f2fa0d85-17d8-4f01-a5bf-aa95b77c9fa5"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "refresh",
+                        "itemId": "refreshGroupsBtn",
+                        "text": null
+                    },
+                    "name": "MyButton9",
+                    "designerId": "ba4426a2-c3d3-4f1e-9ac2-674c084eaffc"
                 }
             ]
         }

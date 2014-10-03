@@ -61,13 +61,58 @@
                             "\t<h4 class=\"scene-name-truncate\">{Name}</h4>  ",
                             "    <i class=\"SCENE\"></i> ",
                             "    <div class=\"scene-level\">",
-                            "\t\t\tRunning",
+                            "        <tpl if='isRunning == true'>",
+                            " Running",
+                            "<tpl else>",
+                            "   Not Running",
+                            "</tpl>",
+                            "\t\t\t",
                             "\t\t</div>\t    ",
                             "</div>"
                         ]
                     },
                     "name": "itemTpl",
                     "designerId": "2526d7fc-af28-4e8b-ac29-362ab6a23755"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "name": "MyToolbar1",
+            "designerId": "c6e34e71-3758-4d6e-96e6-6e786f75fdd3",
+            "cn": [
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MySpacer1",
+                    "designerId": "c58cf5f1-4016-40f2-afcc-54a8516261c2"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "refresh",
+                        "itemId": "refreshScenes",
+                        "text": null
+                    },
+                    "name": "MyButton7",
+                    "designerId": "74bd8e45-f7d5-4a67-8acc-833b9fd8c573"
                 }
             ]
         }

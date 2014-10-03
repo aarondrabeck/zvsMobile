@@ -18,14 +18,74 @@ Ext.define('zvsMobile.controller.Scenes', {
     alias: 'controller.scenespanel',
 
     config: {
+        refs: {
+            mainView: 'navigationview#mainView'
+        },
+
         control: {
             "panel#scenesPanel": {
                 initialize: 'onPanelInitialize'
+            },
+            "dataview#scenesDataview": {
+                itemtap: 'onDataviewItemTap'
+            },
+            "button#activateSceneBtn": {
+                tap: 'onActivateButtonTap'
+            },
+            "button#refreshScenes": {
+                tap: 'onReloadButtonTap'
             }
         }
     },
 
     onPanelInitialize: function(component, eOpts) {
+        var sceneStore = Ext.getStore('SceneStore');
+        sceneStore.load();
+    },
+
+    onDataviewItemTap: function(dataview, index, target, record, e, eOpts) {
+        var mainView = this.getMainView();
+        var scene = record.raw;
+
+        mainView.push({
+            xtype: 'scenecontrolpanel',
+            title: scene.Name,
+            data: scene
+        });
+    },
+
+    onActivateButtonTap: function(button, e, eOpts) {
+        var scene = button.getParent().getData();
+        var cmdStore = Ext.getStore('BuiltinCommandStore');
+        cmdStore.getProxy().setUrl('odata4/BuiltinCommands/?$expand=Options&$filter=UniqueIdentifier eq \'RUN_SCENE\'');
+        cmdStore.load({
+            scope: this,
+            callback: function(records, operation, success) {
+                // the operation object contains all of the details of the load operation
+
+                var cmd = cmdStore.first();
+                if(cmd)
+                {
+                    button.disable();
+                    button.setHtml('Running...');
+                    zvsMobile.app.executeCommand(cmd.data.Id, scene.Id, '', function(success, error){
+                        button.enable();
+                         button.setHtml('Activate Scene');
+                        if(success)
+                            button.getParent().setSuccess(success);
+                        else
+                            button.getParent().setError(error);
+                    });
+
+                }
+            }
+        });
+
+
+
+    },
+
+    onReloadButtonTap: function(button, e, eOpts) {
         var sceneStore = Ext.getStore('SceneStore');
         sceneStore.load();
     }

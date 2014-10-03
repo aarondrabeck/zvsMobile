@@ -17,16 +17,101 @@ Ext.define('zvsMobile.controller.Group', {
     extend: 'Ext.app.Controller',
 
     config: {
+        refs: {
+            mainView: 'navigationview#mainView'
+        },
+
         control: {
             "dataview#groupsDataview": {
-                initialize: 'onDataviewInitialize'
+                initialize: 'onDataviewInitialize',
+                itemtap: 'onDataviewItemTap'
+            },
+            "button#turnOnBtn": {
+                tap: 'onTurnOnButtonTap'
+            },
+            "button#turnOffBtn": {
+                tap: 'onTurnOffButtonTap'
+            },
+            "button#refreshGroupsBtn": {
+                tap: 'onReloadButtonTap'
             }
         }
     },
 
     onDataviewInitialize: function(component, eOpts) {
-        var sceneStore = Ext.getStore('GroupStore');
-        sceneStore.load();
+        var groupStore = Ext.getStore('GroupStore');
+        groupStore.load();
+    },
+
+    onDataviewItemTap: function(dataview, index, target, record, e, eOpts) {
+        var mainView = this.getMainView();
+                var group = record.raw;
+
+                mainView.push({
+                    xtype: 'groupcontrolpanel',
+                    title: group.Name,
+                    data: group
+                });
+    },
+
+    onTurnOnButtonTap: function(button, e, eOpts) {
+        var group = button.getParent().getData();
+        var cmdStore = Ext.getStore('BuiltinCommandStore');
+        cmdStore.getProxy().setUrl('odata4/BuiltinCommands/?$expand=Options&$filter=UniqueIdentifier eq \'GROUP_ON\'');
+
+        cmdStore.load({
+            scope: this,
+            callback: function(records, operation, success) {
+                // the operation object contains all of the details of the load operation
+
+                var cmd = cmdStore.first();
+                if(cmd)
+                {
+                    button.disable();
+                    zvsMobile.app.executeCommand(cmd.data.Id, group.Id, '', function(success, error){
+                        button.enable();
+                        if(success)
+                            button.getParent().setSuccess(success);
+                        else
+                            button.getParent().setError(error);
+                    });
+                }
+
+            }
+        });
+
+    },
+
+    onTurnOffButtonTap: function(button, e, eOpts) {
+        var group = button.getParent().getData();
+        var cmdStore = Ext.getStore('BuiltinCommandStore');
+        cmdStore.getProxy().setUrl('odata4/BuiltinCommands/?$expand=Options&$filter=UniqueIdentifier eq \'GROUP_OFF\'');
+        cmdStore.load({
+            scope: this,
+            callback: function(records, operation, success) {
+                // the operation object contains all of the details of the load operation
+
+                var cmd = cmdStore.first();
+                if(cmd)
+                {
+                    button.disable();
+                    zvsMobile.app.executeCommand(cmd.data.Id, group.Id, '', function(success, error){
+                        button.enable();
+                        if(success)
+                            button.getParent().setSuccess(success);
+                        else
+                            button.getParent().setError(error);
+                    });
+                }
+
+            }
+        });
+
+    },
+
+    onReloadButtonTap: function(button, e, eOpts) {
+        var groupStore = Ext.getStore('GroupStore');
+        groupStore.load();
     }
 
 });

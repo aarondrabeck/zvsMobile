@@ -26,8 +26,9 @@ Ext.application({
         'Settings',
         'Scene',
         'Group',
-        'DeviceCommandOption',
-        'DeviceCommand'
+        'DeviceCommand',
+        'DeviceTypeCommand',
+        'BuiltinCommand'
     ],
     stores: [
         'DeviceStore',
@@ -35,7 +36,9 @@ Ext.application({
         'Settings',
         'SceneStore',
         'GroupStore',
-        'DeviceCommandStore'
+        'DeviceCommandStore',
+        'DeviceTypeCommandStore',
+        'BuiltinCommandStore'
     ],
     views: [
         'MainView',
@@ -43,13 +46,13 @@ Ext.application({
         'NavMenu',
         'DeviceValuesPanel',
         'DeviceDetailsTabPanel',
-        null,
-        null,
-        'DeviceControlPanel',
         'SettingsForm',
         'ScenesPanel',
         'GroupsPanel',
-        'HomePanel'
+        'HomePanel',
+        'DeviceControlPanel',
+        'SceneControlPanel',
+        'GroupControlPanel'
     ],
     controllers: [
         'Navigation',
@@ -79,6 +82,59 @@ Ext.application({
             return record.data.Url + ':'+ record.data.Port +'/' ;
 
             return 'http://localhost:8080/';
+    },
+
+    executeCommand: function(commandId, arg1, arg2, calllback) {
+        var uri = zvsMobile.app.getBaseUrl() + 'odata4/Commands(' + commandId + ')/Actions.Execute';
+        var callback2 = calllback;
+        Ext.Ajax.request({
+            scope:  this,
+            url: uri,
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-zvsToken':zvsMobile.app.getToken()
+            },
+            jsonData: {
+                Argument: arg1.toString(),
+                Argument2: arg2.toString()
+            },
+            success: function (response, opts) {
+
+                var result = JSON.parse(response.responseText);
+                if (result.value) {
+                    callback2(result.value, null);
+                }
+                else {
+                    callback2(null, 'Error executing command');
+                }
+            },
+            failure: function (response, opts) {
+
+                if(response.status > 399)
+                {
+                    if(response.status == 400 && response.responseText !== '')
+                    {
+
+                        var result = JSON.parse(response.responseText);
+
+                        if(result.error)
+                        {
+                            callback2(null, result.error.message);
+                            return;
+                        }
+                    }
+
+                    callback2(null, response.statusText);
+
+
+                }
+                else
+                {
+                    callback2(null, 'Connection error');
+                }
+            }
+        });
     },
 
     launch: function() {

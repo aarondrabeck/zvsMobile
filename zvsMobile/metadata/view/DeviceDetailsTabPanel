@@ -41,7 +41,7 @@
                 "iconCls": "more",
                 "title": "Values"
             },
-            "name": "devicevaluespanel",
+            "name": "devicevaluespanel1",
             "designerId": "f72355f3-68d8-4a1a-a85f-97889e7dbbc5",
             "masterInstanceId": "6192869c-ad6e-4f4c-a2ae-d6058a34b218"
         },

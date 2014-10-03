@@ -7,14 +7,15 @@
     "codeClass": null,
     "userConfig": {
         "data": null,
-        "designer|userClassName": "GroupStore",
+        "designer|userClassName": "BuiltinCommandStore",
         "groupDir": "DESC",
         "groupField": null,
-        "model": "Group",
-        "storeId": "GroupStore"
+        "model": "BuiltinCommand",
+        "remoteFilter": true,
+        "storeId": "BuiltinCommandStore"
     },
-    "name": "SceneStore1",
-    "designerId": "50d45753-ccb0-4980-bcaa-e31f558b2a38",
+    "name": "DeviceCommandStore1",
+    "designerId": "7526fa0b-3ab0-4485-b55e-5f9345b128f0",
     "cn": [
         {
             "type": "Ext.data.proxy.Ajax",
@@ -39,11 +40,11 @@
                 "noCache": false,
                 "sortParam": "$orderby",
                 "startParam": "$skip",
-                "url": "odata4/Groups?$expand=Devices",
+                "url": "odata4/BuiltinCommands/?$expand=Options",
                 "useDefaultXhrHeader": false
             },
             "name": "MyAjaxProxy",
-            "designerId": "38b8aa56-3240-48b5-a1e4-012874174a5a",
+            "designerId": "fdbccb04-3eaa-4b31-915a-8f90daffc4e6",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -57,22 +58,9 @@
                         "rootProperty": "value"
                     },
                     "name": "MyJsonReader",
-                    "designerId": "6ba1d396-7f0e-401c-ba35-0e85415e571c"
+                    "designerId": "aaa42b66-5032-4795-8488-5f8d6e02e94f"
                 }
             ]
-        },
-        {
-            "type": "Ext.util.Sorter",
-            "reference": {
-                "name": "sorters",
-                "type": "object"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "property": "SortOrder"
-            },
-            "name": "MySorter",
-            "designerId": "d8547364-cb71-4963-804e-c5d4929ccd59"
         }
     ]
 }

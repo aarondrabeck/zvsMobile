@@ -19,7 +19,10 @@ Ext.define('zvsMobile.view.ScenesPanel', {
 
     requires: [
         'Ext.dataview.DataView',
-        'Ext.XTemplate'
+        'Ext.XTemplate',
+        'Ext.Toolbar',
+        'Ext.Spacer',
+        'Ext.Button'
     ],
 
     config: {
@@ -38,11 +41,30 @@ Ext.define('zvsMobile.view.ScenesPanel', {
                     '	<h4 class="scene-name-truncate">{Name}</h4>  ',
                     '    <i class="SCENE"></i> ',
                     '    <div class="scene-level">',
-                    '			Running',
+                    '        <tpl if=\'isRunning == true\'>',
+                    ' Running',
+                    '<tpl else>',
+                    '   Not Running',
+                    '</tpl>',
+                    '			',
                     '		</div>	    ',
                     '</div>'
                 ],
                 store: 'SceneStore'
+            },
+            {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                items: [
+                    {
+                        xtype: 'spacer'
+                    },
+                    {
+                        xtype: 'button',
+                        itemId: 'refreshScenes',
+                        iconCls: 'refresh'
+                    }
+                ]
             }
         ]
     }

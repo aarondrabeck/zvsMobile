@@ -31,6 +31,112 @@
             },
             "name": "onPanelInitialize",
             "designerId": "b7606757-fd6d-4039-9876-e0614632aeb8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#scenesDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewItemTap",
+                "implHandler": [
+                    "var mainView = this.getMainView();",
+                    "var scene = record.raw;",
+                    "",
+                    "mainView.push({",
+                    "    xtype: 'scenecontrolpanel',",
+                    "    title: scene.Name,",
+                    "    data: scene",
+                    "});"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onDataviewItemTap",
+            "designerId": "d7d1b2dd-d075-4fd8-ae03-6aaffefffa48"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "08640e7d-7e19-497c-9b4a-5314165ab343"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#activateSceneBtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "onActivateButtonTap",
+                "implHandler": [
+                    "var scene = button.getParent().getData();",
+                    "var cmdStore = Ext.getStore('BuiltinCommandStore');",
+                    "cmdStore.getProxy().setUrl('odata4/BuiltinCommands/?$expand=Options&$filter=UniqueIdentifier eq \\'RUN_SCENE\\'');",
+                    "cmdStore.load({",
+                    "    scope: this,",
+                    "    callback: function(records, operation, success) {",
+                    "        // the operation object contains all of the details of the load operation",
+                    "",
+                    "        var cmd = cmdStore.first();",
+                    "        if(cmd)",
+                    "        {",
+                    "            button.disable();",
+                    "            button.setHtml('Running...');",
+                    "            zvsMobile.app.executeCommand(cmd.data.Id, scene.Id, '', function(success, error){",
+                    "                button.enable();",
+                    "                 button.setHtml('Activate Scene');",
+                    "                if(success)",
+                    "                    button.getParent().setSuccess(success);",
+                    "                else",
+                    "                    button.getParent().setError(error);",
+                    "            });",
+                    "           ",
+                    "        }",
+                    "    }",
+                    "});",
+                    "",
+                    "",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onActivateButtonTap",
+            "designerId": "6054579c-e4d1-44dc-947b-d9948116665f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#refreshScenes",
+                "designer|targetType": "Ext.Button",
+                "fn": "onReloadButtonTap",
+                "implHandler": [
+                    "var sceneStore = Ext.getStore('SceneStore');",
+                    "sceneStore.load();"
+                ],
+                "name": "tap"
+            },
+            "name": "onReloadButtonTap",
+            "designerId": "eba6ae7a-0a19-48dc-ad52-03d6f30de6ba"
         }
     ]
 }
