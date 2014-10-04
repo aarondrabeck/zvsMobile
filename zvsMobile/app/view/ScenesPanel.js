@@ -21,6 +21,7 @@ Ext.define('zvsMobile.view.ScenesPanel', {
         'Ext.dataview.DataView',
         'Ext.XTemplate',
         'Ext.Toolbar',
+        'Ext.field.Search',
         'Ext.Spacer',
         'Ext.Button'
     ],
@@ -39,12 +40,12 @@ Ext.define('zvsMobile.view.ScenesPanel', {
                 itemTpl: [
                     '<div class="scene-item">',
                     '	<h4 class="scene-name-truncate">{Name}</h4>  ',
-                    '    <i class="SCENE"></i> ',
-                    '    <div class="scene-level">',
+                    '    <i class="SCENE scene-icon"></i> ',
+                    '    <div class="scene-status">',
                     '        <tpl if=\'isRunning == true\'>',
                     ' Running',
                     '<tpl else>',
-                    '   Not Running',
+                    '   Off',
                     '</tpl>',
                     '			',
                     '		</div>	    ',
@@ -56,6 +57,12 @@ Ext.define('zvsMobile.view.ScenesPanel', {
                 xtype: 'toolbar',
                 docked: 'bottom',
                 items: [
+                    {
+                        xtype: 'searchfield',
+                        itemId: 'sceneSearchfield',
+                        width: '275px',
+                        label: 'Search'
+                    },
                     {
                         xtype: 'spacer'
                     },

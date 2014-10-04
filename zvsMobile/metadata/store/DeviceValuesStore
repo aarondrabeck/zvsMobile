@@ -36,7 +36,7 @@
                 ],
                 "limitParam": "$top",
                 "noCache": false,
-                "sortParam": "$orderby",
+                "sortParam": null,
                 "startParam": "$skip",
                 "url": "/odata4/DeviceValues/",
                 "useDefaultXhrHeader": false

@@ -33,8 +33,8 @@ Ext.define('zvsMobile.controller.Navigation', {
             "navmenu button": {
                 tap: 'navigate'
             },
-            "homepanel button": {
-                tap: 'homeNavigate'
+            "dataview#homeDataview": {
+                itemtap: 'onHomeDataViewItemTap'
             }
         }
     },
@@ -96,20 +96,19 @@ Ext.define('zvsMobile.controller.Navigation', {
         Ext.Viewport.removeMenu('left');
     },
 
-    homeNavigate: function(button, e, eOpts) {
-        var text = button.getText(),						// Button text
-        	navView = button.getInitialConfig().navView,	// Get custom attribute 'navView'
-        	mainView = this.getMainView();					// Main navigation view
+    onHomeDataViewItemTap: function(dataview, index, target, record, e, eOpts) {
+
+        var navView = record.data.navView,	// Get custom attribute 'navView'
+            mainView = this.getMainView();					// Main navigation view
 
         // Add view to main view
         mainView.push({
             xtype: navView,
-            title: text
+            title: record.data.Name
         });
 
         // Remember current view alias
         this.currentView = navView;
-
     }
 
 });

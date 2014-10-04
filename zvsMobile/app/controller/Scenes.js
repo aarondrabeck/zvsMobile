@@ -34,28 +34,42 @@ Ext.define('zvsMobile.controller.Scenes', {
             },
             "button#refreshScenes": {
                 tap: 'onReloadButtonTap'
+            },
+            "formpanel#sceneEdit": {
+                show: 'onSceneEditShow'
+            },
+            "panel#sceneControlPanel": {
+                show: 'onControlPanelShow'
+            },
+            "button#saveSceneButton": {
+                tap: 'onSaveButtonTap'
+            },
+            "searchfield#sceneSearchfield": {
+                keyup: 'onSearchfieldKeyup',
+                clearicontap: 'onSearchfieldClearicontap'
             }
         }
     },
 
     onPanelInitialize: function(component, eOpts) {
         var sceneStore = Ext.getStore('SceneStore');
+        sceneStore.clearFilter();
         sceneStore.load();
     },
 
     onDataviewItemTap: function(dataview, index, target, record, e, eOpts) {
         var mainView = this.getMainView();
-        var scene = record.raw;
+        var sceneRecord = record;
 
         mainView.push({
-            xtype: 'scenecontrolpanel',
-            title: scene.Name,
-            data: scene
+            xtype: 'scenetabpanel',
+            title: sceneRecord.data.Name,
+            record: sceneRecord
         });
     },
 
     onActivateButtonTap: function(button, e, eOpts) {
-        var scene = button.getParent().getData();
+        var sceneRecord = button.getParent().getRecord();
         var cmdStore = Ext.getStore('BuiltinCommandStore');
         cmdStore.getProxy().setUrl('odata4/BuiltinCommands/?$expand=Options&$filter=UniqueIdentifier eq \'RUN_SCENE\'');
         cmdStore.load({
@@ -68,26 +82,87 @@ Ext.define('zvsMobile.controller.Scenes', {
                 {
                     button.disable();
                     button.setHtml('Running...');
-                    zvsMobile.app.executeCommand(cmd.data.Id, scene.Id, '', function(success, error){
+                    zvsMobile.app.executeCommand(cmd.data.Id, sceneRecord.data.Id, '', function(success, error){
                         button.enable();
                          button.setHtml('Activate Scene');
                         if(success)
-                            button.getParent().setSuccess(success);
+                            Ext.Msg.alert('Success',  success);
                         else
-                            button.getParent().setError(error);
+                            Ext.Msg.alert('Error',  error);
                     });
 
                 }
             }
         });
-
-
-
     },
 
     onReloadButtonTap: function(button, e, eOpts) {
         var sceneStore = Ext.getStore('SceneStore');
         sceneStore.load();
+    },
+
+    onSceneEditShow: function(component, eOpts) {
+        var sceneRecord = component.getParent().getRecord();
+        component.setRecord(sceneRecord);
+    },
+
+    onControlPanelShow: function(component, eOpts) {
+        var sceneRecord = component.getParent().getRecord();
+                component.setRecord(sceneRecord);
+    },
+
+    onSaveButtonTap: function(button, e, eOpts) {
+        var editPanel = button.getParent();
+        var sceneRecord = editPanel.getRecord();
+        button.disable();
+
+        Ext.Ajax.request({
+            url: zvsMobile.app.getBaseUrl() + 'odata4/Scenes('+sceneRecord.getData().Id+')/',
+            method: 'PATCH',
+            scope : this,
+            jsonData: {
+                Name: editPanel.getValues().Name
+            },
+            headers: {
+                'Content-Type': 'application/json',
+                'X-zvsToken': zvsMobile.app.getToken()
+            },
+            success: function (response, opts) {
+                Ext.Msg.alert('Done',  'Scene updated');
+
+                var sceneStore = Ext.getStore('SceneStore');
+                var record = sceneStore.getById(sceneRecord.getData().Id);
+                record.set(editPanel.getValues());
+                var mainView = this.getMainView();
+                mainView.getNavigationBar().setTitle(record.data.Name);
+                button.enable();
+            },
+            failure: function (response, opts) {
+                Ext.Msg.alert('Error',  'Scene update failed. ' + response.responseText);
+                button.enable();
+            }
+        });
+    },
+
+    onSearchfieldKeyup: function(textfield, e, eOpts) {
+        queryString = textfield.getValue();
+
+        var store = Ext.getStore('SceneStore');
+        store.clearFilter();
+
+        if(queryString) {
+            var thisRegEx = new RegExp(queryString, "i");
+            store.filterBy(function(record) {
+                if (thisRegEx.test(record.get('Name')))
+                    return true;
+                return false;
+            });
+        }
+    },
+
+    onSearchfieldClearicontap: function(textfield, e, eOpts) {
+            var store = Ext.getStore('SceneStore');
+            store.clearFilter();
     }
 
 });

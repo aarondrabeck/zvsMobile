@@ -53,6 +53,23 @@
             },
             "name": "field24",
             "designerId": "8df7dada-814e-4b46-b506-30148ba21c41"
+        },
+        {
+            "type": "Ext.data.association.HasMany",
+            "reference": {
+                "name": "hasMany",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "associatedName": "Devices",
+                "associationKey": "Devices",
+                "designer|displayName": "hasManyDevice",
+                "model": "Device",
+                "primaryKey": "Id"
+            },
+            "name": "MyHasManyAssociation2",
+            "designerId": "89cd5a26-16d9-47f8-83fc-be75a29a6a39"
         }
     ]
 }

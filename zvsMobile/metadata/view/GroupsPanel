@@ -58,7 +58,7 @@
                         "implHandler": [
                             "<div class=\"group-item\">",
                             "\t<h4 class=\"group-name-truncate\">{Name}</h4>  ",
-                            "    <i class=\"GROUP\"></i>   \t    ",
+                            "    <i class=\"GROUP group-icon\"></i>   \t    ",
                             "</div>"
                         ]
                     },
@@ -80,6 +80,22 @@
             "name": "MyToolbar2",
             "designerId": "c008ac84-885c-48e7-a600-390e8a5a53d5",
             "cn": [
+                {
+                    "type": "Ext.field.Search",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "groupSearchfield",
+                        "label": "Search",
+                        "labelWidth": null,
+                        "width": "275px"
+                    },
+                    "name": "MySearchField1",
+                    "designerId": "d9120935-09d3-4057-b7f4-dc7018f1e43e"
+                },
                 {
                     "type": "Ext.Spacer",
                     "reference": {

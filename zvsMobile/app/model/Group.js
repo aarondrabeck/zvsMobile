@@ -17,7 +17,11 @@ Ext.define('zvsMobile.model.Group', {
     extend: 'Ext.data.Model',
 
     requires: [
-        'Ext.data.Field'
+        'Ext.data.Field',
+        'Ext.data.association.HasMany'
+    ],
+    uses: [
+        'zvsMobile.model.Device'
     ],
 
     config: {
@@ -35,6 +39,12 @@ Ext.define('zvsMobile.model.Group', {
                 name: 'Description',
                 type: 'string'
             }
-        ]
+        ],
+        hasMany: {
+            associatedName: 'Devices',
+            associationKey: 'Devices',
+            primaryKey: 'Id',
+            model: 'zvsMobile.model.Device'
+        }
     }
 });

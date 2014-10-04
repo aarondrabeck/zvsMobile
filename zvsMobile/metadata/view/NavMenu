@@ -169,7 +169,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "iconCls": "settings",
+                "iconCls": "settings3",
                 "itemId": "SettingsBtn",
                 "margin": "20 3 3 3",
                 "navId": null,

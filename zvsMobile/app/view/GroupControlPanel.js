@@ -18,8 +18,8 @@ Ext.define('zvsMobile.view.GroupControlPanel', {
     alias: 'widget.groupcontrolpanel',
 
     requires: [
+        'Ext.Spacer',
         'Ext.Button',
-        'Ext.Toolbar',
         'Ext.XTemplate'
     ],
 
@@ -36,7 +36,7 @@ Ext.define('zvsMobile.view.GroupControlPanel', {
             '            </tr>',
             '        </thead>',
             '        <tbody>',
-            '            <tpl for="Devices">',
+            '            <tpl for="devices">',
             '                <tr>                    ',
             '                    <td>{Name}</td>',
             '                    <td>{Location}</td>',
@@ -49,39 +49,26 @@ Ext.define('zvsMobile.view.GroupControlPanel', {
         ],
         items: [
             {
+                xtype: 'spacer',
+                height: 10
+            },
+            {
                 xtype: 'button',
                 itemId: 'turnOnBtn',
-                margin: '10 10 0 10',
+                margin: '0 10',
                 text: 'Turn On'
+            },
+            {
+                xtype: 'spacer',
+                height: 10
             },
             {
                 xtype: 'button',
                 itemId: 'turnOffBtn',
-                margin: '10 10 0 10',
+                margin: '0 10',
                 text: 'Turn Off'
-            },
-            {
-                xtype: 'toolbar',
-                docked: 'bottom',
-                itemId: 'feedbackLabel',
-                padding: '10px',
-                scrollable: 'vertical'
             }
         ]
-    },
-
-    setError: function(message) {
-        var feedbackLabel= this.down('#feedbackLabel');
-        feedbackLabel.setHtml(message);
-        feedbackLabel.setStyle('color:red');
-        setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);
-    },
-
-    setSuccess: function(message) {
-        var feedbackLabel= this.down('#feedbackLabel');
-        feedbackLabel.setHtml(message);
-        feedbackLabel.setStyle('color:green');
-        setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);
     }
 
 });

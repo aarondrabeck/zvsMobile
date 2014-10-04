@@ -1,35 +1,3 @@
-@font-face {
-	font-family: "Flaticon";
-	src: url("/resources/fonts/zvs/flaticon.eot");
-	src: url("/resources/fonts/zvs/flaticon.eot#iefix") format("embedded-opentype"),
-	url("/resources/fonts/zvs/flaticon.woff") format("woff"),
-	url("/resources/fonts/zvs/flaticon.ttf") format("truetype"),
-	url("/resources/fonts/zvs/flaticon.svg") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
-	font-family: Flaticon;
-    font-size: 20px;
-    font-style: normal;
-    margin-left: 20px;
-}.flaticon-light71:before {
-	content: "\e000";
-}
-.flaticon-movie16:before {
-	content: "\e001";
-}
-.flaticon-switch1:before {
-	content: "\e002";
-}
-.flaticon-thermometer14:before {
-	content: "\e003";
-}
-.flaticon-wedding4:before {
-	content: "\e004";
-}
-
 .mainIconCls {
     font-size: 25vw !important;
     color: white !important;
@@ -38,10 +6,8 @@
 .mainLabelCls {
     font-size: 4vw !important;
     color: white !important;
-    
+
 }
-
-
 
 .mainButtonCls {
 
@@ -51,72 +17,12 @@
 }
 
 .dataview-horizontal .x-dataview-item, .dataview-inline .x-dataview-item {
-    -webkit-box-shadow: 0 5px 10px -6px black;
+    /* -webkit-box-shadow: 0 5px 10px -6px black;
     -moz-box-shadow: 0 5px 10px -6px black;
-    box-shadow: 0 5px 10px -6px black;
-    padding: 5px;
+    box-shadow: 0 5px 10px -6px black;*/
     margin: 5px;
     width: 170px;
     height: 140px;  
-}
-
- .tileParent{
-    position:relative;
-    
-}
-
-.tileInner {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding:10px;
-}
-
-.tile {
-    display: block;
-    float: left;
-    width: 50%;
-    min-height: 100px;
-    margin-bottom: 1px;
-    padding: 10px;
-    color: white;
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 0;
-    padding-bottom: 50%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;   
-    
-} 
-
-
-
-@media (max-width: 100px) {
-    .tile {
-        width: 50%
-    }
-}
-
-@media (max-width: 300px) {
-    .tile {
-        width: 50%
-    }
-}
-
-
-.deviceItem
-{
-    background-color:#2CAFE7;
-    position: relative;  
-
-}
-.sceneItem
-{
-    background-color:#9EC974
 }
 
 .groupItem
@@ -124,14 +30,157 @@
     background-color:#F5A70E
 }
 
+.home-tile
+{
+    height: 100%;
+    position: relative; 
+}
 
-.DIMMER:before {
+.home-icon:before {   
+    margin-left: 0 !important;
+    font-size: 4em !important;
+}
+
+.home-icon
+{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top:20px;
+    line-height: 70px;
+   
+}
+
+.home-name-truncate
+{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.2em;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+}
+
+.scene-name-truncate {
+    position: absolute;
+    top:10px;    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.1em;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 0 5px;
+}
+
+.scene-status {
+    position: absolute;
+    text-align: right;
+    font-size: .7em;
+    color: white;
+    bottom: 5px;
+    width: 100%;
+    right: 5px;
+}
+
+.sceneItem
+{
+    background-color:#9EC974
+}
+
+.scene-item{
+    position: relative;  
+    width: 100%;
+    height: 100%;
+}
+
+.SCENE:before {
+    content: "\e001";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+}
+
+.setting-icon:before {
+    content: "\e004";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+}
+
+.scene-icon
+{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 45px;
+    line-height: 60px;
+}
+
+.group-item {
+    position: relative;  
+    width: 100%;
+    height: 100%;
+}
+
+.group-icon
+{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top:30px;
+    line-height: 60px;
+}
+
+.GROUP:before {
+    content: "\e005";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+}
+
+.group-name-truncate {
+    position: absolute;
+    bottom: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.1em;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 0 5px;
+    font-weight: normal;
+}
+
+
+.group-level {
+    position:absolute;    
+    text-align: center;
+    font-size:.75em;
+    color: white;
+    top: 97px;
+    width: 100%;
+}
+
+.deviceItem
+{
+    background-color:#2CAFE7;    
+
+}
+.DIMMER:before{
     content: "\e000";
     font-family: Flaticon;
     font-size: 60px;
     font-style: normal;
     color: white;
-    margin-left: 60px;
 }
 
 
@@ -141,7 +190,6 @@
     font-size: 60px;
     font-style: normal;
     color: white;
-    margin-left: 52px;
 }
 
 .THERMOSTAT:before {
@@ -150,160 +198,74 @@
     font-size: 60px;
     font-style: normal;
     color: white;
-    margin-left: 50px;
-}
-
-.scene-item {
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 91px 91px;
-    width: 162px;
-    height: 130px;
-}
-
-.SCENE:before {
-    content: "\e001";
-    font-family: Flaticon;
-    font-size: 60px;
-    font-style: normal;
-    color: white;
-    margin-left: 50px;
-}
-
-.scene-name-truncate {
-    width: 162px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size:.9em;
-    color: white;
-    margin-bottom: 15px;
-}
-
-.scene-level {
-    text-align: center;
-    font-size:.75em;
-    color: white;
-    margin-top: 5px;
-}
-
-.group-item {
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 91px 91px;
-    width: 162px;
-    height: 130px;
-}
-
-.GROUP:before {
-    content: "\e004";
-    font-family: Flaticon;
-    font-size: 60px;
-    font-style: normal;
-    color: white;
-    margin-left: 50px;
-}
-
-.group-name-truncate {
-    width: 162px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size:.9em;
-    color: white;
-    margin-bottom: 15px;
-}
-
-.group-level {
-    text-align: center;
-    font-size:.75em;
-    color: white;
-    margin-top: 5px;
 }
 
 .device-name-truncate {
-    width: 162px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size:.9em;
-    color: white;
-    margin-bottom: 10px;
-}
-
-.location-name-truncate {
-    
-    width: 162px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size:.7em;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    top:7px;    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: .9em;
     color: white;
+    width: 100%;
+    text-align: center;
+    padding: 0 5px;
 }
 
 .device-level {
+    position:absolute;    
     text-align: center;
     font-size:.75em;
     color: white;
+    top: 100px;
+    width: 100%;
+}
+
+.device-icon
+{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top:34px;
+    line-height: 60px;
 }
 
 .device-item {
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 91px 91px;
-    width: 162px;
-    height: 130px;
-}
-
-.device-item-level {
-
-    width: 100px;
-    margin: 0 auto;
-}
-
-.device-item-level .meter {
-    margin: .2em 0;
+    position: relative;  
     width: 100%;
-    height: 5px;
-    background-color: #EEE;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(2%, #ffffff), color-stop(100%, #dcdcdc));
-    background-image: linear-gradient(#ffffff,#ffffff 2%,#dcdcdc);
-    border: 1px solid #EEE;
-    -webkit-border-radius: 0.3em;
-    border-radius: 0.3em;
+    height: 100%;
 }
 
-.device-item-level .meter .progress {
-    background-color: #E3E3E3;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #E3E3E3), color-stop(2%, #00d228), color-stop(100%, #05d62a));
-    background-image: linear-gradient(#E3E3E3,#E3E3E3 2%,#E3E3E3);
-    border: 1px solid gray;
-    -webkit-border-radius: 0.3em;
-    border-radius: 0.3em;
-    height: 100%;
+.location-name-truncate {
+
+    position: absolute;
+    bottom:2px;
+    left:0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: .75em;
+    color: white;
+    width: 100%;
+    padding: 0 5px;
 }
 
 /* latin-ext */
 @font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(/resources/fonts/lato.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(/resources/fonts/lato.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'), url(/resources/fonts/lat.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(/resources/fonts/lat.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 /*info table */

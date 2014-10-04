@@ -31,68 +31,6 @@
             "designerId": "eceed485-58b5-449b-b185-4ac507621591"
         },
         {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "message"
-                ],
-                "fn": "setError",
-                "implHandler": [
-                    "var feedbackLabel= this.down('#feedbackLabel');",
-                    "feedbackLabel.setHtml(message);",
-                    "feedbackLabel.setStyle('color:red');",
-                    "setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);"
-                ]
-            },
-            "name": "setError",
-            "designerId": "77ee1411-fe02-48dc-b616-ffcf7f25437a"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "message"
-                ],
-                "fn": "setSuccess",
-                "implHandler": [
-                    "var feedbackLabel= this.down('#feedbackLabel');",
-                    "feedbackLabel.setHtml(message);",
-                    "feedbackLabel.setStyle('color:green');",
-                    "setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);"
-                ]
-            },
-            "name": "setSuccess",
-            "designerId": "39d65134-e60d-4ab3-911f-1e08a2ab03e9"
-        },
-        {
-            "type": "Ext.Toolbar",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "docked": "bottom",
-                "height": null,
-                "html": null,
-                "itemId": "feedbackLabel",
-                "padding": "10px",
-                "scrollable": "vertical"
-            },
-            "name": "MyToolbar",
-            "designerId": "f85e9a97-2e1f-46b2-8714-59f1310edcd2"
-        },
-        {
             "type": "Ext.XTemplate",
             "reference": {
                 "name": "tpl",

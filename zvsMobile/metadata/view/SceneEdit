@@ -1,0 +1,74 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sceneedit",
+        "designer|userClassName": "SceneEdit",
+        "itemId": "sceneEdit"
+    },
+    "name": "DeviceEdit1",
+    "designerId": "7d120917-7616-4131-8286-04b1e27afcfa",
+    "cn": [
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "10px"
+            },
+            "name": "MySpacer6",
+            "designerId": "e4665e22-ad41-494d-9deb-c932afa75320"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyFieldSet1",
+            "designerId": "1b8ab259-8033-4a77-8eb3-70fee06e8eed",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "deviceNameField",
+                        "label": "Name",
+                        "name": "Name",
+                        "required": true
+                    },
+                    "name": "MyTextField",
+                    "designerId": "35a71daa-fafe-452c-8040-dbb3dd00b49c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "saveSceneButton",
+                "margin": 10,
+                "text": "Save",
+                "ui": "action"
+            },
+            "name": "MyButton10",
+            "designerId": "d0beb068-b474-483c-a644-794e3808b261"
+        }
+    ]
+}

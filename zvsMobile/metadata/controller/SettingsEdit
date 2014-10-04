@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "Settings"
+        "designer|userClassName": "SettingsEdit"
     },
     "name": "MyController",
     "designerId": "caee1779-2d65-469d-ba31-9a79bf95275c",
@@ -19,12 +19,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "button#saveButton",
+                "designer|controlQuery": "button#saveSettingsButton",
                 "designer|targetType": "Ext.Button",
                 "fn": "OnSaveBtnTap",
                 "implHandler": [
-                    "//Save Emp",
-                    "var settingForm = this.getSettingsForm();",
+                    "var settingForm = button.getParent();",
                     "",
                     "var settingsStore = Ext.getStore('Settings');",
                     "var record = settingsStore.getById(1);",
@@ -54,62 +53,6 @@
             "designerId": "ed34b076-203b-41ac-bbfc-671fb6285501"
         },
         {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "myurlfield",
-                "selector": "urlfield#myurlfield"
-            },
-            "name": "myurlfield",
-            "designerId": "64de18f1-3ead-4498-ab13-a3d9629e4708"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "mynumberfield",
-                "selector": "numberfield#mynumberfield"
-            },
-            "name": "mynumberfield",
-            "designerId": "bb3ebbc6-d634-4f73-be65-9c70d48a3815"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "tokenTextField",
-                "selector": "textfield#tokenTextField"
-            },
-            "name": "tokenTextField",
-            "designerId": "16561585-8447-428c-bab0-91e531fac9aa"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "settingsForm",
-                "selector": "formpanel#settingsForm"
-            },
-            "name": "settingsForm",
-            "designerId": "4de97438-c012-4194-b508-f6878747ba00"
-        },
-        {
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -119,7 +62,7 @@
             "userConfig": {
                 "designer|controlQuery": "formpanel#settingsForm",
                 "designer|targetType": "Ext.form.Panel",
-                "fn": "onFormpanelInitialize",
+                "fn": "onSettingsFormInitialize",
                 "implHandler": [
                     "var settingsStore = Ext.getStore('Settings');",
                     "var record = settingsStore.getById(1);",
@@ -133,12 +76,11 @@
                     "    settingsStore.add(record);",
                     "}",
                     "",
-                    "//var settingForm = this.getSettingsForm();",
                     "component.setRecord(record);"
                 ],
                 "name": "initialize"
             },
-            "name": "onFormpanelInitialize",
+            "name": "onSettingsFormInitialize",
             "designerId": "f8dfafe8-0a13-48b8-bcb1-e61db8c35ce1"
         }
     ]

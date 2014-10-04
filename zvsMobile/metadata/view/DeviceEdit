@@ -1,0 +1,89 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "deviceedit",
+        "designer|userClassName": "DeviceEdit",
+        "itemId": "deviceEdit"
+    },
+    "designerId": "092d320b-5559-45ba-9c18-26a64d777666",
+    "cn": [
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "10px"
+            },
+            "name": "MySpacer8",
+            "designerId": "312968bd-a078-4cdb-a3b2-31ca987c83ee"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyFieldSet1",
+            "designerId": "ba391d7c-e467-43c1-86e1-457a0ff61d55",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "deviceNameField",
+                        "label": "Name",
+                        "name": "Name",
+                        "required": true
+                    },
+                    "name": "MyTextField",
+                    "designerId": "d3009f62-9448-4567-b6e9-9dc7da4809ae"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "deviceLocationField",
+                        "label": "Location",
+                        "name": "Location",
+                        "required": true
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "f0941ea9-0061-42b6-a585-475edb9edfb6"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "saveDeviceButton",
+                "margin": 10,
+                "text": "Save",
+                "ui": "action"
+            },
+            "name": "MyButton10",
+            "designerId": "85c67e8a-0113-4539-b423-6e013cd7c677"
+        }
+    ]
+}

@@ -21,6 +21,7 @@ Ext.define('zvsMobile.view.GroupsPanel', {
         'Ext.dataview.DataView',
         'Ext.XTemplate',
         'Ext.Toolbar',
+        'Ext.field.Search',
         'Ext.Spacer',
         'Ext.Button'
     ],
@@ -39,7 +40,7 @@ Ext.define('zvsMobile.view.GroupsPanel', {
                 itemTpl: [
                     '<div class="group-item">',
                     '	<h4 class="group-name-truncate">{Name}</h4>  ',
-                    '    <i class="GROUP"></i>   	    ',
+                    '    <i class="GROUP group-icon"></i>   	    ',
                     '</div>'
                 ],
                 store: 'GroupStore'
@@ -48,6 +49,12 @@ Ext.define('zvsMobile.view.GroupsPanel', {
                 xtype: 'toolbar',
                 docked: 'bottom',
                 items: [
+                    {
+                        xtype: 'searchfield',
+                        itemId: 'groupSearchfield',
+                        width: '275px',
+                        label: 'Search'
+                    },
                     {
                         xtype: 'spacer'
                     },

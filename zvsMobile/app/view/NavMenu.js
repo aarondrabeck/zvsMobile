@@ -82,7 +82,7 @@ Ext.define('zvsMobile.view.NavMenu', {
                 navView: 'settingsform',
                 itemId: 'SettingsBtn',
                 margin: '20 3 3 3',
-                iconCls: 'settings',
+                iconCls: 'settings3',
                 text: 'Settings'
             }
         ]

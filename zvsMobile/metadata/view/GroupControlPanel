@@ -16,6 +16,19 @@
     "designerId": "7f81fe33-2747-4892-abf5-a20bda43f765",
     "cn": [
         {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer4",
+            "designerId": "b8e83da1-2a71-43d0-8113-49ad3383ebf8"
+        },
+        {
             "type": "Ext.Button",
             "reference": {
                 "name": "items",
@@ -23,15 +36,30 @@
             },
             "codeClass": null,
             "userConfig": {
+                "docked": null,
                 "itemId": "turnOnBtn",
-                "margin": "10 10 0 10",
+                "margin": "0 10",
                 "padding": null,
-                "text": "Turn On"
+                "text": "Turn On",
+                "width": null
             },
             "name": "MyButton4",
             "designerId": "d09045e9-9c92-471b-925f-15f5fca120ce"
         },
         {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 10
+            },
+            "name": "MySpacer3",
+            "designerId": "0bb67bf6-9e80-4d10-b8b4-ca8c80a00240"
+        },
+        {
             "type": "Ext.Button",
             "reference": {
                 "name": "items",
@@ -39,75 +67,15 @@
             },
             "codeClass": null,
             "userConfig": {
+                "docked": null,
                 "itemId": "turnOffBtn",
-                "margin": "10 10 0 10",
+                "margin": "0 10",
                 "padding": null,
-                "text": "Turn Off"
+                "text": "Turn Off",
+                "width": null
             },
             "name": "MyButton8",
             "designerId": "3f03d9a9-475e-4f80-8b6c-1a82df19751c"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "message"
-                ],
-                "fn": "setError",
-                "implHandler": [
-                    "var feedbackLabel= this.down('#feedbackLabel');",
-                    "feedbackLabel.setHtml(message);",
-                    "feedbackLabel.setStyle('color:red');",
-                    "setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);"
-                ]
-            },
-            "name": "setError",
-            "designerId": "b2af6ed1-dc58-4f60-b128-8327f348dab9"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|params": [
-                    "message"
-                ],
-                "fn": "setSuccess",
-                "implHandler": [
-                    "var feedbackLabel= this.down('#feedbackLabel');",
-                    "feedbackLabel.setHtml(message);",
-                    "feedbackLabel.setStyle('color:green');",
-                    "setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);"
-                ]
-            },
-            "name": "setSuccess",
-            "designerId": "f91549bd-9f96-4857-a8ca-5ab033432da7"
-        },
-        {
-            "type": "Ext.Toolbar",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "docked": "bottom",
-                "height": null,
-                "html": null,
-                "itemId": "feedbackLabel",
-                "padding": "10px",
-                "scrollable": "vertical"
-            },
-            "name": "MyToolbar",
-            "designerId": "5f3136b0-a366-468b-a22e-793a613d9243"
         },
         {
             "type": "Ext.XTemplate",
@@ -128,7 +96,7 @@
                     "            </tr>",
                     "        </thead>",
                     "        <tbody>",
-                    "            <tpl for=\"Devices\">",
+                    "            <tpl for=\"devices\">",
                     "                <tr>                    ",
                     "                    <td>{Name}</td>",
                     "                    <td>{Location}</td>",

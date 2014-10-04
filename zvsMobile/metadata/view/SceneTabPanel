@@ -1,0 +1,61 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "activeItem": null,
+        "designer|userAlias": "scenetabpanel",
+        "designer|userClassName": "SceneTabPanel",
+        "itemId": "scenetabpanel"
+    },
+    "name": "MyTabPanel",
+    "designerId": "5062612a-b257-4f85-900b-3877bf2840fd",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "action",
+                "title": "Control"
+            },
+            "name": "scenecontrolpanel",
+            "designerId": "479aab46-129e-450d-9229-bbadac998838",
+            "masterInstanceId": "e6018204-ba7f-4ae9-aa30-5b4f0428f448"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "compose",
+                "title": "Edit"
+            },
+            "name": "sceneedit1",
+            "designerId": "ff78004e-3899-4b0a-9cb6-a46e3c704d0f",
+            "masterInstanceId": "7d120917-7616-4131-8286-04b1e27afcfa"
+        },
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "name": "MyTabBar1",
+            "designerId": "9015009e-8c0e-467e-8e17-56597fc84229"
+        }
+    ]
+}

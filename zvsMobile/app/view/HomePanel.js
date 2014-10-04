@@ -18,109 +18,54 @@ Ext.define('zvsMobile.view.HomePanel', {
     alias: 'widget.homepanel',
 
     requires: [
-        'Ext.Container',
-        'Ext.Button'
+        'Ext.dataview.DataView',
+        'Ext.XTemplate'
     ],
 
     config: {
         baseCls: 'x-panel tileParent',
         itemId: 'homePanel',
         autoDestroy: false,
+        layout: 'fit',
         scrollable: 'vertical',
         items: [
             {
-                xtype: 'container',
-                cls: 'tile',
-                items: [
+                xtype: 'dataview',
+                cls: 'dataview-inline',
+                data: [
                     {
-                        xtype: 'container',
-                        baseCls: 'tileInner',
-                        items: [
-                            {
-                                xtype: 'button',
-                                navView: 'devicespanel',
-                                baseCls: 'x-button mainButtonCls',
-                                centered: false,
-                                style: 'background-color:#2CAFE7',
-                                iconAlign: 'top',
-                                iconCls: 'mainIconCls light',
-                                labelCls: 'mainLabelCls',
-                                text: 'Devices'
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                xtype: 'container',
-                cls: 'tile',
-                items: [
+                        Name: 'Devices',
+                        Color: '#2CAFE7',
+                        Iconcls: 'DIMMER',
+                        navView: 'devicespanel'
+                    },
                     {
-                        xtype: 'container',
-                        baseCls: 'tileInner',
-                        items: [
-                            {
-                                xtype: 'button',
-                                navView: 'scenespanel',
-                                baseCls: 'x-button mainButtonCls',
-                                centered: false,
-                                height: '100%',
-                                style: 'background-color:#9EC974',
-                                iconAlign: 'top',
-                                iconCls: 'scene mainIconCls',
-                                labelCls: 'mainLabelCls',
-                                text: 'Scenes'
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                xtype: 'container',
-                cls: 'tile',
-                items: [
+                        Name: 'Scenes',
+                        Color: '#9EC974',
+                        Iconcls: 'SCENE',
+                        navView: 'scenespanel'
+                    },
                     {
-                        xtype: 'container',
-                        baseCls: 'tileInner',
-                        items: [
-                            {
-                                xtype: 'button',
-                                navView: 'groupspanel',
-                                baseCls: 'x-button mainButtonCls',
-                                centered: false,
-                                height: '100%',
-                                style: 'background-color:#F5A70E',
-                                iconAlign: 'top',
-                                iconCls: 'group mainIconCls',
-                                labelCls: 'mainLabelCls',
-                                text: 'Group'
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                xtype: 'container',
-                cls: 'tile',
-                items: [
+                        Name: 'Groups',
+                        Color: '#F5A70E',
+                        Iconcls: 'GROUP',
+                        navView: 'groupspanel'
+                    },
                     {
-                        xtype: 'container',
-                        baseCls: 'tileInner',
-                        items: [
-                            {
-                                xtype: 'button',
-                                navView: 'settingsform',
-                                baseCls: 'x-button mainButtonCls',
-                                centered: false,
-                                height: '100%',
-                                style: 'background-color:#EE5445',
-                                iconAlign: 'top',
-                                iconCls: 'settings mainIconCls',
-                                labelCls: 'mainLabelCls',
-                                text: 'Settings'
-                            }
-                        ]
+                        Name: 'Settings',
+                        Color: '#EE5445',
+                        Iconcls: 'setting-icon',
+                        navView: 'settingsform'
                     }
+                ],
+                itemId: 'homeDataview',
+                style: '',
+                inline: true,
+                itemTpl: [
+                    '<div class="home-tile" style="background-color:{Color}">	  ',
+                    '    <i class="{Iconcls} home-icon"></i> ',
+                    '    <h4 class="home-name-truncate">{Name}</h4>',
+                    '</div>'
                 ]
             }
         ]

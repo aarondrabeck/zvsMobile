@@ -34,28 +34,36 @@ Ext.define('zvsMobile.controller.Group', {
             },
             "button#refreshGroupsBtn": {
                 tap: 'onReloadButtonTap'
+            },
+            "panel#groupControlPanel": {
+                show: 'ongroupControlPanelShow'
+            },
+            "searchfield#groupSearchfield": {
+                keyup: 'onSearchfieldKeyup',
+                clearicontap: 'onSearchfieldClearicontap'
             }
         }
     },
 
     onDataviewInitialize: function(component, eOpts) {
         var groupStore = Ext.getStore('GroupStore');
+        groupStore.clearFilter();
         groupStore.load();
     },
 
     onDataviewItemTap: function(dataview, index, target, record, e, eOpts) {
         var mainView = this.getMainView();
-                var group = record.raw;
+                var groupRecord = record;
 
                 mainView.push({
-                    xtype: 'groupcontrolpanel',
-                    title: group.Name,
-                    data: group
+                    xtype: 'groupdetailstabpanel',
+                    title: groupRecord.data.Name,
+                    record: groupRecord
                 });
     },
 
     onTurnOnButtonTap: function(button, e, eOpts) {
-        var group = button.getParent().getData();
+        var group = button.getParent().getRecord().getData();
         var cmdStore = Ext.getStore('BuiltinCommandStore');
         cmdStore.getProxy().setUrl('odata4/BuiltinCommands/?$expand=Options&$filter=UniqueIdentifier eq \'GROUP_ON\'');
 
@@ -71,9 +79,9 @@ Ext.define('zvsMobile.controller.Group', {
                     zvsMobile.app.executeCommand(cmd.data.Id, group.Id, '', function(success, error){
                         button.enable();
                         if(success)
-                            button.getParent().setSuccess(success);
+                            Ext.Msg.alert('Success',  success);
                         else
-                            button.getParent().setError(error);
+                            Ext.Msg.alert('Error',  error);
                     });
                 }
 
@@ -83,7 +91,7 @@ Ext.define('zvsMobile.controller.Group', {
     },
 
     onTurnOffButtonTap: function(button, e, eOpts) {
-        var group = button.getParent().getData();
+        var group = button.getParent().getRecord().getData();
         var cmdStore = Ext.getStore('BuiltinCommandStore');
         cmdStore.getProxy().setUrl('odata4/BuiltinCommands/?$expand=Options&$filter=UniqueIdentifier eq \'GROUP_OFF\'');
         cmdStore.load({
@@ -98,9 +106,9 @@ Ext.define('zvsMobile.controller.Group', {
                     zvsMobile.app.executeCommand(cmd.data.Id, group.Id, '', function(success, error){
                         button.enable();
                         if(success)
-                            button.getParent().setSuccess(success);
+                            Ext.Msg.alert('Success',  success);
                         else
-                            button.getParent().setError(error);
+                            Ext.Msg.alert('Error',  error);
                     });
                 }
 
@@ -112,6 +120,32 @@ Ext.define('zvsMobile.controller.Group', {
     onReloadButtonTap: function(button, e, eOpts) {
         var groupStore = Ext.getStore('GroupStore');
         groupStore.load();
+    },
+
+    ongroupControlPanelShow: function(component, eOpts) {
+        var groupRecord = component.getParent().getRecord();
+        component.setRecord(groupRecord);
+    },
+
+    onSearchfieldKeyup: function(textfield, e, eOpts) {
+        queryString = textfield.getValue();
+
+        var store = Ext.getStore('GroupStore');
+        store.clearFilter();
+
+        if(queryString) {
+            var thisRegEx = new RegExp(queryString, "i");
+            store.filterBy(function(record) {
+                if (thisRegEx.test(record.get('Name')))
+                    return true;
+                return false;
+            });
+        }
+    },
+
+    onSearchfieldClearicontap: function(textfield, e, eOpts) {
+        var store = Ext.getStore('GroupStore');
+        store.clearFilter();
     }
 
 });

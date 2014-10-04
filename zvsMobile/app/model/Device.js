@@ -15,6 +15,7 @@
 
 Ext.define('zvsMobile.model.Device', {
     extend: 'Ext.data.Model',
+    alias: 'model.device',
 
     requires: [
         'Ext.data.Field',

@@ -2,9 +2,9 @@
  @import 'sencha-touch/base';
 
 @include icon-font('Flaticon', inline-font-files(
-  '../fonts/zvs/flaticon.woff', woff,
-  '../fonts/zvs/flaticon.ttf', truetype,
-  '../fonts/zvs/flaticon.svg', svg
+  '../fonts/zvs/flaticon2.woff', woff,
+  '../fonts/zvs/flaticon2.ttf', truetype,
+  '../fonts/zvs/flaticon2.svg', svg
 ));
 
 
@@ -12,7 +12,8 @@
 @include icon("scene", "\e001", "Flaticon");
 @include icon("switch", "\e002", "Flaticon");
 @include icon("thermo", "\e003", "Flaticon");
-@include icon("group", "\e004", "Flaticon");
+@include icon("settings3", "\e004", "Flaticon");
+@include icon("group", "\e005", "Flaticon");
 
 
 @import 'sencha-touch/cupertino';

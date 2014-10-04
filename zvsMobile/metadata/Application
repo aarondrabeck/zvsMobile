@@ -9,9 +9,12 @@
         "controllers": [
             "Navigation",
             "Devices",
-            "Settings",
+            "SettingsEdit",
             "Scenes",
-            "Group"
+            "Group",
+            "DeviceEdit",
+            "DeviceControl",
+            "GroupEdit"
         ],
         "models": [
             "Device",
@@ -46,7 +49,12 @@
             "HomePanel",
             "DeviceControlPanel",
             "SceneControlPanel",
-            "GroupControlPanel"
+            "GroupControlPanel",
+            "DeviceEdit",
+            "SceneEdit",
+            "SceneTabPanel",
+            "GroupDetailTabPanel",
+            "GroupEdit"
         ]
     },
     "name": "Application",

@@ -35,7 +35,6 @@ Ext.define('zvsMobile.store.DeviceValuesStore', {
             filterParam: '$filter',
             limitParam: '$top',
             noCache: false,
-            sortParam: '$orderby',
             startParam: '$skip',
             url: '/odata4/DeviceValues/',
             headers: {

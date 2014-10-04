@@ -18,37 +18,13 @@ Ext.define('zvsMobile.view.DeviceControlPanel', {
     alias: 'widget.devicecontrolpanel',
 
     requires: [
-        'Ext.Toolbar',
         'Ext.field.Toggle',
         'Ext.field.Select'
     ],
 
     config: {
         itemId: 'deviceControlPanel',
-        scrollable: 'vertical',
-        items: [
-            {
-                xtype: 'toolbar',
-                docked: 'bottom',
-                itemId: 'feedbackLabel',
-                padding: '10px',
-                scrollable: 'vertical'
-            }
-        ]
-    },
-
-    setError: function(message) {
-        var feedbackLabel= this.down('#feedbackLabel');
-        feedbackLabel.setHtml(message);
-        feedbackLabel.setStyle('color:red');
-        setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);
-    },
-
-    setSuccess: function(message) {
-        var feedbackLabel= this.down('#feedbackLabel');
-        feedbackLabel.setHtml(message);
-        feedbackLabel.setStyle('color:green');
-        setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);
+        scrollable: 'vertical'
     }
 
 });

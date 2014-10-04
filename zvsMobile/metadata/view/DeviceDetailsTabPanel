@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "activeItem": null,
         "designer|userAlias": "devicedetailstabpanel",
         "designer|userClassName": "DeviceDetailsTabPanel",
         "id": null,
@@ -26,7 +25,7 @@
                 "iconCls": "action",
                 "title": "Control"
             },
-            "name": "devicecontrolpanel",
+            "name": "devicecontrolpanel1",
             "designerId": "6c3a462e-5338-4957-9666-ad668323a13c",
             "masterInstanceId": "0599d6d3-6430-4abc-acd2-a6797bbd23d2"
         },
@@ -41,9 +40,24 @@
                 "iconCls": "more",
                 "title": "Values"
             },
-            "name": "devicevaluespanel1",
+            "name": "devicevaluespanel2",
             "designerId": "f72355f3-68d8-4a1a-a85f-97889e7dbbc5",
             "masterInstanceId": "6192869c-ad6e-4f4c-a2ae-d6058a34b218"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "compose",
+                "title": "Edit"
+            },
+            "name": "deviceedit",
+            "designerId": "33443b2b-f46d-40e2-9834-ac7268b72114",
+            "masterInstanceId": "092d320b-5559-45ba-9c18-26a64d777666"
         },
         {
             "type": "Ext.tab.Bar",

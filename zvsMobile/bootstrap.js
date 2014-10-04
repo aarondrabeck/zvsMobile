@@ -773,11 +773,14 @@ Ext.ClassManager.addNameAlternateMappings({
     "Ext.viewport.WP"
   ],
   "zvsMobile.ODataProxy": [],
+  "zvsMobile.controller.DeviceControl": [],
+  "zvsMobile.controller.DeviceEdit": [],
   "zvsMobile.controller.Devices": [],
   "zvsMobile.controller.Group": [],
+  "zvsMobile.controller.GroupEdit": [],
   "zvsMobile.controller.Navigation": [],
   "zvsMobile.controller.Scenes": [],
-  "zvsMobile.controller.Settings": [],
+  "zvsMobile.controller.SettingsEdit": [],
   "zvsMobile.model.BuiltinCommand": [],
   "zvsMobile.model.CommandOption": [],
   "zvsMobile.model.Device": [],
@@ -798,14 +801,19 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.store.Settings": [],
   "zvsMobile.view.DeviceControlPanel": [],
   "zvsMobile.view.DeviceDetailsTabPanel": [],
+  "zvsMobile.view.DeviceEdit": [],
   "zvsMobile.view.DeviceValuesPanel": [],
   "zvsMobile.view.DevicesPanel": [],
   "zvsMobile.view.GroupControlPanel": [],
+  "zvsMobile.view.GroupDetailTabPanel": [],
+  "zvsMobile.view.GroupEdit": [],
   "zvsMobile.view.GroupsPanel": [],
   "zvsMobile.view.HomePanel": [],
   "zvsMobile.view.MainView": [],
   "zvsMobile.view.NavMenu": [],
   "zvsMobile.view.SceneControlPanel": [],
+  "zvsMobile.view.SceneEdit": [],
+  "zvsMobile.view.SceneTabPanel": [],
   "zvsMobile.view.ScenesPanel": [],
   "zvsMobile.view.SettingsForm": []
 });
@@ -1766,16 +1774,21 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.ODataProxy": [
     "proxy.odata"
   ],
+  "zvsMobile.controller.DeviceControl": [],
+  "zvsMobile.controller.DeviceEdit": [],
   "zvsMobile.controller.Devices": [],
   "zvsMobile.controller.Group": [],
+  "zvsMobile.controller.GroupEdit": [],
   "zvsMobile.controller.Navigation": [],
   "zvsMobile.controller.Scenes": [
     "controller.scenespanel"
   ],
-  "zvsMobile.controller.Settings": [],
+  "zvsMobile.controller.SettingsEdit": [],
   "zvsMobile.model.BuiltinCommand": [],
   "zvsMobile.model.CommandOption": [],
-  "zvsMobile.model.Device": [],
+  "zvsMobile.model.Device": [
+    "model.device"
+  ],
   "zvsMobile.model.DeviceCommand": [],
   "zvsMobile.model.DeviceType": [],
   "zvsMobile.model.DeviceTypeCommand": [],
@@ -1801,6 +1814,9 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.view.DeviceDetailsTabPanel": [
     "widget.devicedetailstabpanel"
   ],
+  "zvsMobile.view.DeviceEdit": [
+    "widget.deviceedit"
+  ],
   "zvsMobile.view.DeviceValuesPanel": [
     "widget.devicevaluespanel"
   ],
@@ -1809,6 +1825,12 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.view.GroupControlPanel": [
     "widget.groupcontrolpanel"
+  ],
+  "zvsMobile.view.GroupDetailTabPanel": [
+    "widget.groupdetailstabpanel"
+  ],
+  "zvsMobile.view.GroupEdit": [
+    "widget.groupedit"
   ],
   "zvsMobile.view.GroupsPanel": [
     "widget.groupspanel"
@@ -1824,6 +1846,12 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.view.SceneControlPanel": [
     "widget.scenecontrolpanel"
+  ],
+  "zvsMobile.view.SceneEdit": [
+    "widget.sceneedit"
+  ],
+  "zvsMobile.view.SceneTabPanel": [
+    "widget.scenetabpanel"
   ],
   "zvsMobile.view.ScenesPanel": [
     "widget.scenespanel"

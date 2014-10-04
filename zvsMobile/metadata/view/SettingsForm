@@ -16,6 +16,19 @@
     "designerId": "8b7af629-5bf5-47f6-8efa-05c8c0809369",
     "cn": [
         {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "10px"
+            },
+            "name": "MySpacer5",
+            "designerId": "f7c48750-b2c1-4299-83d5-6cd2cea46f96"
+        },
+        {
             "type": "Ext.form.FieldSet",
             "reference": {
                 "name": "items",
@@ -39,6 +52,7 @@
                         "height": null,
                         "itemId": "myurlfield",
                         "label": "Url",
+                        "margin": null,
                         "name": "Url",
                         "required": true
                     },
@@ -90,7 +104,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "saveButton",
+                "itemId": "saveSettingsButton",
                 "margin": 10,
                 "text": "Save",
                 "ui": "action"

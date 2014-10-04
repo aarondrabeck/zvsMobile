@@ -59,12 +59,12 @@
                         "implHandler": [
                             "<div class=\"scene-item\">",
                             "\t<h4 class=\"scene-name-truncate\">{Name}</h4>  ",
-                            "    <i class=\"SCENE\"></i> ",
-                            "    <div class=\"scene-level\">",
+                            "    <i class=\"SCENE scene-icon\"></i> ",
+                            "    <div class=\"scene-status\">",
                             "        <tpl if='isRunning == true'>",
                             " Running",
                             "<tpl else>",
-                            "   Not Running",
+                            "   Off",
                             "</tpl>",
                             "\t\t\t",
                             "\t\t</div>\t    ",
@@ -89,6 +89,22 @@
             "name": "MyToolbar1",
             "designerId": "c6e34e71-3758-4d6e-96e6-6e786f75fdd3",
             "cn": [
+                {
+                    "type": "Ext.field.Search",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "sceneSearchfield",
+                        "label": "Search",
+                        "labelWidth": null,
+                        "width": "275px"
+                    },
+                    "name": "MySearchField",
+                    "designerId": "50607a52-224b-41a8-88fa-75951b3e75fb"
+                },
                 {
                     "type": "Ext.Spacer",
                     "reference": {

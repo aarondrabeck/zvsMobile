@@ -19,7 +19,6 @@ Ext.define('zvsMobile.view.SceneControlPanel', {
 
     requires: [
         'Ext.Button',
-        'Ext.Toolbar',
         'Ext.XTemplate'
     ],
 
@@ -58,29 +57,8 @@ Ext.define('zvsMobile.view.SceneControlPanel', {
                 itemId: 'activateSceneBtn',
                 margin: 10,
                 text: 'Activate Scene'
-            },
-            {
-                xtype: 'toolbar',
-                docked: 'bottom',
-                itemId: 'feedbackLabel',
-                padding: '10px',
-                scrollable: 'vertical'
             }
         ]
-    },
-
-    setError: function(message) {
-        var feedbackLabel= this.down('#feedbackLabel');
-        feedbackLabel.setHtml(message);
-        feedbackLabel.setStyle('color:red');
-        setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);
-    },
-
-    setSuccess: function(message) {
-        var feedbackLabel= this.down('#feedbackLabel');
-        feedbackLabel.setHtml(message);
-        feedbackLabel.setStyle('color:green');
-        setTimeout(function(){ feedbackLabel.setHtml('');}, 5000);
     }
 
 });

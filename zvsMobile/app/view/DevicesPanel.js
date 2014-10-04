@@ -40,7 +40,7 @@ Ext.define('zvsMobile.view.DevicesPanel', {
                 itemTpl: [
                     '<div class="device-item">',
                     '	<h4 class="device-name-truncate">{Name}</h4>  ',
-                    '    <i class="{type.UniqueIdentifier}"></i> ',
+                    '    <i class="device-icon {type.UniqueIdentifier}"></i> ',
                     '    <div class="device-level">',
                     '			{CurrentLevelText}',
                     '		</div>	',

@@ -52,14 +52,22 @@ Ext.application({
         'HomePanel',
         'DeviceControlPanel',
         'SceneControlPanel',
-        'GroupControlPanel'
+        'GroupControlPanel',
+        'DeviceEdit',
+        'SceneEdit',
+        'SceneTabPanel',
+        'GroupDetailTabPanel',
+        'GroupEdit'
     ],
     controllers: [
         'Navigation',
         'Devices',
-        'Settings',
+        'SettingsEdit',
         'Scenes',
-        'Group'
+        'Group',
+        'DeviceEdit',
+        'DeviceControl',
+        'GroupEdit'
     ],
     name: 'zvsMobile',
 
