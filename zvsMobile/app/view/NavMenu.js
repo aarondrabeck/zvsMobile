@@ -48,7 +48,7 @@ Ext.define('zvsMobile.view.NavMenu', {
                         height: 50,
                         html: 'zVirtualScenes</br>Mobile',
                         padding: 5,
-                        style: 'font-family:Lato;color:#157EFB'
+                        style: 'font-family:Lato;color:#C2C3C5'
                     }
                 ]
             },
@@ -76,6 +76,13 @@ Ext.define('zvsMobile.view.NavMenu', {
                 margin: 3,
                 iconCls: 'group',
                 text: 'Groups'
+            },
+            {
+                xtype: 'button',
+                navView: 'loglist',
+                margin: 3,
+                iconCls: 'log',
+                text: 'Log'
             },
             {
                 xtype: 'button',

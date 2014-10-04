@@ -789,6 +789,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.model.DeviceTypeCommand": [],
   "zvsMobile.model.DeviceValue": [],
   "zvsMobile.model.Group": [],
+  "zvsMobile.model.LogItem": [],
   "zvsMobile.model.Scene": [],
   "zvsMobile.model.Settings": [],
   "zvsMobile.store.BuiltinCommandStore": [],
@@ -797,6 +798,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.store.DeviceTypeCommandStore": [],
   "zvsMobile.store.DeviceValuesStore": [],
   "zvsMobile.store.GroupStore": [],
+  "zvsMobile.store.LogItemStore": [],
   "zvsMobile.store.SceneStore": [],
   "zvsMobile.store.Settings": [],
   "zvsMobile.view.DeviceControlPanel": [],
@@ -809,6 +811,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.view.GroupEdit": [],
   "zvsMobile.view.GroupsPanel": [],
   "zvsMobile.view.HomePanel": [],
+  "zvsMobile.view.LogList": [],
   "zvsMobile.view.MainView": [],
   "zvsMobile.view.NavMenu": [],
   "zvsMobile.view.SceneControlPanel": [],
@@ -1794,6 +1797,9 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.model.DeviceTypeCommand": [],
   "zvsMobile.model.DeviceValue": [],
   "zvsMobile.model.Group": [],
+  "zvsMobile.model.LogItem": [
+    "model.logitem"
+  ],
   "zvsMobile.model.Scene": [],
   "zvsMobile.model.Settings": [
     "model.settings"
@@ -1804,6 +1810,7 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.store.DeviceTypeCommandStore": [],
   "zvsMobile.store.DeviceValuesStore": [],
   "zvsMobile.store.GroupStore": [],
+  "zvsMobile.store.LogItemStore": [],
   "zvsMobile.store.SceneStore": [],
   "zvsMobile.store.Settings": [
     "store.settings"
@@ -1837,6 +1844,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.view.HomePanel": [
     "widget.homepanel"
+  ],
+  "zvsMobile.view.LogList": [
+    "widget.loglist"
   ],
   "zvsMobile.view.MainView": [
     "widget.mainview"

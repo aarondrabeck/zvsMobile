@@ -177,8 +177,13 @@ Ext.define('zvsMobile.controller.DeviceControl', {
                 'X-zvsToken': zvsMobile.app.getToken()
             },
             success: function (response, opts) {
-                var result = JSON.parse(response.responseText);
-                if (result.value.length > 0) {
+
+                if (response.status === 200) {
+
+                    if(result.value.length > 0)
+                        return;
+
+                    var result = JSON.parse(response.responseText);
                     var values = result.value;
 
                     var commandFilter = '';

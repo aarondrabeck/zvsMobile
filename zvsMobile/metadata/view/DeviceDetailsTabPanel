@@ -25,7 +25,7 @@
                 "iconCls": "action",
                 "title": "Control"
             },
-            "name": "devicecontrolpanel1",
+            "name": "devicecontrolpanel",
             "designerId": "6c3a462e-5338-4957-9666-ad668323a13c",
             "masterInstanceId": "0599d6d3-6430-4abc-acd2-a6797bbd23d2"
         },
@@ -40,7 +40,7 @@
                 "iconCls": "more",
                 "title": "Values"
             },
-            "name": "devicevaluespanel2",
+            "name": "devicevaluespanel",
             "designerId": "f72355f3-68d8-4a1a-a85f-97889e7dbbc5",
             "masterInstanceId": "6192869c-ad6e-4f4c-a2ae-d6058a34b218"
         },

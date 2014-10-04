@@ -56,7 +56,7 @@
                         "height": 50,
                         "html": "zVirtualScenes</br>Mobile",
                         "padding": 5,
-                        "style": "font-family:Lato;color:#157EFB"
+                        "style": "font-family:Lato;color:#C2C3C5"
                     },
                     "name": "MyLabel1",
                     "designerId": "e88663a9-24c4-43b1-b2e5-47b692056bf4"
@@ -148,6 +148,36 @@
             },
             "name": "MyButton3",
             "designerId": "2f7996be-3019-4db7-88bf-0d5eabbb3536",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navId",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navView",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "log",
+                "itemId": null,
+                "margin": 3,
+                "navId": null,
+                "navView": "loglist",
+                "text": "Log"
+            },
+            "name": "MyButton4",
+            "designerId": "35b79e91-d6f5-479d-be0b-46ba7c7d5295",
             "customConfigs": [
                 {
                     "group": "(Custom Properties)",

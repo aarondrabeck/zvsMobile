@@ -99,7 +99,7 @@
 }
 
 .SCENE:before {
-    content: "\e001";
+    content: "\e005";
     font-family: Flaticon;
     font-size: 60px;
     font-style: normal;
@@ -107,7 +107,15 @@
 }
 
 .setting-icon:before {
-    content: "\e004";
+    content: "\e00b";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+}
+
+.log-icon:before {
+    content: "\e001";
     font-family: Flaticon;
     font-size: 60px;
     font-style: normal;
@@ -139,7 +147,7 @@
 }
 
 .GROUP:before {
-    content: "\e005";
+    content: "\e00c";
     font-family: Flaticon;
     font-size: 60px;
     font-style: normal;
@@ -175,7 +183,16 @@
     background-color:#2CAFE7;    
 
 }
-.DIMMER:before{
+
+.UNKNOWN:before{
+    content: "\e006";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+}
+
+.CONTROLLER:before{
     content: "\e000";
     font-family: Flaticon;
     font-size: 60px;
@@ -183,9 +200,16 @@
     color: white;
 }
 
-
 .SWITCH:before {
-    content: "\e002";
+    content: "\e009";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+}
+
+.DIMMER:before{
+    content: "\e004";
     font-family: Flaticon;
     font-size: 60px;
     font-style: normal;
@@ -193,7 +217,23 @@
 }
 
 .THERMOSTAT:before {
+    content: "\e00a";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+}
+
+.DOORLOCK:before{
     content: "\e003";
+    font-family: Flaticon;
+    font-size: 60px;
+    font-style: normal;
+    color: white;
+}
+
+.SENSOR:before{
+    content: "\e007";
     font-family: Flaticon;
     font-size: 60px;
     font-style: normal;
@@ -296,3 +336,10 @@
     color: #575757;
 }
 /*info table end */
+
+.log { position: relative; padding: 0px 0px 0px 0px !important;min-height: 25px !important;}
+.description {font-weight: normal; font-size: .9em;}
+
+.log h3 { font-size: .6em; margin:5px 0 0 5px; color:#999}
+.source {font-weight: normal;}
+.urgency {}

@@ -24,7 +24,8 @@
             "Group",
             "DeviceCommand",
             "DeviceTypeCommand",
-            "BuiltinCommand"
+            "BuiltinCommand",
+            "LogItem"
         ],
         "name": "zvsMobile",
         "stores": [
@@ -35,7 +36,8 @@
             "GroupStore",
             "DeviceCommandStore",
             "DeviceTypeCommandStore",
-            "BuiltinCommandStore"
+            "BuiltinCommandStore",
+            "LogItemStore"
         ],
         "views": [
             "MainView",
@@ -54,7 +56,8 @@
             "SceneEdit",
             "SceneTabPanel",
             "GroupDetailTabPanel",
-            "GroupEdit"
+            "GroupEdit",
+            "LogList"
         ]
     },
     "name": "Application",

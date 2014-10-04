@@ -28,7 +28,8 @@ Ext.application({
         'Group',
         'DeviceCommand',
         'DeviceTypeCommand',
-        'BuiltinCommand'
+        'BuiltinCommand',
+        'LogItem'
     ],
     stores: [
         'DeviceStore',
@@ -38,7 +39,8 @@ Ext.application({
         'GroupStore',
         'DeviceCommandStore',
         'DeviceTypeCommandStore',
-        'BuiltinCommandStore'
+        'BuiltinCommandStore',
+        'LogItemStore'
     ],
     views: [
         'MainView',
@@ -57,7 +59,8 @@ Ext.application({
         'SceneEdit',
         'SceneTabPanel',
         'GroupDetailTabPanel',
-        'GroupEdit'
+        'GroupEdit',
+        'LogList'
     ],
     controllers: [
         'Navigation',
