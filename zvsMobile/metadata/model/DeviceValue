@@ -180,47 +180,6 @@
             },
             "name": "MyBelongsToAssociation",
             "designerId": "94cfc372-f6b6-435d-838c-494c5d0faac8"
-        },
-        {
-            "type": "Ext.data.proxy.Ajax",
-            "reference": {
-                "name": "proxy",
-                "type": "object"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "api": [
-                    "{ read: 'http://localhost:50232/DeviceValues/' }"
-                ],
-                "designer|createAlias": "odata",
-                "filterParam": "$filter",
-                "headers": [
-                    "{",
-                    "'Content-Type': 'application/json',",
-                    "'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
-                    "}"
-                ],
-                "url": "http://localhost:50232/DeviceValues",
-                "useDefaultXhrHeader": false
-            },
-            "name": "MyAjaxProxy1",
-            "designerId": "fe104d79-76ae-4ab9-95cb-71b40205de5a",
-            "cn": [
-                {
-                    "type": "Ext.data.reader.Json",
-                    "reference": {
-                        "name": "reader",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "idProperty": "Id",
-                        "rootProperty": "value"
-                    },
-                    "name": "MyJsonReader1",
-                    "designerId": "ed419940-08ea-4747-b755-79d3db821cde"
-                }
-            ]
         }
     ]
 }

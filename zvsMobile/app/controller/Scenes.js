@@ -117,7 +117,7 @@ Ext.define('zvsMobile.controller.Scenes', {
         button.disable();
 
         Ext.Ajax.request({
-            url: zvsMobile.app.getBaseUrl() + 'odata4/Scenes('+sceneRecord.getData().Id+')/',
+            url: 'odata4/Scenes('+sceneRecord.getData().Id+')/',
             method: 'PATCH',
             scope : this,
             jsonData: {

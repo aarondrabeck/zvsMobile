@@ -155,7 +155,9 @@ Ext.define('zvsMobile.controller.DeviceControl', {
 
         //Create Device Type Commands
         var typeStore = Ext.getStore('DeviceTypeCommandStore');
-        typeStore.filter('DeviceTypeId', device.DeviceTypeId);
+        var uri = 'odata4/DeviceTypeCommands/?$filter=DeviceTypeId eq ' + device.DeviceTypeId;
+        uri = uri + '&$expand=Options';
+        typeStore.getProxy().setUrl(uri);
         typeStore.load({
             callback: function(records, operation, success) {
                 // the operation object contains all of the details of the load operation
@@ -169,7 +171,7 @@ Ext.define('zvsMobile.controller.DeviceControl', {
 
         //Create Device Commands
         Ext.Ajax.request({
-            url: zvsMobile.app.getBaseUrl() + 'odata4/DeviceValues/?$filter=DeviceId eq '+device.Id+' and Genre eq \'User\'&$select=UniqueIdentifier, Value',
+            url: 'odata4/DeviceValues/?$filter=DeviceId eq '+device.Id+' and Genre eq \'User\'&$select=UniqueIdentifier, Value',
             method: 'GET',
             scope : this,
             headers: {
@@ -180,10 +182,11 @@ Ext.define('zvsMobile.controller.DeviceControl', {
 
                 if (response.status === 200) {
 
-                    if(result.value.length > 0)
+                    var result = JSON.parse(response.responseText);
+
+                    if(result.value.length === 0)
                         return;
 
-                    var result = JSON.parse(response.responseText);
                     var values = result.value;
 
                     var commandFilter = '';

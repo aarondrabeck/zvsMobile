@@ -24,16 +24,14 @@ Ext.define('zvsMobile.store.LogItemStore', {
     ],
 
     config: {
-        autoLoad: true,
         model: 'zvsMobile.model.LogItem',
         storeId: 'LogItemStore',
         proxy: {
-            type: 'odata',
+            type: 'ajax',
             enablePagingParams: false,
             filterParam: '$filter',
             limitParam: '$top',
             noCache: false,
-            sortParam: '$orderby',
             startParam: '$skip',
             url: 'odata4/LogItems/',
             headers: {

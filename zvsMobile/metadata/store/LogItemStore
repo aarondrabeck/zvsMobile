@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoLoad": true,
         "data": null,
         "designer|userClassName": "LogItemStore",
         "groupDir": null,
@@ -32,7 +31,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|createAlias": "odata",
+                "designer|createAlias": null,
                 "enablePagingParams": false,
                 "filterParam": "$filter",
                 "headers": [
@@ -45,7 +44,7 @@
                 ],
                 "limitParam": "$top",
                 "noCache": false,
-                "sortParam": "$orderby",
+                "sortParam": null,
                 "startParam": "$skip",
                 "url": "odata4/LogItems/",
                 "useDefaultXhrHeader": false

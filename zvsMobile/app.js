@@ -70,7 +70,8 @@ Ext.application({
         'Group',
         'DeviceEdit',
         'DeviceControl',
-        'GroupEdit'
+        'GroupEdit',
+        'Log'
     ],
     name: 'zvsMobile',
 

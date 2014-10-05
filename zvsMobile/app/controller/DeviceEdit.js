@@ -42,7 +42,7 @@ Ext.define('zvsMobile.controller.DeviceEdit', {
         button.disable();
 
         Ext.Ajax.request({
-            url: zvsMobile.app.getBaseUrl() + 'odata4/Devices('+deviceRecord.getData().Id+')/',
+            url: 'odata4/Devices('+deviceRecord.getData().Id+')/',
             method: 'PATCH',
             scope : this,
             jsonData: {

@@ -12,10 +12,6 @@
          "x-bootstrap": true
       },
       {
-         "path": "resources\\js\\odataProxy.js",
-         "x-compile": true
-      },
-      {
          "path": "app.js",
          "bundle": true,
          "update": "delta"
@@ -57,5 +53,5 @@
    "archivePath": "archive",
    "requires": [],
    "id": "d7e67716-a498-4e7d-b3d9-502de430131b",
-   "classpath": "${app.dir}/app,${app.dir}/resources/js/"
+   "classpath": "${app.dir}/app,${app.dir}/app/override/data/proxy/"
 }

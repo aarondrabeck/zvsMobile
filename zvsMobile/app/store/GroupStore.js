@@ -28,7 +28,7 @@ Ext.define('zvsMobile.store.GroupStore', {
         model: 'zvsMobile.model.Group',
         storeId: 'GroupStore',
         proxy: {
-            type: 'odata',
+            type: 'ajax',
             enablePagingParams: false,
             filterParam: '$filter',
             limitParam: '$top',

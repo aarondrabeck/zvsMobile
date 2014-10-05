@@ -28,7 +28,7 @@ Ext.define('zvsMobile.store.DeviceStore', {
         model: 'zvsMobile.model.Device',
         storeId: 'DeviceStore',
         proxy: {
-            type: 'odata',
+            type: 'ajax',
             enablePagingParams: false,
             filterParam: '$filter',
             limitParam: '$top',

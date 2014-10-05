@@ -28,7 +28,7 @@ Ext.define('zvsMobile.store.SceneStore', {
         model: 'zvsMobile.model.Scene',
         storeId: 'SceneStore',
         proxy: {
-            type: 'odata',
+            type: 'ajax',
             enablePagingParams: false,
             filterParam: '$filter',
             limitParam: '$top',

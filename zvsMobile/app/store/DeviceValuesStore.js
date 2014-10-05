@@ -27,10 +27,9 @@ Ext.define('zvsMobile.store.DeviceValuesStore', {
         groupDir: 'DESC',
         groupField: 'Genre',
         model: 'zvsMobile.model.DeviceValue',
-        remoteFilter: true,
         storeId: 'DeviceValuesStore',
         proxy: {
-            type: 'odata',
+            type: 'ajax',
             enablePagingParams: false,
             filterParam: '$filter',
             limitParam: '$top',

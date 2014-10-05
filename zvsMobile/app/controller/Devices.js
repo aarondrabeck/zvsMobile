@@ -42,8 +42,8 @@ Ext.define('zvsMobile.controller.Devices', {
     onDataviewItemTap: function(dataview, index, target, record, e, eOpts) {
         var mainView = this.getMainView();
         var valuesStore = Ext.getStore('DeviceValuesStore');
-        valuesStore.filter('DeviceId', record.data.Id);
-
+        var uri = 'odata4/DeviceValues/?$filter=DeviceId eq ' + record.data.Id;
+        valuesStore.getProxy().setUrl(uri);
         valuesStore.load();
 
         var device = record.getData();

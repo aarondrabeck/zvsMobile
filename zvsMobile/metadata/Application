@@ -14,7 +14,8 @@
             "Group",
             "DeviceEdit",
             "DeviceControl",
-            "GroupEdit"
+            "GroupEdit",
+            "Log"
         ],
         "models": [
             "Device",

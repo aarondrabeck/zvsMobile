@@ -1,0 +1,14 @@
+{
+    "type": "directresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DirectAPI",
+        "url": "resources\\images\\256zvsIcon.png"
+    },
+    "name": "DirectAPI",
+    "designerId": "4ba98ad0-8b87-4e28-8e11-3b14ff776dc2"
+}

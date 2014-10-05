@@ -28,7 +28,7 @@ Ext.define('zvsMobile.store.BuiltinCommandStore', {
         remoteFilter: true,
         storeId: 'BuiltinCommandStore',
         proxy: {
-            type: 'odata',
+            type: 'ajax',
             enablePagingParams: false,
             filterParam: '$filter',
             limitParam: '$top',

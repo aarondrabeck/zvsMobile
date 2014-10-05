@@ -28,7 +28,7 @@ Ext.define('zvsMobile.store.DeviceTypeCommandStore', {
         remoteFilter: true,
         storeId: 'DeviceTypeCommandStore',
         proxy: {
-            type: 'odata',
+            type: 'ajax',
             enablePagingParams: false,
             filterParam: '$filter',
             limitParam: '$top',

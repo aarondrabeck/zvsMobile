@@ -35,6 +35,9 @@ Ext.define('zvsMobile.controller.Navigation', {
             },
             "dataview#homeDataview": {
                 itemtap: 'onHomeDataViewItemTap'
+            },
+            "navigationview#mainView": {
+                initialize: 'onNavigationviewInitialize'
             }
         }
     },
@@ -109,6 +112,16 @@ Ext.define('zvsMobile.controller.Navigation', {
 
         // Remember current view alias
         this.currentView = navView;
+    },
+
+    onNavigationviewInitialize: function(component, eOpts) {
+        Ext.Ajax.on('beforerequest', (function(conn, options, eOpts) {
+
+            options.url = zvsMobile.app.getBaseUrl() + options.url;
+            options.headers = {
+                'X-zvsToken': zvsMobile.app.getToken(),
+            };
+        }), this);
     }
 
 });

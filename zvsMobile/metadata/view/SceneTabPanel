@@ -40,7 +40,7 @@
                 "iconCls": "compose",
                 "title": "Edit"
             },
-            "name": "sceneedit1",
+            "name": "sceneedit",
             "designerId": "ff78004e-3899-4b0a-9cb6-a46e3c704d0f",
             "masterInstanceId": "7d120917-7616-4131-8286-04b1e27afcfa"
         },

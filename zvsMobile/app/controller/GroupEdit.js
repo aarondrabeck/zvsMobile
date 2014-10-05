@@ -42,7 +42,7 @@ Ext.define('zvsMobile.controller.GroupEdit', {
         button.disable();
 
         Ext.Ajax.request({
-            url: zvsMobile.app.getBaseUrl() + 'odata4/Groups('+groupRecord.getData().Id+')/',
+            url: 'odata4/Groups('+groupRecord.getData().Id+')/',
             method: 'PATCH',
             scope : this,
             jsonData: {

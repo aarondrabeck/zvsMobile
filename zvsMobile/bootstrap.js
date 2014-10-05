@@ -33,8 +33,7 @@ Ext.Loader.addClassPathMappings({
   "Ext.device.sqlite.SQLResultSetRowList": "touch/src/device/sqlite/Sencha.js",
   "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js",
   "Ext.draw.engine.SvgContext.Gradient": "touch/src/draw/engine/SvgContext.js",
-  "zvsMobile": "app",
-  "zvsMobile.ODataProxy": "resources/js/odataProxy.js"
+  "zvsMobile": "app"
 });
 
 Ext.ClassManager.addNameAlternateMappings({
@@ -772,12 +771,13 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
-  "zvsMobile.ODataProxy": [],
+  "zvsMobile.DirectAPI": [],
   "zvsMobile.controller.DeviceControl": [],
   "zvsMobile.controller.DeviceEdit": [],
   "zvsMobile.controller.Devices": [],
   "zvsMobile.controller.Group": [],
   "zvsMobile.controller.GroupEdit": [],
+  "zvsMobile.controller.Log": [],
   "zvsMobile.controller.Navigation": [],
   "zvsMobile.controller.Scenes": [],
   "zvsMobile.controller.SettingsEdit": [],
@@ -1774,14 +1774,13 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
-  "zvsMobile.ODataProxy": [
-    "proxy.odata"
-  ],
+  "zvsMobile.DirectAPI": [],
   "zvsMobile.controller.DeviceControl": [],
   "zvsMobile.controller.DeviceEdit": [],
   "zvsMobile.controller.Devices": [],
   "zvsMobile.controller.Group": [],
   "zvsMobile.controller.GroupEdit": [],
+  "zvsMobile.controller.Log": [],
   "zvsMobile.controller.Navigation": [],
   "zvsMobile.controller.Scenes": [
     "controller.scenespanel"

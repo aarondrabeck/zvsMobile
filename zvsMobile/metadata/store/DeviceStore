@@ -31,7 +31,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|createAlias": "odata",
+                "designer|createAlias": null,
                 "enablePagingParams": false,
                 "filterParam": "$filter",
                 "headers": [
