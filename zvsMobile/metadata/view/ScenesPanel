@@ -57,18 +57,18 @@
                     "userConfig": {
                         "designer|displayName": "itemTpl",
                         "implHandler": [
-                            "<div class=\"scene-item\">",
-                            "\t<h4 class=\"scene-name-truncate\">{Name}</h4>  ",
+                            " <div class=\"scene-item\">",
+                            "    <h4 class=\"scene-name-truncate\">{Name}</h4>  ",
                             "    <i class=\"SCENE scene-icon\"></i> ",
                             "    <div class=\"scene-status\">",
                             "        <tpl if='isRunning == true'>",
-                            " Running",
-                            "<tpl else>",
-                            "   Off",
-                            "</tpl>",
-                            "\t\t\t",
-                            "\t\t</div>\t    ",
-                            "</div>"
+                            "            Running",
+                            "            <tpl else>",
+                            "                Off",
+                            "            </tpl>",
+                            "",
+                            "            </div>\t    ",
+                            "    </div>"
                         ]
                     },
                     "name": "itemTpl",

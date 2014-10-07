@@ -1,0 +1,147 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Trigger"
+    },
+    "name": "MyController",
+    "designerId": "b064b228-eadb-452c-b67a-10aacf698738",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel#triggerPanel",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onPanelInitialize",
+                "implHandler": [
+                    "var store = Ext.getStore('DeviceValueTriggerStore');",
+                    "store.clearFilter();",
+                    "store.load();"
+                ],
+                "name": "initialize"
+            },
+            "name": "onPanelInitialize",
+            "designerId": "42447fde-8e18-4a5e-9b8e-3fc3e25e5ea1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#refreshTriggerBtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "onRefreshButtonTap",
+                "implHandler": [
+                    "var store = Ext.getStore('DeviceValueTriggerStore');",
+                    "store.load();"
+                ],
+                "name": "tap"
+            },
+            "name": "onRefreshButtonTap",
+            "designerId": "8491faa8-c09c-4620-90fe-f6bced9cbc16"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "searchfield#triggerSearchfield",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onSearchfieldKeyup",
+                "implHandler": [
+                    "queryString = textfield.getValue();",
+                    "",
+                    "var store = Ext.getStore('DeviceValueTriggerStore');",
+                    "store.clearFilter();",
+                    "",
+                    "if(queryString) {",
+                    "    var thisRegEx = new RegExp(queryString, \"i\");",
+                    "    store.filterBy(function(record) {",
+                    "        if (thisRegEx.test(record.get('Name')))",
+                    "            return true;",
+                    "        return false;",
+                    "    });",
+                    "}"
+                ],
+                "name": "keyup"
+            },
+            "name": "onSearchfieldKeyup",
+            "designerId": "333140db-1477-4abc-aec9-1c2762689584"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "searchfield#triggerSearchfield",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onSearchfieldClearicontap",
+                "implHandler": [
+                    "var store = Ext.getStore('DeviceValueTriggerStore');",
+                    "store.clearFilter();"
+                ],
+                "name": "clearicontap"
+            },
+            "name": "onSearchfieldClearicontap",
+            "designerId": "a0822bbb-6336-4a67-9fc9-f422043a17ac"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#triggerDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewItemTap",
+                "implHandler": [
+                    "var mainView = this.getMainView();",
+                    "var triggerRecord = record;",
+                    "",
+                    "mainView.push({",
+                    "    xtype: 'triggerdetailspanel',",
+                    "    title: triggerRecord.data.Name,",
+                    "    record: triggerRecord",
+                    "});"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onDataviewItemTap",
+            "designerId": "414bfcd0-c504-4d6c-9d23-c1796b3fac3b"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "e86f7201-dc9a-4896-bdcc-b709c92516b5"
+        }
+    ]
+}

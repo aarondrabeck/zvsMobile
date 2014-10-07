@@ -1,4 +1,19 @@
 {
+   "builds": {
+      "web": {
+         "default": true
+      },
+      "native": {
+         "packager": "cordova",
+         "cordova": {
+            "config": {
+               "id": "com.noncelabs.zvsmobile",
+               "name": "zvsMobile",
+               "platforms": "android"
+            }
+         }
+      }
+   },
    "name": "zvsMobile",
    "indexHtmlPath": "index.html",
    "url": null,

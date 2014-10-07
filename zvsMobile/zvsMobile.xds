@@ -28,8 +28,8 @@
         "lockUrlPrefix": true,
         "installStatus": "Not Installed",
         "lastBuildSelection": {
-            "value": "webBuild",
-            "display": "Build web app"
+            "value": "nativeBuild",
+            "display": "Native Build"
         }
     },
     "xdsVersion": "3.1.0",
@@ -43,8 +43,10 @@
             "6b1d9070-b093-4ef5-9404-8efed4679c79",
             "12fcc33d-36a7-475b-8792-6b6c96745316",
             "4b6e07d4-fd06-4c0e-ab4a-3c6dc373e44d",
+            "9ed2c857-9189-453a-94b0-b175399bf9c2",
             "d0b86522-f0cd-4bad-bb68-c78c3efb016c",
             "5ef75ce5-018b-4de5-9eaa-97cf5b8dda42",
+            "fa510991-a2d9-4cd3-81e5-c8942f5e5777",
             "6192869c-ad6e-4f4c-a2ae-d6058a34b218",
             "0599d6d3-6430-4abc-acd2-a6797bbd23d2",
             "e6018204-ba7f-4ae9-aa30-5b4f0428f448",
@@ -54,6 +56,7 @@
             "092d320b-5559-45ba-9c18-26a64d777666",
             "7d120917-7616-4131-8286-04b1e27afcfa",
             "b2f24797-f7bb-428a-816c-f389fae12da4",
+            "ba4360ff-deac-49fa-bcd2-5636fb123c8d",
             "5062612a-b257-4f85-900b-3877bf2840fd",
             "a5284e4a-9e24-4493-8018-14d2cd48d418",
             "632a52dd-5878-467c-803c-1358af9ca3dc"
@@ -62,7 +65,9 @@
             "d19a7c47-5d37-416c-8220-e97fd3d14506",
             "27a92dd3-1b43-4193-a150-3414fb6ba4fd",
             "ceecabc1-7ecc-442e-a4e5-1541a7a3a637",
+            "67570469-5855-43b5-9448-0efede720795",
             "7526fa0b-3ab0-4485-b55e-5f9345b128f0",
+            "a4ef6d4b-05bf-468b-9c2d-e3bdea077ea0",
             "bbccfc56-351c-463b-a5ba-facbce179e18",
             "f6322341-b060-4399-a1ec-2c2d6ec2cd6a",
             "50d45753-ccb0-4980-bcaa-e31f558b2a38",
@@ -78,7 +83,9 @@
             "b9986f0b-0d77-4b51-b712-9d2b6fb64d43",
             "b98271b0-fa14-47c1-b1b9-9ca1734e7b45",
             "71556e9b-2eb6-4859-af09-00d17b9c24ff",
-            "7875a4f5-39b6-4de7-b7b5-42b5359d9e8c"
+            "7875a4f5-39b6-4de7-b7b5-42b5359d9e8c",
+            "b064b228-eadb-452c-b67a-10aacf698738",
+            "182c877f-eb77-4458-8e88-90356ddfd210"
         ],
         "model": [
             "c0d35e80-94cf-4ea9-b237-bd6232a3e8bf",
@@ -91,14 +98,16 @@
             "9437d17a-2dd9-412a-a360-1cc8f09146b1",
             "4e3da98b-9cb7-46b8-929c-144234ecc9dc",
             "d8a0dba7-c827-4549-8eaf-9dc6c6e65fb1",
-            "d30da493-d84b-42a8-864a-2e1e4ab2b9f4"
+            "d30da493-d84b-42a8-864a-2e1e4ab2b9f4",
+            "f03c824e-f21b-4644-9f37-04cfdf39e0e1",
+            "abe25fd0-2d4d-46eb-916c-80522281314f",
+            "6ecf3389-12df-470b-804d-808afabaf561"
         ],
         "resource": [
             "01dfa91f-d7fa-4c86-8272-a99995dea3d2",
             "e81cb86d-bfa2-4156-85bd-7960788c5c75",
             "a4765e2b-8072-425c-ad47-b5e44774c8b3",
-            "3b10905e-e12b-4042-a02c-eadff8942fdf",
-            "4ba98ad0-8b87-4e28-8e11-3b14ff776dc2"
+            "3b10905e-e12b-4042-a02c-eadff8942fdf"
         ],
         "app": [
             "application"

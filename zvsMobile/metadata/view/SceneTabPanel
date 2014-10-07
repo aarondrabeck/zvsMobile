@@ -25,7 +25,7 @@
                 "iconCls": "action",
                 "title": "Control"
             },
-            "name": "scenecontrolpanel",
+            "name": "scenecontrolpanel1",
             "designerId": "479aab46-129e-450d-9229-bbadac998838",
             "masterInstanceId": "e6018204-ba7f-4ae9-aa30-5b4f0428f448"
         },
@@ -40,7 +40,7 @@
                 "iconCls": "compose",
                 "title": "Edit"
             },
-            "name": "sceneedit",
+            "name": "sceneedit1",
             "designerId": "ff78004e-3899-4b0a-9cb6-a46e3c704d0f",
             "masterInstanceId": "7d120917-7616-4131-8286-04b1e27afcfa"
         },

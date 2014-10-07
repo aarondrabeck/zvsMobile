@@ -37,7 +37,11 @@ Ext.define('zvsMobile.controller.Navigation', {
                 itemtap: 'onHomeDataViewItemTap'
             },
             "navigationview#mainView": {
-                initialize: 'onNavigationviewInitialize'
+                initialize: 'onNavigationviewInitialize',
+                push: 'onNavigationviewPush'
+            },
+            "#navBar": {
+                back: 'onBarBack'
             }
         }
     },
@@ -122,6 +126,31 @@ Ext.define('zvsMobile.controller.Navigation', {
                 'X-zvsToken': zvsMobile.app.getToken(),
             };
         }), this);
+    },
+
+    onNavigationviewPush: function(navigationview, view, eOpts) {
+        history.pushState();
+    },
+
+    onBarBack: function(bar, eOpts) {
+        history.back();  //pop the state to trigger listener in step 3
+            return false;  // return false so listener will take care of this
+    },
+
+    launch: function() {
+        var that = this;
+        window.addEventListener('popstate', function () {
+            var portal = that.getMainView();
+            if (portal) {
+                portal.pop();
+
+                var currentItem = portal.getActiveItem();
+
+                if(currentItem)
+                    that.currentView = currentItem.xtype;
+
+            }
+        }, false);
     }
 
 });

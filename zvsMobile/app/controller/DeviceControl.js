@@ -242,9 +242,9 @@ Ext.define('zvsMobile.controller.DeviceControl', {
         if(newValue === '- select -')
             return;
 
-        var type = selectfield.commandType;
-        var id = selectfield.command.Id;
-        var device = selectfield.device;
+        var type = selectfield.getInitialConfig().commandType;
+        var id = selectfield.getInitialConfig().command.Id;
+        var device = selectfield.getInitialConfig().device;
 
         if(type === 'DeviceCommand' || type === 'DeviceTypeCommand')
         {
@@ -271,9 +271,9 @@ Ext.define('zvsMobile.controller.DeviceControl', {
         {
 
             var type = textfield.commandType;
-            var command = textfield.command;
-            var id = textfield.command.Id;
-            var device = textfield.device;
+            var command = textfield.getInitialConfig().command;
+            var id = textfield.getInitialConfig().command.Id;
+            var device = textfield.getInitialConfig().device;
 
             if(type === 'DeviceCommand' || type === 'DeviceTypeCommand')
             {
@@ -329,9 +329,9 @@ Ext.define('zvsMobile.controller.DeviceControl', {
     },
 
     onToggleFieldChange: function(togglefield, newValue, oldValue, eOpts) {
-        var type = togglefield.commandType;
-        var id = togglefield.command.Id;
-        var device = togglefield.device;
+        var type = togglefield.getInitialConfig().commandType;
+        var id = togglefield.getInitialConfig().command.Id;
+        var device = togglefield.getInitialConfig().device;
 
         if(type === 'DeviceCommand' || type === 'DeviceTypeCommand')
         {
@@ -352,9 +352,9 @@ Ext.define('zvsMobile.controller.DeviceControl', {
     },
 
     checkboxfieldChange: function(checkboxfield, newValue, oldValue, eOpts) {
-        var type = checkboxfield.commandType;
-        var id = checkboxfield.command.Id;
-        var device = checkboxfield.device;
+        var type = checkboxfield.getInitialConfig().commandType;
+        var id = checkboxfield.getInitialConfig().command.Id;
+        var device = checkboxfield.getInitialConfig().device;
 
         if(type === 'DeviceCommand' || type === 'DeviceTypeCommand')
         {

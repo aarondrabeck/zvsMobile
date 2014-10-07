@@ -38,18 +38,18 @@ Ext.define('zvsMobile.view.ScenesPanel', {
                 inline: true,
                 itemCls: 'sceneItem',
                 itemTpl: [
-                    '<div class="scene-item">',
-                    '	<h4 class="scene-name-truncate">{Name}</h4>  ',
+                    ' <div class="scene-item">',
+                    '    <h4 class="scene-name-truncate">{Name}</h4>  ',
                     '    <i class="SCENE scene-icon"></i> ',
                     '    <div class="scene-status">',
                     '        <tpl if=\'isRunning == true\'>',
-                    ' Running',
-                    '<tpl else>',
-                    '   Off',
-                    '</tpl>',
-                    '			',
-                    '		</div>	    ',
-                    '</div>'
+                    '            Running',
+                    '            <tpl else>',
+                    '                Off',
+                    '            </tpl>',
+                    '',
+                    '            </div>	    ',
+                    '    </div>'
                 ],
                 store: 'SceneStore'
             },

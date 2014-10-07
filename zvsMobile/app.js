@@ -20,6 +20,10 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
+
+    requires: [
+        'Ext.MessageBox'
+    ],
     models: [
         'Device',
         'DeviceValue',
@@ -29,7 +33,10 @@ Ext.application({
         'DeviceCommand',
         'DeviceTypeCommand',
         'BuiltinCommand',
-        'LogItem'
+        'LogItem',
+        'SceneCommand',
+        'StoredCommand',
+        'DeviceValueTrigger'
     ],
     stores: [
         'DeviceStore',
@@ -40,7 +47,9 @@ Ext.application({
         'DeviceCommandStore',
         'DeviceTypeCommandStore',
         'BuiltinCommandStore',
-        'LogItemStore'
+        'LogItemStore',
+        'SceneCommandStore',
+        'DeviceValueTriggerStore'
     ],
     views: [
         'MainView',
@@ -60,7 +69,10 @@ Ext.application({
         'SceneTabPanel',
         'GroupDetailTabPanel',
         'GroupEdit',
-        'LogList'
+        'LogList',
+        'TriggerPanel',
+        'TriggerDetailsTabPanel',
+        'TriggerEdit'
     ],
     controllers: [
         'Navigation',
@@ -71,7 +83,9 @@ Ext.application({
         'DeviceEdit',
         'DeviceControl',
         'GroupEdit',
-        'Log'
+        'Log',
+        'Trigger',
+        'TriggerEdit'
     ],
     name: 'zvsMobile',
 
@@ -97,7 +111,7 @@ Ext.application({
     },
 
     executeCommand: function(commandId, arg1, arg2, calllback) {
-        var uri = zvsMobile.app.getBaseUrl() + 'odata4/Commands(' + commandId + ')/Actions.Execute';
+        var uri = 'odata4/Commands(' + commandId + ')/Actions.Execute';
         var callback2 = calllback;
         Ext.Ajax.request({
             scope:  this,

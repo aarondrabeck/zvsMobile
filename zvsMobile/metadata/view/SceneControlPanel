@@ -40,34 +40,28 @@
             "userConfig": {
                 "designer|displayName": "tpl",
                 "implHandler": [
-                    "<tpl for=\"scene\">",
-                    "    <tpl if=\"cmd_count &gt; 0\">",
-                    "        <div class=\"scene_overview\">",
-                    "            <table class=\"info\">",
-                    "                <thead>",
-                    "                    <tr>",
-                    "                        <th></th>",
-                    "                        <th scope=\"col\" abbr=\"Device\">Device / Cmd</th>",
-                    "                        <th scope=\"col\" abbr=\"Action\">Action</th>",
-                    "                    </tr>",
-                    "                </thead>",
-                    "                <tbody>",
-                    "                    <tpl for=\"cmds\">",
-                    "                        <tr>",
-                    "                            <th scope=\"row\">{order}</th>",
-                    "                            <td>{device}</td>",
-                    "                            <td>{action}</td>",
-                    "                        </tr>",
-                    "                    </tpl>",
-                    "                </tbody>",
-                    "            </table>",
-                    "        </div>",
-                    "    </tpl>",
-                    "</tpl>"
+                    "",
+                    "    <table class=\"info-table\">",
+                    "        <thead>",
+                    "            <tr>",
+                    "                <th>Order</th>",
+                    "                <th >Command</th>",
+                    "            </tr>",
+                    "        </thead>",
+                    "        <tbody>",
+                    "           <tpl for=\".\">",
+                    "                <tr>                    ",
+                    "                    <td>{SortOrder}</td>",
+                    "                    <td>{TargetObjectName} {Description}</td>",
+                    "                </tr>",
+                    "            </tpl>",
+                    "        </tbody>",
+                    "    </table>",
+                    ""
                 ]
             },
             "name": "tpl",
-            "designerId": "173dc209-557f-473b-8e3b-f8cddac71f10"
+            "designerId": "6780fa36-5b45-4881-b072-2122f05de482"
         }
     ]
 }

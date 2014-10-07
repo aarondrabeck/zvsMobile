@@ -15,7 +15,9 @@
             "DeviceEdit",
             "DeviceControl",
             "GroupEdit",
-            "Log"
+            "Log",
+            "Trigger",
+            "TriggerEdit"
         ],
         "models": [
             "Device",
@@ -26,9 +28,15 @@
             "DeviceCommand",
             "DeviceTypeCommand",
             "BuiltinCommand",
-            "LogItem"
+            "LogItem",
+            "SceneCommand",
+            "StoredCommand",
+            "DeviceValueTrigger"
         ],
         "name": "zvsMobile",
+        "requires": [
+            "Ext.MessageBox"
+        ],
         "stores": [
             "DeviceStore",
             "DeviceValuesStore",
@@ -38,7 +46,9 @@
             "DeviceCommandStore",
             "DeviceTypeCommandStore",
             "BuiltinCommandStore",
-            "LogItemStore"
+            "LogItemStore",
+            "SceneCommandStore",
+            "DeviceValueTriggerStore"
         ],
         "views": [
             "MainView",
@@ -58,7 +68,10 @@
             "SceneTabPanel",
             "GroupDetailTabPanel",
             "GroupEdit",
-            "LogList"
+            "LogList",
+            "TriggerPanel",
+            "TriggerDetailsTabPanel",
+            "TriggerEdit"
         ]
     },
     "name": "Application",
@@ -122,7 +135,7 @@
                 ],
                 "fn": "executeCommand",
                 "implHandler": [
-                    "var uri = zvsMobile.app.getBaseUrl() + 'odata4/Commands(' + commandId + ')/Actions.Execute';",
+                    "var uri = 'odata4/Commands(' + commandId + ')/Actions.Execute';",
                     "var callback2 = calllback;",
                     "Ext.Ajax.request({",
                     "    scope:  this,",
@@ -150,7 +163,7 @@
                     "",
                     "        if(response.status > 399)",
                     "        {",
-                    "            if(response.status == 400 && response.responseText !== '') ",
+                    "            if(response.status == 400 && response.responseText !== '')",
                     "            {",
                     "",
                     "                var result = JSON.parse(response.responseText);",
@@ -164,7 +177,7 @@
                     "",
                     "            callback2(null, response.statusText);",
                     "",
-                    "          ",
+                    "",
                     "        }",
                     "        else",
                     "        {",

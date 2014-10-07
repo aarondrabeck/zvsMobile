@@ -108,7 +108,26 @@ Ext.define('zvsMobile.controller.Scenes', {
 
     onControlPanelShow: function(component, eOpts) {
         var sceneRecord = component.getParent().getRecord();
-                component.setRecord(sceneRecord);
+        component.setRecord(sceneRecord);
+
+        var cmdStore = Ext.getStore('SceneCommandStore');
+        cmdStore.removeAll();
+
+        cmdStore.getProxy().setUrl('odata4/SceneCommands/?$filter=SceneId eq '+sceneRecord.data.Id+'&$expand=StoredCommand');
+        cmdStore.load({
+            scope: this,
+            callback: function(records, operation, success) {
+                data = [];
+                cmdStore.each(function(record) {
+                    data.push({SortOrder: record.data.SortOrder,
+                               TargetObjectName: record.getStoredCommand().data.TargetObjectName,
+                               Description: record.getStoredCommand().data.Description});
+
+                });
+
+                component.setData(data);
+            }
+        });
     },
 
     onSaveButtonTap: function(button, e, eOpts) {

@@ -196,6 +196,73 @@
             },
             "name": "onNavigationviewInitialize",
             "designerId": "c9501372-6550-418a-af6d-aadaeaa09335"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navigationview#mainView",
+                "designer|targetType": "Ext.navigation.View",
+                "fn": "onNavigationviewPush",
+                "implHandler": [
+                    "history.pushState(); "
+                ],
+                "name": "push"
+            },
+            "name": "onNavigationviewPush",
+            "designerId": "aefa5b16-d7fe-452f-ba06-302958730a46"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#navBar",
+                "designer|targetType": "Ext.navigation.Bar",
+                "fn": "onBarBack",
+                "implHandler": [
+                    "history.back();  //pop the state to trigger listener in step 3",
+                    "    return false;  // return false so listener will take care of this"
+                ],
+                "name": "back"
+            },
+            "name": "onBarBack",
+            "designerId": "f88156ab-667d-4900-a6c8-54a60952a453"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "var that = this;",
+                    "window.addEventListener('popstate', function () {",
+                    "    var portal = that.getMainView();",
+                    "    if (portal) {",
+                    "        portal.pop();",
+                    "",
+                    "        var currentItem = portal.getActiveItem();",
+                    "",
+                    "        if(currentItem)",
+                    "            that.currentView = currentItem.xtype;",
+                    "",
+                    "    }",
+                    "}, false);"
+                ]
+            },
+            "name": "launch",
+            "designerId": "4addd0ea-4994-4c2f-8a82-b7e34bb912ec"
         }
     ]
 }

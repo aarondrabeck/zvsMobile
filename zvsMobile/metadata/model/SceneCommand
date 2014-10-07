@@ -1,0 +1,75 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SceneCommand",
+        "idProperty": "Id"
+    },
+    "name": "MyModel",
+    "designerId": "f03c824e-f21b-4644-9f37-04cfdf39e0e1",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Id",
+                "type": "int"
+            },
+            "name": "field22",
+            "designerId": "d72a3458-ab1c-48c8-8918-db059896ba3c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "SceneId",
+                "type": "int"
+            },
+            "name": "field23",
+            "designerId": "9d3cfd22-6ce7-4890-b7ac-9c6fbc263931"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "SortOrder",
+                "type": "int"
+            },
+            "name": "field24",
+            "designerId": "d06017b0-1669-4c77-a5b2-05479023a972"
+        },
+        {
+            "type": "Ext.data.association.HasOne",
+            "reference": {
+                "name": "hasOne",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "associatedName": "StoredCommand",
+                "associationKey": "StoredCommand",
+                "designer|displayName": "hasOneStoredCommand",
+                "model": "StoredCommand",
+                "primaryKey": "Id"
+            },
+            "name": "MyHasOneAssociation1",
+            "designerId": "e027061a-20af-4e55-902b-2bbf9b8d3ba1"
+        }
+    ]
+}

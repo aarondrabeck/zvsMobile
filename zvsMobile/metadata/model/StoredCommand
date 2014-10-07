@@ -1,0 +1,135 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "StoredCommand",
+        "idProperty": "Id"
+    },
+    "name": "MyModel",
+    "designerId": "abe25fd0-2d4d-46eb-916c-80522281314f",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Id",
+                "type": "int"
+            },
+            "name": "field25",
+            "designerId": "f2142d88-e0b5-4615-a7d7-29b13e8f4c9c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "CommandId",
+                "type": "int"
+            },
+            "name": "field26",
+            "designerId": "2294dcce-17de-415b-8761-e3f778da39a1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Argument",
+                "type": "string"
+            },
+            "name": "field27",
+            "designerId": "807136d5-88d2-49d2-a839-52016e6c7f17"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Argument2",
+                "type": "string"
+            },
+            "name": "field28",
+            "designerId": "f2a61e30-c54d-49e1-b67a-001643bc3294"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "TargetObjectName",
+                "type": "string"
+            },
+            "name": "field29",
+            "designerId": "1fdae5b6-9e98-4153-a36f-5848c3c7d751"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Description",
+                "type": "string"
+            },
+            "name": "field30",
+            "designerId": "ccac572c-46a5-413d-880c-872e3ff8910c"
+        },
+        {
+            "type": "Ext.data.association.HasOne",
+            "reference": {
+                "name": "hasOne",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "associatedName": "SceneCommand",
+                "associationKey": "SceneCommand",
+                "designer|displayName": "hasOneSceneCommand",
+                "foreignKey": "CommandId",
+                "model": "SceneCommand",
+                "primaryKey": "Id"
+            },
+            "name": "MyHasOneAssociation2",
+            "designerId": "9b61acf7-8dc2-4d4a-9434-8890912ee0bc"
+        },
+        {
+            "type": "Ext.data.association.HasMany",
+            "reference": {
+                "name": "hasMany",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "associatedName": "DeviceValueTrigger",
+                "associationKey": "DeviceValueTrigger",
+                "designer|displayName": "hasManyDeviceValueTrigger",
+                "model": "DeviceValueTrigger",
+                "primaryKey": "Id"
+            },
+            "name": "MyHasManyAssociation3",
+            "designerId": "41755513-07a6-46ec-9ca8-e42273dddfc8"
+        }
+    ]
+}

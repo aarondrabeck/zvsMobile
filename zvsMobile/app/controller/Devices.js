@@ -67,9 +67,11 @@ Ext.define('zvsMobile.controller.Devices', {
 
         var existingFilters = [];
         var segButton = dataview.down('#filterSegmentedButton');
+
         segButton.getItems().each(function(item) {
-            existingFilters.push(item.locationFilter);
+            existingFilters.push(item.getInitialConfig().locationFilter);
         });
+
 
 
         //Create list without duplicates
@@ -80,7 +82,11 @@ Ext.define('zvsMobile.controller.Devices', {
                 locationNames.push(element.data.Location);
         });
 
+
+
         locationNames.sort();
+
+
 
         var buttons = [];
         locationNames.forEach(function(value, index, array) {
@@ -96,7 +102,7 @@ Ext.define('zvsMobile.controller.Devices', {
             return;
 
         var deviceStore = Ext.getStore('DeviceStore');
-        var filter = button.locationFilter;
+        var filter = button.getInitialConfig().locationFilter;
         if(filter)
         {
             if(filter == 'all')

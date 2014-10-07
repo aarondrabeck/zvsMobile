@@ -52,6 +52,12 @@ Ext.define('zvsMobile.view.HomePanel', {
                         navView: 'groupspanel'
                     },
                     {
+                        Name: 'Triggers',
+                        Color: '#B173C9',
+                        Iconcls: 'triggers-icon',
+                        navView: 'triggerpanel'
+                    },
+                    {
                         Name: 'Log',
                         Color: '#CACED1',
                         Iconcls: 'log-icon',
