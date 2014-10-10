@@ -79,6 +79,14 @@ Ext.define('zvsMobile.view.NavMenu', {
             },
             {
                 xtype: 'button',
+                navView: 'triggerdetailspanel',
+                itemId: 'TriggersBtn',
+                margin: 3,
+                iconCls: 'trigger',
+                text: 'Triggers'
+            },
+            {
+                xtype: 'button',
                 navView: 'loglist',
                 margin: 3,
                 iconCls: 'log',

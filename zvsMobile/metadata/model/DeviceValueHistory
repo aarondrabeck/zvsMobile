@@ -1,0 +1,72 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DeviceValueHistory",
+        "idProperty": "Id"
+    },
+    "name": "MyModel",
+    "designerId": "ac29629d-de54-4e4d-8280-14cdd33d3f6f",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Id",
+                "type": "int"
+            },
+            "name": "field54",
+            "designerId": "086f3b42-cce4-4d77-9e83-1240c08f5a02"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "DateTime",
+                "type": "date"
+            },
+            "name": "field57",
+            "designerId": "69f7b2ad-6504-4df2-8231-36ca6da1ffc7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "DeviceValueId",
+                "type": "int"
+            },
+            "name": "field58",
+            "designerId": "3f0fd373-640d-4d37-9b9e-d03ea3fdbdd4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Value",
+                "type": "string"
+            },
+            "name": "field59",
+            "designerId": "d0f18daf-f243-4d99-b334-f5206d289f14"
+        }
+    ]
+}

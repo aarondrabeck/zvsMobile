@@ -33,7 +33,7 @@ Ext.define('zvsMobile.store.LogItemStore', {
             limitParam: '$top',
             noCache: false,
             startParam: '$skip',
-            url: 'odata4/LogItems/',
+            url: 'odata4/LogItems',
             headers: {
                 'Content-Type': 'application/json'
             },

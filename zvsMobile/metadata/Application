@@ -17,7 +17,8 @@
             "GroupEdit",
             "Log",
             "Trigger",
-            "TriggerEdit"
+            "TriggerEdit",
+            "DeviceValueHistory"
         ],
         "models": [
             "Device",
@@ -31,7 +32,8 @@
             "LogItem",
             "SceneCommand",
             "StoredCommand",
-            "DeviceValueTrigger"
+            "DeviceValueTrigger",
+            "DeviceValueHistory"
         ],
         "name": "zvsMobile",
         "requires": [
@@ -48,7 +50,8 @@
             "BuiltinCommandStore",
             "LogItemStore",
             "SceneCommandStore",
-            "DeviceValueTriggerStore"
+            "DeviceValueTriggerStore",
+            "DeviceValueHistoryStore"
         ],
         "views": [
             "MainView",
@@ -71,7 +74,8 @@
             "LogList",
             "TriggerPanel",
             "TriggerDetailsTabPanel",
-            "TriggerEdit"
+            "TriggerEdit",
+            "DeviceValueNumberHistoryChart"
         ]
     },
     "name": "Application",

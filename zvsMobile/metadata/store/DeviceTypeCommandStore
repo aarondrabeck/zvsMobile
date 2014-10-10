@@ -40,7 +40,7 @@
                 "noCache": false,
                 "sortParam": "$orderby",
                 "startParam": "$skip",
-                "url": "odata4/DeviceTypeCommands/?$expand=Options",
+                "url": "odata4/DeviceTypeCommands?$expand=Options",
                 "useDefaultXhrHeader": false
             },
             "name": "MyAjaxProxy",

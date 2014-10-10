@@ -54,7 +54,7 @@ Ext.define('zvsMobile.controller.GroupEdit', {
             },
             success: function (response, opts) {
 
-                 Ext.Msg.alert('Done',  'Group updated');
+                Ext.Msg.alert('Done',  'Group updated');
                 var groupStore = Ext.getStore('GroupStore');
                 var record = groupStore.getById(groupRecord.getData().Id);
                 record.set(editPanel.getValues());

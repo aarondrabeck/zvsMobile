@@ -23,7 +23,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "disableSelection": true,
                 "grouped": true,
+                "itemId": "mylist",
                 "store": "DeviceValuesStore"
             },
             "name": "MyList",

@@ -180,6 +180,20 @@
             },
             "name": "MyBelongsToAssociation",
             "designerId": "94cfc372-f6b6-435d-838c-494c5d0faac8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ValueType",
+                "type": "string"
+            },
+            "name": "field26",
+            "designerId": "8c6c09b0-03f3-410a-82fb-11065bdf4511"
         }
     ]
 }

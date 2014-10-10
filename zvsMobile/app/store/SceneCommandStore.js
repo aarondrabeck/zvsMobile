@@ -35,7 +35,7 @@ Ext.define('zvsMobile.store.SceneCommandStore', {
             noCache: false,
             sortParam: '$orderby',
             startParam: '$skip',
-            url: 'odata4/DeviceCommands/?$expand=Options',
+            url: 'odata4/DeviceCommands?$expand=Options',
             headers: {
                 'Content-Type': 'application/json'
             },

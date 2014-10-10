@@ -70,6 +70,10 @@ Ext.define('zvsMobile.model.DeviceValue', {
             {
                 name: 'Id',
                 type: 'int'
+            },
+            {
+                name: 'ValueType',
+                type: 'string'
             }
         ],
         belongsTo: {

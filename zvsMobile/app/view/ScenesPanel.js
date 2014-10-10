@@ -38,7 +38,7 @@ Ext.define('zvsMobile.view.ScenesPanel', {
                 inline: true,
                 itemCls: 'sceneItem',
                 itemTpl: [
-                    ' <div class="scene-item">',
+                    '<div class="scene-item">',
                     '    <h4 class="scene-name-truncate">{Name}</h4>  ',
                     '    <i class="SCENE scene-icon"></i> ',
                     '    <div class="scene-status">',

@@ -1,0 +1,65 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DeviceValueHistory"
+    },
+    "name": "MyController",
+    "designerId": "feb91d61-e2af-4541-8f24-6517b1237532",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "list#mylist",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "onListItemTap",
+                "implHandler": [
+                    "",
+                    "",
+                    "var deviceValue = record.getData();",
+                    "",
+                    "if(deviceValue.ValueType == 'INTEGER' ||",
+                    "   deviceValue.ValueType == 'DECIMAL' ||",
+                    "   deviceValue.ValueType == 'BYTE')",
+                    "{",
+                    "    var store = Ext.getStore('DeviceValueHistoryStore');",
+                    "    var uri = 'odata4/DeviceValueHistories/?$filter=DeviceValueId eq ' + record.data.Id;",
+                    "    store.getProxy().setUrl(uri);",
+                    "    store.load();",
+                    "",
+                    "    this.getMainView().push({",
+                    "        xtype: 'devicevaluenumberhistorychart',",
+                    "        title: deviceValue.Name + ' - History'",
+                    "    });",
+                    "}"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onListItemTap",
+            "designerId": "a80cde07-769e-4a76-9fbe-d654522398e0"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "12af8b42-6770-4c2d-9d9c-507eab8c03a2"
+        }
+    ]
+}

@@ -762,6 +762,7 @@ Ext.ClassManager.addNameAlternateMappings({
   ],
   "zvsMobile.controller.DeviceControl": [],
   "zvsMobile.controller.DeviceEdit": [],
+  "zvsMobile.controller.DeviceValueHistory": [],
   "zvsMobile.controller.Devices": [],
   "zvsMobile.controller.Group": [],
   "zvsMobile.controller.GroupEdit": [],
@@ -769,6 +770,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.controller.Navigation": [],
   "zvsMobile.controller.Scenes": [],
   "zvsMobile.controller.SettingsEdit": [],
+  "zvsMobile.controller.Trigger": [],
+  "zvsMobile.controller.TriggerEdit": [],
   "zvsMobile.model.BuiltinCommand": [],
   "zvsMobile.model.CommandOption": [],
   "zvsMobile.model.Device": [],
@@ -776,6 +779,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.model.DeviceType": [],
   "zvsMobile.model.DeviceTypeCommand": [],
   "zvsMobile.model.DeviceValue": [],
+  "zvsMobile.model.DeviceValueHistory": [],
+  "zvsMobile.model.DeviceValueTrigger": [],
   "zvsMobile.model.Group": [],
   "zvsMobile.model.LogItem": [],
   "zvsMobile.model.Scene": [],
@@ -786,6 +791,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.store.DeviceCommandStore": [],
   "zvsMobile.store.DeviceStore": [],
   "zvsMobile.store.DeviceTypeCommandStore": [],
+  "zvsMobile.store.DeviceValueHistoryStore": [],
+  "zvsMobile.store.DeviceValueTriggerStore": [],
   "zvsMobile.store.DeviceValuesStore": [],
   "zvsMobile.store.GroupStore": [],
   "zvsMobile.store.LogItemStore": [],
@@ -795,6 +802,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.view.DeviceControlPanel": [],
   "zvsMobile.view.DeviceDetailsTabPanel": [],
   "zvsMobile.view.DeviceEdit": [],
+  "zvsMobile.view.DeviceValueNumberHistoryChart": [],
   "zvsMobile.view.DeviceValuesPanel": [],
   "zvsMobile.view.DevicesPanel": [],
   "zvsMobile.view.GroupControlPanel": [],
@@ -809,7 +817,10 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.view.SceneEdit": [],
   "zvsMobile.view.SceneTabPanel": [],
   "zvsMobile.view.ScenesPanel": [],
-  "zvsMobile.view.SettingsForm": []
+  "zvsMobile.view.SettingsForm": [],
+  "zvsMobile.view.TriggerDetailsTabPanel": [],
+  "zvsMobile.view.TriggerEdit": [],
+  "zvsMobile.view.TriggerPanel": []
 });
 
 Ext.ClassManager.addNameAliasMappings({
@@ -1756,6 +1767,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.WindowsPhone": [],
   "zvsMobile.controller.DeviceControl": [],
   "zvsMobile.controller.DeviceEdit": [],
+  "zvsMobile.controller.DeviceValueHistory": [],
   "zvsMobile.controller.Devices": [],
   "zvsMobile.controller.Group": [],
   "zvsMobile.controller.GroupEdit": [],
@@ -1765,6 +1777,8 @@ Ext.ClassManager.addNameAliasMappings({
     "controller.scenespanel"
   ],
   "zvsMobile.controller.SettingsEdit": [],
+  "zvsMobile.controller.Trigger": [],
+  "zvsMobile.controller.TriggerEdit": [],
   "zvsMobile.model.BuiltinCommand": [],
   "zvsMobile.model.CommandOption": [],
   "zvsMobile.model.Device": [
@@ -1774,6 +1788,8 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.model.DeviceType": [],
   "zvsMobile.model.DeviceTypeCommand": [],
   "zvsMobile.model.DeviceValue": [],
+  "zvsMobile.model.DeviceValueHistory": [],
+  "zvsMobile.model.DeviceValueTrigger": [],
   "zvsMobile.model.Group": [],
   "zvsMobile.model.LogItem": [
     "model.logitem"
@@ -1788,6 +1804,8 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.store.DeviceCommandStore": [],
   "zvsMobile.store.DeviceStore": [],
   "zvsMobile.store.DeviceTypeCommandStore": [],
+  "zvsMobile.store.DeviceValueHistoryStore": [],
+  "zvsMobile.store.DeviceValueTriggerStore": [],
   "zvsMobile.store.DeviceValuesStore": [],
   "zvsMobile.store.GroupStore": [],
   "zvsMobile.store.LogItemStore": [],
@@ -1804,6 +1822,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.view.DeviceEdit": [
     "widget.deviceedit"
+  ],
+  "zvsMobile.view.DeviceValueNumberHistoryChart": [
+    "widget.devicevaluenumberhistorychart"
   ],
   "zvsMobile.view.DeviceValuesPanel": [
     "widget.devicevaluespanel"
@@ -1849,6 +1870,15 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.view.SettingsForm": [
     "widget.settingsform"
+  ],
+  "zvsMobile.view.TriggerDetailsTabPanel": [
+    "widget.triggerdetailspanel"
+  ],
+  "zvsMobile.view.TriggerEdit": [
+    "widget.triggeredit"
+  ],
+  "zvsMobile.view.TriggerPanel": [
+    "widget.triggerpanel"
   ]
 });
 

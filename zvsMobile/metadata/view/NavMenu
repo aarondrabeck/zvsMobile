@@ -169,6 +169,36 @@
             },
             "codeClass": null,
             "userConfig": {
+                "iconCls": "trigger",
+                "itemId": "TriggersBtn",
+                "margin": 3,
+                "navId": null,
+                "navView": "triggerdetailspanel",
+                "text": "Triggers"
+            },
+            "name": "MyButton7",
+            "designerId": "852b7e24-b187-4949-9c1a-ba33d641b7b4",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navId",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navView",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "iconCls": "log",
                 "itemId": null,
                 "margin": 3,

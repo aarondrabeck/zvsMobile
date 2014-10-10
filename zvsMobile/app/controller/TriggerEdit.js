@@ -55,7 +55,7 @@ Ext.define('zvsMobile.controller.TriggerEdit', {
             },
             success: function (response, opts) {
 
-                 Ext.Msg.alert('Done',  'Trigger updated');
+                Ext.Msg.alert('Done',  'Trigger updated');
                 var store = Ext.getStore('DeviceValueTriggerStore');
                 var storeRecord = store.getById(record.getData().Id);
                 storeRecord.set(editPanel.getValues());

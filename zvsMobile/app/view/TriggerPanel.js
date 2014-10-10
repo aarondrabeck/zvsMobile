@@ -38,11 +38,11 @@ Ext.define('zvsMobile.view.TriggerPanel', {
                 inline: true,
                 itemCls: 'triggerItem',
                 itemTpl: [
-                    ' <div class="trigger-item">',
+                    '<div class="trigger-item">',
                     '    <h4 class="trigger-name-truncate">{Name}</h4>  ',
                     '    <i class="triggers-icon trigger-box-icon"></i> ',
                     '    <div class="trigger-status">{Description}</div>	    ',
-                    '    </div>'
+                    '</div>'
                 ],
                 store: 'DeviceValueTriggerStore'
             },

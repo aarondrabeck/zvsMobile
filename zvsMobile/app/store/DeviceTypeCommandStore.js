@@ -35,7 +35,7 @@ Ext.define('zvsMobile.store.DeviceTypeCommandStore', {
             noCache: false,
             sortParam: '$orderby',
             startParam: '$skip',
-            url: 'odata4/DeviceTypeCommands/?$expand=Options',
+            url: 'odata4/DeviceTypeCommands?$expand=Options',
             headers: {
                 'Content-Type': 'application/json'
             },

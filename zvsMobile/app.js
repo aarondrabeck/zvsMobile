@@ -36,7 +36,8 @@ Ext.application({
         'LogItem',
         'SceneCommand',
         'StoredCommand',
-        'DeviceValueTrigger'
+        'DeviceValueTrigger',
+        'DeviceValueHistory'
     ],
     stores: [
         'DeviceStore',
@@ -49,7 +50,8 @@ Ext.application({
         'BuiltinCommandStore',
         'LogItemStore',
         'SceneCommandStore',
-        'DeviceValueTriggerStore'
+        'DeviceValueTriggerStore',
+        'DeviceValueHistoryStore'
     ],
     views: [
         'MainView',
@@ -72,7 +74,8 @@ Ext.application({
         'LogList',
         'TriggerPanel',
         'TriggerDetailsTabPanel',
-        'TriggerEdit'
+        'TriggerEdit',
+        'DeviceValueNumberHistoryChart'
     ],
     controllers: [
         'Navigation',
@@ -85,7 +88,8 @@ Ext.application({
         'GroupEdit',
         'Log',
         'Trigger',
-        'TriggerEdit'
+        'TriggerEdit',
+        'DeviceValueHistory'
     ],
     name: 'zvsMobile',
 
