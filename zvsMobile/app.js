@@ -37,7 +37,8 @@ Ext.application({
         'SceneCommand',
         'StoredCommand',
         'DeviceValueTrigger',
-        'DeviceValueHistory'
+        'DeviceValueHistory',
+        'ScheduledTask'
     ],
     stores: [
         'DeviceStore',
@@ -51,7 +52,8 @@ Ext.application({
         'LogItemStore',
         'SceneCommandStore',
         'DeviceValueTriggerStore',
-        'DeviceValueHistoryStore'
+        'DeviceValueHistoryStore',
+        'ScheduledTasksStore'
     ],
     views: [
         'MainView',
@@ -75,7 +77,10 @@ Ext.application({
         'TriggerPanel',
         'TriggerDetailsTabPanel',
         'TriggerEdit',
-        'DeviceValueNumberHistoryChart'
+        'DeviceValueNumberHistoryChart',
+        'ScheduledTasksPanel',
+        'ScheduledTasksDetailsTabPanel',
+        'ScheduledTaskEdit'
     ],
     controllers: [
         'Navigation',
@@ -89,7 +94,9 @@ Ext.application({
         'Log',
         'Trigger',
         'TriggerEdit',
-        'DeviceValueHistory'
+        'DeviceValueHistory',
+        'ScheduledTask',
+        'ScheduledTaskEdit'
     ],
     name: 'zvsMobile',
 

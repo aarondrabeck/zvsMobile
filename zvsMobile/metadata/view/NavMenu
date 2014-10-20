@@ -13,56 +13,10 @@
         "hideOnMaskTap": true,
         "itemId": "navMenu",
         "modal": true,
-        "padding": 10
+        "padding": 20
     },
     "designerId": "6b1d9070-b093-4ef5-9404-8efed4679c79",
     "cn": [
-        {
-            "type": "Ext.Panel",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "name": "MyPanel",
-            "designerId": "eef82a48-125a-4c64-b928-1b9598ac2b97",
-            "cn": [
-                {
-                    "type": "Ext.Img",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "docked": "left",
-                        "height": 50,
-                        "src": "resources/images/256zvsIcon.png",
-                        "width": 50
-                    },
-                    "name": "MyImg",
-                    "designerId": "81c6d641-61a1-43fa-a661-7343a830dd91"
-                },
-                {
-                    "type": "Ext.Label",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "centered": false,
-                        "docked": null,
-                        "height": 50,
-                        "html": "zVirtualScenes</br>Mobile",
-                        "padding": 5,
-                        "style": "font-family:Lato;color:#C2C3C5"
-                    },
-                    "name": "MyLabel1",
-                    "designerId": "e88663a9-24c4-43b1-b2e5-47b692056bf4"
-                }
-            ]
-        },
         {
             "type": "Ext.Button",
             "reference": {
@@ -148,6 +102,36 @@
             },
             "name": "MyButton3",
             "designerId": "2f7996be-3019-4db7-88bf-0d5eabbb3536",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navId",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "navView",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "task",
+                "itemId": "TaskBtn",
+                "margin": 3,
+                "navId": null,
+                "navView": "scheduledtaskspanel",
+                "text": "Tasks"
+            },
+            "name": "MyButton5",
+            "designerId": "4d1f724d-9a30-4527-9d6b-2e8795dce0a0",
             "customConfigs": [
                 {
                     "group": "(Custom Properties)",

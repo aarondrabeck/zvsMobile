@@ -1,0 +1,85 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userClassName": "ScheduledTasksStore",
+        "groupDir": null,
+        "groupField": null,
+        "model": "ScheduledTask",
+        "storeId": "ScheduledTasksStore"
+    },
+    "name": "DeviceStore1",
+    "designerId": "dbbd8045-2ec1-4b82-8c58-af3be765197a",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "needsRefresh",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|createAlias": null,
+                "enablePagingParams": false,
+                "filterParam": "$filter",
+                "headers": [
+                    "",
+                    "{",
+                    "'Content-Type': 'application/json'",
+                    "",
+                    "}",
+                    ""
+                ],
+                "limitParam": "$top",
+                "noCache": false,
+                "sortParam": "$orderby",
+                "startParam": "$skip",
+                "url": "odata4/ScheduledTasks?$select=Id, Frequency, Name, isEnabled, SortOrder&$expand=StoredCommand",
+                "useDefaultXhrHeader": false
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "b4b8cac1-f7f3-4df4-9bf7-8e84f1e91de6",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "Id",
+                        "rootProperty": "value"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "d460d57a-a1a7-45cf-a671-cdd93d61e4eb"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "SortOrder"
+            },
+            "name": "MySorter",
+            "designerId": "0f31d477-7c78-41ab-8526-a327358d115a"
+        }
+    ]
+}

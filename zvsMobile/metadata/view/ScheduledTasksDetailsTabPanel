@@ -1,0 +1,50 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "taskpanel",
+        "designer|userClassName": "ScheduledTasksDetailsTabPanel",
+        "id": null,
+        "itemId": "scheduledTasksDetailsTabPanel"
+    },
+    "name": "TriggerDetailsTabPanel1",
+    "designerId": "d70da2b5-32f8-402d-ab24-2edbca332404",
+    "cn": [
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "center",
+                "designer|uiInterfaceName": "neutral",
+                "docked": "bottom",
+                "itemId": "actionTabBar",
+                "ui": "neutral"
+            },
+            "name": "MyTabBar",
+            "designerId": "7f308cfb-830b-4a7f-8813-a8e6848071a8"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "compose",
+                "title": "Edit"
+            },
+            "name": "scheduledtaskedit1",
+            "designerId": "0595faff-fd17-4f8c-bb09-7ccf66396880",
+            "masterInstanceId": "0c052ba5-8db8-4a6e-bb82-35ecc50515e2"
+        }
+    ]
+}

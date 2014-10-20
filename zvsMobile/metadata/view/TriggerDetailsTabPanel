@@ -25,7 +25,7 @@
                 "iconCls": "compose",
                 "title": "Edit"
             },
-            "name": "triggeredit1",
+            "name": "triggeredit",
             "designerId": "d1593bde-4a16-446d-a309-793019593c9b",
             "masterInstanceId": "ba4360ff-deac-49fa-bcd2-5636fb123c8d"
         },

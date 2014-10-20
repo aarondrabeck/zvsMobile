@@ -24,7 +24,7 @@
                 "iconCls": "action",
                 "title": "Control"
             },
-            "name": "groupcontrolpanel1",
+            "name": "groupcontrolpanel",
             "designerId": "303f040d-d552-4894-89fb-dfb0d492f3fc",
             "masterInstanceId": "7f81fe33-2747-4892-abf5-a20bda43f765"
         },
@@ -39,7 +39,7 @@
                 "iconCls": "compose",
                 "title": "Edit"
             },
-            "name": "groupedit1",
+            "name": "groupedit",
             "designerId": "b92839fe-c994-4ab1-96c8-dd01e604e04c",
             "masterInstanceId": "b2f24797-f7bb-428a-816c-f389fae12da4"
         },

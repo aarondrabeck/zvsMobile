@@ -1,0 +1,103 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ScheduledTask",
+        "idProperty": "Id"
+    },
+    "name": "MyModel",
+    "designerId": "e38a0729-2ee5-4487-8e67-762a4ddc1349",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Id",
+                "type": "int"
+            },
+            "name": "field27",
+            "designerId": "4a519389-12d8-4bfa-976b-242449eb379f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Frequency",
+                "type": "string"
+            },
+            "name": "field28",
+            "designerId": "4e5fb3a5-3ca6-4968-a3f1-d33e98106841"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Name",
+                "type": "string"
+            },
+            "name": "field29",
+            "designerId": "a05ccef8-e6eb-42af-ab40-dadb0ceff6cb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "isEnabled",
+                "type": "boolean"
+            },
+            "name": "field50",
+            "designerId": "2e4d504c-2a56-49e8-874d-73187870a1ea"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "SortOrder",
+                "type": "int"
+            },
+            "name": "field51",
+            "designerId": "71cab52a-abed-4dff-9a69-319f3ced4db2"
+        },
+        {
+            "type": "Ext.data.association.HasOne",
+            "reference": {
+                "name": "hasOne",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "associatedName": "StoredCommand",
+                "associationKey": "StoredCommand",
+                "designer|displayName": "hasOneStoredCommand",
+                "model": "StoredCommand",
+                "primaryKey": "Id"
+            },
+            "name": "MyHasOneAssociation4",
+            "designerId": "0e5b8e41-edda-4749-81ab-6e91478e156b"
+        }
+    ]
+}

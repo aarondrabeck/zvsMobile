@@ -52,6 +52,12 @@ Ext.define('zvsMobile.view.HomePanel', {
                         navView: 'groupspanel'
                     },
                     {
+                        Name: 'Scheduled Tasks',
+                        Color: '#FD605C',
+                        Iconcls: 'st-icon',
+                        navView: 'scheduledtaskspanel'
+                    },
+                    {
                         Name: 'Triggers',
                         Color: '#B173C9',
                         Iconcls: 'triggers-icon',

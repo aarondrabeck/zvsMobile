@@ -769,6 +769,8 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.controller.Log": [],
   "zvsMobile.controller.Navigation": [],
   "zvsMobile.controller.Scenes": [],
+  "zvsMobile.controller.ScheduledTask": [],
+  "zvsMobile.controller.ScheduledTaskEdit": [],
   "zvsMobile.controller.SettingsEdit": [],
   "zvsMobile.controller.Trigger": [],
   "zvsMobile.controller.TriggerEdit": [],
@@ -785,6 +787,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.model.LogItem": [],
   "zvsMobile.model.Scene": [],
   "zvsMobile.model.SceneCommand": [],
+  "zvsMobile.model.ScheduledTask": [],
   "zvsMobile.model.Settings": [],
   "zvsMobile.model.StoredCommand": [],
   "zvsMobile.store.BuiltinCommandStore": [],
@@ -798,6 +801,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.store.LogItemStore": [],
   "zvsMobile.store.SceneCommandStore": [],
   "zvsMobile.store.SceneStore": [],
+  "zvsMobile.store.ScheduledTasksStore": [],
   "zvsMobile.store.Settings": [],
   "zvsMobile.view.DeviceControlPanel": [],
   "zvsMobile.view.DeviceDetailsTabPanel": [],
@@ -817,6 +821,9 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.view.SceneEdit": [],
   "zvsMobile.view.SceneTabPanel": [],
   "zvsMobile.view.ScenesPanel": [],
+  "zvsMobile.view.ScheduledTaskEdit": [],
+  "zvsMobile.view.ScheduledTasksDetailsTabPanel": [],
+  "zvsMobile.view.ScheduledTasksPanel": [],
   "zvsMobile.view.SettingsForm": [],
   "zvsMobile.view.TriggerDetailsTabPanel": [],
   "zvsMobile.view.TriggerEdit": [],
@@ -1776,6 +1783,8 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.controller.Scenes": [
     "controller.scenespanel"
   ],
+  "zvsMobile.controller.ScheduledTask": [],
+  "zvsMobile.controller.ScheduledTaskEdit": [],
   "zvsMobile.controller.SettingsEdit": [],
   "zvsMobile.controller.Trigger": [],
   "zvsMobile.controller.TriggerEdit": [],
@@ -1796,6 +1805,7 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.model.Scene": [],
   "zvsMobile.model.SceneCommand": [],
+  "zvsMobile.model.ScheduledTask": [],
   "zvsMobile.model.Settings": [
     "model.settings"
   ],
@@ -1811,6 +1821,7 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.store.LogItemStore": [],
   "zvsMobile.store.SceneCommandStore": [],
   "zvsMobile.store.SceneStore": [],
+  "zvsMobile.store.ScheduledTasksStore": [],
   "zvsMobile.store.Settings": [
     "store.settings"
   ],
@@ -1867,6 +1878,15 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.view.ScenesPanel": [
     "widget.scenespanel"
+  ],
+  "zvsMobile.view.ScheduledTaskEdit": [
+    "widget.scheduledtaskedit"
+  ],
+  "zvsMobile.view.ScheduledTasksDetailsTabPanel": [
+    "widget.taskpanel"
+  ],
+  "zvsMobile.view.ScheduledTasksPanel": [
+    "widget.scheduledtaskspanel"
   ],
   "zvsMobile.view.SettingsForm": [
     "widget.settingsform"

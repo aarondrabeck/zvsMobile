@@ -6,12 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "triggeredit",
-        "designer|userClassName": "TriggerEdit",
-        "itemId": "triggerEdit"
+        "designer|userAlias": "scheduledtaskedit",
+        "designer|userClassName": "ScheduledTaskEdit",
+        "itemId": "scheduledTaskEdit"
     },
-    "name": "GroupEdit1",
-    "designerId": "ba4360ff-deac-49fa-bcd2-5636fb123c8d",
+    "name": "TriggerEdit1",
+    "designerId": "0c052ba5-8db8-4a6e-bb82-35ecc50515e2",
     "cn": [
         {
             "type": "Ext.Spacer",
@@ -24,7 +24,7 @@
                 "height": "10px"
             },
             "name": "MySpacer7",
-            "designerId": "d81ee63b-7ddd-4158-a91d-01db9ffac9b2"
+            "designerId": "856c436c-19c8-4e81-ac52-b6792d9bfbb1"
         },
         {
             "type": "Ext.form.FieldSet",
@@ -34,7 +34,7 @@
             },
             "codeClass": null,
             "name": "MyFieldSet1",
-            "designerId": "7c0d07a4-4ca9-4007-97e4-e12b29d8cc10",
+            "designerId": "2bbe2f48-c5e8-4618-ad4b-d9fb2ba60350",
             "cn": [
                 {
                     "type": "Ext.field.Text",
@@ -49,8 +49,8 @@
                         "name": "Name",
                         "required": true
                     },
-                    "name": "MyTextField",
-                    "designerId": "6a7044be-abe5-4432-bba9-a541289795f1"
+                    "name": "MyTextField5",
+                    "designerId": "ff4f4431-c069-4358-b815-631ce9251c7c"
                 },
                 {
                     "type": "Ext.field.Checkbox",
@@ -64,7 +64,23 @@
                         "name": "isEnabled"
                     },
                     "name": "MyCheckbox",
-                    "designerId": "7301edca-82ea-4408-b3a9-463c22749eea"
+                    "designerId": "7f9fbaef-5c54-40b7-ba20-4ead83148d26"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "itemId": null,
+                        "label": "Frequency",
+                        "name": "Frequency"
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "0831851a-e151-4dff-88dc-a2634f93608e"
                 }
             ]
         },
@@ -78,8 +94,8 @@
             "userConfig": {
                 "height": "10px"
             },
-            "name": "MySpacer",
-            "designerId": "98f39c88-f447-4159-87ad-104c6a7adc5a"
+            "name": "MySpacer2",
+            "designerId": "07f7bf21-c88a-42f2-bada-a02d885fccd0"
         },
         {
             "type": "Ext.Label",
@@ -94,8 +110,8 @@
                 "margin": "15 15",
                 "style": "font-size:1.1em"
             },
-            "name": "MyLabel1",
-            "designerId": "440514eb-449c-43ca-b354-514d96d099f4",
+            "name": "MyLabel",
+            "designerId": "acd72fed-c093-4a3f-861c-263f0aa2d472",
             "cn": [
                 {
                     "type": "Ext.XTemplate",
@@ -107,11 +123,11 @@
                     "userConfig": {
                         "designer|displayName": "tpl",
                         "implHandler": [
-                            "When {Description} then {StoredCommand.Description} {StoredCommand.TargetObjectName}"
+                            "{StoredCommand.Description} {StoredCommand.TargetObjectName}"
                         ]
                     },
                     "name": "tpl",
-                    "designerId": "07a5e4b6-bd89-4765-9c54-26194fd8fd83"
+                    "designerId": "8615f152-85ed-479f-8db3-07b1a9769144"
                 }
             ]
         },
@@ -123,13 +139,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "itemId": "saveTriggerButton",
+                "itemId": "saveTaskButton",
                 "margin": 10,
                 "text": "Save",
                 "ui": "action"
             },
             "name": "MyButton10",
-            "designerId": "08dc46ec-17c6-411e-b9fb-445fb69f2df7"
+            "designerId": "db193475-12ea-4afb-bcac-51a66afbc058"
         }
     ]
 }

@@ -6,10 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "TriggerEdit"
+        "designer|userClassName": "ScheduledTaskEdit"
     },
     "name": "MyController",
-    "designerId": "182c877f-eb77-4458-8e88-90356ddfd210",
+    "designerId": "595c2344-f197-445e-a4f7-cb2538fbb272",
     "cn": [
         {
             "type": "controlleraction",
@@ -19,28 +19,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "formpanel#triggerEdit",
-                "designer|targetType": "Ext.form.Panel",
-                "fn": "onFormpanelShow",
-                "implHandler": [
-                    "var record = component.getParent().getRecord();",
-                    "component.setRecord(record);",
-                    "component.down('#commandLabel').setRecord(record);"
-                ],
-                "name": "show"
-            },
-            "name": "onFormpanelShow",
-            "designerId": "b3193b74-85af-4890-aee5-33f5a51f3a77"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "button#saveTriggerButton",
+                "designer|controlQuery": "button#saveTaskButton",
                 "designer|targetType": "Ext.Button",
                 "fn": "onSaveButtonTap",
                 "implHandler": [
@@ -49,7 +28,7 @@
                     "button.disable();",
                     "",
                     "Ext.Ajax.request({",
-                    "    url: 'odata4/DeviceValueTriggers('+record.getData().Id+')/',",
+                    "    url: 'odata4/ScheduledTasks('+record.getData().Id+')/',",
                     "    method: 'PATCH',",
                     "    scope : this,",
                     "    jsonData: {",
@@ -62,8 +41,8 @@
                     "    },",
                     "    success: function (response, opts) {",
                     "",
-                    "        Ext.Msg.alert('Done',  'Trigger updated');",
-                    "        var store = Ext.getStore('DeviceValueTriggerStore');",
+                    "        Ext.Msg.alert('Done',  'Scheduled task updated');",
+                    "        var store = Ext.getStore('ScheduledTasksStore');",
                     "        var storeRecord = store.getById(record.getData().Id);",
                     "        storeRecord.set(editPanel.getValues());",
                     "        var mainView = this.getMainView();",
@@ -73,15 +52,36 @@
                     "",
                     "    },",
                     "    failure: function (response, opts) {",
-                    "        Ext.Msg.alert('Error',  'Trigger update failed. ' + response.responseText);",
+                    "        Ext.Msg.alert('Error',  'Scheduled task update failed. ' + response.responseText);",
                     "        button.enable();",
                     "    }",
-                    "});"
+                    "});    "
                 ],
                 "name": "tap"
             },
             "name": "onSaveButtonTap",
-            "designerId": "2e20975c-cb0b-4740-a18a-891340084a49"
+            "designerId": "43e0ef26-e633-46d0-80fa-d3af039c0afe"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "formpanel#scheduledTaskEdit",
+                "designer|targetType": "Ext.form.Panel",
+                "fn": "onFormpanelShow",
+                "implHandler": [
+                    "var record = component.getParent().getRecord();",
+                    "component.setRecord(record);",
+                    "component.down('#commandLabel').setRecord(record);"
+                ],
+                "name": "show"
+            },
+            "name": "onFormpanelShow",
+            "designerId": "b5ad94db-98ac-45c9-a223-a7671553527f"
         },
         {
             "type": "controllerref",
@@ -95,7 +95,7 @@
                 "selector": "navigationview#mainView"
             },
             "name": "mainView",
-            "designerId": "e98a2e1a-ad4c-433a-bed3-8109f3a5ab95"
+            "designerId": "4fb850e2-fb03-4960-a5c9-66ff58f533f2"
         }
     ]
 }

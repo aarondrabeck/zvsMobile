@@ -18,7 +18,9 @@
             "Log",
             "Trigger",
             "TriggerEdit",
-            "DeviceValueHistory"
+            "DeviceValueHistory",
+            "ScheduledTask",
+            "ScheduledTaskEdit"
         ],
         "models": [
             "Device",
@@ -33,7 +35,8 @@
             "SceneCommand",
             "StoredCommand",
             "DeviceValueTrigger",
-            "DeviceValueHistory"
+            "DeviceValueHistory",
+            "ScheduledTask"
         ],
         "name": "zvsMobile",
         "requires": [
@@ -51,7 +54,8 @@
             "LogItemStore",
             "SceneCommandStore",
             "DeviceValueTriggerStore",
-            "DeviceValueHistoryStore"
+            "DeviceValueHistoryStore",
+            "ScheduledTasksStore"
         ],
         "views": [
             "MainView",
@@ -75,7 +79,10 @@
             "TriggerPanel",
             "TriggerDetailsTabPanel",
             "TriggerEdit",
-            "DeviceValueNumberHistoryChart"
+            "DeviceValueNumberHistoryChart",
+            "ScheduledTasksPanel",
+            "ScheduledTasksDetailsTabPanel",
+            "ScheduledTaskEdit"
         ]
     },
     "name": "Application",

@@ -18,9 +18,6 @@ Ext.define('zvsMobile.view.NavMenu', {
     alias: 'widget.navmenu',
 
     requires: [
-        'Ext.Panel',
-        'Ext.Img',
-        'Ext.Label',
         'Ext.Button'
     ],
 
@@ -28,30 +25,10 @@ Ext.define('zvsMobile.view.NavMenu', {
         centered: true,
         hidden: true,
         itemId: 'navMenu',
-        padding: 10,
+        padding: 20,
         hideOnMaskTap: true,
         modal: true,
         items: [
-            {
-                xtype: 'panel',
-                items: [
-                    {
-                        xtype: 'image',
-                        docked: 'left',
-                        height: 50,
-                        width: 50,
-                        src: 'resources/images/256zvsIcon.png'
-                    },
-                    {
-                        xtype: 'label',
-                        centered: false,
-                        height: 50,
-                        html: 'zVirtualScenes</br>Mobile',
-                        padding: 5,
-                        style: 'font-family:Lato;color:#C2C3C5'
-                    }
-                ]
-            },
             {
                 xtype: 'button',
                 navView: 'devicespanel',
@@ -76,6 +53,14 @@ Ext.define('zvsMobile.view.NavMenu', {
                 margin: 3,
                 iconCls: 'group',
                 text: 'Groups'
+            },
+            {
+                xtype: 'button',
+                navView: 'scheduledtaskspanel',
+                itemId: 'TaskBtn',
+                margin: 3,
+                iconCls: 'task',
+                text: 'Tasks'
             },
             {
                 xtype: 'button',
