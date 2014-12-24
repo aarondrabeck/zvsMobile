@@ -1,0 +1,50 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "triggerdetailspanel",
+        "designer|userClassName": "TriggerDetailsTabPanel",
+        "id": null,
+        "itemId": "triggerDetailsTabPanel"
+    },
+    "name": "DeviceDetailsTabPanel1",
+    "designerId": "fa510991-a2d9-4cd3-81e5-c8942f5e5777",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "compose",
+                "title": "Edit"
+            },
+            "name": "triggeredit",
+            "designerId": "d1593bde-4a16-446d-a309-793019593c9b",
+            "masterInstanceId": "ba4360ff-deac-49fa-bcd2-5636fb123c8d"
+        },
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|pack": "center",
+                "designer|uiInterfaceName": "neutral",
+                "docked": "bottom",
+                "itemId": "actionTabBar",
+                "ui": "neutral"
+            },
+            "name": "MyTabBar",
+            "designerId": "748e68e4-f727-4842-9952-d1d5c052e8ec"
+        }
+    ]
+}

@@ -6,10 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoDestroy": false,
+        "container|animation": null,
         "designer|initialView": true,
         "designer|userAlias": "mainview",
         "designer|userClassName": "MainView",
-        "itemId": "mainView"
+        "itemId": "mainView",
+        "requires": [
+            "Ext.Menu"
+        ]
     },
     "designerId": "faa0b672-f068-471f-a6d3-46b660667fb3",
     "cn": [
@@ -21,11 +26,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "title": "Devices"
+                "title": "zVirtualScenes Mobile"
             },
-            "name": "devicespanel",
-            "designerId": "498cac42-a8ff-45b0-8824-6cd6462aa473",
-            "masterInstanceId": "12fcc33d-36a7-475b-8792-6b6c96745316"
+            "name": "homepanel",
+            "designerId": "611df710-4d88-48e6-b652-5631659fb354",
+            "masterInstanceId": "4845c96b-bcf7-4419-b852-0471958945f9"
         },
         {
             "type": "Ext.navigation.Bar",
@@ -35,13 +40,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "autoDestroy": false,
                 "centered": false,
                 "container|align": "center",
                 "designer|displayName": null,
-                "designer|uiInterfaceName": "nuetral",
+                "designer|uiInterfaceName": "neutral",
                 "docked": "top",
                 "itemId": "navBar",
-                "ui": "nuetral"
+                "ui": "neutral"
             },
             "name": "MyNavigationBar",
             "designerId": "0f1bbba6-fd7c-4481-b01a-5619bf8837f8",
@@ -54,28 +60,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "iconCls": "more",
+                        "iconCls": "list",
                         "itemId": "menuButton",
                         "text": ""
                     },
                     "name": "MyButton",
                     "designerId": "4e669aad-cf0b-4bd8-bc1b-a90720ca5001"
-                },
-                {
-                    "type": "Ext.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "align": "right",
-                        "iconCls": "settings",
-                        "itemId": "settingsButton",
-                        "text": ""
-                    },
-                    "name": "MyButton4",
-                    "designerId": "9e777b24-2734-4fe3-b5c5-37b24f34d254"
                 }
             ]
         }

@@ -1,4 +1,4 @@
-<project name="x-sass-impl">
+<project name="sass-impl">
     
     <!--
     Uses the compiler to generate the top-level scss file for the app

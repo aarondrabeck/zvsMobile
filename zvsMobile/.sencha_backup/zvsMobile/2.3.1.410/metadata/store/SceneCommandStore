@@ -1,0 +1,78 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userClassName": "SceneCommandStore",
+        "groupDir": "DESC",
+        "groupField": null,
+        "model": "SceneCommand",
+        "storeId": "SceneCommandStore"
+    },
+    "name": "DeviceCommandStore1",
+    "designerId": "67570469-5855-43b5-9448-0efede720795",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|createAlias": null,
+                "enablePagingParams": false,
+                "filterParam": "$filter",
+                "headers": [
+                    "",
+                    "{",
+                    "'Content-Type': 'application/json'",
+                    "",
+                    "}",
+                    ""
+                ],
+                "limitParam": "$top",
+                "noCache": false,
+                "sortParam": "$orderby",
+                "startParam": "$skip",
+                "url": "odata4/DeviceCommands?$expand=Options",
+                "useDefaultXhrHeader": false
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "1e78d3a0-6ac2-4b3f-8de4-d5e24ff5754c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "Id",
+                        "rootProperty": "value"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "560a38d3-54bb-4765-b82f-44549a8be50c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "SortOrder"
+            },
+            "name": "MySorter1",
+            "designerId": "9442f863-ce41-487f-9bf7-28d88c31ebf4"
+        }
+    ]
+}

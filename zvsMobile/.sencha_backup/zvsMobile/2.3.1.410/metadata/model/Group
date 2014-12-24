@@ -1,0 +1,75 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Group",
+        "idProperty": "Id"
+    },
+    "name": "MyModel",
+    "designerId": "ebd722d2-4190-44a4-8432-e9b4992ba8ef",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Id",
+                "type": "int"
+            },
+            "name": "field22",
+            "designerId": "bf8d90d4-d2b6-4bd1-939f-7a6ffce5314f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Name",
+                "type": "string"
+            },
+            "name": "field23",
+            "designerId": "7add486a-18c1-4d14-a16e-b7356c7a7574"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Description",
+                "type": "string"
+            },
+            "name": "field24",
+            "designerId": "8df7dada-814e-4b46-b506-30148ba21c41"
+        },
+        {
+            "type": "Ext.data.association.HasMany",
+            "reference": {
+                "name": "hasMany",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "associatedName": "Devices",
+                "associationKey": "Devices",
+                "designer|displayName": "hasManyDevice",
+                "model": "Device",
+                "primaryKey": "Id"
+            },
+            "name": "MyHasManyAssociation2",
+            "designerId": "89cd5a26-16d9-47f8-83fc-be75a29a6a39"
+        }
+    ]
+}

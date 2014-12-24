@@ -29,6 +29,8 @@ Ext.define('zvsMobile.view.DeviceValuesPanel', {
         items: [
             {
                 xtype: 'list',
+                itemId: 'mylist',
+                disableSelection: true,
                 itemTpl: [
                     '<div>{Name} - {Value}</div>'
                 ],

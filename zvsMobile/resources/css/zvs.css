@@ -269,7 +269,7 @@
     line-height: 60px;
 }
 
-.GROUP:before {
+.group:before {
     content: "\e00c";
     font-family: Flaticon;
     font-size: 60px;
@@ -307,7 +307,7 @@
 
 }
 
-.UNKNOWN:before{
+.Unknown:before{
     content: "\e006";
     font-family: Flaticon;
     font-size: 60px;
@@ -315,7 +315,7 @@
     color: white;
 }
 
-.CONTROLLER:before{
+.Controller:before{
     content: "\e000";
     font-family: Flaticon;
     font-size: 60px;
@@ -323,7 +323,7 @@
     color: white;
 }
 
-.SWITCH:before {
+.Switch:before {
     content: "\e009";
     font-family: Flaticon;
     font-size: 60px;
@@ -331,7 +331,7 @@
     color: white;
 }
 
-.DIMMER:before{
+.Dimmer:before{
     content: "\e004";
     font-family: Flaticon;
     font-size: 60px;
@@ -339,7 +339,7 @@
     color: white;
 }
 
-.THERMOSTAT:before {
+.Thermostat:before {
     content: "\e00a";
     font-family: Flaticon;
     font-size: 60px;
@@ -347,7 +347,7 @@
     color: white;
 }
 
-.DOORLOCK:before{
+.Doorlock:before{
     content: "\e003";
     font-family: Flaticon;
     font-size: 60px;
@@ -355,7 +355,7 @@
     color: white;
 }
 
-.SENSOR:before{
+.Sensor:before{
     content: "\e007";
     font-family: Flaticon;
     font-size: 60px;

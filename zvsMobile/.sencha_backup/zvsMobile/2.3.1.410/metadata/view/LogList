@@ -1,0 +1,51 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "loglist",
+        "designer|userClassName": "LogList",
+        "itemId": "logList",
+        "store": "LogItemStore"
+    },
+    "name": "MyList2",
+    "designerId": "632a52dd-5878-467c-803c-1358af9ca3dc",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "",
+                    "<div class=\"log\">",
+                    "    <h2 class=\"description\">{Description}</h2>",
+                    "    <h3>{DatetimeLog} <span class=\"urgency\">{Urgency}</span> ",
+                    "        <span class=\"source\">{Source}</span>  </h3>",
+                    "</div>",
+                    "",
+                    ""
+                ]
+            },
+            "name": "itemTpl",
+            "designerId": "65ba7e3e-8a27-49c2-87a5-54a7b3fb015d"
+        },
+        {
+            "type": "Ext.plugin.PullRefresh",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyPullRefreshPlugin1",
+            "designerId": "36958ddd-78c0-4cb2-b315-a165213e4e47"
+        }
+    ]
+}

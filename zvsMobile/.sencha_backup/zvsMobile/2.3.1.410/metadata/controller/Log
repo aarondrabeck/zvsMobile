@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Log"
+    },
+    "name": "MyController",
+    "designerId": "7875a4f5-39b6-4de7-b7b5-42b5359d9e8c",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "list#logList",
+                "designer|targetType": "Ext.dataview.List",
+                "fn": "onListInitialize",
+                "implHandler": [
+                    "var store = Ext.getStore('LogItemStore');",
+                    "store.load();"
+                ],
+                "name": "initialize"
+            },
+            "name": "onListInitialize",
+            "designerId": "dc474602-6052-4871-b9bc-4399249da9f3"
+        }
+    ]
+}

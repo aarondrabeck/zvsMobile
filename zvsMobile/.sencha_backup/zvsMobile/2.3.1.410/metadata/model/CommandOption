@@ -1,0 +1,92 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CommandOption",
+        "idProperty": "Id"
+    },
+    "name": "MyModel",
+    "designerId": "55dad082-c3b4-440b-b7ea-c5f22d46beda",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Id",
+                "type": "int"
+            },
+            "name": "field40",
+            "designerId": "86093bae-c7d1-4867-b459-2aadbcd674d7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Name",
+                "type": "string"
+            },
+            "name": "field41",
+            "designerId": "304c3fb7-aef6-4fc6-b15d-79cb50000422"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "CommandId",
+                "type": "int"
+            },
+            "name": "field42",
+            "designerId": "6e825fe6-79c0-4e92-a0e1-3e3f6f6ee541"
+        },
+        {
+            "type": "Ext.data.association.BelongsTo",
+            "reference": {
+                "name": "belongsTo",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "belongsToDeviceCommand",
+                "foreignKey": null,
+                "model": "DeviceCommand",
+                "primaryKey": "Id"
+            },
+            "name": "MyBelongsToAssociation1",
+            "designerId": "8c372c6a-84a2-4019-852e-dde28ddbe850"
+        },
+        {
+            "type": "Ext.data.association.BelongsTo",
+            "reference": {
+                "name": "belongsTo",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "associationKey": "Options",
+                "designer|displayName": "belongsToDeviceTypeCommand",
+                "foreignKey": null,
+                "getterName": null,
+                "model": "DeviceTypeCommand",
+                "primaryKey": "Id"
+            },
+            "name": "MyBelongsToAssociation2",
+            "designerId": "2bc99bb1-b31f-4a3f-86b3-b215a6534469"
+        }
+    ]
+}

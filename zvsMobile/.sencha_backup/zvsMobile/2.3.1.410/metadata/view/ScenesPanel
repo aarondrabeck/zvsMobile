@@ -1,0 +1,136 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "config": null,
+        "designer|userAlias": "scenespanel",
+        "designer|userClassName": "ScenesPanel",
+        "itemId": "scenesPanel",
+        "layout": "fit"
+    },
+    "name": "DevicesPanel1",
+    "designerId": "4b6e07d4-fd06-4c0e-ab4a-3c6dc373e44d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "config",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "dataview-inline"
+                ],
+                "designer|createAlias": null,
+                "docked": null,
+                "inline": true,
+                "itemCls": "sceneItem",
+                "itemId": "scenesDataview",
+                "store": "SceneStore",
+                "style": ""
+            },
+            "name": "MyDataView",
+            "configAlternates": {
+                "inline": "boolean"
+            },
+            "designerId": "6371eb04-c3e8-4128-aaf5-63d8e6db41c7",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"scene-item\">",
+                            "    <h4 class=\"scene-name-truncate\">{Name}</h4>  ",
+                            "    <i class=\"SCENE scene-icon\"></i> ",
+                            "    <div class=\"scene-status\">",
+                            "        <tpl if='isRunning == true'>",
+                            "            Running",
+                            "            <tpl else>",
+                            "                Off",
+                            "            </tpl>",
+                            "",
+                            "            </div>\t    ",
+                            "    </div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "2526d7fc-af28-4e8b-ac29-362ab6a23755"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "name": "MyToolbar1",
+            "designerId": "c6e34e71-3758-4d6e-96e6-6e786f75fdd3",
+            "cn": [
+                {
+                    "type": "Ext.field.Search",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "sceneSearchfield",
+                        "label": "Search",
+                        "labelWidth": null,
+                        "width": "275px"
+                    },
+                    "name": "MySearchField",
+                    "designerId": "50607a52-224b-41a8-88fa-75951b3e75fb"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MySpacer1",
+                    "designerId": "c58cf5f1-4016-40f2-afcc-54a8516261c2"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "refresh",
+                        "itemId": "refreshScenes",
+                        "text": null
+                    },
+                    "name": "MyButton7",
+                    "designerId": "74bd8e45-f7d5-4a67-8acc-833b9fd8c573"
+                }
+            ]
+        }
+    ]
+}

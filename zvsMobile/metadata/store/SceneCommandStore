@@ -10,7 +10,7 @@
         "designer|userClassName": "SceneCommandStore",
         "groupDir": "DESC",
         "groupField": null,
-        "model": "SceneCommand",
+        "model": "SceneStoredCommands",
         "storeId": "SceneCommandStore"
     },
     "name": "DeviceCommandStore1",

@@ -61,7 +61,7 @@
                             "    <h4 class=\"scene-name-truncate\">{Name}</h4>  ",
                             "    <i class=\"SCENE scene-icon\"></i> ",
                             "    <div class=\"scene-status\">",
-                            "        <tpl if='isRunning == true'>",
+                            "        <tpl if='IsRunning == true'>",
                             "            Running",
                             "            <tpl else>",
                             "                Off",

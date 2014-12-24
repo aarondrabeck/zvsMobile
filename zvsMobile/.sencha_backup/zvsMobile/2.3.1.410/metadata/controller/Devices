@@ -1,0 +1,209 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Devices"
+    },
+    "name": "MyController",
+    "designerId": "6ce882fa-eb1d-4863-9c06-c76d93e27216",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "#mainView"
+            },
+            "name": "mainView",
+            "designerId": "47c4e436-8611-4bff-97fd-b57fdd686044"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#deviceDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewItemTap",
+                "implHandler": [
+                    "var mainView = this.getMainView();",
+                    "var valuesStore = Ext.getStore('DeviceValuesStore');",
+                    "var uri = 'odata4/DeviceValues/?$filter=DeviceId eq ' + record.data.Id;",
+                    "valuesStore.getProxy().setUrl(uri);",
+                    "valuesStore.load();",
+                    "",
+                    "var device = record.getData();",
+                    "",
+                    "mainView.push({",
+                    "    xtype: 'devicedetailstabpanel',",
+                    "    title: device.Name + ' - ' + device.Location,",
+                    "    record: record",
+                    "});"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onDataviewItemTap",
+            "designerId": "d0522694-13c8-42c5-9e78-da8fb488bf72"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#devicesReloadBtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "onReloadTap",
+                "implHandler": [
+                    "var deviceStore = Ext.getStore('DeviceStore');",
+                    "deviceStore.load();"
+                ],
+                "name": "tap"
+            },
+            "name": "onReloadTap",
+            "designerId": "eb3098de-7923-45d3-9165-8485b976891d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#deviceDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewRefresh",
+                "implHandler": [
+                    "var locationNames = [];",
+                    "",
+                    "var deviceStore = Ext.getStore('DeviceStore');",
+                    "",
+                    "var existingFilters = [];",
+                    "var segButton = dataview.down('#filterSegmentedButton');",
+                    "",
+                    "segButton.getItems().each(function(item) {",
+                    "    existingFilters.push(item.getInitialConfig().locationFilter);",
+                    "});",
+                    "",
+                    "",
+                    "",
+                    "//Create list without duplicates",
+                    "",
+                    "var allRecords = deviceStore.queryBy(function(){return true;});",
+                    "allRecords.each(function(element) {",
+                    "    if(locationNames.indexOf(element.data.Location) === -1)",
+                    "        locationNames.push(element.data.Location);",
+                    "});",
+                    "",
+                    "",
+                    "",
+                    "locationNames.sort();",
+                    "",
+                    "",
+                    "",
+                    "var buttons = [];",
+                    "locationNames.forEach(function(value, index, array) {",
+                    "",
+                    "    if(existingFilters.indexOf(value) === -1)",
+                    "        buttons.push({ text: value, locationFilter:value });",
+                    "});",
+                    "segButton.add(buttons);"
+                ],
+                "name": "refresh"
+            },
+            "name": "onDataviewRefresh",
+            "designerId": "62fd5231-f582-429a-96d3-afa1576d8abf"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "segmentedbutton#filterSegmentedButton",
+                "designer|targetType": "Ext.SegmentedButton",
+                "fn": "onSegmentedbuttonToggle",
+                "implHandler": [
+                    "if(!isPressed)",
+                    "    return;",
+                    "",
+                    "var deviceStore = Ext.getStore('DeviceStore');",
+                    "var filter = button.getInitialConfig().locationFilter;",
+                    "if(filter)",
+                    "{",
+                    "    if(filter == 'all')",
+                    "        deviceStore.clearFilter();",
+                    "    else",
+                    "        deviceStore.filter('Location', filter);",
+                    "}"
+                ],
+                "name": "toggle"
+            },
+            "name": "onSegmentedbuttonToggle",
+            "designerId": "cef6ff2e-9edb-4f2b-8b33-c218cdf788e1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel#devicesPanel",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onPanelInitialize",
+                "implHandler": [
+                    "var deviceStore = Ext.getStore('DeviceStore');",
+                    "deviceStore.load();",
+                    "deviceStore.clearFilter();"
+                ],
+                "name": "initialize"
+            },
+            "name": "onPanelInitialize",
+            "designerId": "98b9126d-23de-4dac-b5f9-da592bdd0934"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel#devicesPanel",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onDevicePanelShow",
+                "implHandler": [
+                    "var deviceStore = Ext.getStore('DeviceStore');",
+                    "",
+                    "if(deviceStore.needsRefresh)",
+                    "{",
+                    "    deviceStore.load();",
+                    "    ",
+                    "    deviceStore.needsRefresh = false;",
+                    "}"
+                ],
+                "name": "show"
+            },
+            "name": "onDevicePanelShow",
+            "designerId": "f9ceef1c-3f69-4081-94ea-7c4debcb0bbc"
+        }
+    ]
+}

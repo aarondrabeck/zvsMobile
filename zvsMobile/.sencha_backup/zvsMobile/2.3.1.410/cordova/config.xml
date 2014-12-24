@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget  id="com.noncelabs.zvsmobile" version="2.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>zvsMobile</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+	<icon src="icons/icon-ldpi.png" platform="android" density="ldpi" />
+	<icon src="icons/icon-mdpi.png" platform="android" density="mdpi" />
+	<icon src="icons/icon-hdpi.png" platform="android" density="hdpi" />
+	<icon src="icons/icon-xhdpi.png" platform="android" density="xhdpi" />
+		<icon src="icons/icon-xxhdpi.png" platform="android" density="xxhdpi" />
+			<icon src="icons/icon-xxxhdpi.png" platform="android" density="xxxhdpi" />
+</widget>

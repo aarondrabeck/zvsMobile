@@ -1,0 +1,67 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scenecontrolpanel",
+        "designer|userClassName": "SceneControlPanel",
+        "id": null,
+        "itemId": "sceneControlPanel",
+        "scrollable": "vertical"
+    },
+    "name": "DeviceControlPanel1",
+    "designerId": "e6018204-ba7f-4ae9-aa30-5b4f0428f448",
+    "cn": [
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "activateSceneBtn",
+                "margin": 10,
+                "text": "Activate Scene"
+            },
+            "name": "MyButton4",
+            "designerId": "eceed485-58b5-449b-b185-4ac507621591"
+        },
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "tpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "tpl",
+                "implHandler": [
+                    "",
+                    "<table class=\"info-table\">",
+                    "    <thead>",
+                    "        <tr>",
+                    "            <th>Order</th>",
+                    "            <th >Command</th>",
+                    "        </tr>",
+                    "    </thead>",
+                    "    <tbody>",
+                    "        <tpl for=\".\">",
+                    "            <tr>                    ",
+                    "                <td>{SortOrder}</td>",
+                    "                <td>{TargetObjectName} {Description}</td>",
+                    "            </tr>",
+                    "        </tpl>",
+                    "    </tbody>",
+                    "</table>",
+                    ""
+                ]
+            },
+            "name": "tpl",
+            "designerId": "6780fa36-5b45-4881-b072-2122f05de482"
+        }
+    ]
+}

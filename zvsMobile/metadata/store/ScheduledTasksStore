@@ -46,7 +46,7 @@
                 "noCache": false,
                 "sortParam": "$orderby",
                 "startParam": "$skip",
-                "url": "odata4/ScheduledTasks?$select=Id, Frequency, Name, isEnabled, SortOrder&$expand=StoredCommand",
+                "url": "odata4/ScheduledTasks",
                 "useDefaultXhrHeader": false
             },
             "name": "MyAjaxProxy",

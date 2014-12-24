@@ -1,0 +1,133 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "config": null,
+        "designer|userAlias": "triggerpanel",
+        "designer|userClassName": "TriggerPanel",
+        "itemId": "triggerPanel",
+        "layout": "fit"
+    },
+    "name": "ScenesPanel1",
+    "designerId": "9ed2c857-9189-453a-94b0-b175399bf9c2",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "config",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "dataview-inline"
+                ],
+                "designer|createAlias": null,
+                "docked": null,
+                "inline": true,
+                "itemCls": "triggerItem",
+                "itemId": "triggerDataview",
+                "store": "DeviceValueTriggerStore",
+                "style": ""
+            },
+            "name": "MyDataView",
+            "configAlternates": {
+                "inline": "boolean"
+            },
+            "designerId": "6d017de9-9d35-4e91-89b5-ce8f6160cbfa",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"trigger-item\">",
+                            "    <h4 class=\"trigger-name-truncate\">{Name}</h4>  ",
+                            "    <i class=\"triggers-icon trigger-box-icon\"></i> ",
+                            "    <div class=\"trigger-status\"><tpl if='isEnabled == true'>",
+                            "            Enabled",
+                            "            <tpl else>",
+                            "                Disabled",
+                            "            </tpl></div>\t    ",
+                            "</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "63729e75-e4b1-43ae-b485-533f653daefe"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "name": "MyToolbar1",
+            "designerId": "90aa29bc-9d26-41ca-bd5a-9a1595b8d803",
+            "cn": [
+                {
+                    "type": "Ext.field.Search",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "triggerSearchfield",
+                        "label": "Search",
+                        "labelWidth": null,
+                        "width": "275px"
+                    },
+                    "name": "MySearchField",
+                    "designerId": "a9827b3e-346e-4bd2-b904-af2c21395106"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MySpacer1",
+                    "designerId": "75e7a1b5-85ee-4866-93b1-d95478cc31e4"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "refresh",
+                        "itemId": "refreshTriggerBtn",
+                        "text": null
+                    },
+                    "name": "MyButton7",
+                    "designerId": "a5826c39-2cf6-4191-bc05-5f04865963cd"
+                }
+            ]
+        }
+    ]
+}

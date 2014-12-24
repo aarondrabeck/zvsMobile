@@ -1,0 +1,87 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "SettingsEdit"
+    },
+    "name": "MyController",
+    "designerId": "caee1779-2d65-469d-ba31-9a79bf95275c",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#saveSettingsButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "OnSaveBtnTap",
+                "implHandler": [
+                    "var settingForm = button.getParent();",
+                    "",
+                    "var settingsStore = Ext.getStore('Settings');",
+                    "var record = settingsStore.getById(1);",
+                    "// get model instance \"bound\" to form",
+                    "var rec = settingForm.getRecord();",
+                    "",
+                    "var settingsStore = Ext.getStore('Settings');",
+                    "record.set(settingForm.getValues());",
+                    "",
+                    "var errs = rec.validate();",
+                    "var msg = '';",
+                    "",
+                    "if (!errs.isValid()) {",
+                    "    errs.each(function (err) {",
+                    "        msg += err.getField() + ' ' + err.getMessage() + '.  ';",
+                    "    });",
+                    "    Ext.Msg.alert('Error', msg);",
+                    "    return;",
+                    "}",
+                    "",
+                    "settingsStore.sync();",
+                    "Ext.Msg.alert('Done',  'Settings saved');"
+                ],
+                "name": "tap"
+            },
+            "name": "OnSaveBtnTap",
+            "designerId": "ed34b076-203b-41ac-bbfc-671fb6285501"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "formpanel#settingsForm",
+                "designer|targetType": "Ext.form.Panel",
+                "fn": "onSettingsFormInitialize",
+                "implHandler": [
+                    "var settingsStore = Ext.getStore('Settings');",
+                    "var record = settingsStore.getById(1);",
+                    "",
+                    "if(!record) {",
+                    "    record = Ext.create('zvsMobile.model.Settings', {",
+                    "        Id: 1,",
+                    "        Url: 'localhost',",
+                    "        Port: 5332",
+                    "    });",
+                    "    settingsStore.add(record);",
+                    "}",
+                    "",
+                    "component.setRecord(record);"
+                ],
+                "name": "initialize"
+            },
+            "name": "onSettingsFormInitialize",
+            "designerId": "f8dfafe8-0a13-48b8-bcb1-e61db8c35ce1"
+        }
+    ]
+}

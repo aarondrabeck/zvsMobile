@@ -25,30 +25,65 @@ Ext.define('zvsMobile.view.NavMenu', {
         centered: true,
         hidden: true,
         itemId: 'navMenu',
-        padding: 10,
+        padding: 20,
         hideOnMaskTap: true,
         modal: true,
         items: [
             {
                 xtype: 'button',
                 navView: 'devicespanel',
-                margin: 15,
-                iconCls: 'home',
+                itemId: 'DevicesBtn',
+                margin: '20 3 3 3',
+                iconCls: 'light',
                 text: 'Devices'
             },
             {
                 xtype: 'button',
-                navView: 'aboutpanel',
-                margin: 15,
-                iconCls: 'info',
+                navView: 'scenespanel',
+                itemId: 'ScenesBtn',
+                margin: 3,
+                style: 'color:#9EC974',
+                iconCls: 'scene',
                 text: 'Scenes'
             },
             {
                 xtype: 'button',
-                navView: 'contactpanel',
-                margin: 15,
-                iconCls: 'compose',
+                navView: 'groupspanel',
+                itemId: 'GroupsBtn',
+                margin: 3,
+                iconCls: 'group',
                 text: 'Groups'
+            },
+            {
+                xtype: 'button',
+                navView: 'scheduledtaskspanel',
+                itemId: 'TaskBtn',
+                margin: 3,
+                iconCls: 'task',
+                text: 'Tasks'
+            },
+            {
+                xtype: 'button',
+                navView: 'triggerdetailspanel',
+                itemId: 'TriggersBtn',
+                margin: 3,
+                iconCls: 'trigger',
+                text: 'Triggers'
+            },
+            {
+                xtype: 'button',
+                navView: 'loglist',
+                margin: 3,
+                iconCls: 'log',
+                text: 'Log'
+            },
+            {
+                xtype: 'button',
+                navView: 'settingsform',
+                itemId: 'SettingsBtn',
+                margin: '20 3 3 3',
+                iconCls: 'settings3',
+                text: 'Settings'
             }
         ]
     }

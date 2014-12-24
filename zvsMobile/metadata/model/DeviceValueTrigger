@@ -62,7 +62,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "isEnabled",
+                "name": "IsEnabled",
                 "type": "boolean"
             },
             "name": "field53",
@@ -97,21 +97,32 @@
             "designerId": "176b4db6-5ab2-41fc-9ca4-8340351670c3"
         },
         {
-            "type": "Ext.data.association.HasOne",
+            "type": "Ext.data.Field",
             "reference": {
-                "name": "hasOne",
-                "type": "object"
+                "name": "fields",
+                "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "associatedName": "StoredCommand",
-                "associationKey": "StoredCommand",
-                "designer|displayName": "hasOneStoredCommand",
-                "model": "StoredCommand",
-                "primaryKey": "Id"
+                "name": "TargetObjectName",
+                "type": "string"
             },
-            "name": "MyHasOneAssociation3",
-            "designerId": "f73b761d-e891-4565-a9ee-e270a058d793"
+            "name": "field60",
+            "designerId": "50b6f950-b472-402a-9a98-94b5f39c6c5a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "TriggerDescription",
+                "type": "string"
+            },
+            "name": "field61",
+            "designerId": "38c1531b-f219-4d86-8202-6e962f02db81"
         }
     ]
 }

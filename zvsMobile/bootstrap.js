@@ -83,6 +83,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.Template": [],
   "Ext.Title": [],
   "Ext.TitleBar": [],
+  "Ext.Toast": [],
   "Ext.Toolbar": [],
   "Ext.Video": [],
   "Ext.XTemplate": [],
@@ -451,7 +452,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.draw.Color": [],
   "Ext.draw.Component": [],
   "Ext.draw.Draw": [],
-  "Ext.draw.Group": [],
   "Ext.draw.LimitedCache": [],
   "Ext.draw.Matrix": [],
   "Ext.draw.Path": [],
@@ -466,6 +466,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.draw.engine.SvgContext.Gradient": [],
   "Ext.draw.engine.SvgExporter": [],
   "Ext.draw.gradient.Gradient": [],
+  "Ext.draw.gradient.GradientDefinition": [],
   "Ext.draw.gradient.Linear": [],
   "Ext.draw.gradient.Radial": [],
   "Ext.draw.modifier.Animation": [],
@@ -480,7 +481,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.draw.sprite.Composite": [],
   "Ext.draw.sprite.Ellipse": [],
   "Ext.draw.sprite.EllipticalArc": [],
-  "Ext.draw.sprite.GradientDefinition": [],
   "Ext.draw.sprite.Image": [],
   "Ext.draw.sprite.Instancing": [],
   "Ext.draw.sprite.Line": [],
@@ -908,6 +908,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.TitleBar": [
     "widget.titlebar"
   ],
+  "Ext.Toast": [],
   "Ext.Toolbar": [
     "widget.toolbar"
   ],
@@ -1351,7 +1352,6 @@ Ext.ClassManager.addNameAliasMappings({
     "widget.draw"
   ],
   "Ext.draw.Draw": [],
-  "Ext.draw.Group": [],
   "Ext.draw.LimitedCache": [],
   "Ext.draw.Matrix": [],
   "Ext.draw.Path": [],
@@ -1368,6 +1368,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.draw.engine.SvgContext.Gradient": [],
   "Ext.draw.engine.SvgExporter": [],
   "Ext.draw.gradient.Gradient": [],
+  "Ext.draw.gradient.GradientDefinition": [],
   "Ext.draw.gradient.Linear": [],
   "Ext.draw.gradient.Radial": [],
   "Ext.draw.modifier.Animation": [
@@ -1398,7 +1399,6 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.draw.sprite.EllipticalArc": [
     "sprite.ellipticalArc"
   ],
-  "Ext.draw.sprite.GradientDefinition": [],
   "Ext.draw.sprite.Image": [
     "sprite.image"
   ],

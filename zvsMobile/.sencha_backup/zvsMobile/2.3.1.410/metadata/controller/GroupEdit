@@ -1,0 +1,99 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "GroupEdit"
+    },
+    "name": "MyController",
+    "designerId": "71556e9b-2eb6-4859-af09-00d17b9c24ff",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "2a3762e6-e291-4a64-8a0a-f56a575d20b0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "formpanel#groupEdit",
+                "designer|targetType": "Ext.form.Panel",
+                "fn": "onFormpanelShow",
+                "implHandler": [
+                    "var deviceRecord = component.getParent().getRecord();",
+                    "component.setRecord(deviceRecord);"
+                ],
+                "name": "show"
+            },
+            "name": "onFormpanelShow",
+            "designerId": "1cb17ecf-6396-4368-9293-c94bd12be2e0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#saveGroupButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSaveButtonTap",
+                "implHandler": [
+                    "var editPanel = button.getParent();",
+                    "var groupRecord = editPanel.getRecord();",
+                    "button.disable();",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: 'odata4/Groups('+groupRecord.getData().Id+')/',",
+                    "    method: 'PATCH',",
+                    "    scope : this,",
+                    "    jsonData: {",
+                    "        Name: editPanel.getValues().Name",
+                    "    },",
+                    "    headers: {",
+                    "        'Content-Type': 'application/json',",
+                    "        'X-zvsToken': zvsMobile.app.getToken()",
+                    "    },",
+                    "    success: function (response, opts) {",
+                    "",
+                    "        Ext.Msg.alert('Done',  'Group updated');",
+                    "        var groupStore = Ext.getStore('GroupStore');",
+                    "        var record = groupStore.getById(groupRecord.getData().Id);",
+                    "        record.set(editPanel.getValues());",
+                    "        var mainView = this.getMainView();",
+                    "        mainView.getNavigationBar().setTitle(record.data.Name);",
+                    "",
+                    "        button.enable();",
+                    "",
+                    "    },",
+                    "    failure: function (response, opts) {",
+                    "        Ext.Msg.alert('Error',  'Group update failed. ' + response.responseText);",
+                    "        button.enable();",
+                    "    }",
+                    "});"
+                ],
+                "name": "tap"
+            },
+            "name": "onSaveButtonTap",
+            "designerId": "d897d154-05ca-41d1-998c-6232a410bf85"
+        }
+    ]
+}

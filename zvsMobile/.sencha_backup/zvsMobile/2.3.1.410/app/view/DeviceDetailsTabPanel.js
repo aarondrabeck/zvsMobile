@@ -20,16 +20,16 @@ Ext.define('zvsMobile.view.DeviceDetailsTabPanel', {
     requires: [
         'zvsMobile.view.DeviceControlPanel',
         'zvsMobile.view.DeviceValuesPanel',
-        'Ext.Panel',
+        'zvsMobile.view.DeviceEdit',
+        'Ext.form.Panel',
         'Ext.tab.Bar'
     ],
 
     config: {
-        id: 'deviceDetailsTabPanel',
+        itemId: 'deviceDetailsTabPanel',
         items: [
             {
                 xtype: 'devicecontrolpanel',
-                scrollable: 'vertical',
                 title: 'Control',
                 iconCls: 'action'
             },
@@ -37,10 +37,16 @@ Ext.define('zvsMobile.view.DeviceDetailsTabPanel', {
                 xtype: 'devicevaluespanel',
                 title: 'Values',
                 iconCls: 'more'
+            },
+            {
+                xtype: 'deviceedit',
+                title: 'Edit',
+                iconCls: 'compose'
             }
         ],
         tabBar: {
             docked: 'bottom',
+            itemId: 'actionTabBar',
             ui: 'neutral',
             layout: {
                 type: 'hbox',

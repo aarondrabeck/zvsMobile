@@ -1,0 +1,298 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scenespanel",
+        "designer|userClassName": "Scenes"
+    },
+    "name": "MyController",
+    "designerId": "0f69bfbb-812c-4fb8-b595-7d12d66b698e",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "08640e7d-7e19-497c-9b4a-5314165ab343"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel#scenesPanel",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onPanelInitialize",
+                "implHandler": [
+                    "var sceneStore = Ext.getStore('SceneStore');",
+                    "sceneStore.clearFilter();",
+                    "sceneStore.load();"
+                ],
+                "name": "initialize"
+            },
+            "name": "onPanelInitialize",
+            "designerId": "b7606757-fd6d-4039-9876-e0614632aeb8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#scenesDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewItemTap",
+                "implHandler": [
+                    "var mainView = this.getMainView();",
+                    "var sceneRecord = record;",
+                    "",
+                    "mainView.push({",
+                    "    xtype: 'scenetabpanel',",
+                    "    title: sceneRecord.data.Name,",
+                    "    record: sceneRecord",
+                    "});"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onDataviewItemTap",
+            "designerId": "d7d1b2dd-d075-4fd8-ae03-6aaffefffa48"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#activateSceneBtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "onActivateButtonTap",
+                "implHandler": [
+                    "var sceneRecord = button.getParent().getRecord();",
+                    "var cmdStore = Ext.getStore('BuiltinCommandStore');",
+                    "cmdStore.getProxy().setUrl('odata4/BuiltinCommands/?$expand=Options&$filter=UniqueIdentifier eq \\'RUN_SCENE\\'');",
+                    "cmdStore.load({",
+                    "    scope: this,",
+                    "    callback: function(records, operation, success) {",
+                    "        // the operation object contains all of the details of the load operation",
+                    "",
+                    "        var cmd = cmdStore.first();",
+                    "        if(cmd)",
+                    "        {",
+                    "            button.disable();",
+                    "            button.setHtml('Running...');",
+                    "            zvsMobile.app.executeCommand(cmd.data.Id, sceneRecord.data.Id, '', function(success, error){",
+                    "                button.enable();",
+                    "                 button.setHtml('Activate Scene');",
+                    "                if(success)",
+                    "                    Ext.Msg.alert('Success',  success);",
+                    "                else",
+                    "                    Ext.Msg.alert('Error',  error);",
+                    "            });",
+                    "",
+                    "        }",
+                    "    }",
+                    "});"
+                ],
+                "name": "tap"
+            },
+            "name": "onActivateButtonTap",
+            "designerId": "6054579c-e4d1-44dc-947b-d9948116665f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#refreshScenes",
+                "designer|targetType": "Ext.Button",
+                "fn": "onReloadButtonTap",
+                "implHandler": [
+                    "var sceneStore = Ext.getStore('SceneStore');",
+                    "sceneStore.load();"
+                ],
+                "name": "tap"
+            },
+            "name": "onReloadButtonTap",
+            "designerId": "eba6ae7a-0a19-48dc-ad52-03d6f30de6ba"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "formpanel#sceneEdit",
+                "designer|targetType": "Ext.form.Panel",
+                "fn": "onSceneEditShow",
+                "implHandler": [
+                    "var sceneRecord = component.getParent().getRecord();",
+                    "component.setRecord(sceneRecord);"
+                ],
+                "name": "show"
+            },
+            "name": "onSceneEditShow",
+            "designerId": "3e7b04a8-e262-47bd-9cfd-68ee80a13a10"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel#sceneControlPanel",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onControlPanelShow",
+                "implHandler": [
+                    "var sceneRecord = component.getParent().getRecord();",
+                    "component.setRecord(sceneRecord);",
+                    "",
+                    "var cmdStore = Ext.getStore('SceneCommandStore');",
+                    "cmdStore.removeAll();",
+                    "",
+                    "cmdStore.getProxy().setUrl('odata4/SceneCommands/?$filter=SceneId eq '+sceneRecord.data.Id+'&$expand=StoredCommand');",
+                    "cmdStore.load({",
+                    "    scope: this,",
+                    "    callback: function(records, operation, success) {",
+                    "        data = [];",
+                    "        cmdStore.each(function(record) {",
+                    "            data.push({SortOrder: record.data.SortOrder,",
+                    "                       TargetObjectName: record.getStoredCommand().data.TargetObjectName,",
+                    "                       Description: record.getStoredCommand().data.Description});",
+                    "",
+                    "        });",
+                    "",
+                    "        component.setData(data);",
+                    "    }",
+                    "});"
+                ],
+                "name": "show"
+            },
+            "name": "onControlPanelShow",
+            "designerId": "4e2e1723-2f11-4087-94ff-ce45674913a9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#saveSceneButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSaveButtonTap",
+                "implHandler": [
+                    "var editPanel = button.getParent();",
+                    "var sceneRecord = editPanel.getRecord();",
+                    "button.disable();",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: 'odata4/Scenes('+sceneRecord.getData().Id+')/',",
+                    "    method: 'PATCH',",
+                    "    scope : this,",
+                    "    jsonData: {",
+                    "        Name: editPanel.getValues().Name",
+                    "    },",
+                    "    headers: {",
+                    "        'Content-Type': 'application/json',",
+                    "        'X-zvsToken': zvsMobile.app.getToken()",
+                    "    },",
+                    "    success: function (response, opts) {",
+                    "        Ext.Msg.alert('Done',  'Scene updated');",
+                    "",
+                    "        var sceneStore = Ext.getStore('SceneStore');",
+                    "        var record = sceneStore.getById(sceneRecord.getData().Id);",
+                    "        record.set(editPanel.getValues());",
+                    "        var mainView = this.getMainView();",
+                    "        mainView.getNavigationBar().setTitle(record.data.Name);",
+                    "        button.enable();",
+                    "    },",
+                    "    failure: function (response, opts) {",
+                    "        Ext.Msg.alert('Error',  'Scene update failed. ' + response.responseText);",
+                    "        button.enable();",
+                    "    }",
+                    "});"
+                ],
+                "name": "tap"
+            },
+            "name": "onSaveButtonTap",
+            "designerId": "c2eba7fd-95f2-4805-a470-f12e8a60c6c5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "searchfield#sceneSearchfield",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onSearchfieldKeyup",
+                "implHandler": [
+                    "queryString = textfield.getValue();",
+                    "",
+                    "var store = Ext.getStore('SceneStore');",
+                    "store.clearFilter();",
+                    "",
+                    "if(queryString) {",
+                    "    var thisRegEx = new RegExp(queryString, \"i\");",
+                    "    store.filterBy(function(record) {",
+                    "        if (thisRegEx.test(record.get('Name')))",
+                    "            return true;",
+                    "        return false;",
+                    "    });",
+                    "}"
+                ],
+                "name": "keyup"
+            },
+            "name": "onSearchfieldKeyup",
+            "designerId": "7a9d3fbe-c032-410c-a15b-d62f6586b764"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "searchfield#sceneSearchfield",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onSearchfieldClearicontap",
+                "implHandler": [
+                    "    var store = Ext.getStore('SceneStore');",
+                    "    store.clearFilter();"
+                ],
+                "name": "clearicontap"
+            },
+            "name": "onSearchfieldClearicontap",
+            "designerId": "76258650-4503-4bc2-a21c-955669ffdc6f"
+        }
+    ]
+}

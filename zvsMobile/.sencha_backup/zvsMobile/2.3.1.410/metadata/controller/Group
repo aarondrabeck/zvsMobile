@@ -1,0 +1,252 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Group"
+    },
+    "name": "MyController",
+    "designerId": "c6990502-853e-4d93-b472-8289f0f01fc3",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "b271fde3-9246-472a-abda-d655302978f3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#groupsDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewInitialize",
+                "implHandler": [
+                    "var groupStore = Ext.getStore('GroupStore');",
+                    "groupStore.clearFilter();",
+                    "groupStore.load();"
+                ],
+                "name": "initialize"
+            },
+            "name": "onDataviewInitialize",
+            "designerId": "01c308d6-820a-4c22-b162-30726751e742"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#groupsDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewItemTap",
+                "implHandler": [
+                    "var mainView = this.getMainView();",
+                    "        var groupRecord = record;",
+                    "",
+                    "        mainView.push({",
+                    "            xtype: 'groupdetailstabpanel',",
+                    "            title: groupRecord.data.Name,",
+                    "            record: groupRecord",
+                    "        });"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onDataviewItemTap",
+            "designerId": "36159d66-82c9-451d-b29c-02b3bc387af7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#turnOnBtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "onTurnOnButtonTap",
+                "implHandler": [
+                    "var group = button.getParent().getRecord().getData();",
+                    "var cmdStore = Ext.getStore('BuiltinCommandStore');",
+                    "cmdStore.getProxy().setUrl('odata4/BuiltinCommands/?$expand=Options&$filter=UniqueIdentifier eq \\'GROUP_ON\\'');",
+                    "",
+                    "cmdStore.load({",
+                    "    scope: this,",
+                    "    callback: function(records, operation, success) {",
+                    "        // the operation object contains all of the details of the load operation",
+                    "",
+                    "        var cmd = cmdStore.first();",
+                    "        if(cmd)",
+                    "        {",
+                    "            button.disable();",
+                    "            zvsMobile.app.executeCommand(cmd.data.Id, group.Id, '', function(success, error){",
+                    "                button.enable();",
+                    "                if(success)",
+                    "                    Ext.Msg.alert('Success',  success);",
+                    "                else",
+                    "                    Ext.Msg.alert('Error',  error);",
+                    "            });",
+                    "        }",
+                    "",
+                    "    }",
+                    "});",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onTurnOnButtonTap",
+            "designerId": "d2606cca-840e-4d30-9e65-e8a384e5f86b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#turnOffBtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "onTurnOffButtonTap",
+                "implHandler": [
+                    "var group = button.getParent().getRecord().getData();",
+                    "var cmdStore = Ext.getStore('BuiltinCommandStore');",
+                    "cmdStore.getProxy().setUrl('odata4/BuiltinCommands/?$expand=Options&$filter=UniqueIdentifier eq \\'GROUP_OFF\\'');",
+                    "cmdStore.load({",
+                    "    scope: this,",
+                    "    callback: function(records, operation, success) {",
+                    "        // the operation object contains all of the details of the load operation",
+                    "",
+                    "        var cmd = cmdStore.first();",
+                    "        if(cmd)",
+                    "        {",
+                    "            button.disable();",
+                    "            zvsMobile.app.executeCommand(cmd.data.Id, group.Id, '', function(success, error){",
+                    "                button.enable();",
+                    "                if(success)",
+                    "                    Ext.Msg.alert('Success',  success);                    ",
+                    "                else",
+                    "                    Ext.Msg.alert('Error',  error);",
+                    "            });",
+                    "        }",
+                    "",
+                    "    }",
+                    "});",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onTurnOffButtonTap",
+            "designerId": "1af703cc-fb26-4553-889f-20cac4ddb82f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#refreshGroupsBtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "onReloadButtonTap",
+                "implHandler": [
+                    "var groupStore = Ext.getStore('GroupStore');",
+                    "groupStore.load();"
+                ],
+                "name": "tap"
+            },
+            "name": "onReloadButtonTap",
+            "designerId": "7f21c865-1903-41e8-8ef0-5504bd92a20f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel#groupControlPanel",
+                "designer|targetType": "Ext.Panel",
+                "fn": "ongroupControlPanelShow",
+                "implHandler": [
+                    "var groupRecord = component.getParent().getRecord();",
+                    "component.setRecord(groupRecord);"
+                ],
+                "name": "show"
+            },
+            "name": "ongroupControlPanelShow",
+            "designerId": "93a76bbf-7ba7-44ac-b22d-a8359237a955"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "searchfield#groupSearchfield",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onSearchfieldKeyup",
+                "implHandler": [
+                    "queryString = textfield.getValue();",
+                    "",
+                    "var store = Ext.getStore('GroupStore');",
+                    "store.clearFilter();",
+                    "",
+                    "if(queryString) {",
+                    "    var thisRegEx = new RegExp(queryString, \"i\");",
+                    "    store.filterBy(function(record) {",
+                    "        if (thisRegEx.test(record.get('Name')))",
+                    "            return true;",
+                    "        return false;",
+                    "    });",
+                    "}"
+                ],
+                "name": "keyup"
+            },
+            "name": "onSearchfieldKeyup",
+            "designerId": "9e6297db-7ea1-4913-8cc1-74c1e3bd949e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "searchfield#groupSearchfield",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onSearchfieldClearicontap",
+                "implHandler": [
+                    "var store = Ext.getStore('GroupStore');",
+                    "store.clearFilter();"
+                ],
+                "name": "clearicontap"
+            },
+            "name": "onSearchfieldClearicontap",
+            "designerId": "fc5303a5-c78c-4b70-ba53-7cf19c2c2bcb"
+        }
+    ]
+}

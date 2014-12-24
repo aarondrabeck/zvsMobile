@@ -1,0 +1,99 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DeviceEdit"
+    },
+    "name": "MyController",
+    "designerId": "b9986f0b-0d77-4b51-b712-9d2b6fb64d43",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "formpanel#deviceEdit",
+                "designer|targetType": "Ext.form.Panel",
+                "fn": "onFormpanelShow",
+                "implHandler": [
+                    "var deviceRecord = component.getParent().getRecord();",
+                    "component.setRecord(deviceRecord);"
+                ],
+                "name": "show"
+            },
+            "name": "onFormpanelShow",
+            "designerId": "623324aa-27ea-4165-b165-8635e4a004fd"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#saveDeviceButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSaveButtonTap",
+                "implHandler": [
+                    "var editPanel = button.getParent();",
+                    "var deviceRecord = editPanel.getRecord();",
+                    "button.disable();",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: 'odata4/Devices('+deviceRecord.getData().Id+')/',",
+                    "    method: 'PATCH',",
+                    "    scope : this,",
+                    "    jsonData: {",
+                    "        Name: editPanel.getValues().Name,",
+                    "        Location: editPanel.getValues().Location",
+                    "    },",
+                    "    headers: {",
+                    "        'Content-Type': 'application/json',",
+                    "        'X-zvsToken': zvsMobile.app.getToken()",
+                    "    },",
+                    "    success: function (response, opts) {",
+                    "        Ext.Msg.alert('Done',  'Device updated');",
+                    "",
+                    "        var deviceStore = Ext.getStore('DeviceStore');",
+                    "        var record = deviceStore.getById(deviceRecord.getData().Id);",
+                    "        record.set(editPanel.getValues());",
+                    "        var mainView = this.getMainView();",
+                    "        mainView.getNavigationBar().setTitle(record.data.Name + ' - ' + record.data.Location);",
+                    "        button.enable();",
+                    "    },",
+                    "    failure: function (response, opts) {",
+                    "        Ext.Msg.alert('Error',  'Device update failed. ' + response.responseText);",
+                    "        button.enable();",
+                    "    }",
+                    "});",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onSaveButtonTap",
+            "designerId": "d1c71a3d-275e-4af7-8ed2-5de47c9cb791"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "eaf272bc-12d2-4043-9e9b-74e4c0e81792"
+        }
+    ]
+}

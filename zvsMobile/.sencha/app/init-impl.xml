@@ -184,10 +184,6 @@
         <dirname property="build.bootstrap.manifest.dir" file="${build.bootstrap.manifest.path}"/>
         <dirname property="build.bootstrap.metadata.dir" file="${build.bootstrap.metadata.path}"/>
 
-        <x-get-relative-path from="${build.out.base.path}" to="${build.out.js.path}" property="build.classes.name"/>
-        <x-get-relative-path from="${build.out.page.dir}" to="${build.out.microloader.path}" property="build.microloader.name"/>
-        <x-get-relative-path from="${build.out.page.dir}" to="${build.out.manifest.path}" property="app.manifest.name"/>
-
         <if>
             <x-is-true value="${app.output.microloader.enable}"/>
             <then>

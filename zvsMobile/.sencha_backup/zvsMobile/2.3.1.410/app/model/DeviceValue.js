@@ -18,9 +18,7 @@ Ext.define('zvsMobile.model.DeviceValue', {
 
     requires: [
         'Ext.data.Field',
-        'Ext.data.association.BelongsTo',
-        'Ext.data.proxy.Ajax',
-        'Ext.data.reader.Json'
+        'Ext.data.association.BelongsTo'
     ],
     uses: [
         'zvsMobile.model.Device'
@@ -72,29 +70,15 @@ Ext.define('zvsMobile.model.DeviceValue', {
             {
                 name: 'Id',
                 type: 'int'
+            },
+            {
+                name: 'ValueType',
+                type: 'string'
             }
         ],
         belongsTo: {
             model: 'zvsMobile.model.Device',
             foreignKey: 'DeviceId'
-        },
-        proxy: {
-            type: 'odata',
-            api: {
-                read: 'http://localhost:50232/DeviceValues/'
-            },
-            filterParam: '$filter',
-            url: 'http://localhost:50232/DeviceValues',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-zvsToken': 'CC2D226814CBC713134BD9D09B892F10A9'
-            },
-            useDefaultXhrHeader: false,
-            reader: {
-                type: 'json',
-                idProperty: 'Id',
-                rootProperty: 'value'
-            }
         }
     }
 });

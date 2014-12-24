@@ -26,8 +26,8 @@
                 "implHandler": [
                     "",
                     "<div class=\"log\">",
-                    "    <h2 class=\"description\">{Description}</h2>",
-                    "    <h3>{DatetimeLog} <span class=\"urgency\">{Urgency}</span> ",
+                    "    <h2 class=\"description\">{Message}</h2>",
+                    "    <h3>{Datetime} <span class=\"urgency\">{Level}</span> ",
                     "        <span class=\"source\">{Source}</span>  </h3>",
                     "</div>",
                     "",

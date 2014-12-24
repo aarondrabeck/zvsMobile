@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "autoLoad": true,
         "data": null,
         "designer|userClassName": "DeviceStore",
         "groupDir": "DESC",
@@ -16,6 +15,13 @@
     },
     "name": "MyJsonStore",
     "designerId": "d19a7c47-5d37-416c-8220-e97fd3d14506",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "needsRefresh",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "Ext.data.proxy.Ajax",
@@ -25,21 +31,22 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|createAlias": "odata",
+                "designer|createAlias": null,
                 "enablePagingParams": false,
                 "filterParam": "$filter",
                 "headers": [
                     "",
                     "{",
-                    "'Content-Type': 'application/json',",
-                    "'X-zvsToken':'CC2D226814CBC713134BD9D09B892F10A9'",
-                    "}"
+                    "'Content-Type': 'application/json'",
+                    "",
+                    "}",
+                    ""
                 ],
                 "limitParam": "$top",
                 "noCache": false,
                 "sortParam": "$orderby",
                 "startParam": "$skip",
-                "url": "http://10.1.0.54:50232/Devices/?$expand=Type&$filter=Type/UniqueIdentifier ne 'CONTROLLER'",
+                "url": "odata4/Devices/?$expand=Type&$filter=Type/UniqueIdentifier ne 'CONTROLLER'",
                 "useDefaultXhrHeader": false
             },
             "name": "MyAjaxProxy",

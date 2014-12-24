@@ -7,16 +7,13 @@
     "codeClass": null,
     "userConfig": {
         "autoDestroy": false,
-        "container|animation": null,
         "designer|initialView": true,
         "designer|userAlias": "mainview",
         "designer|userClassName": "MainView",
-        "itemId": "mainView",
-        "requires": [
-            "Ext.Menu"
-        ]
+        "itemId": "mainView"
     },
-    "designerId": "faa0b672-f068-471f-a6d3-46b660667fb3",
+    "name": "MyNavigationView",
+    "designerId": "335df79e-bcaf-4953-a691-f30caba3435f",
     "cn": [
         {
             "type": "linkedinstance",
@@ -28,8 +25,8 @@
             "userConfig": {
                 "title": "zVirtualScenes Mobile"
             },
-            "name": "homepanel1",
-            "designerId": "611df710-4d88-48e6-b652-5631659fb354",
+            "name": "homepanel2",
+            "designerId": "3c8b6df4-0515-42e5-a442-abaab7ffa852",
             "masterInstanceId": "4845c96b-bcf7-4419-b852-0471958945f9"
         },
         {
@@ -41,16 +38,13 @@
             "codeClass": null,
             "userConfig": {
                 "autoDestroy": false,
-                "centered": false,
-                "container|align": "center",
-                "designer|displayName": null,
-                "designer|uiInterfaceName": "neutral",
+                "designer|uiInterfaceName": "light",
                 "docked": "top",
                 "itemId": "navBar",
-                "ui": "neutral"
+                "ui": "light"
             },
-            "name": "MyNavigationBar",
-            "designerId": "0f1bbba6-fd7c-4481-b01a-5619bf8837f8",
+            "name": "MyNavigationBar1",
+            "designerId": "32a22e3d-cb62-41ba-8592-108aa6dd047b",
             "cn": [
                 {
                     "type": "Ext.Button",
@@ -65,7 +59,7 @@
                         "text": ""
                     },
                     "name": "MyButton",
-                    "designerId": "4e669aad-cf0b-4bd8-bc1b-a90720ca5001"
+                    "designerId": "014837ab-c5a6-40f2-84f5-c7cfa6cbaf15"
                 }
             ]
         }

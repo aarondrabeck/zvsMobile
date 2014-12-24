@@ -61,7 +61,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "label": "Enabled",
-                        "name": "isEnabled"
+                        "name": "IsEnabled"
                     },
                     "name": "MyCheckbox",
                     "designerId": "7301edca-82ea-4408-b3a9-463c22749eea"
@@ -107,7 +107,7 @@
                     "userConfig": {
                         "designer|displayName": "tpl",
                         "implHandler": [
-                            "When {Description} then {StoredCommand.Description} {StoredCommand.TargetObjectName}"
+                            "When {TriggerDescription} then {Description} {TargetObjectName}"
                         ]
                     },
                     "name": "tpl",

@@ -32,8 +32,6 @@
             "DeviceTypeCommand",
             "BuiltinCommand",
             "LogItem",
-            "SceneCommand",
-            "StoredCommand",
             "DeviceValueTrigger",
             "DeviceValueHistory",
             "ScheduledTask"
@@ -58,7 +56,6 @@
             "ScheduledTasksStore"
         ],
         "views": [
-            "MainView",
             "DevicesPanel",
             "NavMenu",
             "DeviceValuesPanel",
@@ -82,7 +79,8 @@
             "DeviceValueNumberHistoryChart",
             "ScheduledTasksPanel",
             "ScheduledTasksDetailsTabPanel",
-            "ScheduledTaskEdit"
+            "ScheduledTaskEdit",
+            "MainView"
         ]
     },
     "name": "Application",

@@ -61,7 +61,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "label": "Enabled",
-                        "name": "isEnabled"
+                        "name": "IsEnabled"
                     },
                     "name": "MyCheckbox",
                     "designerId": "7f9fbaef-5c54-40b7-ba20-4ead83148d26"
@@ -76,8 +76,8 @@
                     "userConfig": {
                         "disabled": true,
                         "itemId": null,
-                        "label": "Frequency",
-                        "name": "Frequency"
+                        "label": "TaskType",
+                        "name": "TaskType"
                     },
                     "name": "MyTextField1",
                     "designerId": "0831851a-e151-4dff-88dc-a2634f93608e"
@@ -123,7 +123,7 @@
                     "userConfig": {
                         "designer|displayName": "tpl",
                         "implHandler": [
-                            "{StoredCommand.Description} {StoredCommand.TargetObjectName}"
+                            "{Description} {TargetObjectName}"
                         ]
                     },
                     "name": "tpl",

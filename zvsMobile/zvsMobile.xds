@@ -3,8 +3,8 @@
     "settings": {
         "cmd": {
             "license": "gpl",
-            "cmdVersion": "5.0.3.276",
-            "frameworkVersion": "2.3.1.410"
+            "cmdVersion": "5.0.2.270",
+            "frameworkVersion": "2.4.0.482"
         },
         "canvasControls": {
             "viewportSize": {
@@ -28,18 +28,17 @@
         "lockUrlPrefix": true,
         "installStatus": "Not Installed",
         "lastBuildSelection": {
-            "value": "nativeBuild",
-            "display": "Native Build"
+            "value": "webBuild",
+            "display": "Build web app"
         }
     },
     "xdsVersion": "3.1.0",
-    "xdsBuild": 1903,
+    "xdsBuild": 1943,
     "schemaVersion": 1,
     "upgradeVersion": 300000000007,
-    "framework": "touch23",
+    "framework": "touch24",
     "viewOrderMap": {
         "view": [
-            "faa0b672-f068-471f-a6d3-46b660667fb3",
             "6b1d9070-b093-4ef5-9404-8efed4679c79",
             "12fcc33d-36a7-475b-8792-6b6c96745316",
             "4b6e07d4-fd06-4c0e-ab4a-3c6dc373e44d",
@@ -63,7 +62,8 @@
             "5062612a-b257-4f85-900b-3877bf2840fd",
             "a5284e4a-9e24-4493-8018-14d2cd48d418",
             "632a52dd-5878-467c-803c-1358af9ca3dc",
-            "1e761b3f-1c47-4b2e-84f3-df0b01870c37"
+            "1e761b3f-1c47-4b2e-84f3-df0b01870c37",
+            "335df79e-bcaf-4953-a691-f30caba3435f"
         ],
         "store": [
             "d19a7c47-5d37-416c-8220-e97fd3d14506",
@@ -109,7 +109,6 @@
             "d8a0dba7-c827-4549-8eaf-9dc6c6e65fb1",
             "d30da493-d84b-42a8-864a-2e1e4ab2b9f4",
             "f03c824e-f21b-4644-9f37-04cfdf39e0e1",
-            "abe25fd0-2d4d-46eb-916c-80522281314f",
             "6ecf3389-12df-470b-804d-808afabaf561",
             "ac29629d-de54-4e4d-8280-14cdd33d3f6f",
             "e38a0729-2ee5-4487-8e67-762a4ddc1349"

@@ -27,20 +27,17 @@ Ext.define('zvsMobile.store.DeviceValuesStore', {
         groupDir: 'DESC',
         groupField: 'Genre',
         model: 'zvsMobile.model.DeviceValue',
-        remoteFilter: true,
         storeId: 'DeviceValuesStore',
         proxy: {
-            type: 'odata',
+            type: 'ajax',
             enablePagingParams: false,
             filterParam: '$filter',
             limitParam: '$top',
             noCache: false,
-            sortParam: '$orderby',
             startParam: '$skip',
-            url: 'http://10.1.0.54:50232/DeviceValues/',
+            url: '/odata4/DeviceValues/',
             headers: {
-                'Content-Type': 'application/json',
-                'X-zvsToken': 'CC2D226814CBC713134BD9D09B892F10A9'
+                'Content-Type': 'application/json'
             },
             useDefaultXhrHeader: false,
             reader: {

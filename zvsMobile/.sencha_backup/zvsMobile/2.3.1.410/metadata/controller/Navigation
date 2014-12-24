@@ -24,15 +24,20 @@
                 ],
                 "fn": "showMenu",
                 "implHandler": [
-                    "",
                     "// Get or create navigation menu",
                     "var menu = this.getNavMenu();",
                     "if (!menu) {",
                     "    menu = Ext.create('widget.navmenu');",
                     "}",
                     "",
+                    "Ext.Viewport.setMenu(menu, {",
+                    "    side:'left',",
+                    "    cover:true",
+                    "});",
+                    "Ext.Viewport.toggleMenu('left');",
+                    "",
                     "var menuItems = menu.getItems().items,\t\t\t\t// Menu buttons",
-                    "\tcurrentView = this.currentView || \"devicespanel\";\t// Current view alias, default to home",
+                    "\tcurrentView = this.currentView || \"homepanel\";\t// Current view alias, default to home",
                     "",
                     "// Disable active view's button",
                     "menuItems.forEach(function(button) {",
@@ -43,65 +48,23 @@
                     "    // Active button, disable",
                     "    if (currentView == navView) {",
                     "        button.disable();",
+                    "        button.setStyle('background-color:#f7f7f7');",
                     "    }",
                     "",
                     "    // Enable all others",
                     "    else {",
                     "        button.enable();",
+                    "         button.setStyle('background-color:white');",
                     "    }",
                     "",
                     "});",
                     "",
-                    "// Show menu by menu button",
-                    "menu.showBy(target);",
                     ""
                 ],
                 "name": "tap"
             },
             "name": "showMenu",
             "designerId": "beb8e73c-976d-4842-a233-effc11685cea"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "navmenu button",
-                "designer|targetType": "Ext.Button",
-                "fn": "navigate",
-                "implHandler": [
-                    "",
-                    "/**",
-                    "*\tThe following code enables navigation",
-                    "*\tby checking the custom attribute 'navView',",
-                    "*\twhich is the alias of the view to show",
-                    "*/",
-                    "",
-                    "var text = button.getText(),\t\t\t\t\t\t// Button text",
-                    "\tnavView = button.getInitialConfig().navView,\t// Get custom attribute 'navView'",
-                    "\tmainView = this.getMainView(),\t\t\t\t\t// Main navigation view",
-                    "\tnavMenu = this.getNavMenu();\t\t\t\t\t// Navigation menu",
-                    "",
-                    "// Add view to main view",
-                    "mainView.push({",
-                    "    xtype: navView,",
-                    "    title: text",
-                    "});",
-                    "",
-                    "// Remember current view alias",
-                    "this.currentView = navView;",
-                    "",
-                    "// Hide menu",
-                    "navMenu.hide();",
-                    "//Ext.select('.x-button-back').hide();"
-                ],
-                "name": "tap"
-            },
-            "name": "navigate",
-            "designerId": "7d2ec394-96f9-46bd-afc0-b4bea517cc08"
         },
         {
             "type": "controllerref",
@@ -117,6 +80,189 @@
             },
             "name": "navMenu",
             "designerId": "ee9ba556-0a0b-41bb-981d-cd5cda8538c8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "f7c17090-e222-461c-8889-730a24cbf86e"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "devicesPanel",
+                "selector": "panel#devicesPanel"
+            },
+            "name": "devicesPanel",
+            "designerId": "40e7a626-f458-42a4-afbd-c9bb3fb3f676"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navmenu button",
+                "designer|targetType": "Ext.Button",
+                "fn": "navigate",
+                "implHandler": [
+                    "var text = button.getText(),\t\t\t\t\t\t// Button text",
+                    "\tnavView = button.getInitialConfig().navView,\t// Get custom attribute 'navView'",
+                    "\tmainView = this.getMainView(),\t\t\t\t\t// Main navigation view",
+                    "\tnavMenu = this.getNavMenu();\t\t\t\t\t// Navigation menu",
+                    "",
+                    "// Add view to main view",
+                    "mainView.push({",
+                    "    xtype: navView,",
+                    "    title: text",
+                    "});",
+                    "",
+                    "// Remember current view alias",
+                    "this.currentView = navView;",
+                    "",
+                    "Ext.Viewport.removeMenu('left');"
+                ],
+                "name": "tap"
+            },
+            "name": "navigate",
+            "designerId": "6386a869-da81-4839-88b2-8a8d852b82c0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#homeDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onHomeDataViewItemTap",
+                "implHandler": [
+                    "",
+                    "var navView = record.data.navView,\t// Get custom attribute 'navView'",
+                    "    mainView = this.getMainView();\t\t\t\t\t// Main navigation view",
+                    "",
+                    "// Add view to main view",
+                    "mainView.push({",
+                    "    xtype: navView,",
+                    "    title: record.data.Name",
+                    "});",
+                    "",
+                    "// Remember current view alias",
+                    "this.currentView = navView;"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onHomeDataViewItemTap",
+            "designerId": "d4043a3f-1e02-4fe5-9168-7309f9f535ec"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navigationview#mainView",
+                "designer|targetType": "Ext.navigation.View",
+                "fn": "onNavigationviewInitialize",
+                "implHandler": [
+                    "Ext.Ajax.on('beforerequest', (function(conn, options, eOpts) {  ",
+                    "    ",
+                    "    options.url = zvsMobile.app.getBaseUrl() + options.url;",
+                    "    options.headers = {",
+                    "        'X-zvsToken': zvsMobile.app.getToken(),",
+                    "    };",
+                    "}), this);"
+                ],
+                "name": "initialize"
+            },
+            "name": "onNavigationviewInitialize",
+            "designerId": "c9501372-6550-418a-af6d-aadaeaa09335"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "navigationview#mainView",
+                "designer|targetType": "Ext.navigation.View",
+                "fn": "onNavigationviewPush",
+                "implHandler": [
+                    "history.pushState(); "
+                ],
+                "name": "push"
+            },
+            "name": "onNavigationviewPush",
+            "designerId": "aefa5b16-d7fe-452f-ba06-302958730a46"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#navBar",
+                "designer|targetType": "Ext.navigation.Bar",
+                "fn": "onBarBack",
+                "implHandler": [
+                    "history.back();  //pop the state to trigger listener in step 3",
+                    "    return false;  // return false so listener will take care of this"
+                ],
+                "name": "back"
+            },
+            "name": "onBarBack",
+            "designerId": "f88156ab-667d-4900-a6c8-54a60952a453"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "var that = this;",
+                    "window.addEventListener('popstate', function () {",
+                    "    var portal = that.getMainView();",
+                    "    if (portal) {",
+                    "        portal.pop();",
+                    "",
+                    "        var currentItem = portal.getActiveItem();",
+                    "",
+                    "        if(currentItem)",
+                    "            that.currentView = currentItem.xtype;",
+                    "",
+                    "    }",
+                    "}, false);"
+                ]
+            },
+            "name": "launch",
+            "designerId": "4addd0ea-4994-4c2f-8a82-b7e34bb912ec"
         }
     ]
 }

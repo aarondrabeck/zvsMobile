@@ -47,7 +47,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "isRunning",
+                "name": "IsRunning",
                 "type": "boolean"
             },
             "name": "field28",

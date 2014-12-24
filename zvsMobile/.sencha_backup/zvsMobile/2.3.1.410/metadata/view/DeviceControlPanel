@@ -7,24 +7,15 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "devicecontrolpanel",
-        "designer|userClassName": "DeviceControlPanel"
+        "designer|userClassName": "DeviceControlPanel",
+        "id": null,
+        "itemId": "deviceControlPanel",
+        "requires": [
+            "Ext.field.Toggle",
+            "Ext.field.Select"
+        ],
+        "scrollable": "vertical"
     },
-    "name": "MyPanel",
-    "designerId": "0c783cbd-5169-4e88-95ec-762d60755feb",
-    "cn": [
-        {
-            "type": "Ext.Label",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "centered": true,
-                "html": "Device Control"
-            },
-            "name": "MyLabel3",
-            "designerId": "233bff74-9207-46f0-8d8a-ac4e56549702"
-        }
-    ]
+    "name": "SwitchControlPanel2",
+    "designerId": "0599d6d3-6430-4abc-acd2-a6797bbd23d2"
 }

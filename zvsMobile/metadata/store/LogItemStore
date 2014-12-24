@@ -46,7 +46,7 @@
                 "noCache": false,
                 "sortParam": null,
                 "startParam": "$skip",
-                "url": "odata4/LogItems",
+                "url": "odata4/LogEntries",
                 "useDefaultXhrHeader": false
             },
             "name": "MyAjaxProxy",

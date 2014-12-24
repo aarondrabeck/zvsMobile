@@ -18,17 +18,13 @@ Ext.define('zvsMobile.view.DeviceControlPanel', {
     alias: 'widget.devicecontrolpanel',
 
     requires: [
-        'Ext.Label'
+        'Ext.field.Toggle',
+        'Ext.field.Select'
     ],
 
     config: {
-        items: [
-            {
-                xtype: 'label',
-                centered: true,
-                html: 'Device Control'
-            }
-        ]
+        itemId: 'deviceControlPanel',
+        scrollable: 'vertical'
     }
 
 });

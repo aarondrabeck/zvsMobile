@@ -1,4 +1,19 @@
 {
+   "builds": {
+      "web": {
+         "default": true
+      },
+      "native": {
+         "packager": "cordova",
+         "cordova": {
+            "config": {
+               "id": "com.noncelabs.zvsmobile",
+               "name": "zvsMobile",
+               "platforms": "android"
+            }
+         }
+      }
+   },
    "name": "zvsMobile",
    "indexHtmlPath": "index.html",
    "url": null,
@@ -10,10 +25,6 @@
       {
          "path": "bootstrap.js",
          "x-bootstrap": true
-      },
-      {
-         "path": "resources\\js\\odataProxy.js",
-         "x-compile": true
       },
       {
          "path": "app.js",
@@ -32,8 +43,8 @@
             "tablet",
             "desktop"
          ],
-         "theme": "Default",
-         "path": "resources/css/sencha-touch-e81cb86d-bfa2-4156-85bd-7960788c5c75.css"
+         "theme": "Cupertino",
+         "path": "resources/css/cupertino-3b10905e-e12b-4042-a02c-eadff8942fdf.css"
       }
    ],
    "appCache": {
@@ -57,5 +68,5 @@
    "archivePath": "archive",
    "requires": [],
    "id": "d7e67716-a498-4e7d-b3d9-502de430131b",
-   "classpath": "${app.dir}/app,${app.dir}/resources/js/"
+   "classpath": "${app.dir}/app,${app.dir}/app/override/data/proxy/"
 }

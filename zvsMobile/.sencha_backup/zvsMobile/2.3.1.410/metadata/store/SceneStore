@@ -1,0 +1,78 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userClassName": "SceneStore",
+        "groupDir": "DESC",
+        "groupField": null,
+        "model": "Scene",
+        "storeId": "SceneStore"
+    },
+    "name": "DeviceStore1",
+    "designerId": "f6322341-b060-4399-a1ec-2c2d6ec2cd6a",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|createAlias": null,
+                "enablePagingParams": false,
+                "filterParam": "$filter",
+                "headers": [
+                    "",
+                    "{",
+                    "'Content-Type': 'application/json'",
+                    "",
+                    "}",
+                    ""
+                ],
+                "limitParam": "$top",
+                "noCache": false,
+                "sortParam": "$orderby",
+                "startParam": "$skip",
+                "url": "odata4/Scenes",
+                "useDefaultXhrHeader": false
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "b416c9f2-38e6-4dc9-80a6-da9a4035fdbc",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "Id",
+                        "rootProperty": "value"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "1eeae1c9-8c5d-45ee-a034-7cd99c9f3ecb"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "SortOrder"
+            },
+            "name": "MySorter",
+            "designerId": "b58ac101-0649-4a00-9e92-da5feb4d61b7"
+        }
+    ]
+}

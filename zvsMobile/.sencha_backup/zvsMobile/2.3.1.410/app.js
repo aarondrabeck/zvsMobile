@@ -20,29 +20,159 @@ Ext.Loader.setConfig({
 
 
 Ext.application({
+
+    requires: [
+        'Ext.MessageBox'
+    ],
     models: [
         'Device',
-        'DeviceValue'
+        'DeviceValue',
+        'Settings',
+        'Scene',
+        'Group',
+        'DeviceCommand',
+        'DeviceTypeCommand',
+        'BuiltinCommand',
+        'LogItem',
+        'SceneCommand',
+        'StoredCommand',
+        'DeviceValueTrigger',
+        'DeviceValueHistory',
+        'ScheduledTask'
     ],
     stores: [
         'DeviceStore',
-        'DeviceValuesStore'
+        'DeviceValuesStore',
+        'Settings',
+        'SceneStore',
+        'GroupStore',
+        'DeviceCommandStore',
+        'DeviceTypeCommandStore',
+        'BuiltinCommandStore',
+        'LogItemStore',
+        'SceneCommandStore',
+        'DeviceValueTriggerStore',
+        'DeviceValueHistoryStore',
+        'ScheduledTasksStore'
     ],
     views: [
         'MainView',
         'DevicesPanel',
-        'AboutPanel',
-        'ContactPanel',
         'NavMenu',
-        'DeviceControlPanel',
         'DeviceValuesPanel',
-        'DeviceDetailsTabPanel'
+        'DeviceDetailsTabPanel',
+        'SettingsForm',
+        'ScenesPanel',
+        'GroupsPanel',
+        'HomePanel',
+        'DeviceControlPanel',
+        'SceneControlPanel',
+        'GroupControlPanel',
+        'DeviceEdit',
+        'SceneEdit',
+        'SceneTabPanel',
+        'GroupDetailTabPanel',
+        'GroupEdit',
+        'LogList',
+        'TriggerPanel',
+        'TriggerDetailsTabPanel',
+        'TriggerEdit',
+        'DeviceValueNumberHistoryChart',
+        'ScheduledTasksPanel',
+        'ScheduledTasksDetailsTabPanel',
+        'ScheduledTaskEdit'
     ],
     controllers: [
         'Navigation',
-        'DevicesController'
+        'Devices',
+        'SettingsEdit',
+        'Scenes',
+        'Group',
+        'DeviceEdit',
+        'DeviceControl',
+        'GroupEdit',
+        'Log',
+        'Trigger',
+        'TriggerEdit',
+        'DeviceValueHistory',
+        'ScheduledTask',
+        'ScheduledTaskEdit'
     ],
     name: 'zvsMobile',
+
+    getToken: function() {
+        var store = Ext.getStore('Settings');
+        var setting = store.getById(1);
+        if(setting && setting.data && setting.data.Token)
+        return setting.data.Token;
+
+        return 'defaultToken';
+
+
+    },
+
+    getBaseUrl: function() {
+        var settingsStore = Ext.getStore('Settings');
+        var record = settingsStore.getById(1);
+
+        if(record && record.data && record.data.Url&& record.data.Port)
+            return record.data.Url + ':'+ record.data.Port +'/' ;
+
+            return 'http://localhost:8080/';
+    },
+
+    executeCommand: function(commandId, arg1, arg2, calllback) {
+        var uri = 'odata4/Commands(' + commandId + ')/Actions.Execute';
+        var callback2 = calllback;
+        Ext.Ajax.request({
+            scope:  this,
+            url: uri,
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-zvsToken':zvsMobile.app.getToken()
+            },
+            jsonData: {
+                Argument: arg1.toString(),
+                Argument2: arg2.toString()
+            },
+            success: function (response, opts) {
+
+                var result = JSON.parse(response.responseText);
+                if (result.value) {
+                    callback2(result.value, null);
+                }
+                else {
+                    callback2(null, 'Error executing command');
+                }
+            },
+            failure: function (response, opts) {
+
+                if(response.status > 399)
+                {
+                    if(response.status == 400 && response.responseText !== '')
+                    {
+
+                        var result = JSON.parse(response.responseText);
+
+                        if(result.error)
+                        {
+                            callback2(null, result.error.message);
+                            return;
+                        }
+                    }
+
+                    callback2(null, response.statusText);
+
+
+                }
+                else
+                {
+                    callback2(null, 'Connection error');
+                }
+            }
+        });
+    },
 
     launch: function() {
 

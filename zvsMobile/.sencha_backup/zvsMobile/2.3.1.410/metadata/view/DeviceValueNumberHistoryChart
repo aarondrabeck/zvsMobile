@@ -1,0 +1,108 @@
+{
+    "type": "Ext.chart.CartesianChart",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "colors": [
+            "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+        ],
+        "designer|userAlias": "devicevaluenumberhistorychart",
+        "designer|userClassName": "DeviceValueNumberHistoryChart",
+        "store": "DeviceValueHistoryStore"
+    },
+    "name": "MyLineChart",
+    "designerId": "1e761b3f-1c47-4b2e-84f3-df0b01870c37",
+    "isBuiltIn": true,
+    "iconCls": "icon-line-chart",
+    "autoName": "MyLineChart",
+    "cn": [
+        {
+            "type": "Ext.chart.axis.Time",
+            "reference": {
+                "name": "axes",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "M d H:i",
+                "fields": [
+                    "DateTime"
+                ],
+                "title": "Date"
+            },
+            "name": "MyTimeAxis",
+            "designerId": "9a3a7d03-4a0a-4c2b-bfd6-ea626a09823c"
+        },
+        {
+            "type": "Ext.chart.axis.Numeric",
+            "reference": {
+                "name": "axes",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fields": [
+                    "Value"
+                ],
+                "grid": [
+                    "{",
+                    "    odd: {",
+                    "        fill: '#e8e8e8'",
+                    "    }",
+                    "}"
+                ],
+                "increment": 10,
+                "maximum": null,
+                "minimum": null,
+                "position": "left",
+                "title": "Value"
+            },
+            "name": "MyNumericAxis",
+            "designerId": "b00b9308-aced-403d-96cd-81ad8ad09145"
+        },
+        {
+            "type": "Ext.chart.series.Line",
+            "reference": {
+                "name": "series",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "colors": [
+                    "rgba(0,200,0,0.3)"
+                ],
+                "marker": [
+                    "{",
+                    "",
+                    "                    type: \"circle\",",
+                    "                    radius: 5",
+                    "                    }",
+                    ""
+                ],
+                "style": [
+                    "{",
+                    "    smooth: true,",
+                    "    stroke: 'rgb(0,200,0)',",
+                    "}"
+                ],
+                "xField": "DateTime",
+                "yField": "Value"
+            },
+            "name": "MyLineSeries",
+            "designerId": "563974ff-9c21-4046-971c-8d4d9fbe59dd"
+        },
+        {
+            "type": "Ext.chart.interactions.PanZoom",
+            "reference": {
+                "name": "interactions",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyPanZoomInteraction",
+            "designerId": "bd288603-f835-4be4-a7e4-57108fa54562"
+        }
+    ]
+}

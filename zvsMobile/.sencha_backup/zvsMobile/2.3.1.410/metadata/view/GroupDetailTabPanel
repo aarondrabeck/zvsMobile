@@ -1,0 +1,60 @@
+{
+    "type": "Ext.tab.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "groupdetailstabpanel",
+        "designer|userClassName": "GroupDetailTabPanel",
+        "itemId": "groupDetailTabPanel"
+    },
+    "name": "MyTabPanel",
+    "designerId": "a5284e4a-9e24-4493-8018-14d2cd48d418",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "action",
+                "title": "Control"
+            },
+            "name": "groupcontrolpanel",
+            "designerId": "303f040d-d552-4894-89fb-dfb0d492f3fc",
+            "masterInstanceId": "7f81fe33-2747-4892-abf5-a20bda43f765"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "compose",
+                "title": "Edit"
+            },
+            "name": "groupedit",
+            "designerId": "b92839fe-c994-4ab1-96c8-dd01e604e04c",
+            "masterInstanceId": "b2f24797-f7bb-428a-816c-f389fae12da4"
+        },
+        {
+            "type": "Ext.tab.Bar",
+            "reference": {
+                "name": "tabBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "name": "MyTabBar2",
+            "designerId": "f8c90270-7c6b-42a6-bab9-2b8910169edb"
+        }
+    ]
+}

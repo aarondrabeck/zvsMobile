@@ -1,0 +1,101 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ScheduledTaskEdit"
+    },
+    "name": "MyController",
+    "designerId": "595c2344-f197-445e-a4f7-cb2538fbb272",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#saveTaskButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSaveButtonTap",
+                "implHandler": [
+                    "var editPanel = button.getParent();",
+                    "var record = editPanel.getRecord();",
+                    "button.disable();",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: 'odata4/ScheduledTasks('+record.getData().Id+')/',",
+                    "    method: 'PATCH',",
+                    "    scope : this,",
+                    "    jsonData: {",
+                    "        Name: editPanel.getValues().Name,",
+                    "        isEnabled: editPanel.getValues().isEnabled === null? false : editPanel.getValues().isEnabled",
+                    "    },",
+                    "    headers: {",
+                    "        'Content-Type': 'application/json',",
+                    "        'X-zvsToken': zvsMobile.app.getToken()",
+                    "    },",
+                    "    success: function (response, opts) {",
+                    "",
+                    "        Ext.Msg.alert('Done',  'Scheduled task updated');",
+                    "        var store = Ext.getStore('ScheduledTasksStore');",
+                    "        var storeRecord = store.getById(record.getData().Id);",
+                    "        storeRecord.set(editPanel.getValues());",
+                    "        var mainView = this.getMainView();",
+                    "        mainView.getNavigationBar().setTitle(storeRecord.data.Name);",
+                    "",
+                    "        button.enable();",
+                    "",
+                    "    },",
+                    "    failure: function (response, opts) {",
+                    "        Ext.Msg.alert('Error',  'Scheduled task update failed. ' + response.responseText);",
+                    "        button.enable();",
+                    "    }",
+                    "});    "
+                ],
+                "name": "tap"
+            },
+            "name": "onSaveButtonTap",
+            "designerId": "43e0ef26-e633-46d0-80fa-d3af039c0afe"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "formpanel#scheduledTaskEdit",
+                "designer|targetType": "Ext.form.Panel",
+                "fn": "onFormpanelShow",
+                "implHandler": [
+                    "var record = component.getParent().getRecord();",
+                    "component.setRecord(record);",
+                    "component.down('#commandLabel').setRecord(record);"
+                ],
+                "name": "show"
+            },
+            "name": "onFormpanelShow",
+            "designerId": "b5ad94db-98ac-45c9-a223-a7671553527f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "4fb850e2-fb03-4960-a5c9-66ff58f533f2"
+        }
+    ]
+}

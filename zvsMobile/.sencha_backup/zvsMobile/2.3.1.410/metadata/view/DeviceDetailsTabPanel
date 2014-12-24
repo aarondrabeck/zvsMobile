@@ -8,8 +8,8 @@
     "userConfig": {
         "designer|userAlias": "devicedetailstabpanel",
         "designer|userClassName": "DeviceDetailsTabPanel",
-        "id": "deviceDetailsTabPanel",
-        "itemId": null
+        "id": null,
+        "itemId": "deviceDetailsTabPanel"
     },
     "name": "MyTabPanel",
     "designerId": "5ef75ce5-018b-4de5-9eaa-97cf5b8dda42",
@@ -22,14 +22,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "docked": null,
                 "iconCls": "action",
-                "scrollable": "vertical",
                 "title": "Control"
             },
             "name": "devicecontrolpanel",
-            "designerId": "9abb4469-c285-4b30-a388-513099c3621c",
-            "masterInstanceId": "0c783cbd-5169-4e88-95ec-762d60755feb"
+            "designerId": "6c3a462e-5338-4957-9666-ad668323a13c",
+            "masterInstanceId": "0599d6d3-6430-4abc-acd2-a6797bbd23d2"
         },
         {
             "type": "linkedinstance",
@@ -47,6 +45,21 @@
             "masterInstanceId": "6192869c-ad6e-4f4c-a2ae-d6058a34b218"
         },
         {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "compose",
+                "title": "Edit"
+            },
+            "name": "deviceedit",
+            "designerId": "33443b2b-f46d-40e2-9834-ac7268b72114",
+            "masterInstanceId": "092d320b-5559-45ba-9c18-26a64d777666"
+        },
+        {
             "type": "Ext.tab.Bar",
             "reference": {
                 "name": "tabBar",
@@ -57,6 +70,7 @@
                 "container|pack": "center",
                 "designer|uiInterfaceName": "neutral",
                 "docked": "bottom",
+                "itemId": "actionTabBar",
                 "ui": "neutral"
             },
             "name": "MyTabBar",

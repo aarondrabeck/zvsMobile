@@ -60,7 +60,7 @@
                             "<div class=\"trigger-item\">",
                             "    <h4 class=\"trigger-name-truncate\">{Name}</h4>  ",
                             "    <i class=\"triggers-icon trigger-box-icon\"></i> ",
-                            "    <div class=\"trigger-status\"><tpl if='isEnabled == true'>",
+                            "    <div class=\"trigger-status\"><tpl if='IsEnabled == true'>",
                             "            Enabled",
                             "            <tpl else>",
                             "                Disabled",

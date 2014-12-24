@@ -1,0 +1,71 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Scene"
+    },
+    "name": "MyModel",
+    "designerId": "24a1fc61-1181-4675-8a21-8e3754ef1ad5",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Id",
+                "type": "int"
+            },
+            "name": "field26",
+            "designerId": "816940b2-aa71-4d05-b964-7d2b34866d66"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Name",
+                "type": "string"
+            },
+            "name": "field27",
+            "designerId": "09cb335a-95b1-48e4-970f-e2c0a837792b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "isRunning",
+                "type": "boolean"
+            },
+            "name": "field28",
+            "designerId": "7fccb51a-8e0c-481c-a988-fe85cb237447"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "SortOrder",
+                "type": "int"
+            },
+            "name": "field29",
+            "designerId": "ba465eb9-43f7-455b-bf77-5676fad37b49"
+        }
+    ]
+}

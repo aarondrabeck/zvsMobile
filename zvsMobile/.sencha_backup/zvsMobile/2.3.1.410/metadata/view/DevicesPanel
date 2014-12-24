@@ -12,7 +12,6 @@
         "itemId": "devicesPanel",
         "layout": "fit",
         "requires": [
-            "zvsMobile.view.DeviceControlPanel",
             "Ext.SegmentedButton"
         ]
     },
@@ -38,9 +37,10 @@
                 ],
                 "docked": null,
                 "inline": true,
-                "itemCls": "dataview-inline",
+                "itemCls": "deviceItem",
                 "itemId": "deviceDataview",
-                "store": "DeviceStore"
+                "store": "DeviceStore",
+                "style": ""
             },
             "name": "MyDataView",
             "configAlternates": {
@@ -58,86 +58,113 @@
                     "userConfig": {
                         "designer|displayName": "itemTpl",
                         "implHandler": [
-                            "<div class=\"device-item {type.UniqueIdentifier}\">",
-                            "\t",
-                            "\t<h4 class=\"device-name-truncate\">{Name}</h4>",
-                            "   ",
+                            "<div class=\"device-item\">",
+                            "\t<h4 class=\"device-name-truncate\">{Name}</h4>  ",
+                            "    <i class=\"device-icon {type.UniqueIdentifier}\"></i> ",
                             "    <div class=\"device-level\">",
                             "\t\t\t{CurrentLevelText}",
-                            "\t\t</div>",
-                            "\t<div class=\"device-item-level\">",
-                            "\t\t<div class=\"meter\">",
-                            "\t\t\t<div class=\"progress\" style=\"width:{CurrentLevelInt}%\">",
-                            "\t\t\t</div>",
-                            "\t\t</div>",
-                            "\t\t",
-                            "\t</div>",
+                            "\t\t</div>\t",
                             "     <h5 class=\"location-name-truncate\">{Location}</h5>",
                             "</div>"
                         ]
                     },
                     "name": "itemTpl",
                     "designerId": "8ce68141-8d96-44e5-b14d-b9e843127df6"
-                }
-            ]
-        },
-        {
-            "type": "Ext.Toolbar",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|createAlias": "",
-                "designer|uiInterfaceName": "neutral",
-                "docked": "bottom",
-                "id": "deviceToolbar",
-                "itemId": null,
-                "scrollable": "horizontal",
-                "ui": "neutral"
-            },
-            "name": "MyToolbar",
-            "designerId": "0e77d338-af51-439d-bc18-a0c329b17791",
-            "cn": [
+                },
                 {
-                    "type": "Ext.Button",
+                    "type": "Ext.Toolbar",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "id": "devicesReloadBtn",
-                        "itemId": null,
-                        "text": "Reload"
+                        "container|align": "center",
+                        "designer|createAlias": "",
+                        "designer|uiInterfaceName": "neutral",
+                        "docked": "bottom",
+                        "height": 50,
+                        "id": null,
+                        "itemId": "deviceToolbar",
+                        "padding": 5,
+                        "scrollable": "horizontal",
+                        "ui": "neutral"
                     },
-                    "name": "MyButton1",
-                    "designerId": "7318a77a-7937-4eb1-baed-0bbcd73b5fee"
-                },
-                {
-                    "type": "Ext.Spacer",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "name": "MySpacer",
-                    "designerId": "10a7d678-0ca9-4f45-969a-6935fee0115f"
-                },
-                {
-                    "type": "Ext.SegmentedButton",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "allowDepress": true,
-                        "id": "filterSegmentedButton"
-                    },
-                    "name": "MySegmentedButton",
-                    "designerId": "8b10ecfe-1cbe-4f0f-991f-8bb287aeabd0"
+                    "name": "MyToolbar",
+                    "designerId": "0e77d338-af51-439d-bc18-a0c329b17791",
+                    "cn": [
+                        {
+                            "type": "Ext.SegmentedButton",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": null,
+                                "itemId": "filterSegmentedButton"
+                            },
+                            "name": "MySegmentedButton",
+                            "designerId": "8b10ecfe-1cbe-4f0f-991f-8bb287aeabd0",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "locationFilter": "all",
+                                        "pressed": true,
+                                        "text": "All"
+                                    },
+                                    "name": "MyButton4",
+                                    "designerId": "47b1cf17-ff49-4733-aec4-9082721610f5",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "locationFilter",
+                                            "type": "string"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MySpacer",
+                            "designerId": "10a7d678-0ca9-4f45-969a-6935fee0115f"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": null,
+                                "border": null,
+                                "centered": false,
+                                "icon": null,
+                                "iconAlign": null,
+                                "iconCls": "refresh",
+                                "id": null,
+                                "itemId": "devicesReloadBtn",
+                                "style": null,
+                                "text": null,
+                                "ui": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "7318a77a-7937-4eb1-baed-0bbcd73b5fee"
+                        }
+                    ]
                 }
             ]
         }

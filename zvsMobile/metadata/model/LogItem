@@ -21,7 +21,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "DatetimeLog",
+                "name": "Datetime",
                 "type": "string"
             },
             "name": "field43",
@@ -35,7 +35,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "Description",
+                "name": "Message",
                 "type": "string"
             },
             "name": "field44",
@@ -63,39 +63,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "Urgency",
+                "name": "Level",
                 "type": "string"
             },
             "name": "field46",
             "designerId": "429ee7da-89cc-467f-8436-50e296ee5031"
-        },
-        {
-            "type": "Ext.data.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "ThreadName",
-                "type": "string"
-            },
-            "name": "field47",
-            "designerId": "fcafc92c-587b-4375-abbb-11f0d1bdda39"
-        },
-        {
-            "type": "Ext.data.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "UserName",
-                "type": "string"
-            },
-            "name": "field48",
-            "designerId": "e75b1332-b74f-43c1-a367-5c2f8d85a208"
         },
         {
             "type": "Ext.data.Field",

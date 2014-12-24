@@ -1,0 +1,101 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoDestroy": false,
+        "baseCls": "x-panel tileParent",
+        "designer|userAlias": "homepanel",
+        "designer|userClassName": "HomePanel",
+        "itemId": "homePanel",
+        "layout": "fit",
+        "scrollable": "vertical"
+    },
+    "name": "MyPanel1",
+    "designerId": "4845c96b-bcf7-4419-b852-0471958945f9",
+    "cn": [
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "dataview-inline"
+                ],
+                "data": [
+                    "[{ Name: 'Devices',",
+                    "Color: '#2CAFE7',",
+                    "Iconcls: 'DIMMER',",
+                    "navView: 'devicespanel'},",
+                    "{ Name: 'Scenes',",
+                    "Color: '#9EC974',",
+                    "Iconcls: 'SCENE',",
+                    "navView: 'scenespanel'},",
+                    "{ Name: 'Groups',",
+                    "Color: '#F5A70E',",
+                    "Iconcls: 'GROUP',",
+                    "navView: 'groupspanel'},",
+                    "{ Name: 'Scheduled Tasks',",
+                    "Color: '#FD605C',",
+                    "Iconcls: 'st-icon',",
+                    "navView: 'scheduledtaskspanel'},",
+                    "{ Name: 'Triggers',",
+                    "Color: '#B173C9',",
+                    "Iconcls: 'triggers-icon',",
+                    "navView: 'triggerpanel'},",
+                    "{ Name: 'Log',",
+                    "Color: '#CACED1',",
+                    "Iconcls: 'log-icon',",
+                    "navView: 'loglist'},",
+                    "{ Name: 'Settings',",
+                    "Color: '#EE5445',",
+                    "Iconcls: 'setting-icon',",
+                    "navView: 'settingsform'}",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "]"
+                ],
+                "docked": null,
+                "inline": true,
+                "itemCls": null,
+                "itemId": "homeDataview",
+                "store": null,
+                "style": ""
+            },
+            "name": "MyDataView1",
+            "configAlternates": {
+                "inline": "boolean"
+            },
+            "designerId": "47200b23-e29e-4252-9491-fb30f71b563f",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"home-tile\" style=\"background-color:{Color}\">\t  ",
+                            "    <i class=\"{Iconcls} home-icon\"></i> ",
+                            "    <h4 class=\"home-name-truncate\">{Name}</h4>",
+                            "</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "5c261843-ec6c-4dcb-a83b-b42437286b3a"
+                }
+            ]
+        }
+    ]
+}

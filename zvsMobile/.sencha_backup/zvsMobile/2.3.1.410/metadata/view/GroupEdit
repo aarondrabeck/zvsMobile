@@ -1,0 +1,74 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "groupedit",
+        "designer|userClassName": "GroupEdit",
+        "itemId": "groupEdit"
+    },
+    "name": "SceneEdit1",
+    "designerId": "b2f24797-f7bb-428a-816c-f389fae12da4",
+    "cn": [
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "10px"
+            },
+            "name": "MySpacer7",
+            "designerId": "b3807bc0-9f13-4534-9116-149f5842369f"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyFieldSet1",
+            "designerId": "2fac763f-7455-4d00-931e-755a08248a15",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": null,
+                        "label": "Name",
+                        "name": "Name",
+                        "required": true
+                    },
+                    "name": "MyTextField",
+                    "designerId": "fd387e62-862d-4b53-ac73-c82b2c8da4d7"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "saveGroupButton",
+                "margin": 10,
+                "text": "Save",
+                "ui": "action"
+            },
+            "name": "MyButton10",
+            "designerId": "030ee7a0-aeea-4eef-a716-d81161dbc91d"
+        }
+    ]
+}

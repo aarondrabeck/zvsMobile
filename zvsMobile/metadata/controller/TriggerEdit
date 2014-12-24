@@ -54,7 +54,7 @@
                     "    scope : this,",
                     "    jsonData: {",
                     "        Name: editPanel.getValues().Name,",
-                    "        isEnabled: editPanel.getValues().isEnabled === null? false : editPanel.getValues().isEnabled",
+                    "        IsEnabled: editPanel.getValues().IsEnabled === null? false : editPanel.getValues().IsEnabled",
                     "    },",
                     "    headers: {",
                     "        'Content-Type': 'application/json',",

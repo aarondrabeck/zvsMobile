@@ -39,7 +39,7 @@
                 "noCache": false,
                 "sortParam": "$orderby",
                 "startParam": "$skip",
-                "url": "odata4/DeviceValueTriggers?$expand=StoredCommand",
+                "url": "odata4/DeviceValueTriggers",
                 "useDefaultXhrHeader": false
             },
             "name": "MyAjaxProxy",

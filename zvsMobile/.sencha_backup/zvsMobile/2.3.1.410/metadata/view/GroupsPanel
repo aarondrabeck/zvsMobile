@@ -1,0 +1,127 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "config": null,
+        "designer|userAlias": "groupspanel",
+        "designer|userClassName": "GroupsPanel",
+        "itemId": "groupsPanel",
+        "layout": "fit"
+    },
+    "name": "ScenesPanel1",
+    "designerId": "d0b86522-f0cd-4bad-bb68-c78c3efb016c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "config",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "dataview-inline"
+                ],
+                "docked": null,
+                "inline": true,
+                "itemCls": "groupItem",
+                "itemId": "groupsDataview",
+                "store": "GroupStore",
+                "style": ""
+            },
+            "name": "MyDataView",
+            "configAlternates": {
+                "inline": "boolean"
+            },
+            "designerId": "0febb941-2c53-4cc9-9cd3-d2a5d6ffc1e9",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"group-item\">",
+                            "\t<h4 class=\"group-name-truncate\">{Name}</h4>  ",
+                            "    <i class=\"GROUP group-icon\"></i>   \t    ",
+                            "</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "dffa14ab-19b0-4eab-8db9-0ff7209ff43d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "name": "MyToolbar2",
+            "designerId": "c008ac84-885c-48e7-a600-390e8a5a53d5",
+            "cn": [
+                {
+                    "type": "Ext.field.Search",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "groupSearchfield",
+                        "label": "Search",
+                        "labelWidth": null,
+                        "width": "275px"
+                    },
+                    "name": "MySearchField1",
+                    "designerId": "d9120935-09d3-4057-b7f4-dc7018f1e43e"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MySpacer2",
+                    "designerId": "f2fa0d85-17d8-4f01-a5bf-aa95b77c9fa5"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "refresh",
+                        "itemId": "refreshGroupsBtn",
+                        "text": null
+                    },
+                    "name": "MyButton9",
+                    "designerId": "ba4426a2-c3d3-4f1e-9ac2-674c084eaffc"
+                }
+            ]
+        }
+    ]
+}

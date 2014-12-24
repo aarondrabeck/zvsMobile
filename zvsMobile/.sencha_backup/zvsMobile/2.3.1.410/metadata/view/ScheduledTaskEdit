@@ -1,0 +1,151 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "scheduledtaskedit",
+        "designer|userClassName": "ScheduledTaskEdit",
+        "itemId": "scheduledTaskEdit"
+    },
+    "name": "TriggerEdit1",
+    "designerId": "0c052ba5-8db8-4a6e-bb82-35ecc50515e2",
+    "cn": [
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "10px"
+            },
+            "name": "MySpacer7",
+            "designerId": "856c436c-19c8-4e81-ac52-b6792d9bfbb1"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyFieldSet1",
+            "designerId": "2bbe2f48-c5e8-4618-ad4b-d9fb2ba60350",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": null,
+                        "label": "Name",
+                        "name": "Name",
+                        "required": true
+                    },
+                    "name": "MyTextField5",
+                    "designerId": "ff4f4431-c069-4358-b815-631ce9251c7c"
+                },
+                {
+                    "type": "Ext.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Enabled",
+                        "name": "isEnabled"
+                    },
+                    "name": "MyCheckbox",
+                    "designerId": "7f9fbaef-5c54-40b7-ba20-4ead83148d26"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "disabled": true,
+                        "itemId": null,
+                        "label": "Frequency",
+                        "name": "Frequency"
+                    },
+                    "name": "MyTextField1",
+                    "designerId": "0831851a-e151-4dff-88dc-a2634f93608e"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "10px"
+            },
+            "name": "MySpacer2",
+            "designerId": "07f7bf21-c88a-42f2-bada-a02d885fccd0"
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": null,
+                "itemId": "commandLabel",
+                "margin": "15 15",
+                "style": "font-size:1.1em"
+            },
+            "name": "MyLabel",
+            "designerId": "acd72fed-c093-4a3f-861c-263f0aa2d472",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "{StoredCommand.Description} {StoredCommand.TargetObjectName}"
+                        ]
+                    },
+                    "name": "tpl",
+                    "designerId": "8615f152-85ed-479f-8db3-07b1a9769144"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "saveTaskButton",
+                "margin": 10,
+                "text": "Save",
+                "ui": "action"
+            },
+            "name": "MyButton10",
+            "designerId": "db193475-12ea-4afb-bcac-51a66afbc058"
+        }
+    ]
+}

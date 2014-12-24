@@ -1,0 +1,66 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userClassName": "DeviceCommandStore",
+        "groupDir": "DESC",
+        "groupField": null,
+        "model": "DeviceCommand",
+        "remoteFilter": true,
+        "storeId": "DeviceCommandStore"
+    },
+    "name": "DeviceStore1",
+    "designerId": "ceecabc1-7ecc-442e-a4e5-1541a7a3a637",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|createAlias": null,
+                "enablePagingParams": false,
+                "filterParam": "$filter",
+                "headers": [
+                    "",
+                    "{",
+                    "'Content-Type': 'application/json'",
+                    "",
+                    "}",
+                    ""
+                ],
+                "limitParam": "$top",
+                "noCache": false,
+                "sortParam": "$orderby",
+                "startParam": "$skip",
+                "url": "odata4/DeviceCommands/?$expand=Options",
+                "useDefaultXhrHeader": false
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "78fc6bfc-e09f-438f-9964-adee060fd28f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "Id",
+                        "rootProperty": "value"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "61471d11-b05e-4a76-91aa-4072df6622fe"
+                }
+            ]
+        }
+    ]
+}

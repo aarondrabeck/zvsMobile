@@ -1,0 +1,135 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "triggeredit",
+        "designer|userClassName": "TriggerEdit",
+        "itemId": "triggerEdit"
+    },
+    "name": "GroupEdit1",
+    "designerId": "ba4360ff-deac-49fa-bcd2-5636fb123c8d",
+    "cn": [
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "10px"
+            },
+            "name": "MySpacer7",
+            "designerId": "d81ee63b-7ddd-4158-a91d-01db9ffac9b2"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyFieldSet1",
+            "designerId": "7c0d07a4-4ca9-4007-97e4-e12b29d8cc10",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": null,
+                        "label": "Name",
+                        "name": "Name",
+                        "required": true
+                    },
+                    "name": "MyTextField",
+                    "designerId": "6a7044be-abe5-4432-bba9-a541289795f1"
+                },
+                {
+                    "type": "Ext.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Enabled",
+                        "name": "isEnabled"
+                    },
+                    "name": "MyCheckbox",
+                    "designerId": "7301edca-82ea-4408-b3a9-463c22749eea"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "10px"
+            },
+            "name": "MySpacer",
+            "designerId": "98f39c88-f447-4159-87ad-104c6a7adc5a"
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "html": null,
+                "itemId": "commandLabel",
+                "margin": "15 15",
+                "style": "font-size:1.1em"
+            },
+            "name": "MyLabel1",
+            "designerId": "440514eb-449c-43ca-b354-514d96d099f4",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "When {Description} then {StoredCommand.Description} {StoredCommand.TargetObjectName}"
+                        ]
+                    },
+                    "name": "tpl",
+                    "designerId": "07a5e4b6-bd89-4765-9c54-26194fd8fd83"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "saveTriggerButton",
+                "margin": 10,
+                "text": "Save",
+                "ui": "action"
+            },
+            "name": "MyButton10",
+            "designerId": "08dc46ec-17c6-411e-b9fb-445fb69f2df7"
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-<project name="x-watch-impl">
+<project name="watch-impl">
 
     <target name="-watch-impl">
         <x-ant-call target="${build.trigger.targets}"/>

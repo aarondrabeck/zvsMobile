@@ -1,0 +1,116 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "settingsform",
+        "designer|userClassName": "SettingsForm",
+        "itemId": "settingsForm",
+        "requires": [
+            "Ext.MessageBox"
+        ]
+    },
+    "designerId": "8b7af629-5bf5-47f6-8efa-05c8c0809369",
+    "cn": [
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "10px"
+            },
+            "name": "MySpacer5",
+            "designerId": "f7c48750-b2c1-4299-83d5-6cd2cea46f96"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "settingFieldSet"
+            },
+            "name": "MyFieldSet",
+            "designerId": "f3dc310f-55dc-40b7-8a79-6601afa317e0",
+            "cn": [
+                {
+                    "type": "Ext.field.Url",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "itemId": "myurlfield",
+                        "label": "Url",
+                        "margin": null,
+                        "name": "Url",
+                        "required": true
+                    },
+                    "name": "MyUrlField",
+                    "designerId": "1c5c4aef-34b2-4344-8c43-87590a5f5b4a"
+                },
+                {
+                    "type": "Ext.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "mynumberfield",
+                        "label": "Port",
+                        "maxValue": 65535,
+                        "minValue": 1,
+                        "name": "Port",
+                        "required": true,
+                        "stepValue": 1
+                    },
+                    "name": "MyNumberField",
+                    "designerId": "987c201a-df42-40bb-be0d-3781cd9f2727"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "tokenTextField",
+                        "label": "Token",
+                        "name": "Token",
+                        "required": true
+                    },
+                    "name": "MyTextField3",
+                    "designerId": "4012fa5b-c8ed-43fb-b774-cded63063393"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "saveSettingsButton",
+                "margin": 10,
+                "text": "Save",
+                "ui": "action"
+            },
+            "name": "MyButton5",
+            "designerId": "69967801-c847-4410-a7b1-44351d340578"
+        }
+    ]
+}

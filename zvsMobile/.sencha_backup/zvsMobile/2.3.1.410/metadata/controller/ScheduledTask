@@ -1,0 +1,146 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ScheduledTask"
+    },
+    "name": "MyController",
+    "designerId": "0ddc20b4-5c02-469e-b3cf-e506a9d8ff74",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#scheduledTasksDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewInitialize",
+                "implHandler": [
+                    "var store = Ext.getStore('ScheduledTasksStore');",
+                    "store.clearFilter();",
+                    "store.load();"
+                ],
+                "name": "initialize"
+            },
+            "name": "onDataviewInitialize",
+            "designerId": "83966f0c-cdcf-41c9-9c98-bf207e98b4ab"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "searchfield#taskSearchfield",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onSearchfieldClearicontap",
+                "implHandler": [
+                    " var store = Ext.getStore('ScheduledTasksStore');",
+                    "        store.clearFilter();",
+                    ""
+                ],
+                "name": "clearicontap"
+            },
+            "name": "onSearchfieldClearicontap",
+            "designerId": "8ee2fdc2-6631-4c6d-a7f3-db10f28aeae4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "searchfield#taskSearchfield",
+                "designer|targetType": "Ext.field.Search",
+                "fn": "onSearchfieldKeyup",
+                "implHandler": [
+                    "queryString = textfield.getValue();",
+                    "",
+                    "var store = Ext.getStore('ScheduledTasksStore');",
+                    "store.clearFilter();",
+                    "",
+                    "if(queryString) {",
+                    "    var thisRegEx = new RegExp(queryString, \"i\");",
+                    "    store.filterBy(function(record) {",
+                    "        if (thisRegEx.test(record.get('Name')))",
+                    "            return true;",
+                    "        return false;",
+                    "    });",
+                    "}"
+                ],
+                "name": "keyup"
+            },
+            "name": "onSearchfieldKeyup",
+            "designerId": "9aaf0995-e47e-4bc1-b146-c8635cc8c96b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#refreshScheduledTasksBtn",
+                "designer|targetType": "Ext.Button",
+                "fn": "onRefreshButtonTap",
+                "implHandler": [
+                    "var store = Ext.getStore('ScheduledTasksStore');",
+                    "store.load();"
+                ],
+                "name": "tap"
+            },
+            "name": "onRefreshButtonTap",
+            "designerId": "fb332cb8-5fcf-4674-97ad-d60b758e1c9c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#scheduledTasksDataview",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onDataviewItemTap",
+                "implHandler": [
+                    "var mainView = this.getMainView();",
+                    "mainView.push({",
+                    "    xtype: 'taskpanel',",
+                    "    title: record.data.Name,",
+                    "    record: record",
+                    "});"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onDataviewItemTap",
+            "designerId": "0e89953f-823a-48a9-ac50-71c3cd1be6cd"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "navigationview#mainView"
+            },
+            "name": "mainView",
+            "designerId": "b56ff942-f516-4d9e-a8b5-c0fc7e742ed2"
+        }
+    ]
+}

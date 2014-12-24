@@ -21,7 +21,9 @@ Ext.define('zvsMobile.controller.Navigation', {
             navMenu: {
                 selector: '#navMenu',
                 xtype: 'navmenu'
-            }
+            },
+            mainView: 'navigationview#mainView',
+            devicesPanel: 'panel#devicesPanel'
         },
 
         control: {
@@ -30,20 +32,35 @@ Ext.define('zvsMobile.controller.Navigation', {
             },
             "navmenu button": {
                 tap: 'navigate'
+            },
+            "dataview#homeDataview": {
+                itemtap: 'onHomeDataViewItemTap'
+            },
+            "navigationview#mainView": {
+                initialize: 'onNavigationviewInitialize',
+                push: 'onNavigationviewPush'
+            },
+            "#navBar": {
+                back: 'onBarBack'
             }
         }
     },
 
     showMenu: function(target) {
-
         // Get or create navigation menu
         var menu = this.getNavMenu();
         if (!menu) {
             menu = Ext.create('widget.navmenu');
         }
 
+        Ext.Viewport.setMenu(menu, {
+            side:'left',
+            cover:true
+        });
+        Ext.Viewport.toggleMenu('left');
+
         var menuItems = menu.getItems().items,				// Menu buttons
-        	currentView = this.currentView || "devicespanel";	// Current view alias, default to home
+        	currentView = this.currentView || "homepanel";	// Current view alias, default to home
 
         // Disable active view's button
         menuItems.forEach(function(button) {
@@ -54,28 +71,21 @@ Ext.define('zvsMobile.controller.Navigation', {
             // Active button, disable
             if (currentView == navView) {
                 button.disable();
+                button.setStyle('background-color:#f7f7f7');
             }
 
             // Enable all others
             else {
                 button.enable();
+                 button.setStyle('background-color:white');
             }
 
         });
 
-        // Show menu by menu button
-        menu.showBy(target);
 
     },
 
     navigate: function(button, e, eOpts) {
-
-        /**
-        *	The following code enables navigation
-        *	by checking the custom attribute 'navView',
-        *	which is the alias of the view to show
-        */
-
         var text = button.getText(),						// Button text
         	navView = button.getInitialConfig().navView,	// Get custom attribute 'navView'
         	mainView = this.getMainView(),					// Main navigation view
@@ -90,9 +100,57 @@ Ext.define('zvsMobile.controller.Navigation', {
         // Remember current view alias
         this.currentView = navView;
 
-        // Hide menu
-        navMenu.hide();
-        //Ext.select('.x-button-back').hide();
+        Ext.Viewport.removeMenu('left');
+    },
+
+    onHomeDataViewItemTap: function(dataview, index, target, record, e, eOpts) {
+
+        var navView = record.data.navView,	// Get custom attribute 'navView'
+            mainView = this.getMainView();					// Main navigation view
+
+        // Add view to main view
+        mainView.push({
+            xtype: navView,
+            title: record.data.Name
+        });
+
+        // Remember current view alias
+        this.currentView = navView;
+    },
+
+    onNavigationviewInitialize: function(component, eOpts) {
+        Ext.Ajax.on('beforerequest', (function(conn, options, eOpts) {
+
+            options.url = zvsMobile.app.getBaseUrl() + options.url;
+            options.headers = {
+                'X-zvsToken': zvsMobile.app.getToken(),
+            };
+        }), this);
+    },
+
+    onNavigationviewPush: function(navigationview, view, eOpts) {
+        history.pushState();
+    },
+
+    onBarBack: function(bar, eOpts) {
+        history.back();  //pop the state to trigger listener in step 3
+            return false;  // return false so listener will take care of this
+    },
+
+    launch: function() {
+        var that = this;
+        window.addEventListener('popstate', function () {
+            var portal = that.getMainView();
+            if (portal) {
+                portal.pop();
+
+                var currentItem = portal.getActiveItem();
+
+                if(currentItem)
+                    that.currentView = currentItem.xtype;
+
+            }
+        }, false);
     }
 
 });

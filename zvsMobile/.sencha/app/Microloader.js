@@ -62,8 +62,8 @@ Ext.Microloader = Ext.Microloader || (function () {
                 if (typeof manifest === "string") {
                     var extension = ".json",
                         url = manifest.indexOf(extension) === manifest.length - extension.length
-                            ? manifest
-                            : manifest + ".json";
+                            ? Boot.baseUrl + manifest
+                            : Boot.baseUrl + manifest + ".json";
 
                     Boot.fetch(url, function(result){
                         manifest = Ext.manifest = JSON.parse(result.content);

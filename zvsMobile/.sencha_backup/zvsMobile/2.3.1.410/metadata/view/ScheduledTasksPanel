@@ -1,0 +1,129 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "config": null,
+        "designer|userAlias": "scheduledtaskspanel",
+        "designer|userClassName": "ScheduledTasksPanel",
+        "itemId": "scheduledTasksPanel",
+        "layout": "fit"
+    },
+    "name": "TriggerPanel1",
+    "designerId": "170c2db7-b9ff-4d99-8a7f-c220b4a06d7b",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "config",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.dataview.DataView",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "dataview-inline"
+                ],
+                "designer|createAlias": null,
+                "docked": null,
+                "inline": true,
+                "itemCls": "stItem",
+                "itemId": "scheduledTasksDataview",
+                "store": "ScheduledTasksStore",
+                "style": ""
+            },
+            "name": "MyDataView",
+            "configAlternates": {
+                "inline": "boolean"
+            },
+            "designerId": "6abde9bc-3551-4ca4-9a2d-d945c802a18c",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div class=\"st-item\">",
+                            "    <h4 class=\"st-name-truncate\">{Name}</h4>  ",
+                            "    <i class=\"st-icon st-box-icon\"></i> ",
+                            "    <div class=\"st-status\">{Description}</div>\t    ",
+                            "</div>"
+                        ]
+                    },
+                    "name": "itemTpl",
+                    "designerId": "d42c22dd-aa7b-4962-bef1-4bb0f3010aa4"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "name": "MyToolbar1",
+            "designerId": "07614d60-08b6-47d6-97be-d2b91f0b1bf3",
+            "cn": [
+                {
+                    "type": "Ext.field.Search",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "taskSearchfield",
+                        "label": "Search",
+                        "labelWidth": null,
+                        "width": "275px"
+                    },
+                    "name": "MySearchField",
+                    "designerId": "14f6d431-0301-476d-aac1-0e527f542d79"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MySpacer1",
+                    "designerId": "3a6a5360-9070-45cb-9438-7333382d50f4"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "refresh",
+                        "itemId": "refreshScheduledTasksBtn",
+                        "text": null
+                    },
+                    "name": "MyButton7",
+                    "designerId": "f9dd33dd-f9da-49fe-aa62-469d7b4b3044"
+                }
+            ]
+        }
+    ]
+}

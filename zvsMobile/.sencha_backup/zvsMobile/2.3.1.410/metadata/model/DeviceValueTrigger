@@ -1,0 +1,117 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DeviceValueTrigger",
+        "idProperty": "Id"
+    },
+    "name": "MyModel",
+    "designerId": "6ecf3389-12df-470b-804d-808afabaf561",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Id",
+                "type": "int"
+            },
+            "name": "field50",
+            "designerId": "3fb70991-ef95-472d-b160-9f5d2ce396e3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Name",
+                "type": "string"
+            },
+            "name": "field51",
+            "designerId": "02e7bcaf-2662-473f-a0e1-cf9da96eb653"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Operator",
+                "type": "string"
+            },
+            "name": "field52",
+            "designerId": "f66b32fa-67b8-4500-8941-d76b0d177542"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "isEnabled",
+                "type": "boolean"
+            },
+            "name": "field53",
+            "designerId": "ede99a1a-db6e-4678-8dec-3860a012d6e7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Value",
+                "type": "string"
+            },
+            "name": "field55",
+            "designerId": "39492435-0ccc-4c37-afad-65e9bb4a9335"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Description",
+                "type": "string"
+            },
+            "name": "field56",
+            "designerId": "176b4db6-5ab2-41fc-9ca4-8340351670c3"
+        },
+        {
+            "type": "Ext.data.association.HasOne",
+            "reference": {
+                "name": "hasOne",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "associatedName": "StoredCommand",
+                "associationKey": "StoredCommand",
+                "designer|displayName": "hasOneStoredCommand",
+                "model": "StoredCommand",
+                "primaryKey": "Id"
+            },
+            "name": "MyHasOneAssociation3",
+            "designerId": "f73b761d-e891-4565-a9ee-e270a058d793"
+        }
+    ]
+}
