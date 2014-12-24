@@ -1099,7 +1099,7 @@
                 }
             ]
         },
-        "controller": false,
+        "controller": true,
         "b65f72c1-bee5-4e5a-9fed-ce939650a75c": {
             "id": "b65f72c1-bee5-4e5a-9fed-ce939650a75c",
             "cn": [
@@ -1447,8 +1447,8 @@
         "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "dbbd8045-2ec1-4b82-8c58-af3be765197a",
-        "selectedInstance": "b4b8cac1-f7f3-4df4-9bf7-8e84f1e91de6"
+        "topInstance": "595c2344-f197-445e-a4f7-cb2538fbb272",
+        "selectedInstance": "b5ad94db-98ac-45c9-a223-a7671553527f"
     },
     "editMode": "code",
     "userSettings": {
