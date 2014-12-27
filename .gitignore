@@ -1,0 +1,4 @@
+*.apk
+/zvsMobile/cordova/platforms/android/ant-build/zvsMobile.ap_
+/zvsMobile/cordova/platforms/android/*.keystore
+/zvsMobile/cordova/platforms/android/ant-build/zvsMobile-release-unsigned.apk.d
