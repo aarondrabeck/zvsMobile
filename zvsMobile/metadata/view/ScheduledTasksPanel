@@ -57,8 +57,8 @@
                     "userConfig": {
                         "designer|displayName": "itemTpl",
                         "implHandler": [
-                            "<div class=\"st-item\">",
-                            "    <h4 class=\"st-name-truncate\">{Name}</h4>  ",
+                            "<div class=\"tile st-item\">",
+                            "    <h4 class=\"title st-name-truncate\">{Name}</h4>  ",
                             "    <i class=\"st-icon st-box-icon\"></i> ",
                             "    <div class=\"st-status\">{Description}</div>\t    ",
                             "</div>"

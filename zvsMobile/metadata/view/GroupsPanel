@@ -56,8 +56,8 @@
                     "userConfig": {
                         "designer|displayName": "itemTpl",
                         "implHandler": [
-                            "<div class=\"group-item\">",
-                            "\t<h4 class=\"group-name-truncate\">{Name}</h4>  ",
+                            "<div class=\"tile group-item\">",
+                            "\t<h4 class=\"title group-name-truncate\">{Name}</h4>  ",
                             "    <i class=\"GROUP group-icon\"></i>   \t    ",
                             "</div>"
                         ]

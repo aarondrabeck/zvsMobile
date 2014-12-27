@@ -30,11 +30,35 @@
     background-color:#F5A70E
 }
 
-.home-tile
+.tile
 {
-    height: 100%;
-    position: relative; 
+  height: 100%;
+  position: relative; 
+  font-family: RobotoDraft, Roboto, 'Helvetica Neue, Helvetica, Arial', sans-serif;
+  color: #212121;
+  overflow: hidden;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  -webkit-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+    font-weight: 300;
+    line-height: 1.1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
+.tile:hover,
+.tile:active,
+.tile.active,
+.tile:focus,
+.tile:active:focus,
+.tile.active:focus {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
 
 .home-icon:before {   
     margin-left: 0 !important;
@@ -51,17 +75,27 @@
 
 }
 
+.title
+{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.1;
+    -webkit-font-smoothing: antialiased;
+    text-transform: none;    
+    color: white;
+    font-family: RobotoDraft, Roboto, 'Helvetica Neue, Helvetica, Arial', sans-serif;
+}
+
 .home-name-truncate
 {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 1.2em;
-    color: white;
-    position: absolute;
-    bottom: 10px;
+    text-overflow: ellipsis;     
+    position: absolute;    
+    bottom: 15px;      
     text-align: center;
+  
 }
 
 .scene-name-truncate {
@@ -70,7 +104,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 1.1em;
     color: white;
     width: 100%;
     text-align: center;
@@ -98,9 +131,9 @@
     height: 100%;
 }
 
-.SCENE:before {
+.scene-icon:before {
     content: "\e005";
-    font-family: Flaticon;
+    font-family: zVirtualScenes;
     font-size: 60px;
     font-style: normal;
     color: white;
@@ -108,15 +141,15 @@
 
 .setting-icon:before {
     content: "\e00b";
-    font-family: Flaticon;
+    font-family: zVirtualScenes;
     font-size: 60px;
     font-style: normal;
     color: white;
 }
 
 .log-icon:before {
-    content: "\e001";
-    font-family: Flaticon;
+    content: "\e018";
+    font-family: zVirtualScenes;
     font-size: 60px;
     font-style: normal;
     color: white;
@@ -135,12 +168,11 @@
     top:10px;    
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 1.0em;
+    text-overflow: ellipsis;    
     color: white;
     width: 100%;
     text-align: center;
-    padding: 0 5px;
+    padding: 0 5px;   
 }
 
 .st-status {
@@ -166,7 +198,7 @@
 
 .st-icon:before {
     content: "\e008";
-    font-family: Flaticon;
+    font-family: zVirtualScenes;
     font-size: 60px;
     font-style: normal;
     color: white;
@@ -198,7 +230,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 1.0em;
     color: white;
     width: 100%;
     text-align: center;
@@ -228,7 +259,7 @@
 
 .triggers-icon:before {
     content: "\e002";
-    font-family: Flaticon;
+    font-family: zVirtualScenes;
     font-size: 60px;
     font-style: normal;
     color: white;
@@ -245,7 +276,7 @@
 
 /* End Triggers */
 
-.scene-icon
+.scene-list-item
 {
     width: 100%;
     text-align: center;
@@ -269,9 +300,9 @@
     line-height: 60px;
 }
 
-.group:before {
+.group-icon:before {
     content: "\e00c";
-    font-family: Flaticon;
+    font-family: zVirtualScenes;
     font-size: 60px;
     font-style: normal;
     color: white;
@@ -279,18 +310,15 @@
 
 .group-name-truncate {
     position: absolute;
-    bottom: 15px;
+    bottom: 20px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 1.1em;
     color: white;
     width: 100%;
     text-align: center;
     padding: 0 5px;
-    font-weight: normal;
 }
-
 
 .group-level {
     position:absolute;    
@@ -309,47 +337,47 @@
 
 .Unknown:before{
     content: "\e006";
-    font-family: Flaticon;
-    font-size: 60px;
+    font-family: zVirtualScenes;
+    font-size: 50px;
     font-style: normal;
     color: white;
 }
 
 .Controller:before{
     content: "\e000";
-    font-family: Flaticon;
-    font-size: 60px;
+    font-family: zVirtualScenes;
+    font-size: 50px;
     font-style: normal;
     color: white;
 }
 
 .Switch:before {
     content: "\e009";
-    font-family: Flaticon;
-    font-size: 60px;
+    font-family: zVirtualScenes;
+    font-size: 50px;
     font-style: normal;
     color: white;
 }
 
 .Dimmer:before{
     content: "\e004";
-    font-family: Flaticon;
-    font-size: 60px;
+    font-family: zVirtualScenes;
+    font-size: 50px;
     font-style: normal;
     color: white;
 }
 
 .Thermostat:before {
     content: "\e00a";
-    font-family: Flaticon;
-    font-size: 60px;
+    font-family: zVirtualScenes;
+    font-size: 50px;
     font-style: normal;
     color: white;
 }
 
 .Doorlock:before{
     content: "\e003";
-    font-family: Flaticon;
+    font-family: zVirtualScenes;
     font-size: 60px;
     font-style: normal;
     color: white;
@@ -357,8 +385,8 @@
 
 .Sensor:before{
     content: "\e007";
-    font-family: Flaticon;
-    font-size: 60px;
+    font-family: zVirtualScenes;
+    font-size: 50px;
     font-style: normal;
     color: white;
 }
@@ -368,8 +396,7 @@
     top:7px;    
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: .9em;
+    text-overflow: ellipsis;   
     color: white;
     width: 100%;
     text-align: center;
@@ -408,7 +435,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: .75em;
+    font-size: 13px;
     color: white;
     width: 100%;
     padding: 0 5px;

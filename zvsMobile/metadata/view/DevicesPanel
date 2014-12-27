@@ -58,13 +58,13 @@
                     "userConfig": {
                         "designer|displayName": "itemTpl",
                         "implHandler": [
-                            "<div class=\"device-item\">",
-                            "\t<h4 class=\"device-name-truncate\">{Name}</h4>  ",
+                            "<div class=\"device-item tile\">",
+                            "\t<h4 class=\"title device-name-truncate\">{Name}</h4>  ",
                             "    <i class=\"device-icon {type.UniqueIdentifier}\"></i> ",
-                            "    <div class=\"device-level\">",
+                            "    <div class=\"title device-level\">",
                             "\t\t\t{CurrentLevelText}",
                             "\t\t</div>\t",
-                            "     <h5 class=\"location-name-truncate\">{Location}</h5>",
+                            "     <h5 class=\"title location-name-truncate\">{Location}</h5>",
                             "</div>"
                         ]
                     },

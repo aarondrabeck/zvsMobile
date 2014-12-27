@@ -31,15 +31,15 @@
                 "data": [
                     "[{ Name: 'Devices',",
                     "Color: '#2CAFE7',",
-                    "Iconcls: 'DIMMER',",
+                    "Iconcls: 'Dimmer',",
                     "navView: 'devicespanel'},",
                     "{ Name: 'Scenes',",
                     "Color: '#9EC974',",
-                    "Iconcls: 'SCENE',",
+                    "Iconcls: 'scene-icon',",
                     "navView: 'scenespanel'},",
                     "{ Name: 'Groups',",
                     "Color: '#F5A70E',",
-                    "Iconcls: 'GROUP',",
+                    "Iconcls: 'group-icon',",
                     "navView: 'groupspanel'},",
                     "{ Name: 'Scheduled Tasks',",
                     "Color: '#FD605C',",
@@ -86,9 +86,9 @@
                     "userConfig": {
                         "designer|displayName": "itemTpl",
                         "implHandler": [
-                            "<div class=\"home-tile\" style=\"background-color:{Color}\">\t  ",
-                            "    <i class=\"{Iconcls} home-icon\"></i> ",
-                            "    <h4 class=\"home-name-truncate\">{Name}</h4>",
+                            "<div class=\"tile\" style=\"background-color:{Color}\">",
+                            "    <i class=\"{Iconcls} home-icon\"></i>",
+                            "    <h4 class=\"title home-name-truncate\">{Name}</h4> ",
                             "</div>"
                         ]
                     },

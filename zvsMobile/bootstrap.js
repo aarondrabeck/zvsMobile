@@ -786,10 +786,9 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.model.Group": [],
   "zvsMobile.model.LogItem": [],
   "zvsMobile.model.Scene": [],
-  "zvsMobile.model.SceneCommand": [],
+  "zvsMobile.model.SceneStoredCommands": [],
   "zvsMobile.model.ScheduledTask": [],
   "zvsMobile.model.Settings": [],
-  "zvsMobile.model.StoredCommand": [],
   "zvsMobile.store.BuiltinCommandStore": [],
   "zvsMobile.store.DeviceCommandStore": [],
   "zvsMobile.store.DeviceStore": [],
@@ -1804,12 +1803,11 @@ Ext.ClassManager.addNameAliasMappings({
     "model.logitem"
   ],
   "zvsMobile.model.Scene": [],
-  "zvsMobile.model.SceneCommand": [],
+  "zvsMobile.model.SceneStoredCommands": [],
   "zvsMobile.model.ScheduledTask": [],
   "zvsMobile.model.Settings": [
     "model.settings"
   ],
-  "zvsMobile.model.StoredCommand": [],
   "zvsMobile.store.BuiltinCommandStore": [],
   "zvsMobile.store.DeviceCommandStore": [],
   "zvsMobile.store.DeviceStore": [],

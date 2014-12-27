@@ -1,30 +1,8 @@
 /* _arch-vars-start */
- @import 'sencha-touch/base';
+$font-family: roboto;
 
-@include icon-font('Flaticon', inline-font-files(
-  '../fonts/zvs/flaticon4.woff', woff,
-  '../fonts/zvs/flaticon4.ttf', truetype,
-  '../fonts/zvs/flaticon4.svg', svg
-));
-
-
-@include icon("controller", "\e000", "Flaticon");
-@include icon("log", "\e001", "Flaticon");
-@include icon("trigger", "\e002", "Flaticon");
-@include icon("doorlock", "\e003", "Flaticon");
-@include icon("light", "\e004", "Flaticon");
-@include icon("scene", "\e005", "Flaticon");
-@include icon("unknwon", "\e006", "Flaticon");
-@include icon("sensor", "\e007", "Flaticon");
-@include icon("task", "\e008", "Flaticon");
-@include icon("switch", "\e009", "Flaticon");
-@include icon("thermo", "\e00a", "Flaticon");
-@include icon("settings3", "\e00b", "Flaticon");
-@include icon("group", "\e00c", "Flaticon");
-
-
-@import 'sencha-touch/cupertino';
-@import 'sencha-touch/cupertino/all';
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/all';
 
 
 /* _arch-other-start */

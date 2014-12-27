@@ -57,10 +57,10 @@
                     "userConfig": {
                         "designer|displayName": "itemTpl",
                         "implHandler": [
-                            "<div class=\"trigger-item\">",
-                            "    <h4 class=\"trigger-name-truncate\">{Name}</h4>  ",
+                            "<div class=\"tile trigger-item\">",
+                            "    <h4 class=\"title trigger-name-truncate\">{Name}</h4>  ",
                             "    <i class=\"triggers-icon trigger-box-icon\"></i> ",
-                            "    <div class=\"trigger-status\"><tpl if='IsEnabled == true'>",
+                            "    <div class=\"title trigger-status\"><tpl if='IsEnabled == true'>",
                             "            Enabled",
                             "            <tpl else>",
                             "                Disabled",
