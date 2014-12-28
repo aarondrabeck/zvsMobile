@@ -46,7 +46,7 @@
                 "noCache": false,
                 "sortParam": null,
                 "startParam": "$skip",
-                "url": "odata4/LogEntries",
+                "url": "odata4/LogEntries?$orderby=Id desc",
                 "useDefaultXhrHeader": false
             },
             "name": "MyAjaxProxy",
@@ -77,7 +77,7 @@
             "codeClass": null,
             "userConfig": {
                 "direction": "DESC",
-                "property": "DatetimeLog"
+                "property": "Datetime"
             },
             "name": "MySorter",
             "designerId": "ec5856da-ee5c-40e8-92d7-bf7428f55b6b"
