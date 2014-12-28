@@ -12,7 +12,8 @@
         "itemId": "deviceControlPanel",
         "requires": [
             "Ext.field.Toggle",
-            "Ext.field.Select"
+            "Ext.field.Select",
+            "Ext.Toast"
         ],
         "scrollable": "vertical"
     },
