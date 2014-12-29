@@ -1,5 +1,4 @@
 ## zvsMobile Home Automation App ##
-=========
 Remotely control and monitor lights, thermostats, doorlocks and sensors.
 
 <img src="https://raw.githubusercontent.com/aarondrabeck/zvsMobile/master/zvsMobile/images/main-ss200.png">
