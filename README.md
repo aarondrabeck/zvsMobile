@@ -29,7 +29,7 @@ Note: You can optionally setup zvsMobile to work outside your local LAN by openi
 <img src="https://raw.githubusercontent.com/aarondrabeck/zvsMobile/master/zvsMobile/images/zvsMobile-Settings-Setup.png">
 
 
-## Troubleshotting ##
+## Troubleshooting ##
 
 ####Access Denied or similar is displayed in the log when starting the plug-in####
 Close zVirtualScenes and start it with administrator privileges. Alternatively you can Google "How to configure HTTPLISTENER to run without administrator privileges?" for tutorials that will allow you to use certain ports without running the entire app with admin rights.
