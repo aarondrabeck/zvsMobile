@@ -1,0 +1,100 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "centered": true,
+        "designer|userAlias": "dimmerezcontrol",
+        "designer|userClassName": "DimmerEzControl",
+        "fullscreen": false,
+        "itemId": "dimmerEzControl"
+    },
+    "name": "MyPanel",
+    "designerId": "8281bd5d-37d8-4b9d-88b4-fbf3ed14887f",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "itemId": "DimmerLogoPanel",
+                "layout": "vbox"
+            },
+            "name": "MyPanel1",
+            "designerId": "1bf7c1a9-7b4c-41df-b51f-d0f6f2dcf293",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            ".zvs-dimmer-icon"
+                        ],
+                        "height": null,
+                        "html": "",
+                        "itemId": "dimmer-device-icon"
+                    },
+                    "name": "MyLabel2",
+                    "designerId": "88b07194-df52-4d10-8aca-bf63b96dd33a"
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": null,
+                        "html": "0%",
+                        "itemId": "percent-label",
+                        "margin": null,
+                        "width": ""
+                    },
+                    "name": "MyLabel",
+                    "designerId": "08d4e003-5d2a-4f7a-bd04-d149ba8ed13b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.field.Slider",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "level-slider",
+                "label": null,
+                "labelAlign": null,
+                "width": "200px"
+            },
+            "name": "MySliderField",
+            "designerId": "44dca876-b606-46e5-8b57-02e31d0af206"
+        },
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "ezDimmerLoadedPanel"
+            },
+            "name": "MyPanel",
+            "designerId": "1794b299-6b5c-497c-ac5c-8ad6c308b47c"
+        }
+    ]
+}

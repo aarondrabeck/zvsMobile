@@ -20,7 +20,9 @@
             "TriggerEdit",
             "DeviceValueHistory",
             "ScheduledTask",
-            "ScheduledTaskEdit"
+            "ScheduledTaskEdit",
+            "DimmerEz",
+            "EzControl"
         ],
         "models": [
             "Device",
@@ -80,7 +82,9 @@
             "ScheduledTasksPanel",
             "ScheduledTasksDetailsTabPanel",
             "ScheduledTaskEdit",
-            "MainView"
+            "MainView",
+            "DimmerEzControl",
+            "EzControl"
         ]
     },
     "name": "Application",

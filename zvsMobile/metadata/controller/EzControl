@@ -1,0 +1,57 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EzControl"
+    },
+    "name": "MyController",
+    "designerId": "deb4dcee-3939-46d2-9431-8493357342ad",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel#EzControlTab",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onPanelShow",
+                "implHandler": [
+                    "if(component.getItems().Count === 0)",
+                    "    return;",
+                    "",
+                    "var deviceRecord = component.getParent().getRecord();",
+                    "component.setRecord(deviceRecord);",
+                    "var device = deviceRecord.getData();",
+                    "",
+                    "component.removeAll();",
+                    "if(device.type.UniqueIdentifier == 'Dimmer')",
+                    "{",
+                    "    component.add({",
+                    "        xtype: 'dimmerezcontrol',",
+                    "        data: device",
+                    "    });",
+                    "}",
+                    "else{",
+                    "     component.add({",
+                    "        xtype: 'label',",
+                    "        html: 'None',",
+                    "         centered: true",
+                    "    });",
+                    "",
+                    "}",
+                    ""
+                ],
+                "name": "show"
+            },
+            "name": "onPanelShow",
+            "designerId": "204ba5fe-bfd3-41d0-9934-4fc85ae88cda"
+        }
+    ]
+}

@@ -1,0 +1,159 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DimmerEz"
+    },
+    "name": "MyController",
+    "designerId": "1c2019f3-4d74-4a67-9dd5-a1b4114162f1",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sliderfield#level-slider",
+                "designer|targetType": "Ext.field.Slider",
+                "fn": "onSliderfieldDrag",
+                "implHandler": [
+                    "var value = thumb.getParent().getValue()[0];",
+                    "zvsMobile.app.getController('DimmerEz').updateLevelDisplay(value,sliderfield.getParent().getParent());"
+                ],
+                "name": "drag"
+            },
+            "name": "onSliderfieldDrag",
+            "designerId": "c9053485-dad3-4f64-a404-1bcfcd8c467c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "sliderfield#level-slider",
+                "designer|targetType": "Ext.field.Slider",
+                "fn": "onSliderfieldChange",
+                "implHandler": [
+                    "zvsMobile.app.getController('DimmerEz').updateLevelDisplay(newValue, me.getParent());",
+                    "",
+                    "var device = me.getParent().getData();",
+                    "",
+                    "",
+                    " Ext.Ajax.request({",
+                    "            url: 'odata4/DeviceCommands/?$filter=DeviceId eq '+device.Id+' and CustomData1 eq \\'Basic\\'&$select=Id',",
+                    "            method: 'GET',",
+                    "            scope : this,",
+                    "            headers: {",
+                    "                'Content-Type': 'application/json',",
+                    "                'X-zvsToken': zvsMobile.app.getToken()",
+                    "            },",
+                    "            success: function (response, opts) {",
+                    "",
+                    "                if (response.status === 200) {",
+                    "                    var result = JSON.parse(response.responseText);",
+                    "",
+                    "                    if(result.value.length === 0)",
+                    "                    {",
+                    "                        Ext.toast(\"Cannot find Basic command on this device\", 3000);",
+                    "                        return;",
+                    "                    }",
+                    "",
+                    "                    var cmdId = result.value[0].Id;",
+                    "                    zvsMobile.app.executeCommand(cmdId, newValue.toString(), device.Id.toString(), function(success, error){",
+                    "                        if(success)",
+                    "                        {",
+                    "                            Ext.toast(success, 3000);",
+                    "                            var deviceStore = Ext.getStore('DeviceStore');",
+                    "                            deviceStore.needsRefresh = true;",
+                    "                        }",
+                    "                        else",
+                    "                            Ext.toast(error, 3000);",
+                    "                    });",
+                    "                }",
+                    "                else {",
+                    "                    Ext.Msg.alert('Error',  'Unabled to load device commands.');",
+                    "                }",
+                    "            },",
+                    "     failure: function (response, opts) {",
+                    "         var result = JSON.parse(response.responseText);",
+                    "         Ext.Msg.alert('Error',  result.error.message);",
+                    "     }",
+                    " });"
+                ],
+                "name": "change"
+            },
+            "name": "onSliderfieldChange",
+            "designerId": "b4900a24-a893-48b7-9f4d-154ffa554321"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value",
+                    "ezDimmerPanel"
+                ],
+                "fn": "updateLevelDisplay",
+                "implHandler": [
+                    "var textValue = value === 0 ? 'Off' : value + '%';",
+                    "",
+                    "var dimmer = ezDimmerPanel.down('#dimmer-device-icon');",
+                    "",
+                    "if(value === 0 )",
+                    "{",
+                    "    dimmer.setStyle('color:#F5F5F5');",
+                    "    dimmer.setStyle('opacity:1');",
+                    "}",
+                    "else",
+                    "{",
+                    "    dimmer.setStyle('color:#FFD600');",
+                    "    dimmer.setStyle('opacity:' +(value/100) + 0.1);",
+                    "}",
+                    "",
+                    "ezDimmerPanel.down('#percent-label').setHtml(textValue);",
+                    "",
+                    "var slider = ezDimmerPanel.down('#level-slider');",
+                    "slider.suspendEvents();",
+                    "slider.setValue(value);",
+                    "slider.resumeEvents(true);"
+                ]
+            },
+            "name": "updateLevelDisplay",
+            "designerId": "5a49b1eb-786f-4158-920c-dddfcbdb5e5d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel#dimmerEzControl",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onPanelInitialize1",
+                "implHandler": [
+                    "var device = component.getData();",
+                    "zvsMobile.app.getController('DimmerEz').updateLevelDisplay(device.CurrentLevelInt,component);",
+                    ""
+                ],
+                "name": "initialize"
+            },
+            "name": "onPanelInitialize1",
+            "designerId": "57a03ccb-ce51-440e-b350-9331c14c7307"
+        }
+    ]
+}

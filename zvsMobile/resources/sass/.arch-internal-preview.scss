@@ -1,8 +1,61 @@
 /* _arch-vars-start */
-$font-family: roboto;
+@import 'sencha-touch/base';
 
-@import 'sencha-touch/default';
-@import 'sencha-touch/default/all';
+@include icon-font('zVirtualScenes', inline-font-files(
+  '../fonts/zvs/zVirtualScenes.woff', woff,
+  '../fonts/zvs/zVirtualScenes.ttf', truetype,
+  '../fonts/zvs/zVirtualScenes.svg', svg
+));
+
+
+@include icon("controller", "\e000", "zVirtualScenes");
+@include icon("add", "\e001", "zVirtualScenes");
+@include icon("trigger", "\e002", "zVirtualScenes");
+@include icon("doorlock", "\e003", "zVirtualScenes");
+@include icon("light", "\e004", "zVirtualScenes");
+@include icon("scene", "\e005", "zVirtualScenes");
+@include icon("unknwon", "\e006", "zVirtualScenes");
+@include icon("sensor2", "\e007", "zVirtualScenes");
+@include icon("task", "\e008", "zVirtualScenes");
+@include icon("switch", "\e009", "zVirtualScenes");
+@include icon("thermo", "\e00a", "zVirtualScenes");
+@include icon("settings3", "\e00b", "zVirtualScenes");
+@include icon("group", "\e00c", "zVirtualScenes");
+@include icon("check", "\e00d", "zVirtualScenes");
+@include icon("x", "\e00e", "zVirtualScenes");
+@include icon("xwithbox", "\e00f", "zVirtualScenes");
+@include icon("script", "\e010", "zVirtualScenes");
+@include icon("runscript", "\e011", "zVirtualScenes");
+@include icon("download", "\e012", "zVirtualScenes");
+@include icon("sortdown", "\e013", "zVirtualScenes");
+@include icon("sortup", "\e014", "zVirtualScenes");
+@include icon("down", "\e015", "zVirtualScenes");
+@include icon("up", "\e016", "zVirtualScenes");
+@include icon("duplicate", "\e017", "zVirtualScenes");
+@include icon("log", "\e018", "zVirtualScenes");
+@include icon("menu", "\e019", "zVirtualScenes");
+@include icon("trash", "\e01a", "zVirtualScenes");
+@include icon("save", "\e01b", "zVirtualScenes");
+@include icon("find", "\e01c", "zVirtualScenes");
+@include icon("turnon", "\e01d", "zVirtualScenes");
+@include icon("turnoff", "\e01e", "zVirtualScenes");
+@include icon("settings", "\e01f", "zVirtualScenes");
+@include icon("upload", "\e020", "zVirtualScenes");
+@include icon("forward", "\e07e", "zVirtualScenes");
+@include icon("scene2", "\e082", "zVirtualScenes");
+@include icon("play", "\e103", "zVirtualScenes");
+@include icon("refresh", "\e185", "zVirtualScenes");
+@include icon("sensor", "\e1A0", "zVirtualScenes");
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/zvs/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import 'sencha-touch/cupertino';
+@import 'sencha-touch/cupertino/all';
 
 
 /* _arch-other-start */

@@ -1,0 +1,18 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "ezcontrol",
+        "designer|userClassName": "EzControl",
+        "itemId": "EzControlTab",
+        "requires": [
+            "zvsMobile.view.DimmerEzControl"
+        ]
+    },
+    "name": "MyPanel2",
+    "designerId": "303851f7-c0be-48e4-a996-2b84f3ee46dd"
+}
