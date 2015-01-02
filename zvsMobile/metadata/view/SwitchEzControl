@@ -1,0 +1,131 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "centered": true,
+        "designer|userAlias": "switchezcontrol",
+        "designer|userClassName": "SwitchEzControl",
+        "fullscreen": false,
+        "itemId": "switchEzControl",
+        "style": null
+    },
+    "name": "DimmerEzControl1",
+    "designerId": "5ca2a393-0529-42ed-94a4-c6e2113ac00d",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "itemId": "SwitchLogoPanel",
+                "layout": "vbox",
+                "style": null
+            },
+            "name": "MyPanel1",
+            "designerId": "3784e42e-b1b0-417a-9ad7-d38354021cbc",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": null,
+                        "html": "",
+                        "itemId": "switch-device-icon",
+                        "style": "text-align:center;font-family: zVirtualScenes;font-size: 150px;font-style: normal;color: #FDD835;margin: 10px;"
+                    },
+                    "name": "MyLabel2",
+                    "designerId": "b0b3f44e-c56e-407c-80d0-29c10ba6d20e"
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": null,
+                        "html": "0%",
+                        "itemId": "percent-label",
+                        "margin": null,
+                        "style": "font-family:roboto;font-size:20px;padding:5px",
+                        "width": ""
+                    },
+                    "name": "MyLabel",
+                    "designerId": "8d2e5c4a-58e0-4da4-a3d5-90848fe9d4db"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Spacer",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MySpacer9",
+            "designerId": "15fc877f-3de2-47e5-b057-30ffa0ac80e4"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretchmax",
+                "docked": null,
+                "layout": "hbox",
+                "margin": "10px"
+            },
+            "name": "MyContainer",
+            "designerId": "de779e68-c859-4e0a-acb5-e4a06717fd71",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "OnButton",
+                        "margin": "0 10px 0 0 ",
+                        "text": "Turn On",
+                        "width": "100px"
+                    },
+                    "name": "MyButton11",
+                    "designerId": "981cd6af-ccdf-4e7f-a84a-85272af23d01"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "OffButton",
+                        "text": "Turn Off",
+                        "width": "100px"
+                    },
+                    "name": "MyButton12",
+                    "designerId": "6ccbc28e-4f9a-4472-a85b-1a96dc6b08fb"
+                }
+            ]
+        }
+    ]
+}

@@ -3,20 +3,19 @@
     color: white !important;
 }
 
-.zvs-dimmer-icon {
-    text-align:center;
-    font-family: zVirtualScenes;
-    font-size: 120px;
-    font-style: normal;
-    color: #FDD835;
-    margin: 10px;
-}
 
 .mainLabelCls {
     font-size: 4vw !important;
     color: white !important;
 
 }
+
+.blueBG.x-panel.x-floating, .blueBG .x-panel-inner, .blueBG .x-panel-inner .x-container {
+    /* background-color: #2CAFE7 !important;*/
+
+}
+
+
 
 .mainButtonCls {
 

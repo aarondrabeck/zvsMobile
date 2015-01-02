@@ -1,0 +1,191 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EzSwitch"
+    },
+    "name": "MyController",
+    "designerId": "8f2d60b2-ffa5-43b1-af97-c7125263ad25",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "value",
+                    "panel"
+                ],
+                "fn": "updateDisplay",
+                "implHandler": [
+                    "var textValue = value === 0 ? 'Off' : 'On';",
+                    "",
+                    "var icon = panel.down('#switch-device-icon');",
+                    "",
+                    "if(value === 0)",
+                    "{",
+                    "    icon.setStyle('color:#F5F5F5');",
+                    "}",
+                    "else",
+                    "{",
+                    "    icon.setStyle('color:#FFD600');",
+                    "}",
+                    "",
+                    "panel.down('#percent-label').setHtml(textValue);"
+                ]
+            },
+            "name": "updateDisplay",
+            "designerId": "f397aebd-8155-464f-a6f1-08e9de42ccd5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel#switchEzControl",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onPanelInitialize1",
+                "implHandler": [
+                    " var device = component.getData();",
+                    "        zvsMobile.app.getController('EzSwitch').updateDisplay(device.CurrentLevelInt,component);",
+                    ""
+                ],
+                "name": "initialize"
+            },
+            "name": "onPanelInitialize1",
+            "designerId": "c61d6210-1379-4962-82b3-2c07a983f368"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#OnButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onButtonTap",
+                "implHandler": [
+                    "var switchPanel =button.getParent().getParent();",
+                    "zvsMobile.app.getController('EzSwitch').updateDisplay(100,switchPanel);",
+                    "var device = switchPanel.getData();",
+                    "Ext.Ajax.request({",
+                    "    url: 'odata4/DeviceTypeCommands/?$filter=DeviceTypeId eq '+device.DeviceTypeId+' and UniqueIdentifier eq \\'TURNON\\'&$select=Id',",
+                    "    method: 'GET',",
+                    "    scope : this,",
+                    "    headers: {",
+                    "        'Content-Type': 'application/json',",
+                    "        'X-zvsToken': zvsMobile.app.getToken()",
+                    "    },",
+                    "    success: function (response, opts) {",
+                    "",
+                    "        if (response.status === 200) {",
+                    "            var result = JSON.parse(response.responseText);",
+                    "",
+                    "            if(result.value.length === 0)",
+                    "            {",
+                    "                Ext.toast(\"Cannot find Turn On command on this device\", 3000);",
+                    "                return;",
+                    "            }",
+                    "",
+                    "            var cmdId = result.value[0].Id;",
+                    "            zvsMobile.app.executeCommand(cmdId, '', device.Id.toString(), function(success, error){",
+                    "                if(success)",
+                    "                {",
+                    "                    Ext.toast(success, 3000);",
+                    "                    var deviceStore = Ext.getStore('DeviceStore');",
+                    "                    deviceStore.needsRefresh = true;",
+                    "                }",
+                    "                else",
+                    "                    Ext.toast(error, 3000);",
+                    "            });",
+                    "        }",
+                    "        else {",
+                    "            Ext.Msg.alert('Error',  'Unabled to load device commands.');",
+                    "        }",
+                    "    },",
+                    "    failure: function (response, opts) {",
+                    "        var result = JSON.parse(response.responseText);",
+                    "        Ext.Msg.alert('Error',  result.error.message);",
+                    "    }",
+                    "});"
+                ],
+                "name": "tap"
+            },
+            "name": "onButtonTap",
+            "designerId": "05219c88-94c0-4722-8cc2-ca382024ba5b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#OffButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "offButtonTap",
+                "implHandler": [
+                    "var switchPanel =button.getParent().getParent();",
+                    "zvsMobile.app.getController('EzSwitch').updateDisplay(0,switchPanel);",
+                    "var device = switchPanel.getData();",
+                    "Ext.Ajax.request({",
+                    "    url: 'odata4/DeviceTypeCommands/?$filter=DeviceTypeId eq '+device.DeviceTypeId+' and UniqueIdentifier eq \\'TURNOFF\\'&$select=Id',",
+                    "    method: 'GET',",
+                    "    scope : this,",
+                    "    headers: {",
+                    "        'Content-Type': 'application/json',",
+                    "        'X-zvsToken': zvsMobile.app.getToken()",
+                    "    },",
+                    "    success: function (response, opts) {",
+                    "",
+                    "        if (response.status === 200) {",
+                    "            var result = JSON.parse(response.responseText);",
+                    "",
+                    "            if(result.value.length === 0)",
+                    "            {",
+                    "                Ext.toast(\"Cannot find Turn Off command on this device\", 3000);",
+                    "                return;",
+                    "            }",
+                    "",
+                    "            var cmdId = result.value[0].Id;",
+                    "            zvsMobile.app.executeCommand(cmdId, '', device.Id.toString(), function(success, error){",
+                    "                if(success)",
+                    "                {",
+                    "                    Ext.toast(success, 3000);",
+                    "                    var deviceStore = Ext.getStore('DeviceStore');",
+                    "                    deviceStore.needsRefresh = true;",
+                    "                }",
+                    "                else",
+                    "                    Ext.toast(error, 3000);",
+                    "            });",
+                    "        }",
+                    "        else {",
+                    "            Ext.Msg.alert('Error',  'Unabled to load device commands.');",
+                    "        }",
+                    "    },",
+                    "    failure: function (response, opts) {",
+                    "        var result = JSON.parse(response.responseText);",
+                    "        Ext.Msg.alert('Error',  result.error.message);",
+                    "    }",
+                    "});"
+                ],
+                "name": "tap"
+            },
+            "name": "offButtonTap",
+            "designerId": "7fa9cc78-b74b-44f2-8c5d-1dd5097e2634"
+        }
+    ]
+}

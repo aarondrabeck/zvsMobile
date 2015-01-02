@@ -22,7 +22,8 @@
             "ScheduledTask",
             "ScheduledTaskEdit",
             "DimmerEz",
-            "EzControl"
+            "EzControl",
+            "EzSwitch"
         ],
         "models": [
             "Device",
@@ -84,7 +85,8 @@
             "ScheduledTaskEdit",
             "MainView",
             "DimmerEzControl",
-            "EzControl"
+            "EzControl",
+            "SwitchEzControl"
         ]
     },
     "name": "Application",
