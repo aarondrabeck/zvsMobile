@@ -93,6 +93,21 @@
                     },
                     "name": "MyTextField3",
                     "designerId": "4012fa5b-c8ed-43fb-b774-cded63063393"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "zipCodeTextField",
+                        "label": "ZipCode",
+                        "name": "ZipCode"
+                    },
+                    "name": "MyTextField2",
+                    "designerId": "ed5f951c-ebda-4bb6-aac5-b8e4e1e2703f"
                 }
             ]
         },

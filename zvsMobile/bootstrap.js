@@ -767,6 +767,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.controller.DimmerEz": [],
   "zvsMobile.controller.EzControl": [],
   "zvsMobile.controller.EzSwitch": [],
+  "zvsMobile.controller.EzThermostatController": [],
   "zvsMobile.controller.Group": [],
   "zvsMobile.controller.GroupEdit": [],
   "zvsMobile.controller.Log": [],
@@ -830,6 +831,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.view.ScheduledTasksPanel": [],
   "zvsMobile.view.SettingsForm": [],
   "zvsMobile.view.SwitchEzControl": [],
+  "zvsMobile.view.ThermostatEzControl": [],
   "zvsMobile.view.TriggerDetailsTabPanel": [],
   "zvsMobile.view.TriggerEdit": [],
   "zvsMobile.view.TriggerPanel": []
@@ -1784,6 +1786,7 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.controller.DimmerEz": [],
   "zvsMobile.controller.EzControl": [],
   "zvsMobile.controller.EzSwitch": [],
+  "zvsMobile.controller.EzThermostatController": [],
   "zvsMobile.controller.Group": [],
   "zvsMobile.controller.GroupEdit": [],
   "zvsMobile.controller.Log": [],
@@ -1906,6 +1909,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.view.SwitchEzControl": [
     "widget.switchezcontrol"
+  ],
+  "zvsMobile.view.ThermostatEzControl": [
+    "widget.thermostatezcontrol"
   ],
   "zvsMobile.view.TriggerDetailsTabPanel": [
     "widget.triggerdetailspanel"

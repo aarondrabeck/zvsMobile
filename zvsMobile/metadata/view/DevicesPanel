@@ -80,6 +80,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "container|align": "center",
+                        "container|pack": "center",
                         "designer|createAlias": "",
                         "designer|uiInterfaceName": "neutral",
                         "docked": "bottom",
@@ -94,6 +95,40 @@
                     "designerId": "0e77d338-af51-439d-bc18-a0c329b17791",
                     "cn": [
                         {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": null,
+                                "border": null,
+                                "centered": null,
+                                "icon": null,
+                                "iconAlign": null,
+                                "iconCls": "refresh",
+                                "id": null,
+                                "itemId": "devicesReloadBtn",
+                                "layout|flex": null,
+                                "style": null,
+                                "text": null,
+                                "ui": null
+                            },
+                            "name": "MyButton1",
+                            "designerId": "7318a77a-7937-4eb1-baed-0bbcd73b5fee"
+                        },
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MySpacer",
+                            "designerId": "aea6e3a1-971d-4912-8577-8dcd49624bfa"
+                        },
+                        {
                             "type": "Ext.SegmentedButton",
                             "reference": {
                                 "name": "items",
@@ -102,7 +137,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": null,
-                                "itemId": "filterSegmentedButton"
+                                "itemId": "filterSegmentedButton",
+                                "layout|flex": null
                             },
                             "name": "MySegmentedButton",
                             "designerId": "8b10ecfe-1cbe-4f0f-991f-8bb287aeabd0",
@@ -130,39 +166,6 @@
                                     ]
                                 }
                             ]
-                        },
-                        {
-                            "type": "Ext.Spacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "name": "MySpacer",
-                            "designerId": "10a7d678-0ca9-4f45-969a-6935fee0115f"
-                        },
-                        {
-                            "type": "Ext.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "baseCls": null,
-                                "border": null,
-                                "centered": false,
-                                "icon": null,
-                                "iconAlign": null,
-                                "iconCls": "refresh",
-                                "id": null,
-                                "itemId": "devicesReloadBtn",
-                                "style": null,
-                                "text": null,
-                                "ui": null
-                            },
-                            "name": "MyButton1",
-                            "designerId": "7318a77a-7937-4eb1-baed-0bbcd73b5fee"
                         }
                     ]
                 }

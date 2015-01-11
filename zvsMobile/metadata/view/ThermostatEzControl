@@ -1,0 +1,659 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "centered": true,
+        "container|align": "start",
+        "designer|userAlias": "thermostatezcontrol",
+        "designer|userClassName": "ThermostatEzControl",
+        "fullscreen": false,
+        "height": "100%",
+        "itemId": "thermostatEzControl",
+        "layout": "vbox",
+        "scrollable": false,
+        "style": null,
+        "width": "100%"
+    },
+    "name": "SwitchEzControl1",
+    "designerId": "33cf2cb1-edbe-46f2-96f7-55fad5d71a17",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "end",
+                "height": null,
+                "itemId": "header-containter",
+                "layout": "vbox",
+                "margin": "0 10 0 0",
+                "width": "100%"
+            },
+            "name": "MyContainer2",
+            "designerId": "9adfb4fb-a338-494f-b9e3-ab108e03d8c0",
+            "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "left",
+                        "height": null,
+                        "html": "",
+                        "itemId": "thermostat-icon",
+                        "margin": 5,
+                        "style": "text-align:center;font-family: zVirtualScenes;font-size: 30px;font-style: normal;color: #099CF9;"
+                    },
+                    "name": "MyLabel2",
+                    "designerId": "c48432f1-ba13-4489-8b9a-fa525575b938"
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "Outdoor",
+                        "itemId": "outdoor-label",
+                        "margin": "5 5 0 0",
+                        "style": "font-size:14px;font-family:Roboto;color:#B6C2C7;font-weight:500"
+                    },
+                    "name": "MyLabel1",
+                    "designerId": "8e869b14-5b1a-4207-814d-338a3f7df9da"
+                },
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "html": "-",
+                        "itemId": "outdoor-text",
+                        "margin": "0 5 0 5",
+                        "style": "font-size:12px;font-family:Roboto;color:#757575;font-weight:400"
+                    },
+                    "name": "MyLabel4",
+                    "designerId": "e774f262-9dc0-4372-9ec0-0c0e6e09da3f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null,
+                "height": null,
+                "itemId": "outer-container",
+                "layout": "vbox",
+                "layout|flex": 1,
+                "minHeight": null,
+                "scrollable": false,
+                "width": "100%"
+            },
+            "name": "MyContainer4",
+            "designerId": "c810009e-ae92-4af6-a9d2-91db54baddd1",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "start",
+                        "height": null,
+                        "layout": "vbox",
+                        "layout|flex": 1,
+                        "margin": "10 0 0 0",
+                        "scrollable": "vertical",
+                        "style": "",
+                        "width": null
+                    },
+                    "name": "MyContainer5",
+                    "designerId": "6b18e425-8930-4088-8666-0386aebce9ba",
+                    "cn": [
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "Indoor",
+                                "itemId": "indoor-label",
+                                "margin": "5 0 0 5",
+                                "style": "font-size:14px;font-family:Roboto;color:#B6C2C7;font-weight:500"
+                            },
+                            "name": "MyLabel5",
+                            "designerId": "7260ce1c-9f39-4b03-8f4a-6ce1b6dcde6a"
+                        },
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "start",
+                                "itemId": "indoor-degree-container",
+                                "layout": "hbox",
+                                "width": "100%"
+                            },
+                            "name": "MyContainer",
+                            "designerId": "ddcbc072-26b9-4331-823e-28d0753d04cc",
+                            "cn": [
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "docked": null,
+                                        "html": "60",
+                                        "itemId": "temp-text",
+                                        "margin": "0 0 0 5",
+                                        "style": "font-size:70px;font-family:Roboto;color:#757575;font-weight:400",
+                                        "width": ""
+                                    },
+                                    "name": "MyLabel",
+                                    "designerId": "279b7d38-4404-4991-b5de-23d43e47dc49"
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "docked": null,
+                                        "html": "&deg;",
+                                        "itemId": "degree-text",
+                                        "margin": "0 0 0 5",
+                                        "style": "font-size:70px;font-family:Roboto;color:#757575;font-weight:400",
+                                        "width": ""
+                                    },
+                                    "name": "MyLabel11",
+                                    "designerId": "25d1bb1f-d57b-4238-ae3e-d777715e330b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "Heat to",
+                                "itemId": "heat-to-label",
+                                "margin": "10 0 0 5",
+                                "style": "font-size:14px;font-family:Roboto;color:#B6C2C7;font-weight:500"
+                            },
+                            "name": "MyLabel6",
+                            "designerId": "bade367d-c643-42e2-bc13-6496a83634ad"
+                        },
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": null,
+                                "container|pack": null,
+                                "itemId": "heat-to-container",
+                                "layout": "hbox"
+                            },
+                            "name": "MyContainer3",
+                            "designerId": "b18821ff-b3cc-42ea-9e2a-0f432b868e2e",
+                            "cn": [
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "html": "75",
+                                        "itemId": "heat-to-text",
+                                        "margin": "0 0 0 5",
+                                        "style": "font-size:30px;font-family:Roboto;color:#757575;font-weight:400"
+                                    },
+                                    "name": "MyLabel3",
+                                    "designerId": "ceda034e-cc4f-424d-ae61-b3e29e2bfb32"
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "html": "&deg;",
+                                        "itemId": "heat-degree-test",
+                                        "margin": "0 0 0 0",
+                                        "style": "font-size:30px;font-family:Roboto;color:#757575;font-weight:400"
+                                    },
+                                    "name": "MyLabel7",
+                                    "designerId": "295eee8a-f1b6-4bbe-8b91-896e3f3f6593"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "heat-down",
+                                        "margin": "0 0 0 30",
+                                        "text": " - ",
+                                        "width": 80
+                                    },
+                                    "name": "MyButton9",
+                                    "designerId": "f0f31596-5dd5-42fe-a36a-59773306d7b7"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "heat-up",
+                                        "margin": "0 0 0 5",
+                                        "text": " + ",
+                                        "width": 80
+                                    },
+                                    "name": "MyButton1",
+                                    "designerId": "385fb800-4610-4a0c-84fd-d38181bf9a56"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "Cool to",
+                                "itemId": "cool-to-label",
+                                "margin": "20 0 0 5",
+                                "style": "font-size:14px;font-family:Roboto;color:#B6C2C7;font-weight:500"
+                            },
+                            "name": "MyLabel8",
+                            "designerId": "8be0ab3e-2c0d-4392-a9ac-f19dac0bbcd7"
+                        },
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": null,
+                                "container|pack": null,
+                                "itemId": "cool-to-container",
+                                "layout": "hbox"
+                            },
+                            "name": "MyContainer1",
+                            "designerId": "9dee45d9-7124-4883-8cac-9a857051a574",
+                            "cn": [
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "html": "70",
+                                        "itemId": "cool-to-text",
+                                        "margin": "0 0 0 5",
+                                        "style": "font-size:30px;font-family:Roboto;color:#757575;font-weight:400"
+                                    },
+                                    "name": "MyLabel3",
+                                    "designerId": "dcfa3324-8fce-4d34-9bec-c60ff22cddb4"
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "html": "&deg;",
+                                        "itemId": "cool-degree-test",
+                                        "margin": "0 0 0 0",
+                                        "style": "font-size:30px;font-family:Roboto;color:#757575;font-weight:400"
+                                    },
+                                    "name": "MyLabel7",
+                                    "designerId": "bf7b53db-aeb5-4a92-99a9-aa30c1e15d2f"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "cool-down",
+                                        "margin": "0 0 0 30",
+                                        "text": " - ",
+                                        "width": 80
+                                    },
+                                    "name": "MyButton9",
+                                    "designerId": "1df0f841-7617-4fb7-9820-876cc99be0c0"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "cool-up",
+                                        "margin": "0 0 0 5",
+                                        "text": " + ",
+                                        "width": 80
+                                    },
+                                    "name": "MyButton1",
+                                    "designerId": "1104a3d1-3e44-49d7-96dc-09292f6fcf9b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "Mode",
+                                "itemId": "mode-label",
+                                "margin": "20 0 0 5",
+                                "style": "font-size:14px;font-family:Roboto;color:#B6C2C7;font-weight:500"
+                            },
+                            "name": "MyLabel9",
+                            "designerId": "ceb30d07-5fed-4fc9-9df2-3057429d5b74"
+                        },
+                        {
+                            "type": "Ext.SegmentedButton",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hitCount": 0,
+                                "itemId": "esm-mode",
+                                "margin": "5 0 0 5"
+                            },
+                            "name": "MySegmentedButton",
+                            "configAlternates": {
+                                "hitCount": "number"
+                            },
+                            "designerId": "0aebec6d-66ba-49d6-9174-d587c682368e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "hitCount",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "esm-button",
+                                        "text": "ESM",
+                                        "width": 120
+                                    },
+                                    "name": "MyButton7",
+                                    "designerId": "829f5d57-5f2f-4248-9a83-af21f4eacb81"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "comfort-button",
+                                        "margin": "",
+                                        "text": "Comfort",
+                                        "width": 120
+                                    },
+                                    "name": "MyButton8",
+                                    "designerId": "f5ca39b5-32f0-4655-b769-9b4498705c6c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "Energy Mode",
+                                "itemId": "esm-mode-label",
+                                "margin": "20 0 0 5",
+                                "style": "font-size:14px;font-family:Roboto;color:#B6C2C7;font-weight:500"
+                            },
+                            "name": "MyLabel12",
+                            "designerId": "db787756-255d-4b39-8711-27ec6c0feff6"
+                        },
+                        {
+                            "type": "Ext.SegmentedButton",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hitCount": 0,
+                                "itemId": "mode",
+                                "margin": "5 0 0 5",
+                                "style": null
+                            },
+                            "name": "MySegmentedButton1",
+                            "configAlternates": {
+                                "hitCount": "number"
+                            },
+                            "designerId": "83574f52-2925-4e9d-a220-66bf094f1d12",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "hitCount",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "mode-off-button",
+                                        "margin": "",
+                                        "text": "Off",
+                                        "width": 60
+                                    },
+                                    "name": "MyButton",
+                                    "designerId": "57ca3aa9-6cbc-4222-8420-f55371b5e0bf"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "mode-heat-button",
+                                        "text": "Heat",
+                                        "width": 60
+                                    },
+                                    "name": "MyButton2",
+                                    "designerId": "888cb4ac-7f3b-41a2-8246-4cf148d94780"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "mode-cool-button",
+                                        "text": "Cool",
+                                        "width": 60
+                                    },
+                                    "name": "MyButton3",
+                                    "designerId": "f3380227-5bfd-447a-a536-1cdf57f7389b"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "mode-auto-button",
+                                        "style": null,
+                                        "text": "Auto",
+                                        "width": 60
+                                    },
+                                    "name": "MyButton6",
+                                    "designerId": "d45848c2-a324-446b-bdc1-8e1d790a3fc9"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "Fan Mode",
+                                "itemId": "fan-mode-label",
+                                "margin": "20 0 0 5",
+                                "style": "font-size:14px;font-family:Roboto;color:#B6C2C7;font-weight:500"
+                            },
+                            "name": "MyLabel10",
+                            "designerId": "07a93567-b6da-4220-8182-7e316eb369a4"
+                        },
+                        {
+                            "type": "Ext.SegmentedButton",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hitCount": 0,
+                                "itemId": "fan-mode",
+                                "margin": "5 0 0 5"
+                            },
+                            "name": "MySegmentedButton2",
+                            "configAlternates": {
+                                "hitCount": "number"
+                            },
+                            "designerId": "3a495c3f-6800-417d-8d7b-c153a0808f44",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "hitCount",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "fan-on-button",
+                                        "text": "On Low",
+                                        "width": 120
+                                    },
+                                    "name": "MyButton7",
+                                    "designerId": "b05c4a80-c92d-409a-9bbf-79f607731d55"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "itemId": "fan-auto-button",
+                                        "margin": "",
+                                        "text": "Auto Low",
+                                        "width": 120
+                                    },
+                                    "name": "MyButton8",
+                                    "designerId": "87af37fa-b173-4a9e-acb4-e261a487b6a3"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

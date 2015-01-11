@@ -11,7 +11,8 @@
         "itemId": "EzControlTab",
         "requires": [
             "zvsMobile.view.DimmerEzControl"
-        ]
+        ],
+        "scrollable": true
     },
     "name": "MyPanel2",
     "designerId": "303851f7-c0be-48e4-a996-2b84f3ee46dd"

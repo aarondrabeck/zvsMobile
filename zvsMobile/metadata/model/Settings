@@ -49,11 +49,25 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "Port",
-                "type": "int"
+                "name": "ZipCode",
+                "type": "string"
             },
             "name": "field24",
             "designerId": "11228b59-2716-40a9-88bf-ab467db92d6a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Port",
+                "type": "int"
+            },
+            "name": "field64",
+            "designerId": "3c77d82e-198f-4f28-9672-ad90f24b7c2d"
         },
         {
             "type": "Ext.data.Field",

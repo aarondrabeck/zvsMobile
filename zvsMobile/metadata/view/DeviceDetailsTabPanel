@@ -28,7 +28,7 @@
                 "style": null,
                 "title": "Quick Set"
             },
-            "name": "ezcontrol2",
+            "name": "ezcontrol",
             "designerId": "657068d1-e6fa-44f3-9203-25d97e0621a8",
             "masterInstanceId": "303851f7-c0be-48e4-a996-2b84f3ee46dd"
         },
@@ -43,7 +43,7 @@
                 "iconCls": "action",
                 "title": "Control"
             },
-            "name": "devicecontrolpanel2",
+            "name": "devicecontrolpanel",
             "designerId": "6c3a462e-5338-4957-9666-ad668323a13c",
             "masterInstanceId": "0599d6d3-6430-4abc-acd2-a6797bbd23d2"
         },
@@ -58,7 +58,7 @@
                 "iconCls": "more",
                 "title": "Values"
             },
-            "name": "devicevaluespanel2",
+            "name": "devicevaluespanel",
             "designerId": "f72355f3-68d8-4a1a-a85f-97889e7dbbc5",
             "masterInstanceId": "6192869c-ad6e-4f4c-a2ae-d6058a34b218"
         },
@@ -73,7 +73,7 @@
                 "iconCls": "compose",
                 "title": "Edit"
             },
-            "name": "deviceedit2",
+            "name": "deviceedit",
             "designerId": "33443b2b-f46d-40e2-9834-ac7268b72114",
             "masterInstanceId": "092d320b-5559-45ba-9c18-26a64d777666"
         },

@@ -23,7 +23,8 @@
             "ScheduledTaskEdit",
             "DimmerEz",
             "EzControl",
-            "EzSwitch"
+            "EzSwitch",
+            "EzThermostatController"
         ],
         "models": [
             "Device",
@@ -41,7 +42,8 @@
         ],
         "name": "zvsMobile",
         "requires": [
-            "Ext.MessageBox"
+            "Ext.MessageBox",
+            "Ext.data.JsonP"
         ],
         "stores": [
             "DeviceStore",
@@ -86,7 +88,8 @@
             "MainView",
             "DimmerEzControl",
             "EzControl",
-            "SwitchEzControl"
+            "SwitchEzControl",
+            "ThermostatEzControl"
         ]
     },
     "name": "Application",
