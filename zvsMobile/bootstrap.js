@@ -772,6 +772,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.controller.GroupEdit": [],
   "zvsMobile.controller.Log": [],
   "zvsMobile.controller.Navigation": [],
+  "zvsMobile.controller.PowerSensorPanel": [],
   "zvsMobile.controller.Scenes": [],
   "zvsMobile.controller.ScheduledTask": [],
   "zvsMobile.controller.ScheduledTaskEdit": [],
@@ -822,6 +823,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "zvsMobile.view.LogList": [],
   "zvsMobile.view.MainView": [],
   "zvsMobile.view.NavMenu": [],
+  "zvsMobile.view.PowerSensorPanel": [],
   "zvsMobile.view.SceneControlPanel": [],
   "zvsMobile.view.SceneEdit": [],
   "zvsMobile.view.SceneTabPanel": [],
@@ -1791,6 +1793,7 @@ Ext.ClassManager.addNameAliasMappings({
   "zvsMobile.controller.GroupEdit": [],
   "zvsMobile.controller.Log": [],
   "zvsMobile.controller.Navigation": [],
+  "zvsMobile.controller.PowerSensorPanel": [],
   "zvsMobile.controller.Scenes": [
     "controller.scenespanel"
   ],
@@ -1882,6 +1885,9 @@ Ext.ClassManager.addNameAliasMappings({
   ],
   "zvsMobile.view.NavMenu": [
     "widget.navmenu"
+  ],
+  "zvsMobile.view.PowerSensorPanel": [
+    "widget.powersensorpanel"
   ],
   "zvsMobile.view.SceneControlPanel": [
     "widget.scenecontrolpanel"

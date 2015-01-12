@@ -24,7 +24,8 @@
             "DimmerEz",
             "EzControl",
             "EzSwitch",
-            "EzThermostatController"
+            "EzThermostatController",
+            "PowerSensorPanel"
         ],
         "models": [
             "Device",
@@ -89,7 +90,8 @@
             "DimmerEzControl",
             "EzControl",
             "SwitchEzControl",
-            "ThermostatEzControl"
+            "ThermostatEzControl",
+            "PowerSensorPanel"
         ]
     },
     "name": "Application",
