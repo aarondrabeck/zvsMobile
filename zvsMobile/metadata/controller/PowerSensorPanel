@@ -1,0 +1,41 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "PowerSensorPanel"
+    },
+    "name": "MyController",
+    "designerId": "5881893b-6bd0-4849-8369-52289fdab2a1",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "panel#powerSensorPanel",
+                "designer|targetType": "Ext.Panel",
+                "fn": "onPanelInitialize",
+                "implHandler": [
+                    "var value = component.getData();",
+                    "var wattsLabel = component.down('#watt-label');",
+                    "var co2Label = component.down('#co2-label');",
+                    "",
+                    "wattsLabel.setHtml(Math.round(value.Value) + 'W');",
+                    "",
+                    "var poundsCO = Math.round((value.Value * 0.00120218)*100)/100;",
+                    "co2Label.setHtml(poundsCO);"
+                ],
+                "name": "initialize"
+            },
+            "name": "onPanelInitialize",
+            "designerId": "79eba1cc-907d-4149-b4dc-34ba8412949c"
+        }
+    ]
+}

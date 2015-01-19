@@ -95,6 +95,60 @@
                     "designerId": "0e77d338-af51-439d-bc18-a0c329b17791",
                     "cn": [
                         {
+                            "type": "Ext.field.Select",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "locationSelectField",
+                                "label": null,
+                                "maxWidth": "42%",
+                                "options": null,
+                                "width": null
+                            },
+                            "name": "MySelectField",
+                            "designerId": "b7edc6c4-c4a8-43f6-80f4-23d532e78938"
+                        },
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MySpacer",
+                            "designerId": "aea6e3a1-971d-4912-8577-8dcd49624bfa"
+                        },
+                        {
+                            "type": "Ext.field.Select",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "itemId": "typeSelectField",
+                                "label": null,
+                                "maxWidth": "42%",
+                                "options": null,
+                                "width": null
+                            },
+                            "name": "MySelectField1",
+                            "designerId": "366259c3-4842-4b9c-9f89-c603963a93d3"
+                        },
+                        {
+                            "type": "Ext.Spacer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "name": "MySpacer1",
+                            "designerId": "7ab930fb-6f8d-4997-b05e-b8a8a674396e"
+                        },
+                        {
                             "type": "Ext.Button",
                             "reference": {
                                 "name": "items",
@@ -117,55 +171,6 @@
                             },
                             "name": "MyButton1",
                             "designerId": "7318a77a-7937-4eb1-baed-0bbcd73b5fee"
-                        },
-                        {
-                            "type": "Ext.Spacer",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "name": "MySpacer",
-                            "designerId": "aea6e3a1-971d-4912-8577-8dcd49624bfa"
-                        },
-                        {
-                            "type": "Ext.SegmentedButton",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "id": null,
-                                "itemId": "filterSegmentedButton",
-                                "layout|flex": null
-                            },
-                            "name": "MySegmentedButton",
-                            "designerId": "8b10ecfe-1cbe-4f0f-991f-8bb287aeabd0",
-                            "cn": [
-                                {
-                                    "type": "Ext.Button",
-                                    "reference": {
-                                        "name": "items",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "locationFilter": "all",
-                                        "pressed": true,
-                                        "text": "All"
-                                    },
-                                    "name": "MyButton4",
-                                    "designerId": "47b1cf17-ff49-4733-aec4-9082721610f5",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "locationFilter",
-                                            "type": "string"
-                                        }
-                                    ]
-                                }
-                            ]
                         }
                     ]
                 }

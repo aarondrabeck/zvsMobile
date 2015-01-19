@@ -88,75 +88,83 @@
                 "designer|targetType": "Ext.dataview.DataView",
                 "fn": "onDataviewRefresh",
                 "implHandler": [
-                    "var locationNames = [];",
+                    "var locationNames = [ ];",
                     "",
                     "var deviceStore = Ext.getStore('DeviceStore');",
                     "",
-                    "var existingFilters = [];",
-                    "var segButton = dataview.down('#filterSegmentedButton');",
-                    "",
-                    "segButton.getItems().each(function(item) {",
-                    "    existingFilters.push(item.getInitialConfig().locationFilter);",
-                    "});",
-                    "",
-                    "",
+                    "var locationSelectField = dataview.down('#locationSelectField');",
+                    "var selectedLocation = locationSelectField.getValue();",
                     "",
                     "//Create list without duplicates",
-                    "",
                     "var allRecords = deviceStore.queryBy(function(){return true;});",
                     "allRecords.each(function(element) {",
                     "    if(locationNames.indexOf(element.data.Location) === -1)",
                     "        locationNames.push(element.data.Location);",
                     "});",
                     "",
-                    "",
-                    "",
                     "locationNames.sort();",
                     "",
-                    "",
-                    "",
-                    "var buttons = [];",
+                    "var options= [{text: 'All Rooms',  value: 'All'}];",
                     "locationNames.forEach(function(value, index, array) {",
-                    "",
-                    "    if(existingFilters.indexOf(value) === -1)",
-                    "        buttons.push({ text: value, locationFilter:value });",
+                    "        options.push({ text: value, value:value });",
                     "});",
-                    "segButton.add(buttons);"
+                    "",
+                    "locationSelectField.setOptions(options);",
+                    "",
+                    "if(selectedLocation !== null)",
+                    "    locationSelectField.setValue(selectedLocation);",
+                    "",
+                    "",
+                    "//Types",
+                    "",
+                    "var typeSelectField = dataview.down('#typeSelectField');",
+                    "var selectedType = typeSelectField.getValue();",
+                    "",
+                    "//Create list without duplicates",
+                    "var allTypes = [ ];",
+                    "allRecords.each(function(element) {",
+                    "    var name = element.raw.Type.UniqueIdentifier;",
+                    "    var id = element.raw.Type.Id;",
+                    "",
+                    "",
+                    "    var found = false;",
+                    "    for(var i = 0; i < allTypes.length; i++) {",
+                    "        if (allTypes[i].text == name) {",
+                    "            found = true;",
+                    "            break;",
+                    "        }",
+                    "    }",
+                    "",
+                    "    var option = { text: name, value:id };",
+                    "    if(!found)",
+                    "        allTypes.push(option);",
+                    "});",
+                    "",
+                    "",
+                    "var sortFn = function compare(a,b) {",
+                    "  if (a.text < b.text)",
+                    "     return -1;",
+                    "  if (a.text > b.text)",
+                    "    return 1;",
+                    "  return 0;",
+                    "};",
+                    "",
+                    "allTypes.sort(sortFn);",
+                    "",
+                    "var typeOptions= [{text: 'All Types',  value: '-1'}];",
+                    "allTypes.forEach(function(value, index, array) {",
+                    "        typeOptions.push(value);",
+                    "});",
+                    "",
+                    "typeSelectField.setOptions(typeOptions);",
+                    "",
+                    "if(selectedType !== null)",
+                    "    typeSelectField.setValue(selectedType);"
                 ],
                 "name": "refresh"
             },
             "name": "onDataviewRefresh",
             "designerId": "62fd5231-f582-429a-96d3-afa1576d8abf"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|controlQuery": "segmentedbutton#filterSegmentedButton",
-                "designer|targetType": "Ext.SegmentedButton",
-                "fn": "onSegmentedbuttonToggle",
-                "implHandler": [
-                    "if(!isPressed)",
-                    "    return;",
-                    "",
-                    "var deviceStore = Ext.getStore('DeviceStore');",
-                    "var filter = button.getInitialConfig().locationFilter;",
-                    "if(filter)",
-                    "{",
-                    "    if(filter == 'all')",
-                    "        deviceStore.clearFilter();",
-                    "    else",
-                    "        deviceStore.filter('Location', filter);",
-                    "}"
-                ],
-                "name": "toggle"
-            },
-            "name": "onSegmentedbuttonToggle",
-            "designerId": "cef6ff2e-9edb-4f2b-8b33-c218cdf788e1"
         },
         {
             "type": "controlleraction",
@@ -204,6 +212,78 @@
             },
             "name": "onDevicePanelShow",
             "designerId": "f9ceef1c-3f69-4081-94ea-7c4debcb0bbc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "selectfield#locationSelectField",
+                "designer|targetType": "Ext.field.Select",
+                "fn": "onLocationSelectfieldChange",
+                "implHandler": [
+                    "var devicePanel = selectfield.up('#devicesPanel');",
+                    "zvsMobile.app.getController('Devices').setFilter(devicePanel);"
+                ],
+                "name": "change"
+            },
+            "name": "onLocationSelectfieldChange",
+            "designerId": "95324ca2-0047-4740-85be-4ecafe4467d9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "selectfield#typeSelectField",
+                "designer|targetType": "Ext.field.Select",
+                "fn": "onTypeSelectfieldChange",
+                "implHandler": [
+                    "var devicePanel = selectfield.up('#devicesPanel');",
+                    "zvsMobile.app.getController('Devices').setFilter(devicePanel);"
+                ],
+                "name": "change"
+            },
+            "name": "onTypeSelectfieldChange",
+            "designerId": "55ff19b7-1f93-4288-8f5f-c41b118e44d4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "devicesPanel"
+                ],
+                "fn": "setFilter",
+                "implHandler": [
+                    "var deviceStore = Ext.getStore('DeviceStore');",
+                    "",
+                    "var typeSelectField = devicesPanel.down('#typeSelectField');",
+                    "var selectedTypeValue = typeSelectField.getValue();",
+                    "",
+                    "var locationSelectField = devicesPanel.down('#locationSelectField');",
+                    "var selectedLocationValue = locationSelectField.getValue();",
+                    "",
+                    "deviceStore.clearFilter();",
+                    "if(selectedTypeValue !== '-1')",
+                    "    deviceStore.filter('DeviceTypeId', selectedTypeValue);",
+                    "",
+                    "if(selectedLocationValue !== 'All')",
+                    "      deviceStore.filter('Location', selectedLocationValue);"
+                ]
+            },
+            "name": "setFilter",
+            "designerId": "e4a33bd4-ffba-491b-93a5-f31335a99b5a"
         }
     ]
 }

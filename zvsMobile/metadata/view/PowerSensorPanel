@@ -1,0 +1,177 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "powersensorpanel",
+        "designer|userClassName": "PowerSensorPanel",
+        "itemId": "powerSensorPanel",
+        "scrollable": null
+    },
+    "name": "MyPanel",
+    "designerId": "d2ad8c44-a8a9-4d2a-9af0-e1e7abe26064",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "padding": 5
+            },
+            "name": "MyContainer6",
+            "designerId": "2217a1d3-b79c-437c-a91a-75138539d206",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "header"
+                    },
+                    "name": "MyContainer8",
+                    "designerId": "4bfec0cd-b22a-4c4a-9f17-a8cde455ef35",
+                    "cn": [
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "docked": null,
+                                "height": null,
+                                "html": "",
+                                "itemId": "iccn",
+                                "margin": 5,
+                                "style": "font-family: zVirtualScenes;font-size: 80px;font-style: normal;color: #43A047;"
+                            },
+                            "name": "MyLabel14",
+                            "designerId": "0f32d784-4b35-4192-bdd1-6e4c109d7230"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": null,
+                        "height": 200,
+                        "itemId": "content",
+                        "scrollable": null
+                    },
+                    "name": "MyContainer9",
+                    "designerId": "ed140e7e-a0d7-4fc3-a9cf-aff70f00bdf5",
+                    "cn": [
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "Current Consumption",
+                                "margin": "10 0 0 0",
+                                "style": "font-size:14px;font-family:Roboto;color:#B6C2C7;font-weight:500"
+                            },
+                            "name": "MyLabel13",
+                            "designerId": "9b9d2e57-e548-46c0-920d-8714bbd7383e"
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "html": "-W",
+                                "itemId": "watt-label",
+                                "style": "font-size:70px;font-family:Roboto;color:#757575;font-weight:400"
+                            },
+                            "name": "MyLabel15",
+                            "designerId": "eef2a77e-b546-4d5e-843e-ecebc3ff8928"
+                        },
+                        {
+                            "type": "Ext.Label",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "html": "Estimated C0<sup>2</sup> Output",
+                                "margin": "10 0 0 0",
+                                "style": "font-size:14px;font-family:Roboto;color:#B6C2C7;font-weight:500"
+                            },
+                            "name": "MyLabel16",
+                            "designerId": "6d19aa07-278e-47ea-acbf-6f371547c4c4"
+                        },
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout": "hbox",
+                                "margin": "5 0 0 0",
+                                "padding": ""
+                            },
+                            "name": "MyContainer7",
+                            "designerId": "03153e9b-e55f-4fab-8508-6614b94ba059",
+                            "cn": [
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "html": "-",
+                                        "itemId": "co2-label",
+                                        "style": "font-size:20px;font-family:Roboto;color:#757575;font-weight:400"
+                                    },
+                                    "name": "MyLabel17",
+                                    "designerId": "ca7fa52f-9d62-4153-a3aa-c7aed2ec6e8e"
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "html": " pounds/hour",
+                                        "padding": "0 0 0 5",
+                                        "style": "font-size:20px;font-family:Roboto;color:#757575;font-weight:400"
+                                    },
+                                    "name": "MyLabel18",
+                                    "designerId": "81a78290-10bf-4379-b06a-d76087e51dce"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
