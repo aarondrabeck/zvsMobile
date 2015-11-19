@@ -212,7 +212,7 @@
                 "designer|targetType": "Ext.navigation.View",
                 "fn": "onNavigationviewPush",
                 "implHandler": [
-                    "history.pushState(); "
+                    "history.pushState(view.title,view.title);"
                 ],
                 "name": "push"
             },

@@ -28,8 +28,8 @@
         "lockUrlPrefix": true,
         "installStatus": "Not Installed",
         "lastBuildSelection": {
-            "value": "webBuild",
-            "display": "Build web app"
+            "value": "nativeBuild",
+            "display": "Native Build"
         }
     },
     "xdsVersion": "3.2.0",
