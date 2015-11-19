@@ -660,7 +660,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.picker.Slot": [
     "Ext.Picker.Slot"
   ],
-  "Ext.plugin.BufferedList": [],
   "Ext.plugin.ListPaging": [],
   "Ext.plugin.PullRefresh": [],
   "Ext.plugin.SortableList": [],
@@ -753,7 +752,9 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.ux.parse.Store": [],
   "Ext.ux.parse.association.Pointer": [],
   "Ext.ux.parse.association.Relation": [],
-  "Ext.viewport.Android": [],
+  "Ext.viewport.AndroidStock": [
+    "Ext.viewport.Android"
+  ],
   "Ext.viewport.Default": [],
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
@@ -1663,9 +1664,6 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.picker.Slot": [
     "widget.pickerslot"
   ],
-  "Ext.plugin.BufferedList": [
-    "plugin.bufferedlist"
-  ],
   "Ext.plugin.ListPaging": [
     "plugin.listpaging"
   ],
@@ -1774,7 +1772,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.ux.parse.association.Relation": [
     "association.relation"
   ],
-  "Ext.viewport.Android": [],
+  "Ext.viewport.AndroidStock": [],
   "Ext.viewport.Default": [
     "widget.viewport"
   ],

@@ -3,8 +3,8 @@
     "settings": {
         "cmd": {
             "license": "gpl",
-            "cmdVersion": "5.0.2.270",
-            "frameworkVersion": "2.4.0.482"
+            "cmdVersion": "5.1.3.61",
+            "frameworkVersion": "2.4.2.571"
         },
         "canvasControls": {
             "viewportSize": {
@@ -28,14 +28,14 @@
         "lockUrlPrefix": true,
         "installStatus": "Not Installed",
         "lastBuildSelection": {
-            "value": "nativeBuild",
-            "display": "Native Build"
+            "value": "webBuild",
+            "display": "Build web app"
         }
     },
-    "xdsVersion": "3.1.0",
-    "xdsBuild": 1943,
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
     "schemaVersion": 1,
-    "upgradeVersion": 300000000007,
+    "upgradeVersion": 310000000001,
     "framework": "touch24",
     "viewOrderMap": {
         "view": [

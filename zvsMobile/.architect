@@ -1742,17 +1742,18 @@
         "openTabs": [
             "12fcc33d-36a7-475b-8792-6b6c96745316",
             "6ce882fa-eb1d-4863-9c06-c76d93e27216",
-            "application"
+            "application",
+            "8b7af629-5bf5-47f6-8efa-05c8c0809369"
         ]
     },
     "canvasState": {
-        "topInstance": null
+        "topInstance": "8b7af629-5bf5-47f6-8efa-05c8c0809369"
     },
     "inspectorState": {
-        "topInstance": "6ce882fa-eb1d-4863-9c06-c76d93e27216",
-        "selectedInstance": "62fd5231-f582-429a-96d3-afa1576d8abf"
+        "topInstance": "8b7af629-5bf5-47f6-8efa-05c8c0809369",
+        "selectedInstance": "8b7af629-5bf5-47f6-8efa-05c8c0809369"
     },
-    "editMode": "code",
+    "editMode": "design",
     "userSettings": {
         "no-cmd": false
     }

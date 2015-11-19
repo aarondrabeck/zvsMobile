@@ -129,9 +129,7 @@
  * form submission was successful. These functions are usually used to take some action in your app after your data
  * has been saved to the server side.
  *
- * @aside guide forms
- * @aside example forms
- * @aside example forms-toolbars
+ * For more information regarding forms and fields, please review [Using Forms in Sencha Touch Guide](../../../components/forms.html)
  */
 Ext.define('Ext.form.Panel', {
     alternateClassName: 'Ext.form.FormPanel',
@@ -396,6 +394,10 @@ Ext.define('Ext.form.Panel', {
         if (e && !me.getStandardSubmit()) {
             e.stopEvent();
         } else {
+            // Stop the submit event on the original for if we are swapping a form in
+            if (me.getEnableSubmissionForm()) {
+                e.stopEvent();
+            }
             this.submit(null, e);
         }
     },
@@ -1177,7 +1179,6 @@ Ext.define('Ext.form.Panel', {
     },
 
     /**
-     * @private
      * Returns all {@link Ext.field.Field field} instances inside this form.
      * @param {Boolean} byName return only fields that match the given name, otherwise return all fields.
      * @return {Object/Array} All field instances, mapped by field name; or an array if `byName` is passed.
