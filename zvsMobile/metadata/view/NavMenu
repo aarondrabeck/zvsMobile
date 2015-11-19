@@ -157,7 +157,7 @@
                 "itemId": "TriggersBtn",
                 "margin": 3,
                 "navId": null,
-                "navView": "triggerdetailspanel",
+                "navView": "triggerpanel",
                 "text": "Triggers"
             },
             "name": "MyButton7",
